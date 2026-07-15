@@ -39,6 +39,30 @@ Keep this superrepo **private** (a public superrepo can't recurse a private subm
   end-to-end coaching tests need `GEMINI_API_KEY`).
 - **Mac app:** `cd mac-client && xcodebuild -project Lucena.xcodeproj -scheme Lucena -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO build`.
 
+## Code review (Claude implements, Codex reviews)
+
+Every non-trivial change goes through the two-agent loop. **Claude is the implementer; Codex is the
+reviewer and never writes code.** The loop ends only when Codex returns `VERDICT: PASS`.
+Contract: `AGENTS.md`. Procedure + prompts: `CODE_REVIEW_PROTOCOL.md`.
+
+```bash
+./review-loop.sh "task"                              # Claude implements, then Codex reviews
+REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already in the worktree"
+```
+
+- `REVIEW_ONLY=1` reviews what is already in the worktree (skips the implement step; the default
+  clean-worktree gate otherwise refuses). `ALLOW_DIRTY=1` skips that gate when implementing.
+- `REVIEW_DIR=backend` scopes the review to a layer — per the AGENTS.md multi-repo rule, review a
+  change in the repo where it actually lives, and call out a stale superrepo pointer separately.
+- `CONTEXT_FILE=path` feeds the implementer a plan; without it `claude -p` starts cold, knowing only
+  the task string.
+- **Dispute findings with evidence, don't silently close them** (test output, the code path, or an
+  invariant below). Codex reassesses; that exchange has already caught real bugs on both sides.
+- Do NOT use `codex exec review --uncommitted "<prompt>"` — codex-cli rejects a prompt alongside that
+  flag, and the loop's exit condition needs our prompt (the `VERDICT:` line). Use plain `codex exec`
+  and let the reviewer scope itself to the diff. Always redirect stdin (`</dev/null`) or codex blocks
+  waiting for EOF.
+
 ## Load-bearing conventions
 
 - **Calculate vs. interpret.** The engine calculates the truth; the LLM only interprets it. Anything the
@@ -51,8 +75,28 @@ Keep this superrepo **private** (a public superrepo can't recurse a private subm
   separate read-only `ground_ctx` handles coaching grounding so slow analysis never blocks interactive
   moves. (The engine *also* ships a gRPC surface for external/networked use.)
 - **SAN on the wire.** UCI is engine-internal only (entry/exit conversion); the backend and app speak SAN.
-- **Storeless engine, one Postgres** in the backend. Relational session state (no json-as-state), at most
-  one `is_active` session. Drill/forcing-line trees are precomputed and position-keyed, never per-session.
+- **Storeless engine, one Postgres** in the backend. Relational session state (no json-as-state).
+  Drill/forcing-line trees are precomputed and position-keyed, never per-session.
+- **Three things are called "session" — never conflate them.** This distinction is load-bearing:
+
+  | Term | What it is | Cardinality | Where it lives |
+  |---|---|---|---|
+  | **chat session** | a coaching conversation | **many** per user | the `session` table; `StateStore._live[sid]` |
+  | **active chat** | which chat a user currently has open | **one per user** | `session.is_active` |
+  | **login session** | an authenticated user | one token per login | *(Phase 3 — does not exist yet)* |
+
+  Also: `session.status` ('active') and `session.is_active` (the active-chat pointer) are **unrelated
+  concepts that happen to share the word "active"**. The DB table named `session` is the **chat**
+  session; the login layer must never reuse that name.
+- **The bound chat is a ContextVar, never a global.** `state._current_sid` is per execution context,
+  so two concurrent turns cannot see each other's cursor — a background turn parked in the LLM still
+  writes to the chat it started in. Bind at entry points with `store.bound(sid)`; `_cur`/`_sc`/
+  `_publish` resolve from it. It crosses `asyncio.create_task` (context copied at creation) and
+  `asyncio.to_thread` (copy_context), but **NOT** a raw `threading.Thread` or `loop.run_in_executor`
+  — those callers must be handed a `session_id` explicitly (see `publish_engine_lines`).
+- **Publishes are addressed, not broadcast.** `_subscribers` is keyed by chat, and each subscriber
+  stores its OWN event loop next to its queue (one store-wide loop is silently wrong the moment more
+  than one loop exists — the last subscriber wins and earlier sockets never wake).
 - **GPL hygiene (the dual-license invariant):** the engine library **never** imports `python-chess`;
   Stockfish and Maia are used **only as subprocesses over UCI** (arm's-length). A CI gate enforces it
   (`engine/tests/test_gpl_hygiene.py`). Don't add copyleft runtime deps to the engine.
