@@ -1,0 +1,9 @@
+[submodule "engine"]
+	path = engine
+	url = git@github.com:distressedrook/lucena-engine.git
+[submodule "backend"]
+	path = backend
+	url = git@github.com:distressedrook/lucena-backend.git
+[submodule "mac-client"]
+	path = mac-client
+	url = git@github.com:distressedrook/lucena-mac.git
