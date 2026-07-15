@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" width="116" alt="lucena">
+</p>
+
 # lucena
 
 Private superrepo. Pins each layer to a specific commit via submodules — clone this one thing and get
