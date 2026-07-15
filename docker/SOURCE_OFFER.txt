@@ -1,0 +1,34 @@
+LUCENA — WRITTEN OFFER OF CORRESPONDING SOURCE
+==============================================
+
+This image bundles software under the GNU AGPL-3.0 and GNU GPL-3.0. In
+accordance with those licences, the Corresponding Source is available as
+follows.
+
+1. lucena-engine  (AGPL-3.0-only)
+   The grounding engine embedded in this image is the public lucena-engine
+   project. This image was built from engine source commit:
+
+       @ENGINE_GIT_SHA@
+
+   Corresponding Source (that exact revision, including any modifications):
+       https://github.com/distressedrook/lucena-engine       (public repo)
+       PyPI: `pip install lucena-engine`
+   AGPL §13: if you run this software and let users interact with it over a
+   network, you must offer them that Corresponding Source. Keep this commit
+   published, or ship the source alongside any deployment you modify.
+
+2. Stockfish 18  (GPL-3.0-only)
+   Used unmodified, as a separate program invoked over the UCI text protocol
+   (arm's-length — never linked into lucena-engine). Source for the exact
+   version:
+       https://github.com/official-stockfish/Stockfish  (tag: sf_18)
+
+3. Maia / maia3 + weights  (GPL-3.0-only)
+   Used unmodified, as a separate program invoked over UCI. Source:
+       https://github.com/CSSLab/maia3
+
+Licence texts for the bundled works are in this directory
+(/usr/local/share/lucena-licences/). The Lucena backend is proprietary and is
+NOT covered by the AGPL/GPL offers above; it is distributed under its own terms
+by the copyright holder, who dual-licenses lucena-engine.

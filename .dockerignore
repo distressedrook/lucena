@@ -1,0 +1,29 @@
+# Keep the build context small and free of host-specific / non-image artifacts.
+.git
+.gitmodules
+**/.git
+
+# Native mac client — never part of any container image.
+mac-client/
+
+# Host dev state: venvs, run dirs, logs, caches.
+**/.venv
+**/.venv-maia
+.venv
+.venv-maia
+.run/
+**/__pycache__/
+**/*.pyc
+.pytest_cache/
+**/.pytest_cache/
+**/*.egg-info/
+**/target/            # Rust build output (rebuilt inside the image)
+
+# Editor / OS cruft
+.DS_Store
+.idea/
+.vscode/
+
+# Docs and scratch that don't belong in an image build
+scratchpad/
+*.log

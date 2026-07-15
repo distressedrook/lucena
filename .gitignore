@@ -38,6 +38,9 @@ narration_pack.md
 /private/
 .venv-maia/
 
+# Docker: local env with secrets (GEMINI_API_KEY). .env.example IS tracked.
+.env
+
 # machine-local MCP server runtime log
 coach-home/.lucena-server.log
 coach-home/errors.log

@@ -1,0 +1,52 @@
+# Lucena deployable stack: Postgres + the app image (engine built in + backend +
+# Stockfish 18 + Maia). The native mac client stays on the host and connects to
+# ws://<host>:8766/ws.
+#
+#   cp .env.example .env        # then set GEMINI_API_KEY
+#   ENGINE_GIT_SHA=$(git -C engine rev-parse HEAD) docker compose build
+#   docker compose up
+#
+# The ENGINE_GIT_SHA build arg stamps the AGPL §13 source-offer with the exact
+# engine commit — set it for any image you distribute.
+
+services:
+  postgres:
+    image: postgres:16-bookworm
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-lucena}
+      POSTGRES_USER: ${POSTGRES_USER:-lucena}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-lucena}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-lucena} -d ${POSTGRES_DB:-lucena}"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    # Not published by default — only the app needs it. Uncomment to inspect:
+    # ports: ["5432:5432"]
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        ENGINE_GIT_SHA: ${ENGINE_GIT_SHA:-unknown}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      LUCENA_PG_DSN: postgresql://${POSTGRES_USER:-lucena}:${POSTGRES_PASSWORD:-lucena}@postgres:5432/${POSTGRES_DB:-lucena}
+      LUCENA_MODEL: ${LUCENA_MODEL:-gemini-flash-lite-latest}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      # Set LUCENA_MAIA="" to disable Maia (poisoned-line detection) at runtime.
+    ports:
+      - "${LUCENA_BACKEND_PORT:-8766}:8766"
+    volumes:
+      - lucena-data:/data          # LUCENA_HOME (durable app state that isn't in Postgres)
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  lucena-data:
