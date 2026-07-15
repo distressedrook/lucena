@@ -77,26 +77,9 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
 - **SAN on the wire.** UCI is engine-internal only (entry/exit conversion); the backend and app speak SAN.
 - **Storeless engine, one Postgres** in the backend. Relational session state (no json-as-state).
   Drill/forcing-line trees are precomputed and position-keyed, never per-session.
-- **Three things are called "session" — never conflate them.** This distinction is load-bearing:
-
-  | Term | What it is | Cardinality | Where it lives |
-  |---|---|---|---|
-  | **chat session** | a coaching conversation | **many** per user | the `session` table; `StateStore._live[sid]` |
-  | **active chat** | which chat a user currently has open | **one per user** | `session.is_active` |
-  | **login session** | an authenticated user | one token per login | *(Phase 3 — does not exist yet)* |
-
-  Also: `session.status` ('active') and `session.is_active` (the active-chat pointer) are **unrelated
-  concepts that happen to share the word "active"**. The DB table named `session` is the **chat**
-  session; the login layer must never reuse that name.
-- **The bound chat is a ContextVar, never a global.** `state._current_sid` is per execution context,
-  so two concurrent turns cannot see each other's cursor — a background turn parked in the LLM still
-  writes to the chat it started in. Bind at entry points with `store.bound(sid)`; `_cur`/`_sc`/
-  `_publish` resolve from it. It crosses `asyncio.create_task` (context copied at creation) and
-  `asyncio.to_thread` (copy_context), but **NOT** a raw `threading.Thread` or `loop.run_in_executor`
-  — those callers must be handed a `session_id` explicitly (see `publish_engine_lines`).
-- **Publishes are addressed, not broadcast.** `_subscribers` is keyed by chat, and each subscriber
-  stores its OWN event loop next to its queue (one store-wide loop is silently wrong the moment more
-  than one loop exists — the last subscriber wins and earlier sockets never wake).
+- **Backend design detail lives in `LLD.md`** — the three meanings of "session", the ContextVar chat
+  cursor, addressed publishes, ownership, the auth middleware. Read it before changing `state.py`,
+  `httpserver.py`, `db.py` or `auth.py`.
 - **GPL hygiene (the dual-license invariant):** the engine library **never** imports `python-chess`;
   Stockfish and Maia are used **only as subprocesses over UCI** (arm's-length). A CI gate enforces it
   (`engine/tests/test_gpl_hygiene.py`). Don't add copyleft runtime deps to the engine.
@@ -110,6 +93,10 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
   (Menlo) stays for chess notation/eval (it carries the figurine glyphs; Lora doesn't).
 
 ## Releasing
+
+- **`RELEASE_CHECKLIST.md` gates the first production deploy** — what's deliberately deferred while
+  pre-production. Blocking one: **there is no migration mechanism**, so a schema change reaches fresh
+  schemas only and means recreating the dev DB.
 
 - **Engine → PyPI:** bump `engine/pyproject.toml`, tag `vX.Y.Z`, push the tag — CI builds wheels + sdist
   and publishes via Trusted Publishing. Same version can't be re-uploaded; bump on a failed run.
