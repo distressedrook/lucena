@@ -1,0 +1,21 @@
+Copyright (c) 2026 Avismara. All rights reserved.
+
+PROPRIETARY AND CONFIDENTIAL.
+
+This repository (the "Software") — including the backend, the macOS client,
+infrastructure, and documentation — is proprietary and confidential. No license,
+right, or permission is granted to any party to use, copy, modify, merge,
+publish, distribute, sublicense, reverse engineer, or create derivative works of
+any part of the Software, in whole or in part, except as expressly agreed in a
+separate written agreement signed by the copyright holder.
+
+The archived `legacy/` directory is retained under this same proprietary license.
+
+SEPARATE OPEN-SOURCE COMPONENT. The Lucena "grounding engine" (Stockfish and Maia
+integration, chess validators, and the board core) is a distinct component
+released under the GNU Affero General Public License v3.0 in its own repository.
+That AGPL license governs the grounding engine ONLY and does not apply to this
+repository. This repository communicates with the grounding engine solely over
+its network (gRPC) API — an arm's-length boundary — and contains no copy of it.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.

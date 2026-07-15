@@ -1,0 +1,647 @@
+{
+  "title": "Chess understanding — Lucena seed ontology v1 (800–2000, skill-type modules)",
+  "learn_by_doing": true,
+  "modules": [
+    {
+      "id": "board-vision",
+      "band": "800–1300",
+      "goal": "See the board as it is: what is attacked, what is defended, what is free.",
+      "label": "Board Vision"
+    },
+    {
+      "id": "tactics",
+      "band": "1000–1600",
+      "goal": "Recognize and calculate the recurring forcing motifs.",
+      "label": "Tactical Patterns"
+    },
+    {
+      "id": "king-safety",
+      "band": "1000–1700",
+      "goal": "Judge danger to both kings a move before it is real.",
+      "label": "King Safety & Attack"
+    },
+    {
+      "id": "positional",
+      "band": "1300–1900",
+      "goal": "Choose moves by structure, activity and plans when nothing is forcing.",
+      "label": "Positional Judgment"
+    },
+    {
+      "id": "technique",
+      "band": "1400–2000",
+      "goal": "Convert advantages and hold the fundamental endings.",
+      "label": "Technique & Endgames"
+    },
+    {
+      "id": "discipline",
+      "band": "800–2000",
+      "goal": "The habits that decide games regardless of knowledge.",
+      "label": "Thinking Discipline"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "hanging-pieces",
+      "module": "board-vision",
+      "detectors": [
+        "hanging-piece"
+      ],
+      "behaviors": [
+        "before moving, names every undefended piece of both sides",
+        "spots when a move leaves a piece en prise, including their own",
+        "in own games, hanging-piece losses stop recurring"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "finds a hanging piece only after the coach points at the square"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "finds hanging pieces when asked to scan, but misses them unprompted mid-line"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "flags loose pieces unprompted while discussing something else"
+        }
+      ],
+      "label": "Hanging pieces"
+    },
+    {
+      "id": "defender-counting",
+      "module": "board-vision",
+      "detectors": [
+        "defender-removed"
+      ],
+      "behaviors": [
+        "counts attackers and defenders on a contested square before capturing",
+        "notices when a 'defender' is overloaded, pinned, or of the wrong value",
+        "recognizes that trading a defender changes every count it was part of"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "counts bodies only — misses value order and pinned defenders"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "counts correctly on the focus square but misses the second square the defender covered"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "narrates the full exchange sequence with values and spots the overloaded defender unprompted"
+        }
+      ],
+      "label": "Attackers vs defenders"
+    },
+    {
+      "id": "capture-sequences",
+      "module": "board-vision",
+      "detectors": [],
+      "behaviors": [
+        "plays out a capture chain in order (cheapest first) before starting it",
+        "stops calculating a sequence when recapture order makes it clearly bad",
+        "judges 'is this pawn actually free?' correctly most of the time"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "takes because a capture is available; surprised by the recapture"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "calculates two-piece exchanges reliably; loses the thread at three+"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "resolves multi-piece exchanges including zwischenzug possibilities"
+        }
+      ],
+      "label": "Capture sequences (SEE intuition)"
+    },
+    {
+      "id": "forks-double-attack",
+      "module": "tactics",
+      "detectors": [
+        "fork"
+      ],
+      "behaviors": [
+        "scans knight and pawn fork squares after every opponent piece move",
+        "creates double attacks deliberately, not just when they appear",
+        "sees queen dual-threat moves (mate + material) for both sides"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "sees a fork when both targets are already attacked; walks into knight forks"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "spots fork opportunities in puzzles; misses the defensive scan in own games"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "prophylactically covers fork squares and engineers double attacks two moves ahead"
+        }
+      ],
+      "label": "Forks & double attack"
+    },
+    {
+      "id": "pins-skewers",
+      "module": "tactics",
+      "detectors": [
+        "pin",
+        "skewer"
+      ],
+      "behaviors": [
+        "distinguishes absolute from relative pins and knows a relative pin can be broken",
+        "exploits pins by piling up rather than releasing the tension early",
+        "notices when their own 'defender' is pinned and doesn't actually defend"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "sees the pin symbol on the board but still counts the pinned piece as a defender"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "exploits given pins; rarely sets up new ones deliberately"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "converts pins into wins methodically and breaks opponent pins at the right moment"
+        }
+      ],
+      "label": "Pins & skewers"
+    },
+    {
+      "id": "discovered-attack",
+      "module": "tactics",
+      "detectors": [
+        "discovered-attack"
+      ],
+      "behaviors": [
+        "checks what opens when any piece moves off a line, for both sides",
+        "recognizes battery potential (piece in front of rook/bishop/queen) before it fires",
+        "calculates discovered checks to the end because 'the moving piece is free'"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "hit by discoveries repeatedly; treats the front piece as safely placed"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "sees discoveries a move before they land; sets them up only from puzzles"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "builds batteries deliberately and prices the discovery into every exchange"
+        }
+      ],
+      "label": "Discovered attacks"
+    },
+    {
+      "id": "removing-the-defender",
+      "module": "tactics",
+      "detectors": [
+        "defender-removed"
+      ],
+      "behaviors": [
+        "asks 'what is this piece doing?' before trading or driving it away",
+        "spots deflection and overload targets (a piece defending two things)",
+        "declines trades that would remove their own key defender"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "trades whenever offered; the concept 'this knight had a job' is new information"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "identifies the defender's job when prompted with 'what was it guarding?'"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "hunts overloaded pieces unprompted and evaluates every trade by jobs, not values"
+        }
+      ],
+      "label": "Removing the defender"
+    },
+    {
+      "id": "back-rank",
+      "module": "tactics",
+      "detectors": [
+        "back-rank"
+      ],
+      "behaviors": [
+        "tracks luft status for both kings as a standing condition, not a puzzle theme",
+        "spots when a defender of the back rank is deflectable",
+        "makes luft at the right moment — not too early (tempo) or too late (mate)"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "knows the mate pattern in puzzles; loses games to it anyway"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "checks own back rank when queens and rooks come off their file"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "uses the opponent's back-rank weakness as a standing tactical resource in calculation"
+        }
+      ],
+      "label": "Back-rank weakness"
+    },
+    {
+      "id": "tactical-signals",
+      "module": "tactics",
+      "detectors": [],
+      "behaviors": [
+        "recognizes the preconditions of combinations: loose pieces, exposed king, aligned pieces",
+        "raises alertness when signals accumulate instead of playing by routine",
+        "knows when a position is quiet and calculation can relax"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "calculates the same amount everywhere; tactics feel like lightning strikes"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "names signals in review ('two loose pieces — I should have looked')"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "visibly shifts gears in-game when the signal count rises"
+        }
+      ],
+      "label": "Reading tactical signals"
+    },
+    {
+      "id": "king-air",
+      "module": "king-safety",
+      "detectors": [
+        "king-air"
+      ],
+      "behaviors": [
+        "evaluates pawn-shield integrity before opening lines near their king",
+        "judges which pawn moves in front of the king are weakening vs necessary",
+        "counts attackers vs defenders in the king zone before grabbing material elsewhere"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "pushes shield pawns for space without registering the king cost"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "keeps the shield intact but can't say when h3/h6 is actually fine"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "trades shield integrity for concrete gains only with a counted attack/defense balance"
+        }
+      ],
+      "label": "King shelter & luft"
+    },
+    {
+      "id": "attack-defense-balance",
+      "module": "king-safety",
+      "detectors": [],
+      "behaviors": [
+        "counts pieces that can join the attack vs pieces that can defend before committing",
+        "opens lines toward the enemy king only when the count favors the attack",
+        "defends by trading attackers and keeping the shield, not by grabbing pawns"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "attacks because it feels right; sacrifices on vibes"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "counts correctly when asked; overestimates own attack in-game"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "declines unsound attacks and explains the missing attacker; defends without panic"
+        }
+      ],
+      "label": "Attacking the king soundly"
+    },
+    {
+      "id": "pawn-breaks",
+      "module": "positional",
+      "detectors": [
+        "pawn-break-missed"
+      ],
+      "behaviors": [
+        "names the available pawn breaks for both sides in any structure",
+        "prepares a break (pieces behind it) instead of playing it bare",
+        "recognizes when no break exists and piece play must change the structure first"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "shuffles pieces in closed positions; 'break' is vocabulary, not a plan"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "identifies the thematic break when asked; timing is guesswork"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "builds the game around preparing the right break and preventing the opponent's"
+        }
+      ],
+      "label": "Pawn breaks"
+    },
+    {
+      "id": "weak-squares",
+      "module": "positional",
+      "detectors": [],
+      "behaviors": [
+        "spots holes (squares no pawn can ever defend) as they are created",
+        "maneuvers a knight toward an outpost across several moves",
+        "avoids creating holes in their own camp for a one-move convenience"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "sees the strong knight only after it arrives"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "identifies holes in review; in-game the maneuver loses to impatience"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "trades and pushes pawns with the square map in mind, both colors"
+        }
+      ],
+      "label": "Weak squares & outposts"
+    },
+    {
+      "id": "piece-activity",
+      "module": "positional",
+      "detectors": [],
+      "behaviors": [
+        "identifies their worst-placed piece when there is no forcing move",
+        "judges trades by activity delta, not just material equality",
+        "notices when a 'developed' piece is doing nothing and re-routes it"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "moves whichever piece has an obvious move; activity is invisible"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "names the worst piece when asked; the improving plan needs prompting"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "quiet moves are activity investments and they can say the payoff aloud"
+        }
+      ],
+      "label": "Piece activity — improve the worst piece"
+    },
+    {
+      "id": "open-files",
+      "module": "positional",
+      "detectors": [],
+      "behaviors": [
+        "contests a file before the opponent doubles on it, not after",
+        "knows a file matters only if it has entry squares",
+        "places bishops on diagonals that point at something that matters"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "rooks stay on starting squares until move 30"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "takes the open file when free; concedes it without a fight when contested"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "fights for files with entry squares and ignores decorative ones"
+        }
+      ],
+      "label": "Open files & diagonals"
+    },
+    {
+      "id": "prophylaxis",
+      "module": "positional",
+      "detectors": [],
+      "behaviors": [
+        "asks 'what does my opponent want?' before choosing their own move",
+        "spends a tempo to stop the opponent's best plan when it outweighs their own",
+        "distinguishes prophylaxis from passivity — prevention with purpose"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "opponent's last move is read as an event, not an intention"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "states the opponent's idea when asked, then plays their own plan anyway"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "unprompted: 'first I stop …, then my plan is unstoppable'"
+        }
+      ],
+      "label": "Prophylaxis"
+    },
+    {
+      "id": "trade-evaluation",
+      "module": "positional",
+      "detectors": [
+        "trade-into-lost-endgame"
+      ],
+      "behaviors": [
+        "evaluates a trade by what remains on the board, not what leaves it",
+        "keeps attackers when attacking, trades when defending or ahead",
+        "checks the resulting endgame before entering a forced simplification"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "accepts every equal-value trade reflexively"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "applies 'trade when ahead' but simplifies into losing pawn endings"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "names the piece that must stay and the ending they're steering toward"
+        }
+      ],
+      "label": "What to trade and why"
+    },
+    {
+      "id": "conversion",
+      "module": "technique",
+      "detectors": [],
+      "behaviors": [
+        "shuts down counterplay before grabbing more material",
+        "trades pieces, not pawns, when ahead — and can say why",
+        "keeps calculating checks and threats when winning instead of relaxing"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "eval graph: +4 then the swindle; grabs pawns while the opponent's rook activates"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "converts clean +5 endings; +2 middlegames still drift"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "wins won games with the boring move; counterplay dies first, always"
+        }
+      ],
+      "label": "Converting winning positions"
+    },
+    {
+      "id": "rook-endings",
+      "module": "technique",
+      "detectors": [],
+      "behaviors": [
+        "executes the Lucena bridge and states why each move exists",
+        "holds Philidor's third-rank defense without move-order help",
+        "knows which side of the draw/win line a simplified rook ending falls on before entering it"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "shuffles checks in a won rook ending until the 50-move counter looms"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "wins Lucena with hints; Philidor collapses under an unexpected try"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "plays both flawlessly and uses the knowledge as an in-game simplification target"
+        }
+      ],
+      "label": "Rook endings — Lucena & Philidor"
+    },
+    {
+      "id": "pawn-endings",
+      "module": "technique",
+      "detectors": [],
+      "behaviors": [
+        "calculates opposition and key squares in K+P vs K without guessing",
+        "counts races (pawn vs pawn) by squares, not intuition",
+        "treats every simplification into a pawn ending as a forced-result decision"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "K+P vs K result is a coin flip"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "knows the opposition rule; miscounts races under pressure"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "converts and holds textbook endings on autopilot; enters them only on purpose"
+        }
+      ],
+      "label": "Pawn endings — opposition & counting"
+    },
+    {
+      "id": "blunder-check",
+      "module": "discipline",
+      "detectors": [],
+      "behaviors": [
+        "runs checks-captures-threats for the opponent before releasing every committal move",
+        "asks 'what did that move change?' after every opponent move",
+        "blunder rate in own games trends down over the training period"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "moves on first idea; the scan happens only in puzzles"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "scans in slow games; skips it in rapid or when 'obviously' winning"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "the scan is invisible and constant; one-move blunders are rare events"
+        }
+      ],
+      "label": "The blunder check"
+    },
+    {
+      "id": "plan-formation",
+      "module": "discipline",
+      "detectors": [],
+      "behaviors": [
+        "derives a plan from structure (breaks, weak squares, worst piece) rather than move-to-move impulse",
+        "states the position's demands in one sentence before choosing a candidate",
+        "abandons a plan when the structure changes, not when it gets boring"
+      ],
+      "rubric": [
+        {
+          "q": 0.2,
+          "looks_like": "'I develop and see what happens' persists to move 25"
+        },
+        {
+          "q": 0.5,
+          "looks_like": "produces a plan when the coach asks; own games show plan fragments"
+        },
+        {
+          "q": 0.8,
+          "looks_like": "every quiet position gets a stated plan traceable to a structural fact"
+        }
+      ],
+      "label": "Forming a plan in quiet positions"
+    }
+  ],
+  "exit_test": [
+    {
+      "id": "et-own-loss-audit",
+      "desc": "Given a fresh own loss (unseen by the coach), independently identify the decisive mistake, name the concept behind it, and show the refutation line — then verify against the engine pass.",
+      "label": "Decisive-moment audit of an own loss"
+    },
+    {
+      "id": "et-tactics-mixed",
+      "desc": "Solve a 20-position mixed set (forks, pins, discoveries, deflection, back-rank) at rating-appropriate difficulty, ≥80%, naming the motif before the move.",
+      "label": "Mixed tactical recognition under mild clock"
+    },
+    {
+      "id": "et-defender-audit",
+      "desc": "In three positions from own games, enumerate every job of the piece about to be traded and judge the trade; engine-verified.",
+      "label": "Trade audit"
+    },
+    {
+      "id": "et-conversion",
+      "desc": "From a +3 middlegame position, beat maximum engine resistance at reduced strength appropriate to rating, prioritizing counterplay suppression; no swindle allowed.",
+      "label": "Convert a won position against resistance"
+    },
+    {
+      "id": "et-rook-endings",
+      "desc": "Win the Lucena position and hold the Philidor defense against the engine, explaining the purpose of each key move.",
+      "label": "Lucena & Philidor on demand"
+    },
+    {
+      "id": "et-quiet-plan",
+      "desc": "In two quiet positions, state the correct plan (break / worst piece / file) and defend it Socratically; consistent with engine top lines over a 5-move horizon.",
+      "label": "Plan from structure"
+    }
+  ]
+}

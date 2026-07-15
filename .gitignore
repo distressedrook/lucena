@@ -1,0 +1,55 @@
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+dist/
+*.pyc
+
+# Rust / maturin
+target/
+python/lucena/*.so
+python/lucena/*.pyd
+
+# macOS
+.DS_Store
+
+# Big test downloads (fixtures are committed; raw DBs are not)
+tests/data/lichess_db_puzzle*
+tests/data/stockfish*
+artefacts/
+content/lichess_db_puzzle*
+
+# Coach-home runtime state (source-controlled: CLAUDE.md, .mcp.json, domain.json, settings)
+coach-home/*.json
+!coach-home/.mcp.json
+!coach-home/domain.json
+coach-home/memory/learner.json
+coach-home/memory/pedagogy.json
+coach-home/memory/evidence.jsonl
+coach-home/.claude/settings.local.json
+
+# Eval harness transcripts
+tests/evalharness/transcripts/
+
+# Generated narration smoke-test pack (regenerate via tools/smoke_narration.py)
+narration_pack.md
+
+# Local-only, never tracked
+/private/
+.venv-maia/
+
+# machine-local MCP server runtime log
+coach-home/.lucena-server.log
+coach-home/errors.log
+
+# per-home SQLite durable store (runtime)
+coach-home/lucena.db*
+
+# ADK/Gemini pivot — quarantined venv + spike/harness runtime artifacts
+.venv-adk/
+.p0-home/
+.agent-gate-harness.log
+.p0-last-run.log
+*-probe.txt
+coach-home/.lucena-agent.log
+.run/
