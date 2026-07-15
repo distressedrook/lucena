@@ -1,5 +1,5 @@
-<p align="center">
-  <img src="assets/logo.png" width="116" alt="lucena">
+<p align="left">
+  <img src="assets/wordmark.png" width="340" alt="Lucena">
 </p>
 
 # lucena
