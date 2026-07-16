@@ -221,6 +221,19 @@ state any concrete evaluation, tactic, threat, or verdict not in the handed-over
 you are handed; never calculate. Undocumented, this grows into "the model does chess now" — which is
 why it is written in the prompt *and* in both docs.
 
+**The carve-out's failure mode is reciting the mainline, and it took three instructions to close.**
+Found only by running it against the real model — every test here asserts the prompt, which is right,
+but the prompt was wrong. Given `1.e4` it wrote *"Black responds with e5"*, for a move nobody had
+played. (1) The prompt never said what had been played, so `_played_line()` names the game and says it
+is the whole game. (2) A tense rule alone failed, because the model was being FAITHFUL, not careless:
+the table names the position after 1.e4 "King's Pawn Game", and that name conventionally *means*
+1.e4 e5 — so it explained the opening the name denotes. The instruction has to say the name runs ahead
+of the game. (3) Then it stopped stating continuations and started *exploring* them — given 1.e4 it
+picked the Caro-Kann, a defence nobody chose, and spent half the paragraph there. Correctly hedged,
+entirely irrelevant. Permission to mention what follows needs a budget: one clause. The general shape:
+permission to explain an opening reads, from inside the model, as permission to recite its mainline,
+and the two are one word apart ("usually answers" vs "responds").
+
 **Narration is a second prompt body, not a flag.** It inverts the coaching prompt at three points at
 once — length (1-2 sentences → a paragraph), register (its ban on "generic strategic advice" is
 exactly what narration IS), and verdict. Loosening the shared prompt to fit would make **drills** start
