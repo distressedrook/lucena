@@ -40,6 +40,11 @@ services:
       LUCENA_MODEL: ${LUCENA_MODEL:-gemini-flash-lite-latest}
       GEMINI_API_KEY: ${GEMINI_API_KEY:-}
       GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}
+      # Accounts. Off by default (a local single-user run signs in to nothing); set to 1 to require a
+      # bearer token on every route but /health and /auth/*. Must be listed here to be forwarded at
+      # all — compose passes ONLY what this block names, so `LUCENA_REQUIRE_AUTH=1 docker compose up`
+      # silently reaches the CLI and not the container.
+      LUCENA_REQUIRE_AUTH: ${LUCENA_REQUIRE_AUTH:-}
       # Set LUCENA_MAIA="" to disable Maia (poisoned-line detection) at runtime.
     ports:
       - "${LUCENA_BACKEND_PORT:-8766}:8766"

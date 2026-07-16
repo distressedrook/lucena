@@ -55,6 +55,16 @@ without the stepper.
 
 ## 3. Auth hardening
 
+- [ ] **Set `LUCENA_REQUIRE_AUTH=1`.** It defaults OFF (so a local single-user run works untouched),
+      which means a deploy that forgets it is wide open.
+- [ ] **Password reset ("Forgot password?").** Deliberately absent from the login screen: a reset needs
+      a reset-token table AND an email provider to send the link, and there is no email integration in
+      the stack. A link that goes nowhere is worse than no link — so this is a real gap for anyone who
+      forgets their password, not a deferred nicety. Needs an email provider decision first.
+- [ ] **A sign-out control.** `AuthClient.signOut()` and `Strings.Auth.signOut` exist and work; nothing
+      calls them, because there is no button. The teardown is wired to `authClient.state`, so a button
+      only has to call `signOut()` — but until one exists, the only way out of a session is revoking the
+      token server-side or deleting the Keychain item.
 - [ ] **Rate-limit `/auth/login`.** argon2 is expensive *by design*; unthrottled it is a CPU denial of
       service against the same process serving coaching turns.
 - [ ] Confirm password hashing runs off the event loop (`asyncio.to_thread`) — a login on the loop

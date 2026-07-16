@@ -68,6 +68,9 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
 - **Calculate vs. interpret.** The engine calculates the truth; the LLM only interprets it. Anything the
   model could get wrong is either *grounded* (handed over as facts) or *guarded* (made impossible) —
   never left to the model. The LLM **never tool-calls and never sets the board.**
+  - **One deliberate carve-out:** on the freeform *opening-narration* path the model may use its own
+    knowledge of a **named** opening (ideas/plans only — never a concrete eval, tactic, or verdict).
+    It is the only exception; see `LLD.md` §9 before extending it anywhere.
 - **Orchestrator shape:** rule-based `_classify` → dispatch by class → ground → **one** LLM call. Intent
   is fused into generation, not a separate classify step. Unclassifiable action requests (play a bot,
   etc.) return a polite `unsupported` decline rather than coaching the position.

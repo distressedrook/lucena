@@ -174,3 +174,71 @@ ungated route fails automatically.
 - **`build_app(engine=…)` is close to a decoy**: `test_end_to_end` injects an `EngineClient` that has
   no `.analyse()`/`.new_game()`, and it only works because `ground_ctx` unconditionally builds a real
   local `Engine()`.
+
+## 9. Freeform opening narration (and the one carve-out)
+
+**The voice follows the mode, because the mode is a fact about the board.** In a drill the engine
+replies (`drill.py` plays the defence), so the player really is one side and "you" is correct. In
+freeform *nothing replies* — `play_move` applies one ply and stops — and the client board has no
+side-to-move gate, so either colour is draggable. Freeform is a shared analysis board that the user
+drives from both sides. "You played e4" there is not a style choice, it is factually wrong. One
+predicate (`ToolContext.freeform`), one prompt block (`_perspective(freeform)`), two bodies.
+
+`result["drill"]` is **tri-state** — `True` / `False` / `"suspended"` — and it answers two different
+questions. **Adjudication** (does this move get graded?) is `is True`. **Voice** is `is False`: a
+suspended drill is the player stepping back inside their *own* drill line, so they are still one side
+and still get "you". One expression answering both is how suspended drills started talking like
+freeform.
+
+**Cadence is a pure fold, not a latch.** `openings.book_name(fens)` folds the line; a caller detects a
+change with `book_name(hist) != book_name(hist[:-1])`. Nothing is stored, so nothing resyncs after a
+restart. It is *not* "the last named position": the table re-attaches **coarser** names deeper in a
+line (Najdorf `d6` → "Sicilian Defense: Modern Variations", then `d4` → plain "Sicilian Defense"), so
+last-wins walks backwards up the tree and the coach audibly forgets what it just said. A new name
+replaces the current one only when it is **not an ancestor** of it.
+
+**End of book:** `plies_since_named(fens) == 4` — exactly at the threshold, so it fires once per exit
+with no latch, and re-arms if the line transposes back in. Four, not three: two-unnamed-ply gaps occur
+at ~12% of book positions and the probe was capped at 3, so 3 has zero margin. `None` (never named — a
+drill, a pasted midgame FEN) must never announce.
+
+**The swing fork is independent of the name cadence.** A move can be pure theory *and* tank the eval;
+that is the whole point of a gambit, and "this is the King's Gambit" is a cop-out there. So: quiet +
+new name → narrate with `hide_best=True` (there is nothing to judge, and handing over "best: d4" makes
+the model report it — which is the "that's fine, though d4 is preferred" this feature exists to kill).
+Swing while in book → keep the class/best; *that* is the subject. Both → one beat. In book, neither →
+**silent**; do not fill the air. The trigger is the engine's own `classify` boundary (`dubious`+,
+measured against the engine's best move), not a threshold of our own. Measured: 2.f4 = `dubious`
+(−8.2 win%), so the canonical gambit does fire; `test_the_kings_gambit_actually_triggers_the_swing_fork`
+pins it through the real `evaluate`, because a reimplementation of `classify` in a test got the sign
+backwards and reported the exact opposite.
+
+**The carve-out.** `CLAUDE.md`'s invariant is that anything the model could get wrong is grounded or
+guarded. Narration is the one deliberate exception: on this path the model MAY use its own knowledge
+of the **named** opening — ideas, plans, pawn structures, what each side wants. Opening theory is
+stable, well-documented knowledge and grounding it would mean shipping a prose database. It may NOT
+state any concrete evaluation, tactic, threat, or verdict not in the handed-over facts. Interpret what
+you are handed; never calculate. Undocumented, this grows into "the model does chess now" — which is
+why it is written in the prompt *and* in both docs.
+
+**Narration is a second prompt body, not a flag.** It inverts the coaching prompt at three points at
+once — length (1-2 sentences → a paragraph), register (its ban on "generic strategic advice" is
+exactly what narration IS), and verdict. Loosening the shared prompt to fit would make **drills** start
+dispensing "control the center".
+
+**Titling on the narrate path is deterministic** (`_title_from_opening`): the opening family, taken
+from the table. `_name_hint` asks the *model* for a title because only the model can look at a position
+and describe it; here the answer is already known exactly. Move one is also the most likely titling
+moment, so a JSON that omitted `name` would silently stop titling forever.
+
+**The wire is an additive field, not a new beat kind.** The neutral `1.e4` lane rides as `notation` on
+the existing `kind:"you"` beat. `Beat.kind` decodes as a free String and the view branches only on
+`isYou`, so a client predating a `kind:"move"` would render it in the **coach** lane labelled LUCENA —
+the coach appearing to utter "1.e4" — and beats are **persisted**, so that corrupts the stored
+transcript permanently while the backend deploys independently of the installed app. An unknown *key*
+is simply ignored: new client → neutral lane, old client → today's bubble. Degrade, don't regress.
+
+**Known limit (pre-existing):** `play_move` appends to history and never truncates, so a
+rewound-and-replayed board leaves the old tail behind and `plies_since_named` counts against a line
+that was not played. The fold survives it; end-of-book can fire early. Fixing it is a board-navigation
+change, not an opening one.
