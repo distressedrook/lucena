@@ -9,5 +9,12 @@ written**. Planned documents:
 - `grounding-engine-api.md` — the open engine's contract (validators, Stockfish, Maia3; stateless?).
 - `backend-api.md` — the client ↔ backend contract (turns, beats, board stream, auth).
 - `orchestrator.md` — the deterministic coaching pipeline, flow by flow.
+- `opening-annotator/` — the engine's `openings.tsv` converted into an explicit tree
+  (`openings_tree.json`), plus schema + content rules (`SPEC.md`) for `openings_annotations.json`
+  and `openings_socratic.json`, the curated LLM/hand-written commentary + teaching-Q&A layers over
+  it. Also holds the curated worklist, a validation script, `CLAUDE.md` (auto-loaded instructions
+  for a Claude Code session executing the worklist), and its own `AGENTS.md` + `review.sh` for a
+  Codex content-review pass (quality, duplicate questions, coverage) separate from the root
+  `AGENTS.md`'s code review.
 
 Older design docs are archived in `legacy/docs/`.

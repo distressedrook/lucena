@@ -71,6 +71,13 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
   - **One deliberate carve-out:** on the freeform *opening-narration* path the model may use its own
     knowledge of a **named** opening (ideas/plans only — never a concrete eval, tactic, or verdict).
     It is the only exception; see `LLD.md` §9 before extending it anywhere.
+- **Prompts are first-class citizens.** Every instruction sent to the LLM — system prompt AND user
+  message, the fixed wording and the per-turn assembly alike — is built by a typed `Prompt` subclass
+  in `backend/python/lucena_backend/coaching/prompts.py`, never hand-assembled with raw string
+  concatenation in `orchestrator.py` or anywhere else. Each family's pieces (`_head`/`_tail`/`_body`,
+  single-underscore — Python's actual privacy convention) are private; the only public surface is
+  `SomePrompt.system(...)` and `SomePrompt.prompt(...)`, taking typed data in and returning text.
+  Adding a new prompt or a new fragment of one means adding to that file, not the caller.
 - **Orchestrator shape:** rule-based `_classify` → dispatch by class → ground → **one** LLM call. Intent
   is fused into generation, not a separate classify step. Unclassifiable action requests (play a bot,
   etc.) return a polite `unsupported` decline rather than coaching the position.
