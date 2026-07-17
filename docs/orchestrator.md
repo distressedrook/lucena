@@ -1,5 +1,10 @@
 # Orchestrator — contract (v0, to lock)
 
+> **SUPERSEDED.** The single-pipeline Orchestrator described below was replaced by `ConversationLoop`
+> (`backend/python/lucena_backend/coaching/loop.py`), which routes every turn by mode (freeform vs
+> coach) instead of by a free-text intent classifier. See `LLD.md` and `coaching/loop.py`. The flow
+> catalog below is retained as historical design context.
+
 > The deterministic coaching pipeline. It owns the control flow; the LLM is a pure generator. Every
 > turn: **classify → ground → generate → act**. No LLM tool-calling; the model never decides which
 > tool to run or what the board is. Reuses the prototype in `legacy/agent/orchestrator.py` +

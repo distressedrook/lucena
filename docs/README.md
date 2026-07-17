@@ -3,12 +3,14 @@
 Design-first, no vibe-coding. This is where each layer's **API contract is locked before code is
 written**. Planned documents:
 
-- `architecture.md` — the layer topology (grounding engine · backend/orchestrator · mac-client),
+- `architecture.md` — the layer topology (grounding engine · backend/conversation-loop · mac-client),
   the open/closed boundary, and the hard invariants (state machine pristine & read-only; LLM never
   tool-calls or sets the board; deterministic-first).
 - `grounding-engine-api.md` — the open engine's contract (validators, Stockfish, Maia3; stateless?).
 - `backend-api.md` — the client ↔ backend contract (turns, beats, board stream, auth).
-- `orchestrator.md` — the deterministic coaching pipeline, flow by flow.
+- `orchestrator.md` — the (now-historical) deterministic coaching-pipeline design, flow by flow.
+  **Superseded** by the `ConversationLoop` (mode routing, not free-text intent classification); see
+  `LLD.md`.
 - `opening-annotator/` — the engine's `openings.tsv` converted into an explicit tree
   (`openings_tree.json`), plus schema + content rules (`SPEC.md`) for `openings_annotations.json`
   and `openings_socratic.json`, the curated LLM/hand-written commentary + teaching-Q&A layers over

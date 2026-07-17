@@ -1,5 +1,7 @@
 # Extraction Map — `/legacy` → monorepo
 
+> **Historical (2026-07-14 plan).** The `orchestrator` extraction target became `ConversationLoop`; see `LLD.md`.
+
 > What reusable code lives in `/legacy` and where it belongs in the new tree. Produced 2026-07-14 by a
 > four-way read-only scan (engine · backend · mac-client · tooling/content/misc). This is the plan for
 > the extraction pass; **nothing is moved until this map is signed off.** Rule of the pass: extract

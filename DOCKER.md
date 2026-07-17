@@ -110,7 +110,7 @@ dependency). Nothing GPL is linked into the engine or backend process.
 | Var                    | Default                     | Purpose                          |
 |------------------------|-----------------------------|----------------------------------|
 | `GEMINI_API_KEY`       | —                           | LLM key (coaching turns fail without it) |
-| `LUCENA_MODEL`         | `gemini-flash-lite-latest`  | Model the orchestrator drives    |
+| `LUCENA_MODEL`         | `gemini-flash-lite-latest`  | Model the coach drives           |
 | `LUCENA_PG_DSN`        | (set by compose)            | Postgres DSN                     |
 | `LUCENA_BACKEND_PORT`  | `8766`                      | Published WS/REST port           |
 | `LUCENA_STOCKFISH`     | `/usr/local/bin/stockfish`  | Stockfish binary                 |

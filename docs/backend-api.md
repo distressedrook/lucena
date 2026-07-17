@@ -11,15 +11,15 @@ One socket per active session. Player input goes up; the state machine's change 
 Every message is a JSON envelope `{type, ...payload}`. Server→client payloads are **version-stamped**
 (the monotonic document `version`); the client applies deltas in order and re-syncs on a gap.
 
-**Client → server** (the app's actions; these drive the orchestrator / state machine):
+**Client → server** (the app's actions; these drive the loop / state machine):
 
 | type | payload | effect |
 |---|---|---|
-| `turn` | `{text}` | the player's typed message → a coaching turn (orchestrator classifies & responds). |
-| `input` | `{kind, ...}` | structured input into the mailbox: `move` / `drill_event` / `drill_solved` / `done`. |
-| `position` | `{fen}` | the board the client is displaying → `set_board_view` (the reported board). |
+| `turn` | `{text}` | the player's typed message → a coaching turn (the loop routes by mode and responds; a FEN-shaped text is a position set-up). |
+| `move` | `{uci, fen}` | a played move → routed by the loop (coach mode adjudicates it; freeform mode explains it). |
+| `position` | `{fen}` | the board the client is displaying → `set_board_view` (the reported board; navigation, not a turn). |
 | `view` | `{fen, line, tree, cursor}` | full display state → `set_view` (navigation; replayed on resume). |
-| `explain` | `{fen, move, correct}` | on-demand "Why?" → the lightweight explain flow. |
+| `input` | `{kind, ...}` | structured input into the mailbox: `drill_event` / `drill_solved` / `done`. |
 
 **Server → client** (the state machine's stream — see `docs/state-machine.md` for field detail):
 
@@ -64,7 +64,7 @@ Not in the live loop → plain HTTP.
 4. **One socket per session**; a session switch is a new connect (snapshot + `ready`).
 5. **SAN only on the wire** — no move payload (`history` plies, board, beats) ever carries UCI (see
    `architecture.md` / `grounding-engine-api.md` design rule 1).
-6. **Client→server commands carry an idempotency key** (`turn`/`input`/`explain`) so that on a
+6. **Client→server commands carry an idempotency key** (`turn`/`move`/`input`) so that on a
    **WebSocket reconnect** a resubmitted command is not double-applied — the key plus the monotonic
    `version` guard the resume. (This is the client→backend boundary the failure design relies on; see
    `architecture.md` "Failure & degradation".)

@@ -7,7 +7,7 @@
 ## One-paragraph system
 
 Lucena is an engine-grounded Socratic chess coach. A native **mac client** talks to a **closed
-backend** whose **deterministic orchestrator** runs the coaching loop: it classifies each turn, calls
+backend** whose **deterministic ConversationLoop** runs the coaching loop: it classifies each turn, calls
 an **open, stateless grounding engine** (Stockfish + Maia3 + validators) for chess *truth*, asks a
 commodity **LLM** for exactly one grounded generation, and pushes coaching **beats** to the player.
 The LLM is a pure generator — it never tool-calls, never decides chess, and never mutates state. All
@@ -19,9 +19,9 @@ backend, and is mutated only by deterministic code.
 | Decision | Choice |
 |---|---|
 | **Grounding engine** | OPEN source, **stateless**, **separate repo**, **gRPC** server. Python + Rust (reuse the `lucena-board` Rust core + the Stockfish/Maia/facts Python layer). |
-| **Backend** | CLOSED source, **Python** (reuse). In-process: state machine + orchestrator + LLM adapter. **Mastery, memory, and auth are PARKED this cycle** (first-class for v1, not built now). |
-| **State machine** | Lifts **intact** from today's MCP server into the backend. Behaves exactly as today; made **more robust**. Mutated ONLY by the deterministic orchestrator — never by the LLM. |
-| **LLM** | **Generic, provider-agnostic** in-process adapter — a single interface `generate(messages, {schema?, model?, temperature?, max_tokens?}) -> {text \| json, usage}`, OpenAI-chat-shaped so **OpenRouter is a drop-in**. The orchestrator depends ONLY on this interface; the provider (Gemini now, OpenRouter later) and the model id are **config**. Never tool-calls, never sets state. |
+| **Backend** | CLOSED source, **Python** (reuse). In-process: state machine + ConversationLoop + LLM adapter. **Mastery, memory, and auth are PARKED this cycle** (first-class for v1, not built now). |
+| **State machine** | Lifts **intact** from today's MCP server into the backend. Behaves exactly as today; made **more robust**. Mutated ONLY by the deterministic loop — never by the LLM. |
+| **LLM** | **Generic, provider-agnostic** in-process adapter — a single interface `generate(messages, {schema?, model?, temperature?, max_tokens?}) -> {text \| json, usage}`, OpenAI-chat-shaped so **OpenRouter is a drop-in**. The loop depends ONLY on this interface; the provider (Gemini now, OpenRouter later) and the model id are **config**. Never tool-calls, never sets state. |
 | **Client** | Thin native macOS. **WebSocket** for the interactive coaching loop (input up, beats/board down); **REST** for everything else (auth, library, history, config). |
 | **MCP** | **Retired entirely.** Its two jobs split: chess truth → engine gRPC; state/beats/gate → in-process state machine. |
 | **This monorepo** | The closed product: `backend/` · `mac-client/` · `infra/` · `docs/` + `legacy/` archive. The engine is its own open repo, consumed as a gRPC service. |
@@ -32,7 +32,7 @@ backend, and is mutated only by deterministic code.
                       WebSocket (coaching loop) + REST (everything else)
    ┌── mac-client ─────────────────────────────────────────────▶ BACKEND  (closed, Python, ONE process)
    │   (renders board + beats,                                     ├─ state machine   (in-process, unchanged, robust)
-   │    sends player input)                                        ├─ orchestrator    (in-process, deterministic)
+   │    sends player input)                                        ├─ ConversationLoop (in-process, deterministic)
    └────────────────────────────────────────────────────────────  ├─ (mastery · auth — PARKED)
                                                                    ├─ LLM adapter (in-process) ──HTTP──▶ OpenRouter / Gemini
                                                                    │
@@ -45,7 +45,7 @@ backend, and is mutated only by deterministic code.
 
 gRPC is used for **exactly one link**: backend → grounding engine (our own typed, hot service). The
 LLM link is HTTP because providers are HTTP. All backend modules are in-process — no network hops
-between the orchestrator, the state machine, and the LLM adapter. **Persistence is one Postgres,
+between the loop, the state machine, and the LLM adapter. **Persistence is one Postgres,
 owned by the backend; the engine is storeless.**
 
 ## Persistence boundary
@@ -130,22 +130,28 @@ supervision).
 
 ## The coaching turn (end-to-end)
 
-1. **Client → backend (WebSocket):** the player's typed message (or a board action).
-2. **Classify** — the orchestrator asks the state machine to classify the turn (the `read_input`
-   logic: OPEN / PROBE_ANSWER / drill / … — deterministic, no LLM).
-3. **Ground** — the orchestrator reads the current board from the state machine and calls the
-   **grounding engine (gRPC)** for the facts (analysis, hints, Maia, validation) it needs.
-4. **Generate** — ONE call to the **LLM adapter** (HTTP) with a small per-flow prompt + the grounded
-   facts + the deterministic frame (whose move it is, who the opponent is). The model returns prose
-   or a small JSON verdict. It calls no tools.
-5. **Act** — the orchestrator writes to the **state machine** deterministically (push beats, set the
-   gate on a question; *record a mastery observation — parked this cycle, the seam stays*). The state
+1. **Client → backend (WebSocket):** the player's typed message or a played move.
+2. **Resolve mode** — the loop reads the chat's state (deterministic, no LLM): is there an active
+   **Lesson** on this chat? If so the turn/move runs in **coach mode**; otherwise it runs in
+   **freeform mode**. Mode — not a free-text intent classifier — is what routes the turn.
+3. **Route by mode:**
+   - **coach mode** — a played move is *adjudicated* against the active Lesson (right/wrong, why); a
+     typed turn is answered within the lesson's frame.
+   - **freeform mode** — a played move is *explained*; a typed message is classified-and-answered in
+     the same single call (question vs. position set-up vs. chat), no separate classify step.
+4. **Ground** — the handler reads the current board from the state machine and calls the **grounding
+   engine** for the facts (analysis, hints, Maia, validation) it needs.
+5. **Generate** — ONE call to the **LLM adapter** (HTTP) with the mode's prompt + the grounded facts +
+   the deterministic frame (whose move it is, who the opponent is). The model returns prose or a small
+   JSON verdict. It calls no tools.
+6. **Act** — the handler writes to the **state machine** deterministically (push beats, set the gate
+   on a question; *record a mastery observation — parked this cycle, the seam stays*). The state
    machine streams the new beats + board to the client over the **WebSocket**.
 
 ## Invariants (violating any is a bug, not a choice)
 
 1. **The state machine is the single source of truth and is mutated ONLY by the deterministic
-   orchestrator.** The LLM never mutates state, never tool-calls, never sets the board. (Its logic is
+   loop.** The LLM never mutates state, never tool-calls, never sets the board. (Its logic is
    lifted intact from today; the migration hardens it, never changes its behavior.)
 2. **Determinism first — the LLM interprets, it never calculates or orchestrates.** The backend
    classifies, grounds, and acts; the model only generates over facts it was handed. Perspective,
@@ -177,11 +183,12 @@ supervision).
   hints, maia, … Stateless request/response.
 - `docs/backend-api.md` — the **client ↔ backend** contract: the WebSocket coaching-loop messages
   (input up; beat/board/status events down) + the REST surface (auth, library, history).
-- `docs/orchestrator.md` — the deterministic coaching pipeline, **flow by flow** (classify → ground →
-  generate → act), reusing the prototype in `legacy/agent/orchestrator.py`.
+- `docs/orchestrator.md` — the (now-historical) deterministic coaching pipeline, **flow by flow**
+  (classify → ground → generate → act). **Superseded** by the `ConversationLoop` (mode routing); see
+  `LLD.md` and `backend/python/lucena_backend/coaching/loop.py`.
 - `docs/llm-adapter.md` — the **generic LLM interface** (OpenAI-chat-shaped: messages, JSON/schema
   output, model + params as config), the provider adapters (Gemini now, OpenRouter later), and the
-  hard rule that the orchestrator never imports a provider SDK — only the interface. Provider + model
-  are configuration, swappable without touching the orchestrator.
+  hard rule that the loop never imports a provider SDK — only the interface. Provider + model
+  are configuration, swappable without touching the loop.
 - `docs/state-machine.md` — the lifted state machine: its model (session, board, gate, beats,
-  activities), its public API to the orchestrator, and the robustness hardening.
+  activities), its public API to the loop, and the robustness hardening.

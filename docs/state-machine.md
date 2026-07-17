@@ -1,10 +1,11 @@
 # State Machine — contract (v0, to lock)
 
 > The single source of truth for all application/session state, lifted from
-> `legacy/python/lucena/mcp/state.py` (`StateStore`) into the backend as an **in-process module**.
+> `legacy/python/lucena/mcp/state.py` (`StateStore`) into the backend as an **in-process module** — now
+> live at `backend/python/lucena_backend/persistence/state.py`.
 > **Behaviour and every invariant are unchanged**; the migration *hardens* it and **relationalises its
 > persistence** (the one JSON-blob document → Postgres columns/tables — a storage change, not a logic
-> change; see Persistence below). Mutated ONLY by the deterministic orchestrator — never by the LLM. The MCP wrapper is removed: the orchestrator calls `StateStore`
+> change; see Persistence below). Mutated ONLY by the deterministic loop — never by the LLM. The MCP wrapper is removed: the loop/handlers call `StateStore`
 > directly; the client sees changes via the WebSocket (below).
 
 ## Invariants (the reason this module exists — keep them exactly)
@@ -23,7 +24,7 @@
 4. **Per-session isolation.** State is keyed by session id; the input mailbox is per-session runtime,
    never persisted, so it can never leak across a switch.
 5. **Single-writer, serialized.** Every mutation runs behind one lock (today `ctx._tool_lock` +
-   `asyncio.to_thread`); the orchestrator is the sole writer.
+   `asyncio.to_thread`); the loop is the sole writer.
 
 ## Canonical model
 
@@ -75,7 +76,7 @@ structured shapes to model exactly from their producers when the schema is imple
 (seed filtered to `_SEEDABLE` — a push can never smuggle in a cursor write); `pop_activity()` restores
 the parent (false at base); session-level state (beats, gate, version) is continuous across a push.
 
-## Public API (in-process, what the orchestrator calls)
+## Public API (in-process, what the loop/handlers call)
 
 Grouped; signatures verbatim from the lift. All mutators persist + publish unless noted.
 
@@ -101,9 +102,9 @@ Grouped; signatures verbatim from the lift. All mutators persist + publish unles
   payload)]`, `publish_engine_lines(payload)`.
 
 > Note: the current `read_input` ALSO carries classification + `board_fen` + `load_skill`. In the new
-> design, **classification is the orchestrator's concern** (it reads the mailbox + the board from the
-> state machine and classifies); the state machine just owns the mailbox and the board. See
-> `docs/orchestrator.md`.
+> design, **classification is the loop's concern** (it reads the mailbox + the board from the
+> state machine and routes by mode); the state machine just owns the mailbox and the board. See
+> `LLD.md` and `backend/python/lucena_backend/coaching/loop.py`.
 
 ## Change events → WebSocket
 

@@ -191,4 +191,4 @@ message PoisonedStep { string san = 1; string fen = 2; }       // SAN only
 - **`AnnotateGame` (PGN → annotated fact sheet) — skeleton only.** The RPC + `AnnotateGameResp` /
   `AnnotatedPly` shape stay in the contract (lifted from `gamepass`) so the surface is designed, but
   it is **not implemented this cycle** (heavy game-walk, not hot-path; the game-review flow it feeds is
-  already ▢ in `orchestrator.md`). Refine the exact fields when the walk is actually ported.
+  already ▢ in `LLD.md`). Refine the exact fields when the walk is actually ported.

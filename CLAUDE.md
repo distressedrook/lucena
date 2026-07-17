@@ -8,7 +8,7 @@ This is the **private superrepo**: one clonable tree that pins each layer as a s
 
 ```
 engine/       → lucena-engine   PUBLIC  (AGPL-3.0)   — grounding engine + CLI, on PyPI as `lucena-engine`
-backend/      → lucena-backend  PRIVATE (proprietary) — orchestrator, state machine, Postgres
+backend/      → lucena-backend  PRIVATE (proprietary) — conversation loop, state machine, Postgres
 mac-client/   → lucena-mac      PRIVATE (proprietary) — SwiftUI client (thin; streams over WS)
 ```
 
@@ -73,14 +73,17 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
     It is the only exception; see `LLD.md` §9 before extending it anywhere.
 - **Prompts are first-class citizens.** Every instruction sent to the LLM — system prompt AND user
   message, the fixed wording and the per-turn assembly alike — is built by a typed `Prompt` subclass
-  in `backend/python/lucena_backend/coaching/prompts.py`, never hand-assembled with raw string
-  concatenation in `orchestrator.py` or anywhere else. Each family's pieces (`_head`/`_tail`/`_body`,
+  in `backend/python/lucena_backend/coaching/` (`prompts.py`, `mode_prompts.py`), never hand-assembled
+  with raw string concatenation in the handlers or anywhere else. Each family's pieces (`_head`/`_tail`/`_body`,
   single-underscore — Python's actual privacy convention) are private; the only public surface is
   `SomePrompt.system(...)` and `SomePrompt.prompt(...)`, taking typed data in and returning text.
   Adding a new prompt or a new fragment of one means adding to that file, not the caller.
-- **Orchestrator shape:** rule-based `_classify` → dispatch by class → ground → **one** LLM call. Intent
-  is fused into generation, not a separate classify step. Unclassifiable action requests (play a bot,
-  etc.) return a polite `unsupported` decline rather than coaching the position.
+- **Loop shape:** `ConversationLoop` resolves the mode (an active Lesson for this chat → coach, else
+  freeform), dispatches by input kind, grounds, and makes **one** LLM call. Intent is fused into
+  generation (freeform classifies and answers in a single call), not a separate classify step. Handlers
+  never call each other — they return a typed `Outcome` the loop re-routes (the loop-mediated seam).
+  Unclassifiable action requests (play a bot, etc.) return a polite `unsupported` decline rather than
+  coaching the position.
 - **In-process, not gRPC-in-dev:** the backend imports `lucena_engine` directly via `ToolContext`. A
   separate read-only `ground_ctx` handles coaching grounding so slow analysis never blocks interactive
   moves. (The engine *also* ships a gRPC surface for external/networked use.)
