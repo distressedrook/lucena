@@ -89,12 +89,21 @@ COPY engine/scripts/maia_policy_uci.py /opt/lucena-engine/scripts/maia_policy_uc
 # maia3-23m is heavier on CPU than 5m but a stronger human-move predictor.
 ARG MAIA_MODEL=maia3-23m
 # Pre-warm: drive the UCI wrapper once so the model's weights download into the
-# cache. Best-effort — if the network is unavailable at build time, the runtime
-# will download on first use instead (cache persists on the app volume).
+# cache. REQUIRED, not best-effort — this stage already needs network to pip-install
+# torch/maia3 above, so "no network at build time" was never actually a live case; the
+# old `|| echo ...skipped` just meant a build could silently ship an image whose
+# LUCENA_MAIA env var is set but whose first real call fails at runtime (the weights
+# aren't cached and a production container commonly has no outbound network either).
+# That is the exact silent-degradation shape `tools.py`'s `human_replies` is built to
+# swallow (empty list on any Maia error) — invisible right up until a coach narration
+# quietly loses its grounding. Fail the build instead: a bad Maia setup should never
+# reach a shipped image.
 RUN mkdir -p /opt/maia-cache \
     && printf 'uci\nisready\nposition startpos\ngo depth 1\nquit\n' \
        | /opt/maia/bin/python /opt/lucena-engine/scripts/maia_policy_uci.py --model ${MAIA_MODEL} \
-       > /tmp/maia-warm.log 2>&1 || echo "maia pre-warm skipped (no network at build?)"
+       > /tmp/maia-warm.log 2>&1; \
+    cat /tmp/maia-warm.log; \
+    grep -q '^bestmove ' /tmp/maia-warm.log
 
 # =============================================================================
 # Stage 4 — runtime: slim base + Stockfish binary + engine wheel + backend +
