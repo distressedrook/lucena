@@ -80,3 +80,24 @@ without the stepper.
 - [ ] Decide whether live analysis is ever rewired. It is entirely unwired today (nothing constructs
       `LiveAnalyzer`; `/analyze` is a stub), and it is the only near-continuous CPU cost in the design
       — per-move coaching is bounded and cheap by comparison.
+
+## 5. Prompt-output quality gate (verdict-gloss eval)
+
+- [ ] **Stand up the verdict-gloss eval before open release.** The facts handed to the LLM are grounded
+      and guarded; the model's *connective gloss* is not, and it still fabricates causal links a learner
+      would read as truth (live example: a correct-move verdict claimed Rxh3 "neutralizes Rxc3+ by
+      removing the pawn that supports the attack" — the h3 pawn is unrelated; the rook simply left c3).
+      The unit tests deliberately don't assert on generated text, so this class only surfaces by testing
+      live. Fine **while pre-production** — we prompt-patch against heavy live testing and regressions
+      don't yet matter — but it is the gap between "usable for trusted alpha" and "trustworthy for people
+      who'll take the gloss as authoritative", which is the whole engine-grounded-coach pitch.
+      - A **sketch** is already on the branch: `backend/tests/eval/` (README + deterministic graders +
+        entailment-judge skeleton + seed fixtures + a default-skipped pytest wrapper). Not wired in, not
+        run.
+      - Land the **always-on deterministic-grader unit tests first** (no LLM, every push): solution
+        leak, `THE REFUTATION`-style labels, perspective slips, eval-number leaks, format shape.
+      - Then the **LLM entailment judge** (nightly / pre-release, `RUN_EVAL=1`): a stronger, ideally
+        non-Gemini model flags every verdict claim not entailed by the facts.
+      - Open decisions live in the sketch README (judge model/independence, thresholds, frozen-vs-live
+        facts, scope). The real fix for the gloss itself is separate: ground the *why* deterministically
+        (the parked "tactic reason derivation" work) or forbid the model any connective editorializing.
