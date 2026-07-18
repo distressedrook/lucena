@@ -36,6 +36,16 @@ stop() {
     if _alive "$pf"; then kill "$(cat "$pf")" 2>/dev/null && echo "stopped $(basename "$pf" .pid) (pid $(cat "$pf"))"; fi
     rm -f "$pf"
   done
+  # Belt-and-suspenders: a stale holder on the port (pid-file missed it) made `start` a no-op and kept
+  # serving OLD CODE — the "restart didn't deploy" trap. Kill any lingering backend proc and RECLAIM
+  # the port, waiting until it's actually free.
+  pkill -f "lucena_backend.httpserver" 2>/dev/null || true
+  for _ in 1 2 3 4 5; do
+    holder="$(lsof -ti ":$LUCENA_BACKEND_PORT" 2>/dev/null || true)"
+    [ -z "$holder" ] && break
+    echo "$holder" | xargs -r kill -9 2>/dev/null || true
+    sleep 1
+  done
 }
 
 status() {
@@ -45,10 +55,18 @@ status() {
 }
 
 case "${1:-up}" in
-  stop)   stop; exit 0 ;;
-  status) status; exit 0 ;;
-  logs)   tail -n 40 -F "$LOGS/engine.log" "$LOGS/backend.log"; exit 0 ;;
+  stop)    stop; exit 0 ;;
+  status)  status; exit 0 ;;
+  logs)    tail -n 40 -F "$LOGS/engine.log" "$LOGS/backend.log"; exit 0 ;;
 esac
+# 'up' or 'restart' from here — both start the backend. Check the key BEFORE any stop, so a keyless
+# 'restart' fails fast without taking down a running backend.
+[ -n "${GEMINI_API_KEY:-}${GOOGLE_API_KEY:-}" ] || {
+  echo "ERROR: no GEMINI_API_KEY in the environment — refusing to start the backend keyless."
+  echo "Run:  GEMINI_API_KEY=\"\$KEY\" ./serve.sh   (or export it, e.g. from ~/.zshrc)"
+  exit 1
+}
+[ "${1:-up}" = "restart" ] && stop   # reliable redeploy: stop (reclaims the port) then start below
 
 # --- preflight ---------------------------------------------------------------
 [ -x "$PY" ] || { echo "backend venv missing — run: python3.13 -m venv backend/.venv && backend/.venv/bin/pip install -e engine -e backend"; exit 1; }
@@ -74,7 +92,13 @@ else
 fi
 
 # --- backend -----------------------------------------------------------------
-[ -n "${GEMINI_API_KEY:-}${GOOGLE_API_KEY:-}" ] || echo "WARN: no GEMINI_API_KEY in the environment — server runs, but /turn fails at the LLM call."
+# Reclaim the port from an ORPHAN holder (not our pid file) — else the new process can't bind and the
+# orphan keeps serving stale code (exactly the bug that made a "restart" ship nothing).
+holder="$(lsof -ti ":$LUCENA_BACKEND_PORT" 2>/dev/null || true)"
+if [ -n "$holder" ] && ! _alive "$BACKEND_PID"; then
+  echo "reclaiming :$LUCENA_BACKEND_PORT from orphan pid $holder"
+  echo "$holder" | xargs -r kill -9 2>/dev/null || true; sleep 1
+fi
 if _alive "$BACKEND_PID"; then
   echo "backend already up (pid $(cat "$BACKEND_PID"))"
 else
