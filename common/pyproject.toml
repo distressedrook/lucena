@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lucena-common"
+version = "0.1.0"
+description = "Shared internal packages used by more than one private Lucena repo."
+requires-python = ">=3.9"
+dependencies = [
+    "grpcio>=1.60",
+    "protobuf>=4.25",
+]
+
+[tool.setuptools]
+# Every consumer installs this editable (pip install -e /path/to/common) and
+# imports it as a normal package — `from common.engine_client import Probes` —
+# no sys.path manipulation, no computed relative paths. CI is expected to
+# provision this the same way it provisions lucena-engine into consuming
+# venvs (editable install from the sibling checkout).
+#
+# pyproject.toml sits INSIDE the package it describes (common/pyproject.toml
+# packages up common/ itself) — package_dir maps the "common" package name
+# back to this same directory (".") so setuptools doesn't go looking for a
+# nested common/common/.
+packages = ["common", "common.engine_client", "common.engine_client._pb"]
+
+[tool.setuptools.package-dir]
+common = "."
