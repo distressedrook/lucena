@@ -13,9 +13,11 @@ import grpc
 
 from ..board import Board
 from lucena_engine.evalmodel import Glyph, Score, win_pct_from_score
-from lucena_engine.facts import build_fact_sheet
-from lucena_engine.hints import derive_hints
-from lucena_engine.brilliant import is_brilliant
+from ._tactics import ensure as _ensure_tactics
+_ensure_tactics()
+from facts import build_fact_sheet          # noqa: E402 — lucena-tactics (see _tactics.py)
+from hints import derive_hints              # noqa: E402
+from brilliant import is_brilliant          # noqa: E402
 from ..positional import analyze_positional
 from .. import reads, detect, pgn as pgnmod
 from .._fen import captured_piece

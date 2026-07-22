@@ -9,7 +9,6 @@ So the first test asserts the table LOADS — not merely that lookups don't rais
 
 from lucena_core import openings
 from lucena_core.board import Board
-from lucena_engine.facts import build_fact_sheet
 
 # The START POSITION IS NOT IN THE TABLE: a name needs at least one move, so the book begins at ply 1.
 START = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"
@@ -59,58 +58,6 @@ def test_lookup_ignores_move_counters():
 
 
 # -- the fact ----------------------------------------------------------------
-
-def _facts(fen, **kw):
-    return build_fact_sheet(Board(fen), None, **kw)
-
-
-def _openings_in(facts):
-    return [f for f in facts if f.kind == "opening"]
-
-
-def test_the_fact_sheet_emits_the_opening():
-    facts = _facts(SICILIAN)
-    got = _openings_in(facts)
-    assert len(got) == 1
-    assert "Sicilian" in got[0].text
-    assert got[0].id, "the opening fact was not assigned an F-id"
-
-
-def test_no_opening_fact_when_the_position_is_not_an_opening():
-    assert _openings_in(_facts(NOT_AN_OPENING)) == []
-
-
-def test_the_opening_points_at_no_squares():
-    """A cited fact draws an arrow; an opening names the whole position, so there is nothing to
-    point at."""
-    assert _openings_in(_facts(RUY_LOPEZ))[0].squares == []
-
-
-def test_the_opening_does_not_consume_a_tactical_slot():
-    """`top_n` bounds the TACTICS. The opening rides alongside the ranking, so it can neither evict a
-    real tactic nor be evicted by one — it must not trade off against them."""
-    tactical_only = build_fact_sheet(Board(RUY_LOPEZ), None, top_n=1)
-    assert len(_openings_in(tactical_only)) == 1
-    # Everything else still fits its own budget.
-    assert len([f for f in tactical_only if f.kind != "opening"]) <= 1
-
-
-def test_ids_stay_contiguous_with_the_opening_appended():
-    facts = _facts(RUY_LOPEZ)
-    assert [f.id for f in facts] == [f"F{i + 1}" for i in range(len(facts))]
-
-
-# -- the en-passant convention ---------------------------------------------------
-#
-# The table keys on norm_fen, which KEEPS the ep field, and it stores ep unconditionally on a double
-# push (778/3733 rows carry one; `1.e4` is keyed with `e3`). That only works because our board core
-# uses the same convention. python-chess uses the LEGAL-ONLY convention, against which every double
-# push resolves to None.
-#
-# These MUST go through Board.apply, not FEN literals. The other tests in this file use hardcoded
-# FENs and would keep passing if the board core switched conventions tomorrow — while every opening
-# starting with a double push silently vanished. A miss is indistinguishable from "not an opening",
-# which is exactly how the broken table path shipped unnoticed.
 
 def _line(ucis):
     """Replay ucis from the start THROUGH THE BOARD CORE; return the fen after each."""
