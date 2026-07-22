@@ -10,3 +10,6 @@
 [submodule "lucena-plans"]
 	path = lucena-plans
 	url = git@github.com:distressedrook/lucena-plan.git
+[submodule "lucena-tactics"]
+	path = lucena-tactics
+	url = git@github.com:distressedrook/lucena-tactics.git
