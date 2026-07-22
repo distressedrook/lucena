@@ -10,6 +10,9 @@ This is the **private superrepo**: one clonable tree that pins each layer as a s
 engine/       → lucena-engine   PUBLIC  (AGPL-3.0)   — grounding engine + CLI, on PyPI as `lucena-engine`
 backend/      → lucena-backend  PRIVATE (proprietary) — conversation loop, state machine, Postgres
 mac-client/   → lucena-mac      PRIVATE (proprietary) — SwiftUI client (thin; streams over WS)
+lucena-plans/ → lucena-plan     PRIVATE (proprietary) — position→verified-plans library + research
+                                 (src/ library · docs/ · research/ corpora+benchmarks; its CLAUDE.md
+                                 is the lab notebook — read it before touching the plan grammar)
 ```
 
 The filesystem is one tree — edit freely across layers in a single session. Only **git** is split.
@@ -87,6 +90,14 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
 - **In-process, not gRPC-in-dev:** the backend imports `lucena_engine` directly via `ToolContext`. A
   separate read-only `ground_ctx` handles coaching grounding so slow analysis never blocks interactive
   moves. (The engine *also* ships a gRPC surface for external/networked use.)
+- **The plans layer — (fen, pvs, rolls):** `lucena-plans/src` never rolls an engine or Maia; every
+  entry point takes caller-supplied lines and only CHECKS them. The backend produces the lines
+  (`lucena_backend.plans.rolls`, in-process pool + Maia) and routes a freeform paste to the plans
+  fact sheet when it's out of book, a middlegame, and |eval| ≤ 1.5 (`freeform._plans_read`). Every
+  specific the sheet prints (freeing pushes, routes, trade mechanisms) comes from the firing
+  eval-equal lines — suggest proposes, verify filters. NOTE: lucena-plans depends on python-chess
+  (GPL-3.0) — fine server-side/private, but none of it may ever migrate into the engine (the
+  dual-license invariant), and the repo must stay private.
 - **SAN on the wire.** UCI is engine-internal only (entry/exit conversion); the backend and app speak SAN.
 - **Storeless engine, one Postgres** in the backend. Relational session state (no json-as-state).
   Drill/forcing-line trees are precomputed and position-keyed, never per-session.
