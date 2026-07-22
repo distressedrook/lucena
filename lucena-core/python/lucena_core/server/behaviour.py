@@ -47,13 +47,6 @@ class BehaviourServicer(pbg.BehaviourServicer):
         context.abort(grpc.StatusCode.UNIMPLEMENTED,
                       "CommonMistakes not yet ported (see docs/grounding-engine-api.md)")
 
-    def PoisonedLine(self, request, context):
-        # Moved to lucena-tactics 2026-07-22 (src/poisoned_line_detector.py):
-        # lucena-engine is kept as thin, license-neutral infrastructure
-        # (board core + UCI/gRPC transport); the detector is differentiated
-        # coaching logic and belongs in a private repo. Callers on this RPC
-        # surface were already unused in production (the backend calls the
-        # detector in-process); this wire contract is left defined but
-        # unserved rather than deleted, matching CommonMistakes below.
-        context.abort(grpc.StatusCode.UNIMPLEMENTED,
-                      "PoisonedLine moved to lucena-tactics/src/poisoned_line_detector.py")
+    # PoisonedLine RPC retired 2026-07-23 (Phase 7): the detector lives in
+    # lucena-tactics and the backend calls it in-process; the RPC had no live
+    # callers (verified). CommonMistakes above remains the unported skeleton.

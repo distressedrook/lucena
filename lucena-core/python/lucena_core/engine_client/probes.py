@@ -19,8 +19,8 @@ from dataclasses import dataclass
 
 import grpc
 
-from ._pb import engine_pb2 as pb
-from ._pb import engine_pb2_grpc as rpc
+from .._pb import engine_pb2 as pb
+from .._pb import engine_pb2_grpc as rpc
 
 ENGINE_ADDR = os.environ.get("LUCENA_ADDR", "127.0.0.1:50052")
 NODES = int(os.environ.get("EXPLAINER_NODES", "2000000"))

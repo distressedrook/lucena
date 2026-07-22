@@ -2,12 +2,24 @@
 
 An engine-grounded, Socratic chess coach. A native macOS app talks to a local backend that runs a
 **deterministic orchestrator** over an LLM (Gemini) — the LLM *interprets* chess, it never *calculates*
-it. A grounding engine (Stockfish + Maia + a Rust board core) is the source of truth.
+it. A grounding stack (Stockfish + Maia behind the `lucena-engine` wrapper, python-chess board
+truth + SEE in `lucena-core`) is the source of truth.
 
 This is the **private superrepo**: one clonable tree that pins each layer as a submodule.
 
 ```
-engine/       → lucena-engine   PUBLIC  (AGPL-3.0)   — grounding engine + CLI, on PyPI as `lucena-engine`
+engine/       → lucena-engine   PUBLIC  (AGPL-3.0)   — Stockfish/Maia wrapper (uci, maia, pool,
+                                 evalmodel, nnue), on PyPI as `lucena-engine`. Slimmed 2026-07-23:
+                                 everything else moved private (see below + lucena-tactics/docs/MIGRATION.md)
+lucena-core/  → (superrepo dir) PRIVATE — board truth: python-chess board + ported SEE
+                                 (differential-gated vs the retired Rust core), positional terms,
+                                 detect/pgn/openings/reads/_fen, gRPC client+server. Import name
+                                 `lucena_core`; pip install -e lucena-core
+lucena-tactics/→ lucena-tactic  PRIVATE — the tactical lifecycle: census detectors + facts/hints,
+                                 has_tactics verdict, line_tree/puzzle trees, DrillState walker,
+                                 poisoned-line detector, mechanism naming + factsheet + lexicalizer.
+                                 Contract: (1) why-wrong fact sheet, (2) has_tactics, (3) forcing tree.
+                                 No superrepo remote yet (gitlink only). Its CLAUDE.md is the lab notebook.
 backend/      → lucena-backend  PRIVATE (proprietary) — conversation loop, state machine, Postgres
 mac-client/   → lucena-mac      PRIVATE (proprietary) — SwiftUI client (thin; streams over WS)
 lucena-plans/ → lucena-plan     PRIVATE (proprietary) — position→verified-plans library + research
@@ -37,7 +49,12 @@ Keep this superrepo **private** (a public superrepo can't recurse a private subm
 
 - **Run the stack:** `./serve.sh` — Postgres + engine (gRPC) + backend (WS/REST). `GEMINI_API_KEY` is
   read from the environment (it's in `~/.zshrc`). `stop` / `status` / `logs` subcommands too.
-- **Engine:** `cd engine && maturin develop --release && pytest tests/` (needs a `stockfish` binary).
+- **Engine:** `cd engine && pip install -e . && pytest tests/` (pure python since the 2026-07-23
+  slim; needs a `stockfish` binary for the session tests).
+- **Core:** `pip install -e lucena-core`; tests run under the tactics venv:
+  `cd lucena-tactics && .venv/bin/python -m pytest ../lucena-core/tests/`.
+- **Tactics:** `cd lucena-tactics && .venv/bin/python -m pytest tests/` + the rulings suite
+  `.venv/bin/python research/experiments/test_rulings.py`.
 - **Backend:** `cd backend && PYTHONPATH=python .venv/bin/python -m pytest tests/` (needs Postgres; the
   end-to-end coaching tests need `GEMINI_API_KEY`).
 - **Mac app:** `cd mac-client && xcodebuild -project Lucena.xcodeproj -scheme Lucena -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO build`.
@@ -87,7 +104,10 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
   never call each other — they return a typed `Outcome` the loop re-routes (the loop-mediated seam).
   Unclassifiable action requests (play a bot, etc.) return a polite `unsupported` decline rather than
   coaching the position.
-- **In-process, not gRPC-in-dev:** the backend imports `lucena_engine` directly via `ToolContext`. A
+- **In-process, not gRPC-in-dev:** the backend imports `lucena_engine` (wrappers) and `lucena_core`
+  (board truth) directly via `ToolContext`, and reaches lucena-tactics through the
+  `grounding_tools/_tactics_path.py` bootstrap + thin re-export shims (drill, facts, hints,
+  line_tree, brilliant, poisoned_line_detector). A
   separate read-only `ground_ctx` handles coaching grounding so slow analysis never blocks interactive
   moves. (The engine *also* ships a gRPC surface for external/networked use.)
 - **The plans layer — (fen, pvs, rolls):** `lucena-plans/src` never rolls an engine or Maia; every
@@ -104,9 +124,11 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
 - **Backend design detail lives in `LLD.md`** — the three meanings of "session", the ContextVar chat
   cursor, addressed publishes, ownership, the auth middleware. Read it before changing `state.py`,
   `httpserver.py`, `db.py` or `auth.py`.
-- **GPL hygiene (the dual-license invariant):** the engine library **never** imports `python-chess`;
-  Stockfish and Maia are used **only as subprocesses over UCI** (arm's-length). A CI gate enforces it
-  (`engine/tests/test_gpl_hygiene.py`). Don't add copyleft runtime deps to the engine.
+- **GPL hygiene (the dual-license invariant):** the public engine library **never** imports
+  `python-chess`; Stockfish and Maia are used **only as subprocesses over UCI** (arm's-length). A CI
+  gate enforces it (`engine/tests/test_gpl_hygiene.py`). Since the 2026-07-23 slim this is easy to
+  keep: the engine has no board at all — python-chess lives exclusively in the private layers
+  (`lucena-core`, tactics, plans, backend), where GPL is fine.
 
 ## Design & brand
 
