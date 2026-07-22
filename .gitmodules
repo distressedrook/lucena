@@ -7,3 +7,6 @@
 [submodule "mac-client"]
 	path = mac-client
 	url = git@github.com:distressedrook/lucena-mac.git
+[submodule "lucena-plans"]
+	path = lucena-plans
+	url = git@github.com:distressedrook/lucena-plan.git
