@@ -1,0 +1,185 @@
+{
+  "Sicilian Defense": {
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6",
+    "qa": [
+      {
+        "kind": "idea",
+        "setup": "White opens with 1.e4, staking a claim on the center. Black replies 1...c5 — not the classical, symmetric 1...e5.",
+        "question": "What does 1...c5 actually do, and why fight for the center from the side instead of occupying it directly?",
+        "answer": "1...c5 contests d4 without putting a pawn on it — it stops White from building a free two-pawn center (e4+d4) uncontested. The trade-off is deliberate: Black declines the symmetric, more drawish 1...e5 in exchange for an unbalanced position where both sides usually get real winning chances, since a fight over one central square with pawns still on both sides of it produces sharper, less symmetric structures than mirroring White's move would."
+      },
+      {
+        "kind": "structure",
+        "setup": "In the main line, White follows up with 2.Nf3 and 3.d4, and after 3...cxd4 4.Nxd4, White has traded the d-pawn for Black's c-pawn.",
+        "question": "What files/structures does that trade typically hand to each side, and why does that matter more than the material being even?",
+        "answer": "White gets a half-open d-file and a central space/development lead from having played d4 unopposed by a pawn; Black gets a half-open c-file and, in most lines, an extra central pawn (Black often keeps a pawn on e-something plus the d-pawn versus White's single central pawn), which becomes long-term queenside/central leverage. The point isn't material — it's that each side now has a natural open file to operate on (White's rook eyes d-file pressure, Black's eyes c-file pressure/queenside expansion), which is what actually drives the middlegame plans rather than the pawn count.",
+        "lines": [
+          {
+            "label": "the cxd4/Nxd4 trade this question is about",
+            "moves": [
+              "Nf3",
+              "d6",
+              "d4",
+              "cxd4",
+              "Nxd4"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "opponent",
+        "setup": "1...c5 doesn't itself force anything — White still has to choose how to respond to it.",
+        "question": "What are White's two broad categories of reply to 1...c5, and what is White giving up by choosing the quieter one?",
+        "answer": "White can play into the \"Open Sicilian\" (2.Nf3 and 3.d4), accepting the sharp, theory-heavy imbalance Black is inviting, or sidestep it with an \"Anti-Sicilian\" try (2.Nc3, 2.c3, 3.Bb5+, or a Closed setup with Nc3/g3) that avoids handing Black the half-open c-file and central pawn majority the main line gives up. The trade-off is that White avoids the sharpest theoretical battleground, but also gives up the fuller central stake and open d-file the main line fights for — the game usually becomes more positional and less forcing.",
+        "lines": [
+          {
+            "label": "the Open Sicilian sequence 2.Nf3 / 3.d4 this answer cites (sample route via 2...d6)",
+            "moves": [
+              "Nf3",
+              "d6",
+              "d4",
+              "cxd4",
+              "Nxd4"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "plans",
+        "setup": "After 1...c5, Black hasn't yet revealed what kind of Sicilian this will become — several distinct setups are still available.",
+        "question": "What are the main development choices Black picks between on the next few moves, and what does each commit to?",
+        "answer": "Black typically chooses a setup on the next few moves: ...Nc6 (contesting d4 directly, keeping options like the Classical/Taimanov/Sveshnikov families open), ...d6 (preparing ...Nf6 and often ...g6 or ...e5, heading toward Najdorf/Dragon/Scheveningen-type structures), ...g6 (an immediate fianchetto, Accelerated Dragon setups), or ...e6 (a more solid, flexible structure keeping ...d5 or ...Nf6 in reserve, Taimanov/Kan-type setups). Each choice trades off king safety, central flexibility, and how quickly Black can contest the center."
+      }
+    ],
+    "model": "claude-sonnet-5 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "King's Pawn Game": {
+    "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3",
+    "qa": [
+      {
+        "kind": "idea",
+        "setup": "White begins the game with 1.e4, pushing the king's pawn two squares. Black has not yet replied.",
+        "question": "What does this single move accomplish, before Black has even answered?",
+        "answer": "It claims a central square while controlling d5 and f5, opens the diagonal for White's f1-bishop and a path for the queen, and sets up rapid development toward early castling — a head start in space and piece activity, which is why it is one of the two dominant first moves in chess."
+      },
+      {
+        "kind": "opponent",
+        "setup": "The name \"King's Pawn Game\" describes only the position after 1.e4 — Black hasn't committed to anything yet.",
+        "question": "What are Black's main families of reply to 1.e4, and how do they differ in spirit?",
+        "answer": "1...e5 meets White symmetrically and leads to the open games (Italian, Ruy Lopez, and company); 1...c5, the Sicilian, fights for the center asymmetrically and seeks winning chances through imbalance; 1...e6 (the French) and 1...c6 (the Caro-Kann) prepare ...d5 to counterpunch in the center a move later; and moves like 1...d5 or 1...Nf6 challenge or provoke the e-pawn immediately. Each steers toward a completely different structure — which is why little more specific can be said about the King's Pawn Game position itself."
+      }
+    ],
+    "model": "claude-opus-4-8 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "Queen's Pawn Game": {
+    "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq d3",
+    "qa": [
+      {
+        "kind": "idea",
+        "setup": "White opens with 1.d4, placing the queen's pawn — not the king's pawn — in the center.",
+        "question": "Beyond claiming a central square, what two practical differences separate 1.d4 from 1.e4 at this moment?",
+        "answer": "The d4-pawn is already defended by the queen on d1, so it cannot be attacked as easily as an undefended e-pawn, and the move opens the c1-bishop's diagonal instead of freeing the queen and the f1-bishop the way 1.e4 does. Together that points toward a game where White's center is harder to provoke and early development flows through the queenside."
+      },
+      {
+        "kind": "opponent",
+        "setup": "After 1.d4, Black has not yet chosen a defense — this position is the gateway to most of closed-game theory.",
+        "question": "What are Black's main families of reply, and what does each broadly commit to?",
+        "answer": "1...d5 answers symmetrically and leads toward the Queen's Gambit complex (QGD, Slav, and their relatives); 1...Nf6 holds the center back for a move and heads into the Indian defenses (Nimzo- and Queen's Indian, King's Indian, Grünfeld, Benoni structures); 1...f5, the Dutch, fights for the e4-square with a wing pawn; and moves like 1...e6 or 1...g6 keep options open, often transposing into one of the above."
+      },
+      {
+        "kind": "plans",
+        "setup": "1.d4 by itself claims one central square and opens one diagonal — White's larger plan usually shows on the following move.",
+        "question": "What is White's most common early follow-up to 1.d4, and what is it for?",
+        "answer": "c4 — typically played immediately or very soon — adding a second pawn's pressure against the d5-square and claiming queenside space. It is the move that organizes 1.d4 theory into the Queen's Gambit family: if Black holds the center with a pawn on d5, the c-pawn offers a tension that can deflect or undermine it, rather than White trying to blast the center open with pieces."
+      }
+    ],
+    "model": "claude-opus-4-8 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "English Opening": {
+    "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq c3",
+    "qa": [
+      {
+        "kind": "idea",
+        "setup": "White's first move is 1.c4 — a flank pawn, with nothing yet placed in the center.",
+        "question": "What is 1.c4 actually doing about the center, and what does White gain by not occupying it yet?",
+        "answer": "The c-pawn controls d5 from the side, restraining Black's most natural central break there, while both of White's central pawns stay uncommitted. The gain is flexibility: White can decide later whether to play d4 (often transposing into queen's-pawn openings), e4, or neither, adapting to whatever Black reveals first — and in the meantime there is no White central pawn for Black to attack."
+      },
+      {
+        "kind": "opponent",
+        "setup": "After 1.c4, Black's two most thematic replies each create a recognizable family of positions.",
+        "question": "What do 1...e5 and 1...c5 each turn the game into, and how do those two Englishes differ in character?",
+        "answer": "1...e5 creates a reversed Sicilian — the structure of 1.e4 c5 with colors swapped, so White gets Sicilian-style dynamics with an extra tempo. 1...c5 is the Symmetrical English, a more restrained maneuvering game where each side eyes the other's central d-square. The first tends toward sharper, plan-against-plan play; the second toward patient jockeying where the first player to commit in the center takes on some risk."
+      },
+      {
+        "kind": "plans",
+        "setup": "English players tend to develop along a recognizable pattern across many of its variations.",
+        "question": "What is White's most characteristic development scheme in the English, and what square is it organized around?",
+        "answer": "A kingside fianchetto — g3 and Bg2 — placing the bishop on the long diagonal that runs through d5, the very square 1.c4 already fights for, with Nc3 typically adding a third attacker of it. Queenside expansion with moves like a3 and b4 is the other signature plan, gaining space on the wing where White's pawns are naturally faster."
+      }
+    ],
+    "model": "claude-opus-4-8 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "Réti Opening": {
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq c3",
+    "qa": [
+      {
+        "kind": "idea",
+        "setup": "After 1.Nf3 d5, White plays 2.c4, attacking the d5-pawn — and still hasn't put a pawn in the center.",
+        "question": "What is 2.c4 trying to achieve, and how does that differ from the classical way of fighting for the center?",
+        "answer": "It challenges Black's central pawn from the flank, looking to deflect it (if Black captures on c4), provoke it forward, or tie Black to its defense — all without giving Black a White central pawn to counterattack. Classically White would stake a symmetric claim with 2.d4; the Réti instead controls the center with pieces and flank pawns, betting that Black's pawn center will become a target rather than a strength."
+      },
+      {
+        "kind": "opponent",
+        "setup": "After 1.Nf3 d5 2.c4, Black's d5-pawn is attacked, and how Black handles that shapes the whole opening.",
+        "question": "What are Black's three main options against 2.c4, and what does each concede?",
+        "answer": "Defend the pawn with 2...e6 (solid but shutting in the c8-bishop) or 2...c6 (the sturdiest, Slav-style, though it spends a tempo on a modest pawn move); capture with 2...dxc4, giving up Black's only central pawn for a flank pawn White is usually able to recover; or advance 2...d4, gaining space at the cost of handing White a fixed central target to surround with pieces."
+      },
+      {
+        "kind": "plans",
+        "setup": "Having declined to occupy the center with pawns after 1.Nf3 d5 2.c4, White needs another way to fight for it.",
+        "question": "What development scheme is most characteristic of the Réti, and what is its logic?",
+        "answer": "Fianchettoing — g3 and Bg2 almost always, often b3 and Bb2 as well — with short castling, so that one or both bishops rake the center from the wings. The logic is hypermodern: pressure the central squares from a distance, and strike with a well-timed pawn break once Black's center has committed itself and can be undermined."
+      }
+    ],
+    "model": "claude-opus-4-8 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "Bird Opening": {
+    "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq f3",
+    "qa": [
+      {
+        "kind": "idea",
+        "setup": "White opens 1.f4 — a wing pawn, echoing the Dutch Defense (1.d4 f5) with colors reversed and an extra tempo.",
+        "question": "What does 1.f4 gain, and what does it give up compared with the main first moves?",
+        "answer": "It gains lasting control of e5 and kingside space — the same clamp a Dutch player wants, a move earlier. What it gives up: unlike 1.e4 or 1.d4 it opens no line for a bishop or the queen, so development isn't helped, and the advanced f-pawn slightly exposes White's own king along the e1-h4 diagonal before a single piece is out."
+      },
+      {
+        "kind": "opponent",
+        "setup": "Facing 1.f4, Black can respond calmly or immediately test the move's one structural drawback.",
+        "question": "What is Black's solid main reply, what is the sharp critical try, and what makes the sharp one dangerous?",
+        "answer": "The solid choice is 1...d5, occupying the light central squares 1.f4 does nothing about and heading for a reversed Dutch. The critical try is 1...e5, From's Gambit: Black offers a pawn to drag open the e1-h4 diagonal that 1.f4 loosened, aiming for a fast attack on White's king before development is finished — though White can also sidestep it entirely by answering with 2.e4, transposing into a King's Gambit.",
+        "lines": [
+          {
+            "label": "From's Gambit sidestepped by 2.e4 (King's Gambit transposition)",
+            "moves": [
+              "e5",
+              "e4"
+            ]
+          }
+        ]
+      },
+      {
+        "kind": "plans",
+        "setup": "Suppose Black meets 1.f4 solidly and no early gambit appears; White needs a coherent scheme.",
+        "question": "What are White's typical development setups in the Bird, and what is their shared goal?",
+        "answer": "Nf3 and e3 with a queenside fianchetto (b3, Bb2) pointing the bishop straight at e5, or a kingside fianchetto (g3, Bg2) in reversed Leningrad-Dutch style. Either way the goal is the same: cement the grip on e5 — often planting a knight there — castle short, and build kingside play on the space the f-pawn provides, sometimes with a later f5 advance."
+      }
+    ],
+    "model": "claude-opus-4-8 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  }
+}

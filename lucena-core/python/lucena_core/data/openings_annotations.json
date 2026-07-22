@@ -1,0 +1,65 @@
+{
+  "Sicilian Defense": {
+    "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq c6",
+    "text": "The Sicilian Defense begins 1.e4 c5: instead of meeting White's central pawn symmetrically, Black stakes a claim on the center from the side, contesting d4 without ever occupying it. That asymmetry is the whole point — it trades the classical mirroring of 1...e5 for unbalanced, double-edged positions where both sides typically get to play for a win rather than steer toward an early draw. Its enduring appeal is that it gives Black realistic winning chances against White's first-move initiative rather than a mere path to a level game.\n\nThe most common continuation is 2.Nf3 followed by 3.d4, when White trades the d-pawn for Black's c-pawn (cxd4) and gets a half-open d-file and extra central space, while Black gets a half-open c-file and a lead in central pawn count on the queenside. From there the position typically forks into the sharp \"Open Sicilian\" main lines (Najdorf, Dragon, Scheveningen, Classical, Taimanov, and others, distinguished by Black's move order and pawn/piece placement) or into Anti-Sicilian tries (2.Nc3, 2.c3, 3.Bb5+, the Closed Sicilian with 2.Nc3/3.g3) where White avoids the main theoretical battleground.\n\nTypical plans: White usually looks to expand in the center and on the kingside, often castling queenside in sharp lines to launch a pawn storm (f-g-h pawns) against Black's king, since tempo matters more than pawn shelter once queens are on. Black's compensation for ceding central space is piece activity and queenside/central counterplay — pushing ...b5 and ...a5 for queenside expansion, using the half-open c-file for rook pressure, and often castling kingside while accepting some structural concessions (like an isolated or backward d-pawn) in exchange for active piece play. Because both sides frequently race on opposite wings, Sicilian middlegames are known for sharp, calculation-heavy struggles rather than slow maneuvering.",
+    "history": "The Sicilian has long been the most popular reply to 1.e4 in practice, from club play up to world championship matches. Generations of world-class players — Bobby Fischer and Garry Kasparov most famously — used it as a primary lifelong weapon, and the deep theory they and others built around lines like the Najdorf turned it into the main battleground of 1.e4 opening preparation.",
+    "lines": [
+      {
+        "label": "the asserted main-line continuation 2.Nf3 / 3.d4 cxd4 4.Nxd4 (sample route via 2...d6)",
+        "moves": [
+          "Nf3",
+          "d6",
+          "d4",
+          "cxd4",
+          "Nxd4"
+        ]
+      }
+    ],
+    "model": "claude-sonnet-5 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "King's Pawn Game": {
+    "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3",
+    "text": "1.e4 is the most direct way to open a chess game: it stakes an immediate claim on the center, opens lines for the queen and the f1-bishop, and gives White a head start in development and space. \"King's Pawn Game\" is simply the name for this position before Black has replied — it does not commit to any particular continuation, since Black has every major reply available (1...e5, the classical symmetric answer; 1...c5, the Sicilian; 1...e6, the French; 1...c6, the Caro-Kann; 1...d5, the Scandinavian; 1...Nf6, Alekhine's Defense; among others), each leading to a very different kind of game.\n\nWhat 1.e4 generally commits White to, regardless of Black's reply, is fighting for rapid piece activity and open lines rather than a slow buildup — in most 1.e4 openings, pieces come out quickly and tactics tend to arrive earlier than in closed, pawn-chain-heavy structures. The specific plans, pawn structures, and typical middlegame ideas all depend on what Black chooses next; nothing about them is fixed at this position alone.",
+    "history": "1.e4 is the oldest documented way to open a chess game — the early recorded games and treatises of the Italian school are overwhelmingly king's-pawn games — and it dominated play for centuries before positional theory broadened tastes. Bobby Fischer famously called it \"best by test.\"",
+    "model": "claude-sonnet-5 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "Queen's Pawn Game": {
+    "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq d3",
+    "text": "1.d4 plants a pawn in the center much as 1.e4 does, but with a different character baked in from move one: the d4-pawn is defended by the queen, so it cannot be harassed as easily as an e-pawn can, and the move opens the c1-bishop's diagonal rather than freeing the kingside pieces. \"Queen's Pawn Game\" names this position before Black has committed to a reply — every major defense is still available (1...d5, the classical symmetric answer; 1...Nf6, heading into the Indian defenses; 1...f5, the Dutch; 1...e6 and 1...g6 as flexible move orders), each steering the game somewhere quite different.\n\nWhat 1.d4 tends to promise, whatever Black picks, is a slower, more strategic struggle than 1.e4: because the queen-defended center is harder to attack head-on, positions stay closed or half-closed longer, and the fight often revolves around pawn breaks prepared over many moves rather than early piece contact. White's most common ambition is to follow up with c4 — typically very early — adding a second pawn's pressure against the d5-square and claiming queenside space, which is why so much of 1.d4 theory is organized around the Queen's Gambit complex. But nothing is forced yet: at this position White has claimed space and one good diagonal, and everything else remains to be negotiated.",
+    "history": "1.d4 was a comparative rarity for centuries while romantic-era chess revolved around 1.e4 and its gambits; it rose with the positional school of the late 19th century and by the 1920s and 1930s dominated elite play — the 1927 world championship match between Capablanca and Alekhine was contested almost entirely in queen's-pawn openings.",
+    "model": "claude-opus-4-8 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "English Opening": {
+    "fen": "rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR b KQkq c3",
+    "text": "1.c4 stakes White's claim to the center from the flank: the c-pawn controls d5 without placing anything in the middle for Black to attack. The point is flexibility — White commits neither the king's pawn nor the queen's pawn yet, keeps every central option in reserve, and can steer the game later into a huge range of setups, including transposing into 1.d4 openings with a later d4.\n\nTwo natural landmarks organize the theory from here: 1...e5 gives a \"reversed Sicilian,\" where White gets a Sicilian Defense structure a full tempo up, and 1...c5 mirrors the claim on the opposing d-square to produce the Symmetrical English's slower maneuvering battles. Black can also decline both with 1...Nf6, 1...e6, or 1...c6, which very often flow into Queen's Gambit or Indian-defense territory once White plays d4. Typical English plans feature a kingside fianchetto (g3 and Bg2, aiming the bishop at the d5-square the c-pawn already eyes) and queenside expansion with moves like a3 and b4, playing for pressure on the long light-squared diagonal rather than an early central pawn confrontation.",
+    "history": "The opening is named for the 19th-century English masters who employed it — Howard Staunton foremost, notably in his 1843 match against Saint-Amant — at a time when 1.c4 was viewed as an eccentric sideline. Hypermodern ideas rehabilitated flank openings in the 20th century, and adoption by world champions from Botvinnik to Karpov, Kasparov, and Carlsen made it fully respectable main-line theory.",
+    "model": "claude-opus-4-8 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "Réti Opening": {
+    "fen": "rnbqkbnr/ppp1pppp/8/3p4/2P5/5N2/PP1PPPPP/RNBQKB1R b KQkq c3",
+    "text": "The Réti proper arises after 1.Nf3 d5 2.c4: White has developed a knight to its most natural square and now strikes at Black's d5-pawn from the flank, all while refusing to place a single pawn in the center. This is hypermodern strategy distilled — instead of meeting 1...d5 with the classical 2.d4, White invites Black's center to stand (or advance) and prepares to pressure it from a distance, most characteristically with one or both bishops fianchettoed.\n\nBlack's choice at this exact moment defines the game: defend d5 with 2...e6 (solid, but shutting in the c8-bishop) or 2...c6 (the sturdiest, building a Slav-style chain), grab the pawn with 2...dxc4 (trading the center's only Black pawn for a flank pawn White is usually able to recover), or push 2...d4, gaining space at the cost of handing White's pieces a fixed central target to besiege. White's typical follow-up against almost all of these is g3, Bg2, and short castling, often with b3 and Bb2 as well, playing against the center from both long diagonals.",
+    "history": "Richard Réti was one of the leaders of the 1920s hypermodern school, which argued — against classical dogma — that the center could be controlled by pieces from a distance rather than occupied by pawns. His flank system scored notable wins against the classical elite of the day and turned that argument into respectable practice; the opening has carried his name ever since.",
+    "model": "claude-opus-4-8 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  },
+  "Bird Opening": {
+    "fen": "rnbqkbnr/pppppppp/8/8/5P2/8/PPPPP1PP/RNBQKBNR b KQkq f3",
+    "text": "1.f4 grabs the e5-square from the flank — a mirror image of the Dutch Defense (1.d4 f5) played a tempo up by White. The move stakes out kingside space and prepares a long-term clamp on e5, but unlike 1.e4 or 1.d4 it develops nothing: no diagonal opens for a bishop or the queen, and the advanced f-pawn slightly loosens the king's own e1-h4 diagonal — the tactical price the opening carries from move one.\n\nBlack's most solid answer is 1...d5, occupying the light central squares 1.f4 does nothing about and steering toward reversed-Dutch structures. The critical test is 1...e5, From's Gambit, offering a pawn to rip open the very diagonal 1.f4 weakened — and White's most important resource there is that 2.e4 declines the gambit by transposing straight into a King's Gambit. White's typical setups combine Nf3 and e3 with a fianchetto (b3 and Bb2 pointing the bishop at e5, or g3 and Bg2 in reversed Leningrad-Dutch style), followed by castling short and kingside play built around the f-pawn's grip on e5 and a potential later f5 advance.",
+    "history": "The opening is named for Henry Bird, the English master who championed 1.f4 faithfully for decades in the 19th century. It has never joined the main-line elite, but it has remained a respectable offbeat weapon, valued in part because opponents face it far less often than 1.e4 or 1.d4.",
+    "lines": [
+      {
+        "label": "From's Gambit declined by 2.e4 (King's Gambit transposition)",
+        "moves": [
+          "e5",
+          "e4"
+        ]
+      }
+    ],
+    "model": "claude-opus-4-8 (manual, no API key available)",
+    "generated_at": "2026-07-16"
+  }
+}

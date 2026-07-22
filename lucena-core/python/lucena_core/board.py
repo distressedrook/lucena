@@ -51,9 +51,18 @@ class Board:
         # to the same depth as the Rust core: structurally broken boards
         # (missing king, pawn on a back rank) and impossible states (the side
         # NOT to move in check) are rejected, not just unparseable strings.
+        # One deliberate divergence from python-chess's is_valid(): the old
+        # core treated OPPOSITE_CHECK as "a piece gives check" — a king can
+        # never give check, so adjacent kings were tolerated (and appear in
+        # legitimate pasted-FEN inputs detect.py must recognise). Keep that.
         b = chess.Board(fen)                 # raises ValueError on bad syntax
-        if not b.is_valid():
-            raise ValueError(f"invalid position: {fen!r} ({b.status()!r})")
+        status = b.status()
+        if status & ~chess.STATUS_OPPOSITE_CHECK:
+            raise ValueError(f"invalid position: {fen!r} ({status!r})")
+        if status & chess.STATUS_OPPOSITE_CHECK:
+            them_king = b.king(not b.turn)
+            if b.attackers_mask(b.turn, them_king) & ~b.kings:
+                raise ValueError(f"invalid position: {fen!r} ({status!r})")
         self.fen = fen
         self._b = b
 
