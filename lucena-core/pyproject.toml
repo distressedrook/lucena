@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lucena-core"
+version = "0.1.0"
+description = "Lucena board truth: python-chess board + SEE, positional terms, gRPC client/server. Private."
+requires-python = ">=3.11"
+dependencies = [
+    "chess>=1.11",
+]
+
+# Private package — never published. The dist/import naming convention matches
+# lucena-engine/lucena_engine: dist `lucena-core`, import `lucena_core`.
+# The gRPC client/server (moving in from /common and the engine, Phase 2) adds
+# grpcio/protobuf as extras so board-truth consumers stay dependency-light.
+[project.optional-dependencies]
+grpc = ["grpcio>=1.60", "protobuf>=4.25"]
+
+[tool.setuptools]
+package-dir = { "" = "python" }
+
+[tool.setuptools.packages.find]
+where = ["python"]
