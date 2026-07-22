@@ -69,7 +69,7 @@ esac
 [ "${1:-up}" = "restart" ] && stop   # reliable redeploy: stop (reclaims the port) then start below
 
 # --- preflight ---------------------------------------------------------------
-[ -x "$PY" ] || { echo "backend venv missing — run: python3.13 -m venv backend/.venv && backend/.venv/bin/pip install -e engine -e backend"; exit 1; }
+[ -x "$PY" ] || { echo "backend venv missing — run: python3.13 -m venv backend/.venv && backend/.venv/bin/pip install -e engine -e lucena-core -e backend"; exit 1; }
 [ -n "$LUCENA_STOCKFISH" ] || { echo "stockfish not found — brew install stockfish (or set LUCENA_STOCKFISH)"; exit 1; }
 
 # --- postgres ----------------------------------------------------------------
@@ -86,7 +86,7 @@ pg_isready >/dev/null 2>&1 || { echo "postgres still not reachable"; exit 1; }
 if _alive "$ENGINE_PID"; then
   echo "engine already up (pid $(cat "$ENGINE_PID"))"
 else
-  nohup "$PY" -m lucena_engine.server.serve > "$LOGS/engine.log" 2>&1 &
+  nohup "$PY" -m lucena_core.server.serve > "$LOGS/engine.log" 2>&1 &
   echo $! > "$ENGINE_PID"
   echo "engine   -> :$LUCENA_ENGINE_PORT (pid $(cat "$ENGINE_PID"))"
 fi
