@@ -222,6 +222,9 @@ def _king_safety_term(board, occ, ph: float) -> dict:
                                zone_penalty / 4.0, ph)
         features[color] = {
             "king": ksq,
+            "danger": round(danger[color]),   # the composite (2026-07-23:
+                                              # exposed for the efficacy
+                                              # studies + future norm)
             "zone_attackers": sorted(f"{PIECE_NAME.get(pc, pc)} on {s}"
                                      for s, pc in attackers.items()),
             "attack_units": units,
@@ -248,9 +251,118 @@ def _king_safety_term(board, occ, ph: float) -> dict:
     return {"cp": round(cp), "standing": standing, "features": features}
 
 
-def _activity_term(board, occ, attacks, ph: float) -> dict:
+# The 0-1 normalized activity score is a GM-PRACTICE PERCENTILE, now
+# PHASE-CONDITIONED (2026-07-23 owner ruling: "rooks and queens always lose
+# in the middlegame" — the flat grids pooled endgame rooks, which own the
+# distribution's top, so no middlegame rook could ever score well): norm
+# 0.62 = "more active than 62% of same-type pieces in the SAME PHASE of GM
+# play". Grids are raw-score quantiles (p0..p100, step 5) fitted over the
+# full GM corpus (33,769 games, 4.7M piece observations, phases via
+# reads.game_phase with hysteresis) by
+# lucena-plans/research/experiments/studies/activity_calibration2.py —
+# regenerate there if the score formula or classifier changes. Embedded
+# like the PeSTO tables: data, hand-checked, deterministic.
+_ACT_QUANTILES = {
+    "opening": {
+        "N": [-169.9, -29.0, -29.0, -26.9, -25.0, -23.0, -9.0, -3.0, 12.0,
+              16.0, 16.0, 18.0, 20.0, 20.7, 21.0, 21.0, 21.0, 24.3, 25.0,
+              28.0, 145.0],
+        "B": [-79.0, -32.0, -30.3, -29.4, -27.3, -24.0, -18.3, -17.0, -17.0,
+              -17.0, -15.0, -15.0, -5.0, 1.0, 5.1, 9.7, 13.0, 16.0, 21.0,
+              24.0, 65.0],
+        "R": [-81.0, -38.0, -38.0, -38.0, -36.0, -36.0, -35.5, -33.0, -33.0,
+              -33.0, -32.0, -31.0, -31.0, -29.3, -29.0, -27.0, -25.0, -7.0,
+              -5.0, -1.0, 69.7],
+        "Q": [-60.2, -7.8, -4.8, -3.0, -2.0, -2.0, -1.0, -1.0, 0.0, 0.0,
+              0.8, 1.0, 1.6, 2.0, 2.0, 3.0, 3.0, 4.0, 5.0, 6.6, 59.0],
+    },
+    "middlegame": {
+        "N": [-165.9, -29.0, -17.6, -9.0, -5.0, -1.2, 4.0, 12.0, 14.9, 16.0,
+              17.8, 19.3, 20.2, 21.2, 23.0, 24.3, 26.0, 29.0, 34.5, 49.0,
+              145.0],
+        "B": [-82.1, -26.8, -18.5, -15.3, -9.5, -5.0, -0.5, 1.5, 3.8, 6.0,
+              8.0, 10.0, 11.8, 13.8, 16.0, 17.7, 20.0, 22.0, 25.0, 30.0,
+              68.0],
+        "R": [-85.0, -31.0, -28.5, -26.2, -23.7, -20.5, -16.3, -11.0, -7.8,
+              -6.3, -5.0, -3.0, -1.0, 1.3, 3.8, 6.0, 8.1, 10.3, 13.5, 19.0,
+              87.1],
+        "Q": [-61.2, -20.2, -15.2, -11.2, -8.0, -6.0, -4.8, -3.5, -2.5,
+              -1.7, -1.0, -0.0, 1.0, 1.6, 2.6, 3.6, 5.0, 7.0, 11.0, 20.7,
+              62.7],
+    },
+    "endgame": {
+        "N": [-113.3, -29.7, -21.5, -14.7, -4.8, -0.8, 2.8, 6.2, 10.7, 13.3,
+              15.7, 18.2, 21.8, 25.5, 28.0, 30.2, 33.0, 35.0, 37.8, 42.0,
+              70.2],
+        "B": [-52.6, -21.3, -16.0, -11.7, -7.2, -4.0, -1.0, 1.8, 4.3, 6.2,
+              8.2, 10.4, 12.8, 14.0, 16.3, 18.8, 20.2, 22.4, 25.4, 29.1,
+              47.1],
+        "R": [-43.3, -18.3, -13.0, -9.8, -7.5, -5.0, -2.9, -1.0, 1.0, 2.7,
+              4.5, 6.5, 8.5, 11.0, 13.2, 15.8, 18.5, 21.7, 25.8, 31.7,
+              52.6],
+        "Q": [-53.8, -20.2, -15.9, -12.3, -8.9, -5.5, -0.2, 4.3, 7.5, 10.3,
+              13.0, 16.2, 20.0, 23.2, 26.0, 28.3, 31.0, 34.4, 38.7, 43.3,
+              57.3],
+    },
+}
+
+# development baseline: RAW mean activity score per (side, type, ply),
+# plies 8-20, full GM corpus (activity_calibration2.py). SIDE-CONDITIONED
+# (owner ruling 2026-07-23: "black is statistically always behind" — Black
+# trails White by a tempo BY CONSTRUCTION, so lag judges each side against
+# its OWN curve, or every Black position would "lag").
+_DEV_BASELINE = {
+    "white": {
+        "N": {8: -0.4, 9: 3.8, 10: 3.3, 11: 5.8, 12: 4.9, 13: 6.7, 14: 6.1,
+              15: 7.9, 16: 7.3, 17: 9.6, 18: 8.8, 19: 10.7, 20: 9.8},
+        "B": {8: -16.3, 9: -12.2, 10: -12.6, 11: -8.3, 12: -9.1, 13: -5.5,
+              14: -5.9, 15: -3.0, 16: -3.7, 17: -1.2, 18: -1.8, 19: 0.7,
+              20: -0.0},
+        "R": {8: -34.0, 9: -31.8, 10: -31.7, 11: -29.8, 12: -29.7,
+              13: -27.6, 14: -27.6, 15: -25.4, 16: -25.3, 17: -23.2,
+              18: -23.2, 19: -21.0, 20: -21.0},
+        "Q": {8: 1.1, 9: 1.3, 10: 1.2, 11: 1.5, 12: 1.3, 13: 1.3, 14: 1.2,
+              15: 1.2, 16: 0.9, 17: 0.9, 18: 0.6, 19: 0.5, 20: 0.3},
+    },
+    "black": {
+        "N": {8: 0.6, 9: 0.4, 10: 3.1, 11: 2.3, 12: 4.8, 13: 4.3, 14: 6.6,
+              15: 5.9, 16: 7.9, 17: 7.2, 18: 8.9, 19: 7.9, 20: 9.8},
+        "B": {8: -16.4, 9: -16.7, 10: -13.8, 11: -14.5, 12: -11.3,
+              13: -11.8, 14: -8.9, 15: -9.5, 16: -6.6, 17: -7.3, 18: -4.5,
+              19: -5.2, 20: -2.9},
+        "R": {8: -34.2, 9: -34.2, 10: -32.2, 11: -32.2, 12: -30.6,
+              13: -30.6, 14: -28.6, 15: -28.6, 16: -26.2, 17: -26.2,
+              18: -24.2, 19: -24.2, 20: -22.3},
+        "Q": {8: 0.3, 9: 0.3, 10: 0.5, 11: 0.4, 12: 0.5, 13: 0.4, 14: 0.6,
+              15: 0.4, 16: 0.3, 17: 0.1, 18: -0.0, 19: -0.3, 20: -0.3},
+    },
+}
+DEV_LAG_NOTABLE = -15   # raw points behind own-side baseline before the
+                        # margin may SPEAK it (data below, speech above —
+                        # the annoyance gate, owner 2026-07-23)
+
+
+def _act_norm(piece: str, score: float, phase: str = "middlegame") -> float:
+    """Raw activity score -> same-phase GM-practice percentile in [0, 1],
+    by linear interpolation on the (phase, type) quantile grid."""
+    q = _ACT_QUANTILES.get(phase, _ACT_QUANTILES["middlegame"])[piece]
+    if score <= q[0]:
+        return 0.0
+    if score >= q[-1]:
+        return 1.0
+    for i in range(1, len(q)):
+        if score <= q[i]:
+            lo, hi = q[i - 1], q[i]
+            frac = (score - lo) / (hi - lo) if hi > lo else 1.0
+            return ((i - 1) + frac) / (len(q) - 1)
+    return 1.0
+
+
+def _activity_term(board, occ, attacks, ph: float,
+                   phase_name: str = "middlegame") -> dict:
     sums = {"white": 0.0, "black": 0.0}
     worst = {"white": None, "black": None}
+    per_piece = {"white": [], "black": []}
     # Sorted by square: float accumulation order is part of determinism. The
     # Rust-era code summed in piece_list order; at exact .5 cp boundaries the
     # rounding depended on it (observed: 6/1000 corpus positions off by 1cp).
@@ -265,6 +377,15 @@ def _activity_term(board, occ, attacks, ph: float) -> dict:
                   if occ.get(t) is None or occ[t].color != p.color)
         score = place + (mob - base) * weight
         sums[p.color] += score
+        # per-piece breakdown (2026-07-23, sheet-JSON activity block): the
+        # loop already knows every minor/major's score — keep it instead of
+        # throwing it away. `score` is cp-flavored: PeSTO placement (phase-
+        # tapered) + weighted mobility above the piece's baseline.
+        per_piece[p.color].append({"square": s, "piece": p.piece,
+                                   "score": round(score, 1), "mobility": mob,
+                                   "placement": round(place, 1),
+                                   "norm": round(_act_norm(p.piece, score,
+                                                           phase_name), 2)})
         # tie-break on square so identical scores pick the same piece every run
         if worst[p.color] is None or (score, s) < worst[p.color][:2]:
             worst[p.color] = (score, s, p.piece)
@@ -272,6 +393,12 @@ def _activity_term(board, occ, attacks, ph: float) -> dict:
 
     features = {}
     for color in ("white", "black"):
+        # most-active first BY THE NORMALIZED SCORE (owner 2026-07-23);
+        # raw-score then square tie-breaks keep it deterministic
+        features[f"pieces_{color}"] = sorted(
+            per_piece[color],
+            key=lambda e: (-e["norm"], -e["score"], e["square"]))
+        features[f"score_{color}"] = round(sums[color])
         if worst[color] is not None:
             _, s, pc = worst[color]
             features[f"worst_piece_{color}"] = {"square": s, "piece": pc}
@@ -396,13 +523,275 @@ def analyze_positional(board) -> dict:
     occ = occupancy(board)
     ph = _phase(occ)
     ctrl, attacks = _attack_maps(board)
+    from .reads import game_phase as _gp
+    try:
+        phase_name = _gp(board.fen)["phase"]
+    except Exception:
+        phase_name = "middlegame"
     terms = {
         "material": _material_term(board),
         "king_safety": _king_safety_term(board, occ, ph),
-        "activity": _activity_term(board, occ, attacks, ph),
+        "activity": _activity_term(board, occ, attacks, ph, phase_name),
         "pawns": _pawns_term(board, occ, ph),
         "center": _center_term(occ, ctrl, ph),
     }
     leads = [k for k in sorted(terms, key=lambda k: -abs(terms[k]["cp"]))
              if abs(terms[k]["cp"]) >= _LEAD_THRESHOLD][:2]
     return {"phase": round(ph, 2), "terms": terms, "leads": leads}
+
+
+# ---- attack viability ------------------------------------------------------
+# (2026-07-23, owner request): the PROSPECTIVE sibling of the king-safety
+# danger term. Danger prices attack infrastructure that EXISTS (attackers in
+# the zone, files already open); this scores the viability of BUILDING it —
+# the gap the annotator-validation test exposed ("attack on the king"
+# comments scored BELOW control against the static term: annotators speak
+# before the infrastructure exists). Classical attacking theory compiled to
+# geometry: latent attackers, storm pawns + hooks, openable lines, a stable
+# center, the queen. Hand-authored weights — audited by
+# lucena-plans/research/experiments/studies/attack_viability_validation.py
+# (corpus-scale validation before speech) and NOT yet percentile-calibrated.
+
+_VIA_MAX = 14.0
+
+
+def attack_viability(fen: str) -> dict:
+    """{'white': {...}, 'black': {...}} — each side AS THE ATTACKER against
+    the enemy king: score (raw), norm (score/max, clamped), components
+    [{name, pts, why}]. Deterministic geometry; no engine."""
+    import chess as _c
+    b = _c.Board(fen)
+    out = {}
+    for color in (_c.WHITE, _c.BLACK):
+        enemy = not color
+        ek = b.king(enemy)
+        comps = []
+        if ek is None:
+            out["white" if color else "black"] = {
+                "score": 0, "norm": 0.0, "components": []}
+            continue
+        from .geometry import king_zone as _kz     # shared zone (2026-07-23)
+        kf, kr = _c.square_file(ek), _c.square_rank(ek)
+        zone = _kz(ek, enemy)
+        enemy_pawn_atk = set()
+        for ps in b.pieces(_c.PAWN, enemy):
+            enemy_pawn_atk |= set(b.attacks(ps))
+
+        # 1. LATENT ATTACKERS: pieces already bearing on the zone (x2) plus
+        # pieces one SAFE move from bearing on it (landing square not
+        # guarded by an enemy pawn) — the attack mass that can assemble.
+        now, reach = [], []
+        for pt in (_c.KNIGHT, _c.BISHOP, _c.ROOK, _c.QUEEN):
+            for s in b.pieces(pt, color):
+                if set(b.attacks(s)) & zone:
+                    now.append(s)
+                    continue
+                found = False
+                for t in b.attacks(s):
+                    pc = b.piece_at(t)
+                    if pc is not None and pc.color == color:
+                        continue
+                    if t in enemy_pawn_atk:
+                        continue
+                    b2 = b.copy(stack=False)
+                    b2.remove_piece_at(s)
+                    b2.set_piece_at(t, _c.Piece(pt, color))
+                    if set(b2.attacks(t)) & zone:
+                        found = True
+                        break
+                if found:
+                    reach.append(s)
+        pts = min(6, 2 * len(now) + len(reach))
+        if pts:
+            comps.append(("latent attackers", pts,
+                          f"{len(now)} piece(s) already bear on the king "
+                          f"zone, {len(reach)} more are one safe move away"))
+
+        # 2. STORM PAWNS + HOOK: own pawns near the enemy king's files that
+        # can still march, plus the classical hook (an advanced enemy
+        # shield pawn a storm pawn can lever open).
+        storm = 0
+        for s in b.pieces(_c.PAWN, color):
+            f, r = _c.square_file(s), _c.square_rank(s)
+            if abs(f - kf) <= 1 and abs(r - kr) <= 4:
+                step = _c.square(f, r + (1 if color == _c.WHITE else -1)) \
+                    if 0 <= r + (1 if color == _c.WHITE else -1) <= 7 else None
+                if step is not None and b.piece_at(step) is None:
+                    storm += 1
+        hook = 0
+        base = 1 if enemy == _c.WHITE else 6
+        for s in b.pieces(_c.PAWN, enemy):
+            f, r = _c.square_file(s), _c.square_rank(s)
+            if abs(f - kf) <= 1 and r != base:
+                hook = 1
+                break
+        pts = min(4, storm + hook)
+        if pts:
+            why = f"{storm} pawn(s) free to storm the king's wing"
+            if hook:
+                why += "; an advanced shield pawn offers a lever hook"
+            comps.append(("storm pawns", pts, why))
+
+        # 3. OPENABLE LINES: files beside the enemy king with no own pawn
+        # (heavies can land or the file can open) — only with a heavy on.
+        heavies = list(b.pieces(_c.ROOK, color)) + list(b.pieces(_c.QUEEN, color))
+        own_pawn_files = {_c.square_file(s) for s in b.pieces(_c.PAWN, color)}
+        lines = [f for f in (kf - 1, kf, kf + 1)
+                 if 0 <= f <= 7 and f not in own_pawn_files] if heavies else []
+        pts = min(2, len(lines))
+        if pts:
+            comps.append(("open lines", pts,
+                          f"{len(lines)} file(s) by the king carry no own "
+                          "pawn — heavies can use or open them"))
+
+        # 4. STABLE CENTER: the classical precondition for a wing attack —
+        # central rams with no central tension can't counter-open the middle.
+        from .geometry import center_skeleton as _csk   # shared (2026-07-23)
+        rams, tension = _csk(b)
+        if rams >= 2 and tension == 0:
+            comps.append(("stable center", 2,
+                          "the center is locked — no central counterplay "
+                          "can answer a wing attack"))
+        elif tension == 0:
+            comps.append(("stable center", 1, "no central pawn tension"))
+
+        score = sum(p for _, p, _ in comps)
+        if not b.pieces(_c.QUEEN, color) and score:
+            score = round(score / 2)
+            comps.append(("no queen", 0,
+                          "own queen is off — attack potential halved"))
+        out["white" if color == _c.WHITE else "black"] = {
+            "score": score,
+            "norm": round(min(1.0, score / _VIA_MAX), 2),
+            "components": [{"name": n, "pts": p, "why": w}
+                           for n, p, w in comps],
+        }
+    return out
+
+
+# ---- region control --------------------------------------------------------
+# (2026-07-23, owner request): deterministic control scores for the board's
+# KEY REGIONS — center, wings, holes/outposts, open files. Control of a
+# square = attacker share (occupation weighs extra, pawns most); a region's
+# score is its mean square share. Pure geometry, no engine; every verdict
+# carries its evidence. Shares are UNCALIBRATED means (0.5 = contested) —
+# the percentile treatment can follow the activity precedent if a consumer
+# needs cross-position claims.
+
+_CORE_SQ = ("d4", "e4", "d5", "e5")
+_LEAD_SHARE = 0.60          # region leader needs this share; else contested
+
+
+def region_control(fen: str) -> dict:
+    import chess as _c
+    b = _c.Board(fen)
+
+    from .geometry import control_share as _cs   # the ONE copy (2026-07-23)
+
+    def _share(sq) -> float:
+        return _cs(b, sq)
+
+    def _region(squares) -> dict:
+        s = sum(_share(sq) for sq in squares) / len(squares)
+        leader = ("White" if s >= _LEAD_SHARE else
+                  "Black" if s <= 1 - _LEAD_SHARE else None)
+        return {"white": round(s, 2), "black": round(1 - s, 2),
+                "leader": leader}
+
+    center = _region([_c.parse_square(q) for q in _CORE_SQ])
+    kingside = _region([_c.square(f, r) for f in (5, 6, 7)
+                        for r in (2, 3, 4, 5)])
+    queenside = _region([_c.square(f, r) for f in (0, 1, 2)
+                         for r in (2, 3, 4, 5)])
+
+    # holes: squares on the usable ranks of a camp that no pawn of that camp
+    # can EVER guard (no friendly pawn on an adjacent file able to advance
+    # into guarding position) — the permanent geography. An occupied hole
+    # with own-pawn protection is the classical OUTPOST.
+    from .geometry import is_hole as _is_hole    # the audited definition
+    holes = []
+    for camp, ranks in ((_c.BLACK, (3, 4, 5)), (_c.WHITE, (2, 3, 4))):
+        beneficiary = not camp
+        for r in ranks:
+            for f in range(8):
+                sq = _c.square(f, r)
+                if not _is_hole(b, sq, camp):
+                    continue
+                # only holes a pawn COULD have guarded matter (files a-h
+                # edge squares still qualify; off-board neighbours don't
+                # make something a hole on an empty board — require at
+                # least central-usable relevance: skip rank-edge noise by
+                # requiring the beneficiary to reach it at all)
+                share = _share(sq)
+                bshare = share if beneficiary == _c.WHITE else 1 - share
+                if bshare < 0.5 and b.piece_at(sq) is None:
+                    continue                      # a hole nobody exploits
+                pc = b.piece_at(sq)
+                occupied = (pc is not None and pc.color == beneficiary
+                            and pc.piece_type in (_c.KNIGHT, _c.BISHOP))
+                pawn_backed = bool(b.attackers(beneficiary, sq)
+                                   & b.pieces(_c.PAWN, beneficiary))
+                holes.append({
+                    "square": _c.square_name(sq),
+                    "camp": "black" if camp == _c.BLACK else "white",
+                    "controller": ("White" if share >= _LEAD_SHARE else
+                                   "Black" if share <= 1 - _LEAD_SHARE
+                                   else None),
+                    "occupied": occupied,
+                    "outpost": occupied and pawn_backed,
+                })
+
+    # files: open / half-open, and who holds them (heavies on the file)
+    files = []
+    wp_files = {_c.square_file(s) for s in b.pieces(_c.PAWN, _c.WHITE)}
+    bp_files = {_c.square_file(s) for s in b.pieces(_c.PAWN, _c.BLACK)}
+    for f in range(8):
+        state = ("open" if f not in wp_files and f not in bp_files else
+                 "half-open-white" if f not in wp_files else
+                 "half-open-black" if f not in bp_files else None)
+        if state is None:
+            continue
+        heavies = {"White": 0, "Black": 0}
+        for r in range(8):
+            pc = b.piece_at(_c.square(f, r))
+            if pc is not None and pc.piece_type in (_c.ROOK, _c.QUEEN):
+                heavies["White" if pc.color == _c.WHITE else "Black"] += 1
+        controller = ("White" if heavies["White"] > heavies["Black"] else
+                      "Black" if heavies["Black"] > heavies["White"] else
+                      None)
+        files.append({"file": _FILES[f], "state": state,
+                      "controller": controller,
+                      "heavies": heavies})
+
+    return {"center": center, "kingside": kingside, "queenside": queenside,
+            "holes": holes, "files": files}
+
+
+def development_lag(fen: str) -> dict:
+    """Per-piece development lag vs the SAME side's GM baseline (plies
+    8-20 only — development is a defined concept only there). Owner rulings
+    (2026-07-23): side-conditioned baselines (Black trails White by a tempo
+    by construction), and an ANNOYANCE GATE — every lag is data, but only
+    `notable` (>= 15 raw points behind own baseline) may be spoken.
+    {'ply': n, 'white': [{piece, square, lag, notable}], 'black': [...]}
+    — empty side lists outside plies 8-20."""
+    parts = fen.split()
+    fullmove = int(parts[5]) if len(parts) > 5 and parts[5].isdigit() else 1
+    ply = (fullmove - 1) * 2 + (0 if len(parts) > 1 and parts[1] == "w"
+                                else 1)
+    out = {"ply": ply, "white": [], "black": []}
+    if not 8 <= ply <= 20:
+        return out
+    from .board import Board as _B
+    d = analyze_positional(_B(fen))
+    ft = d["terms"]["activity"]["features"]
+    for color in ("white", "black"):
+        for e in ft.get(f"pieces_{color}", []):
+            base = _DEV_BASELINE[color].get(e["piece"], {}).get(ply)
+            if base is None:
+                continue
+            lag = round(e["score"] - base, 1)
+            out[color].append({"piece": e["piece"], "square": e["square"],
+                               "lag": lag,
+                               "notable": lag <= DEV_LAG_NOTABLE})
+    return out

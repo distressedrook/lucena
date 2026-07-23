@@ -134,3 +134,61 @@ def pv_san(fen: str, pv: list[str], max_plies: int = 6) -> list[str]:
         except Exception:
             break
     return out
+
+
+# ---- game phase ------------------------------------------------------------
+# (2026-07-23, owner-ratified design): the three boundaries are different
+# KINDS of events, so the classifier is a hybrid — ENDGAME is a material
+# event (max side non-pawn material, the plans layer's own threshold);
+# OPENING is a development event (in the openings book, or development
+# incomplete by the classical tells: minors home, king uncastled with
+# rights, rooks unconnected); MIDDLEGAME is everything else. Single-FEN and
+# deterministic; stream callers add hysteresis themselves (a game never
+# returns to an earlier phase).
+
+_PHASE_NPM = {"Q": 9, "R": 5, "B": 3, "N": 3}
+ENDGAME_NPM = 13          # same bar as lucena_backend.plans.service
+
+
+def game_phase(fen: str) -> dict:
+    """{'phase': 'opening'|'middlegame'|'endgame', 'why': str}."""
+    import chess as _c
+    b = _c.Board(fen)
+    sym = {_c.QUEEN: "Q", _c.ROOK: "R", _c.BISHOP: "B", _c.KNIGHT: "N"}
+    npm = {}
+    for color in (_c.WHITE, _c.BLACK):
+        npm[color] = sum(_PHASE_NPM[s] * len(b.pieces(pt, color))
+                         for pt, s in sym.items())
+    if max(npm.values()) <= ENDGAME_NPM:
+        return {"phase": "endgame",
+                "why": (f"max side non-pawn material "
+                        f"{max(npm.values())} <= {ENDGAME_NPM}")}
+
+    fullmove = b.fullmove_number
+    if fullmove <= 20:
+        from . import openings
+        if openings.name_for(fen):
+            return {"phase": "opening", "why": "position is in the book"}
+        for color, back in ((_c.WHITE, 0), (_c.BLACK, 7)):
+            tells = []
+            minors_home = sum(
+                1 for pt in (_c.KNIGHT, _c.BISHOP)
+                for s in b.pieces(pt, color) if _c.square_rank(s) == back)
+            if minors_home >= 2:
+                tells.append(f"{minors_home} minors still home")
+            k = b.king(color)
+            if k is not None and _c.square_rank(k) == back \
+                    and _c.square_file(k) == 4 \
+                    and b.has_castling_rights(color):
+                tells.append("king uncastled with rights")
+            rooks = list(b.pieces(_c.ROOK, color))
+            if len(rooks) >= 2 and not any(
+                    r2 in b.attacks(r1) for r1 in rooks for r2 in rooks
+                    if r1 != r2):
+                tells.append("rooks unconnected")
+            if len(tells) >= 2:
+                side = "White" if color == _c.WHITE else "Black"
+                return {"phase": "opening",
+                        "why": f"{side}'s development incomplete: "
+                               + ", ".join(tells)}
+    return {"phase": "middlegame", "why": "developed, material still on"}
