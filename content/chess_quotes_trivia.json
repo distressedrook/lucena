@@ -1,0 +1,3134 @@
+{
+  "description": "Fact-checked chess quotes and trivia. Each entry was independently researched and sourced by an AI research agent using live web search, with instructions to exclude any claim it could not trace to a real, checkable source (book, interview, tournament record, or reputable chess-history reference such as chessgames.com or Edward Winter's chesshistory.com). Chess quote culture in particular is rife with misattribution, so unsourced or Edward-Winter-debunked quotes were deliberately excluded rather than included with a caveat.",
+  "generated_at": "2026-07-16",
+  "model": "Claude Sonnet 5 (research agents using live web search)",
+  "count": {
+    "quotes": 235,
+    "trivia": 295,
+    "total": 530
+  },
+  "quotes": [
+    {
+      "quote": "I am more strongly confirmed than ever in the belief that the time devoted to chess is literally frittered away.",
+      "author": "Paul Morphy",
+      "author_role": "American chess prodigy, unofficial World Chess Champion 1858-1862",
+      "source": "Letter to Daniel Willard Fiske, 4 February 1863",
+      "year": "1863"
+    },
+    {
+      "quote": "Chess never has been and never can be aught but a recreation.",
+      "author": "Paul Morphy",
+      "author_role": "American chess prodigy, unofficial World Chess Champion 1858-1862",
+      "source": "Speech, 'Testimonials to Paul Morphy,' University Hall, Boston, 25 May 1859",
+      "year": "1859"
+    },
+    {
+      "quote": "It is not only the most delightful and scientific, but the most moral of amusements.",
+      "author": "Paul Morphy",
+      "author_role": "American chess prodigy, unofficial World Chess Champion 1858-1862",
+      "source": "Speech, 'Testimonials to Paul Morphy,' Boston, 1859",
+      "year": "1859"
+    },
+    {
+      "quote": "It is eminently and emphatically the philosopher's game.",
+      "author": "Paul Morphy",
+      "author_role": "American chess prodigy, unofficial World Chess Champion 1858-1862",
+      "source": "Speech, 'Testimonials to Paul Morphy,' Boston, 1859",
+      "year": "1859"
+    },
+    {
+      "quote": "Let the chessboard supersede the card-table, and a great improvement will be visible in the morals of the community.",
+      "author": "Paul Morphy",
+      "author_role": "American chess prodigy, unofficial World Chess Champion 1858-1862",
+      "source": "Speech, 'Testimonials to Paul Morphy,' Boston, 1859",
+      "year": "1859"
+    },
+    {
+      "quote": "It was Paul Morphy and his exploits that first induced me to enter chess life and to him I owe my career in the first instance.",
+      "author": "Wilhelm Steinitz",
+      "author_role": "First official World Chess Champion, 1886-1894",
+      "source": "International Chess Magazine, May 1886, p. 114",
+      "year": "1886"
+    },
+    {
+      "quote": "As is well known, I, in common with most connoisseurs, hold that general contests only furnish a very unreliable and much inferior test of strength in comparison to matches between two selected players.",
+      "author": "Wilhelm Steinitz",
+      "author_role": "First official World Chess Champion, 1886-1894",
+      "source": "International Chess Magazine, June 1886, p. 170",
+      "year": "1886"
+    },
+    {
+      "quote": "Life has often been compared with a game of chess, and no doubt the comparison fits in many respects.",
+      "author": "Wilhelm Steinitz",
+      "author_role": "First official World Chess Champion, 1886-1894",
+      "source": "Speech, New York, 16 October 1897, published in British Chess Magazine, December 1897, p. 471",
+      "year": "1897"
+    },
+    {
+      "quote": "Of my opponent I am oblivious. For all that I know or note, he might as well be an abstraction or an automaton.",
+      "author": "Wilhelm Steinitz",
+      "author_role": "First official World Chess Champion, 1886-1894",
+      "source": "British Chess Magazine, September 1894, p. 366",
+      "year": "1894"
+    },
+    {
+      "quote": "Good nature is the first element of a really strong intellect, and there is no really sound human brain without a sound sympathetic heart.",
+      "author": "Wilhelm Steinitz",
+      "author_role": "First official World Chess Champion, 1886-1894",
+      "source": "Speech, New York, 16 October 1897, published in British Chess Magazine, December 1897, p. 471",
+      "year": "1897"
+    },
+    {
+      "quote": "On the chessboard, lies and hypocrisy do not survive long. The creative combination lays bare the presumption of a lie; the merciless fact, culminating in the checkmate, contradicts the hypocrite.",
+      "author": "Emanuel Lasker",
+      "author_role": "World Chess Champion 1894-1921",
+      "source": "Lasker's Manual of Chess (1925 German ed.; 1932 English ed.)",
+      "year": "1925"
+    },
+    {
+      "quote": "What is immobile must suffer violence. The light-winged bird will easily escape the huge dragon, but the firmly rooted big tree must remain where it is and may have to give up its leaves, fruit, perhaps its life.",
+      "author": "Emanuel Lasker",
+      "author_role": "World Chess Champion 1894-1921",
+      "source": "Lasker's Manual of Chess (1925), p. 115",
+      "year": "1925"
+    },
+    {
+      "quote": "You should keep in mind no names, nor numbers, nor isolated incidents, but only methods.",
+      "author": "Emanuel Lasker",
+      "author_role": "World Chess Champion 1894-1921",
+      "source": "Lasker's Manual of Chess (1925), p. 338",
+      "year": "1925"
+    },
+    {
+      "quote": "Of my fifty-seven years I have applied at least thirty to forgetting most of what I had learned or read, and since I succeeded in this I have acquired a certain ease and cheer which I should never again like to be without.",
+      "author": "Emanuel Lasker",
+      "author_role": "World Chess Champion 1894-1921",
+      "source": "Lasker's Manual of Chess (1925), p. 337",
+      "year": "1925"
+    },
+    {
+      "quote": "In order to improve your game you must study the endgame before anything else; for whereas the endings can be studied and mastered by themselves, the middle game and the opening must be studied in relation to the endgame.",
+      "author": "José Raúl Capablanca",
+      "author_role": "World Chess Champion 1921-1927",
+      "source": "Chess Fundamentals (1921)",
+      "year": "1921"
+    },
+    {
+      "quote": "A passed pawn increases in strength as the number of pieces on the board diminishes.",
+      "author": "José Raúl Capablanca",
+      "author_role": "World Chess Champion 1921-1927",
+      "source": "Chess Fundamentals (1921)",
+      "year": "1921"
+    },
+    {
+      "quote": "One must attempt to increase whatever weakness there may be in the opponent's position; or, if there is none, one or more must be created.",
+      "author": "José Raúl Capablanca",
+      "author_role": "World Chess Champion 1921-1927",
+      "source": "Chess Fundamentals (1921)",
+      "year": "1921"
+    },
+    {
+      "quote": "The fact that a player is very short of time is, to my mind, as little to be considered as an excuse as, for instance, the statement of the law-breaker that he was drunk at the moment he committed the crime.",
+      "author": "Alexander Alekhine",
+      "author_role": "World Chess Champion 1927-1935, 1937-1946",
+      "source": "Chess Life, Vol. 16-18 (1961), p. 113",
+      "year": "1961"
+    },
+    {
+      "quote": "I study chess eight hours a day, on principle.",
+      "author": "Alexander Alekhine",
+      "author_role": "World Chess Champion 1927-1935, 1937-1946",
+      "source": "Quoted in David Hooper & Kenneth Whyld, The Oxford Companion to Chess (1996), p. 8",
+      "year": null
+    },
+    {
+      "quote": "Chess first of all teaches you to be objective.",
+      "author": "Alexander Alekhine",
+      "author_role": "World Chess Champion 1927-1935, 1937-1946",
+      "source": "Quoted in M. Yudovich & A. Kotov, The Soviet School of Chess (1958)",
+      "year": "1958"
+    },
+    {
+      "quote": "Alekhine is a poet who creates a work of art out of something that would hardly inspire another man to send home a picture post card.",
+      "author": "Max Euwe",
+      "author_role": "World Chess Champion 1935-1937",
+      "source": "Quoted in Fred Reinfeld, Why You Lose at Chess (1956), p. 180",
+      "year": "1956"
+    },
+    {
+      "quote": "I honestly feel very humble when I study Capablanca's games.",
+      "author": "Max Euwe",
+      "author_role": "World Chess Champion 1935-1937",
+      "source": "Quoted in David Hooper & Kenneth Whyld, The Oxford Companion to Chess (1996), p. 69",
+      "year": null
+    },
+    {
+      "quote": "First restrain, next blockade, lastly destroy.",
+      "author": "Aron Nimzowitsch",
+      "author_role": "Hypermodern chess theoretician, author of My System",
+      "source": "My System (1925), p. 181",
+      "year": "1925"
+    },
+    {
+      "quote": "The passed pawn is a criminal, who should be kept under lock and key. Mild measures such as police surveillance are not sufficient.",
+      "author": "Aron Nimzowitsch",
+      "author_role": "Hypermodern chess theoretician, author of My System",
+      "source": "My System (1925), Chapter 4: 'The Passed Pawn'",
+      "year": "1925"
+    },
+    {
+      "quote": "The threat is stronger than the execution.",
+      "author": "Aron Nimzowitsch",
+      "author_role": "Hypermodern chess theoretician, author of My System",
+      "source": "Skakbladet, No. 9 (1933), p. 137",
+      "year": "1933"
+    },
+    {
+      "quote": "The beauty of a move lies not in its appearance but in the thought behind it.",
+      "author": "Aron Nimzowitsch",
+      "author_role": "Hypermodern chess theoretician, author of My System",
+      "source": "Quoted in Fred Reinfeld, Nimzovich: The Hypermodern (1948) — secondary source, exact original wording/context unverified",
+      "year": null
+    },
+    {
+      "quote": "Tempo is the soul of chess.",
+      "author": "Siegbert Tarrasch",
+      "author_role": "Leading chess theoretician and teacher, 'Praeceptor Germaniae'",
+      "source": "Tarrasch's Schachzeitung, 15 November 1933, p. 56",
+      "year": "1933"
+    },
+    {
+      "quote": "It is not enough to be a good player; one must play well.",
+      "author": "Siegbert Tarrasch",
+      "author_role": "Leading chess theoretician and teacher, 'Praeceptor Germaniae'",
+      "source": "Chess Player's Chronicle, 20 September 1890, pp. 196-198",
+      "year": "1890"
+    },
+    {
+      "quote": "Before the endgame, the gods have placed the middlegame.",
+      "author": "Siegbert Tarrasch",
+      "author_role": "Leading chess theoretician and teacher, 'Praeceptor Germaniae'",
+      "source": "Annotation to Wolf v Tarrasch, Monte Carlo 1903, in Die moderne Schachpartie",
+      "year": "1903"
+    },
+    {
+      "quote": "Chess, like love, like music, has the power to make men happy.",
+      "author": "Siegbert Tarrasch",
+      "author_role": "Leading chess theoretician and teacher, 'Praeceptor Germaniae'",
+      "source": "Das Schachspiel (1931), p. 4; English ed. The Game of Chess (1935), p. xi",
+      "year": "1931"
+    },
+    {
+      "quote": "When one sees a strong move, one must ask if there is not a stronger one.",
+      "author": "Siegbert Tarrasch",
+      "author_role": "Leading chess theoretician and teacher, 'Praeceptor Germaniae'",
+      "source": "Das Schachspiel (1931), p. 164; English ed. The Game of Chess (1935), p. 122",
+      "year": "1931"
+    },
+    {
+      "quote": "As long as an opening is reputed to be weak it can be tried.",
+      "author": "Savielly Tartakower",
+      "author_role": "Grandmaster, chess journalist and aphorist",
+      "source": "My Best Games of Chess, 1905-1930, Vol. I (1953), p. 17",
+      "year": "1953"
+    },
+    {
+      "quote": "You really have confidence in your pieces.",
+      "author": "Savielly Tartakower",
+      "author_role": "Grandmaster, chess journalist and aphorist",
+      "source": "Remark to Siegbert Tarrasch, Semmering 1926, quoted in My Best Games of Chess, Vol. I (1953), p. 157",
+      "year": "1926"
+    },
+    {
+      "quote": "The art of chess is simple: you play Kt-B3-K5 and then, sooner or later, KtxKBP is decisive.",
+      "author": "Savielly Tartakower",
+      "author_role": "Grandmaster, chess journalist and aphorist",
+      "source": "My Best Games of Chess, Vol. II (1956), p. 61",
+      "year": "1956"
+    },
+    {
+      "quote": "It is only a strong player who knows how weakly he plays.",
+      "author": "Savielly Tartakower",
+      "author_role": "Grandmaster, chess journalist and aphorist",
+      "source": "Chess Pie (1922), p. 28",
+      "year": "1922"
+    },
+    {
+      "quote": "An isolated pawn spreads gloom over the whole board.",
+      "author": "Savielly Tartakower",
+      "author_role": "Grandmaster, chess journalist and aphorist",
+      "source": "Schachmethodik, 2nd edition (Berlin, 1929), p. 113",
+      "year": "1929"
+    },
+    {
+      "quote": "Of good moves have no fear.",
+      "author": "Savielly Tartakower",
+      "author_role": "Grandmaster, chess journalist and aphorist",
+      "source": "Deutsche Schachzeitung, December 1927, p. 354",
+      "year": "1927"
+    },
+    {
+      "quote": "The mistakes are all there, waiting to be made.",
+      "author": "Savielly Tartakower",
+      "author_role": "Grandmaster, chess journalist and aphorist",
+      "source": "Die Hypermoderne Schachpartie (Vienna, 1924), p. 90",
+      "year": "1924"
+    },
+    {
+      "quote": "Chess is a fighting game which is purely intellectual and excludes chance.",
+      "author": "Richard Réti",
+      "author_role": "Hypermodern chess theoretician and grandmaster",
+      "source": "Modern Ideas in Chess (London, 1923), p. 104",
+      "year": "1923"
+    },
+    {
+      "quote": "Those chess lovers who ask me how many moves I calculate in advance, when making a combination, are always astonished when I reply, quite truthfully, 'as a rule not a single one.'",
+      "author": "Richard Réti",
+      "author_role": "Hypermodern chess theoretician and grandmaster",
+      "source": "Modern Ideas in Chess (1923)",
+      "year": "1923"
+    },
+    {
+      "quote": "Lasker often deliberately plays badly.",
+      "author": "Richard Réti",
+      "author_role": "Hypermodern chess theoretician and grandmaster",
+      "source": "Masters of the Chess Board (1933) — a claim Lasker himself strongly objected to in a 1936 letter",
+      "year": "1933"
+    },
+    {
+      "quote": "Capablanca's calm style, the harmonic combination of very exact positional understanding with a calculation of variations, imparted a particular elegance to the Cuban's games.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Achieving the Aim (Pergamon Press, 1981), p. 90",
+      "year": "1981"
+    },
+    {
+      "quote": "As a player Keres had failings which were well known to me. The first was his slight uncertainty when he had to orientate himself in new opening schemes.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Achieving the Aim (Pergamon Press, 1981), p. 110",
+      "year": "1981"
+    },
+    {
+      "quote": "It is clear now to many people that Fischer has a maniacal fear of beginning a competition.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Achieving the Aim (Pergamon Press, 1981), p. 198",
+      "year": "1981"
+    },
+    {
+      "quote": "A Jew by blood, a Russian by culture, Soviet by upbringing.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Achieving the Aim (Pergamon Press, 1981), p. 178",
+      "year": "1981"
+    },
+    {
+      "quote": "When the game takes on a more or less open character, and when piece-play is important, nobody can equal Tal... In other positions he is weaker. Here no calculation can help him.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Chess Life magazine, June 1962, p. 135",
+      "year": "1962"
+    },
+    {
+      "quote": "I think Capablanca had the greatest natural talent. When a great pianist plays, we don't hear separate notes, but we hear a musical picture. So too, Capablanca didn't make separate moves - he was creating a chess picture. Nobody could compare with him in this.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Chess Life magazine, March 1984",
+      "year": "1984"
+    },
+    {
+      "quote": "When my opponent's clock is going I discuss general considerations in an internal dialogue with myself. When my own clock is going I analyse concrete variations.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Quoted in Think Like a Grandmaster by Alexander Kotov (London, 1971), p. 139",
+      "year": "1971"
+    },
+    {
+      "quote": "The world champions die in the strict order of their succession to the title. Thus the writer of these lines is the next on the list.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Europe Echecs, April 1983, p. 13",
+      "year": "1983"
+    },
+    {
+      "quote": "I had still tried not to lose the sense of humour that is so essential both for the struggle and for victory in this field.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Statement dated 3 May 1957, quoted in The World Chess Championship 1957 by Harry Golombek, p. 139",
+      "year": "1957"
+    },
+    {
+      "quote": "When an electronic machine has started playing chess and played it successfully this will be such a momentous event that every schoolboy will want to know about it.",
+      "author": "Mikhail Botvinnik",
+      "author_role": "World Chess Champion 1948-1957, 1958-1960, 1961-1963",
+      "source": "Chess magazine, October 1968, p. 8",
+      "year": "1968"
+    },
+    {
+      "quote": "In my opinion, the style of a player should not be formed under the influence of any single great master.",
+      "author": "Vasily Smyslov",
+      "author_role": "World Chess Champion 1957-1958",
+      "source": "125 Selected Games (Pergamon/Oxford, 1983), p. 4 - English edition of V poiskakh garmonii (In Search of Harmony), 1979",
+      "year": "1979"
+    },
+    {
+      "quote": "In chess I am also a staunch supporter of classical clarity of thought. The content of a game should be a search for truth, and victory a demonstration of its rightness.",
+      "author": "Vasily Smyslov",
+      "author_role": "World Chess Champion 1957-1958",
+      "source": "125 Selected Games (Pergamon/Oxford, 1983), p. 5",
+      "year": "1979"
+    },
+    {
+      "quote": "No fantasy, however rich, no technique, however masterly, no penetration into the psychology of the opponent, however deep, can make a chess game a work of art if these qualities do not lead to the main goal - the search for truth.",
+      "author": "Vasily Smyslov",
+      "author_role": "World Chess Champion 1957-1958",
+      "source": "125 Selected Games (Pergamon/Oxford, 1983), p. 5",
+      "year": "1979"
+    },
+    {
+      "quote": "My study of chess was accompanied by a strong attraction to music, and it was probably thanks to this that from childhood I became accustomed to thinking of chess as an art, and have never regarded it as anything else, for all the science and sport involved in it.",
+      "author": "Vasily Smyslov",
+      "author_role": "World Chess Champion 1957-1958",
+      "source": "125 Selected Games (Pergamon/Oxford, 1983)",
+      "year": "1979"
+    },
+    {
+      "quote": "Such a 'mutual understanding' with the pieces enables a player to see that which often remains concealed to purely logical analysis. It is then that the innate ability of a player, which I call a sense of harmony, manifests itself.",
+      "author": "Vasily Smyslov",
+      "author_role": "World Chess Champion 1957-1958",
+      "source": "125 Selected Games (Pergamon/Oxford, 1983)",
+      "year": "1979"
+    },
+    {
+      "quote": "Talent in chess... I think it's the feeling of harmony. How quickly the player understands the position, how well is their intuition developed.",
+      "author": "Vasily Smyslov",
+      "author_role": "World Chess Champion 1957-1958",
+      "source": "75th-birthday interview with Yakov Damsky, 1996",
+      "year": "1996"
+    },
+    {
+      "quote": "not a work of reference but a book kept under my pillow - a bedtime story for a chess child",
+      "author": "Tigran Petrosian",
+      "author_role": "World Chess Champion 1963-1969",
+      "source": "On Aron Nimzowitsch's My System, quoted in The Games of Tigran Petrosian, Volume I, ed. Eduard Shekhtman (Pergamon, 1991)",
+      "year": null
+    },
+    {
+      "quote": "the teaching of positional play is equivalent to the teaching of chess in general",
+      "author": "Tigran Petrosian",
+      "author_role": "World Chess Champion 1963-1969",
+      "source": "The Games of Tigran Petrosian, Volume I, ed. Eduard Shekhtman (Pergamon, 1991)",
+      "year": null
+    },
+    {
+      "quote": "Botvinnik, like no-one else, is able to arrive for the start of an event in the highest state of preparedness and from the very first moves to play at full strength.",
+      "author": "Tigran Petrosian",
+      "author_role": "World Chess Champion 1963-1969",
+      "source": "On the 1963 World Championship match, in The Games of Tigran Petrosian, Volume I, ed. Eduard Shekhtman (Pergamon, 1991)",
+      "year": "1963"
+    },
+    {
+      "quote": "Looking back, I rarely recall vexations and disappointments. Compared with the joys which chess has generously given me, they are mere trifles.",
+      "author": "Tigran Petrosian",
+      "author_role": "World Chess Champion 1963-1969",
+      "source": "The Games of Tigran Petrosian, Volume I, ed. Eduard Shekhtman (Pergamon, 1991), p. 216",
+      "year": null
+    },
+    {
+      "quote": "I began seriously wondering whether I shouldn't give up chess.",
+      "author": "Tigran Petrosian",
+      "author_role": "World Chess Champion 1963-1969",
+      "source": "On being passed over for the 1956 Amsterdam Candidates delegation, in The Games of Tigran Petrosian, Volume I, ed. Eduard Shekhtman (Pergamon, 1991), pp. 215-216",
+      "year": "1956"
+    },
+    {
+      "quote": "When I knew that, I was down on the stage, instead of up here.",
+      "author": "Tigran Petrosian",
+      "author_role": "World Chess Champion 1963-1969",
+      "source": "Self-deprecating reply to a spectator's question during a public post-mortem; quoted in Anatoly Karpov: Chess is My Life by Karpov and Roshal (Pergamon/Oxford, 1980), p. 166",
+      "year": "1974"
+    },
+    {
+      "quote": "I have a weakness for any piece in excess of my opponent's numbers - from pawn to queen.",
+      "author": "Tigran Petrosian",
+      "author_role": "World Chess Champion 1963-1969",
+      "source": "Vik L. Vasilev, Tigran Petrosian: His Life and Games (Batsford, London, 1974), p. 166",
+      "year": "1974"
+    },
+    {
+      "quote": "I have no further ambitions for the world's championship.",
+      "author": "Boris Spassky",
+      "author_role": "World Chess Champion 1969-1972",
+      "source": "Reported account from the Winnipeg international grandmaster tournament, 1967 (per Edward Winter, chesshistory.com)",
+      "year": "1967"
+    },
+    {
+      "quote": "Personally, I think the best chessplayer of all time was Capablanca - especially because he was very lazy, and I am lazy too. So I can understand him very easily. But he was a real genius.",
+      "author": "Boris Spassky",
+      "author_role": "World Chess Champion 1969-1972",
+      "source": "Chess Life magazine, April 1983, pp. 12-13",
+      "year": "1983"
+    },
+    {
+      "quote": "Probably there have been two pure geniuses in chess; Morphy and Capablanca.",
+      "author": "Boris Spassky",
+      "author_role": "World Chess Champion 1969-1972",
+      "source": "Interview with Leonard Barden, Chess Life & Review, January 1970",
+      "year": "1970"
+    },
+    {
+      "quote": "Only when Mikhail Tal appeared did chessplayers see that there could be a different style.",
+      "author": "Boris Spassky",
+      "author_role": "World Chess Champion 1969-1972",
+      "source": "Interview with Leonard Barden, Chess Life & Review, January 1970",
+      "year": "1970"
+    },
+    {
+      "quote": "I love chess, but I hate it as a profession. You must kill your opponent. I just want to reflect myself on the board.",
+      "author": "Boris Spassky",
+      "author_role": "World Chess Champion 1969-1972",
+      "source": "Interview with Grant Segall, Sun-Sentinel (Florida), August 8, 1985",
+      "year": "1985"
+    },
+    {
+      "quote": "I call him 'Hand' because his hand knows exactly on which square to put which piece.",
+      "author": "Boris Spassky",
+      "author_role": "World Chess Champion 1969-1972",
+      "source": "On Vasily Smyslov, quoted in Kingpin magazine, Autumn 1998, p. 23",
+      "year": "1998"
+    },
+    {
+      "quote": "Overall, of course, I knew the openings badly, but in my own systems I felt confident.",
+      "author": "Boris Spassky",
+      "author_role": "World Chess Champion 1969-1972",
+      "source": "Interview with Soviet Sport, translated and published at chessintranslation.com, January 2012 (interview conducted 2010)",
+      "year": "2010"
+    },
+    {
+      "quote": "When you play Bobby, it is not a question of whether you win or lose. It is a question of whether you survive.",
+      "author": "Boris Spassky",
+      "author_role": "World Chess Champion 1969-1972",
+      "source": "Quoted as epigraph in Bobby Fischer Goes to War by David Edmonds and John Eidinow (2004)",
+      "year": "1972"
+    },
+    {
+      "quote": "I always want to be first. If I weren't a chessplayer, all the same I would aim to be first at something.",
+      "author": "Anatoly Karpov",
+      "author_role": "World Chess Champion 1975-1985",
+      "source": "1976 interview with foreign journalists, quoted in Anatoly Karpov: Chess is My Life (Karpov and Roshal, Pergamon/Oxford, 1980)",
+      "year": "1976"
+    },
+    {
+      "quote": "In general one has to learn not to lose, and wins will then come of their own accord.",
+      "author": "Anatoly Karpov",
+      "author_role": "World Chess Champion 1975-1985",
+      "source": "Anatoly Karpov: Chess is My Life (Karpov and Roshal, Pergamon/Oxford, 1980), p. 59",
+      "year": "1980"
+    },
+    {
+      "quote": "The rapidity of my play is not at all, as some think, due to the fact that everything is clear to me. Simply I don't wish to get into time trouble.",
+      "author": "Anatoly Karpov",
+      "author_role": "World Chess Champion 1975-1985",
+      "source": "Anatoly Karpov: Chess is My Life (Karpov and Roshal, Pergamon/Oxford, 1980), p. 59",
+      "year": "1980"
+    },
+    {
+      "quote": "Sacrifice a piece? Why not sacrifice if, of course, it is correct. Only I do not intend to burn my boats, as some do.",
+      "author": "Anatoly Karpov",
+      "author_role": "World Chess Champion 1975-1985",
+      "source": "Anatoly Karpov: Chess is My Life (Karpov and Roshal, Pergamon/Oxford, 1980), p. 59",
+      "year": "1980"
+    },
+    {
+      "quote": "If you don't believe in victory you have no business sitting down to a chess board.",
+      "author": "Anatoly Karpov",
+      "author_role": "World Chess Champion 1975-1985",
+      "source": "The Batsford Chess Yearbook by Kevin J. O'Connell (London, 1975), p. 16; also in 64 magazine, issue 48, 29 Nov-5 Dec 1974, p. 10",
+      "year": "1974"
+    },
+    {
+      "quote": "We were only testing the equipment.",
+      "author": "Anatoly Karpov",
+      "author_role": "World Chess Champion 1975-1985",
+      "source": "On the colorless 18-move draw in game one of the 1978 World Championship match, quoted in Chess Scandals: The 1978 World Chess Championship by Edward B. Edmondson and Mikhail Tal (Pergamon, 1981)",
+      "year": "1978"
+    },
+    {
+      "quote": "I myself have been travelling around the world for 20 years, and I have never met a chessplayer who would agree to join me for a visit to an art gallery.",
+      "author": "Anatoly Karpov",
+      "author_role": "World Chess Champion 1975-1985",
+      "source": "Karpov on Karpov: Memoirs of a Chess World Champion, trans. Todd Bludeau (Atheneum, 1990)",
+      "year": "1990"
+    },
+    {
+      "quote": "I don't know anyone else in the history of chess to whom we owe so much... No-one from our generation of chessplayers, nor the one to follow, should ever forget that we are living off the dividends guaranteed us by Robert James Fischer.",
+      "author": "Anatoly Karpov",
+      "author_role": "World Chess Champion 1975-1985",
+      "source": "Karpov on Karpov: Memoirs of a Chess World Champion, trans. Todd Bludeau (Atheneum, 1990)",
+      "year": "1990"
+    },
+    {
+      "quote": "Every match is preceded by scandalous situations. Some arise spontaneously, others are planned, but in general a match never comes off without them.",
+      "author": "Anatoly Karpov",
+      "author_role": "World Chess Champion 1975-1985",
+      "source": "Karpov on Karpov: Memoirs of a Chess World Champion, trans. Todd Bludeau (Atheneum, 1990)",
+      "year": "1990"
+    },
+    {
+      "quote": "Later, I began to succeed in decisive games, perhaps because I realised a very simple truth: not only was I worried, but so was my opponent.",
+      "author": "Mikhail Tal",
+      "author_role": "World Chess Champion 1960-1961",
+      "source": "The Life and Games of Mikhail Tal (Cadogan/RHM, first English ed. 1976)",
+      "year": "1976"
+    },
+    {
+      "quote": "To play for a draw, at any rate with White, is to some degree a crime against chess.",
+      "author": "Mikhail Tal",
+      "author_role": "World Chess Champion 1960-1961",
+      "source": "The Life and Games of Mikhail Tal (Cadogan/RHM, first English ed. 1976)",
+      "year": "1976"
+    },
+    {
+      "quote": "I do not like annotating other people's games... it is very difficult to penetrate into a player's thinking.",
+      "author": "Mikhail Tal",
+      "author_role": "World Chess Champion 1960-1961",
+      "source": "The Life and Games of Mikhail Tal (New York, 1976), p. 25",
+      "year": "1976"
+    },
+    {
+      "quote": "I spent 15 minutes looking at the position before I saw it, and my opponent didn't see it at all.",
+      "author": "Mikhail Tal",
+      "author_role": "World Chess Champion 1960-1961",
+      "source": "On a puzzle from his own 1973 game against Platonov; quoted by William Hartston in Now! magazine, 4-10 January 1980, p. 98",
+      "year": "1980"
+    },
+    {
+      "quote": "Chess are leisure... also a science... also a sport. But are chess only a sport?",
+      "author": "Mikhail Tal",
+      "author_role": "World Chess Champion 1960-1961",
+      "source": "Television interview, Ostankino, 1987",
+      "year": "1987"
+    },
+    {
+      "quote": "I prefer not to study chess but to play it. For me chess is more an art than a science.",
+      "author": "Mikhail Tal",
+      "author_role": "World Chess Champion 1960-1961",
+      "source": "Television interview, Ostankino, 1987",
+      "year": "1987"
+    },
+    {
+      "quote": "The secret of the game's attraction is its beauty and logic; the secret of its eternal youth is its variety and inexhaustibility; the secret of mastering it is knowledge and experience.",
+      "author": "Mikhail Tal",
+      "author_role": "World Chess Champion 1960-1961",
+      "source": "Tal's Winning Chess Combinations (RHM Press, 1979)",
+      "year": "1979"
+    },
+    {
+      "quote": "In my opinion, the King's Gambit is busted. It loses by force.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Essay \"A Bust to the King's Gambit,\" American Chess Quarterly, Vol. 1, No. 1",
+      "year": "1961"
+    },
+    {
+      "quote": "Tactics flow from a positionally superior game.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "My 60 Memorable Games (book, annotation on the Sherwin vs. Fischer game)",
+      "year": "1969"
+    },
+    {
+      "quote": "Best by test.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "My 60 Memorable Games (book, remark on 1.e4)",
+      "year": "1969"
+    },
+    {
+      "quote": "I am the best player in the world, and I am here to prove it.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Chess Digest Magazine, Vol. 4, p. 263",
+      "year": "1971"
+    },
+    {
+      "quote": "I'm not afraid of him, he's afraid of me.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Interview prior to the 1972 World Championship match against Spassky",
+      "year": "1972"
+    },
+    {
+      "quote": "I object to being called a chess genius because I consider myself to be an all around genius who just happens to play chess, which is rather different.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Radio interview",
+      "year": "2001"
+    },
+    {
+      "quote": "I think once you start distrusting your own mind you're finished.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Interview, Ambassador Report magazine",
+      "year": "1977"
+    },
+    {
+      "quote": "I don't believe in psychology. I believe in good moves.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Interview with The Washington Post, on the eve of the 1972 Spassky match, responding to a question about being \"on edge\"",
+      "year": "1972"
+    },
+    {
+      "quote": "Capablanca was possibly the greatest player in the entire history of chess.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Interview during the 1960 Chess Olympiad, published in Ajedrez Español",
+      "year": "1961"
+    },
+    {
+      "quote": "[Lasker was] a coffee-house player who knew nothing about openings and didn't understand positional chess.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "\"The Ten Greatest Masters in History,\" Chessworld magazine",
+      "year": "1964"
+    },
+    {
+      "quote": "Many consider Alekhine a great opening theoretician, but I don't think he was.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Chessworld magazine, January-February issue",
+      "year": "1964"
+    },
+    {
+      "quote": "Paul Morphy was a great chessplayer, a genius.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Press conference",
+      "year": "1992"
+    },
+    {
+      "quote": "Botvinnik and Tal are among the best; I also like Spassky, but I think Petrosian is better than all of them.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Interview at the 1960 Chess Olympiad",
+      "year": "1960"
+    },
+    {
+      "quote": "There's no comparison. Now there are far more good players, and technical knowledge is more extensive.",
+      "author": "Bobby Fischer",
+      "author_role": "World Chess Champion 1972-1975",
+      "source": "Interview at the 1960 Chess Olympiad, on how the chess world had changed",
+      "year": "1960"
+    },
+    {
+      "quote": "The public must come to see that chess is a violent sport. Chess is mental torture.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "Quoted in Martin Amis's review of \"Kasparov-Short\" by Raymond Keene, Independent on Sunday",
+      "year": "1995"
+    },
+    {
+      "quote": "It's not enough to be talented. It's not enough to work hard and to study late into the night. You must also become intimately aware of the methods you use to reach your decisions.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "How Life Imitates Chess, Part I Chapter 1 \"The Lesson,\" p. 14",
+      "year": "2007"
+    },
+    {
+      "quote": "Having spent a lifetime analyzing the game of chess and comparing the capacity of computers to the capacity of the human brain, I've often wondered, where does our success come from? The answer is synthesis, the ability to combine creativity and calculation, art and science, into a whole that is much greater than the sum of its parts.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "How Life Imitates Chess, Opening Gambit section \"Why Chess?,\" p. 4",
+      "year": "2007"
+    },
+    {
+      "quote": "With each success the ability to change is reduced. My longtime friend and coach Grandmaster Yuri Dokhoian, aptly compared it to being dipped in bronze. Each victory added another coat.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "How Life Imitates Chess, Part I Chapter 2 \"Strategy,\" p. 34",
+      "year": "2007"
+    },
+    {
+      "quote": "This obligation to move can be a burden to a player without strategic vision.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "How Life Imitates Chess, Part I Chapter 3 \"Strategy And Tactics At Work,\" p. 36",
+      "year": "2007"
+    },
+    {
+      "quote": "You must also have a sense of when to stop.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "How Life Imitates Chess, Part I Chapter 4 \"Calculation,\" p. 51",
+      "year": "2007"
+    },
+    {
+      "quote": "I like to say that the attacker always has the advantage.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "How Life Imitates Chess, Part II Chapter 10 \"The Attacker's Advantage,\" p. 122",
+      "year": "2007"
+    },
+    {
+      "quote": "If you're already in a fight, you want the first blow to be the last and you had better be the one to throw it.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "How Life Imitates Chess, Part II Chapter 10 \"The Attacker's Advantage,\" p. 130",
+      "year": "2007"
+    },
+    {
+      "quote": "Question the status quo at all times, especially when things are going well.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "How Life Imitates Chess, Part III Chapter 11 \"Question Success,\" p. 135",
+      "year": "2007"
+    },
+    {
+      "quote": "In chess, bigamy is acceptable but monarchy is absolute.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "How Life Imitates Chess, Part II Chapter 8 \"Exchanges And Imbalances,\" p. 102",
+      "year": "2007"
+    },
+    {
+      "quote": "Deep Blue was as intelligent as your alarm clock.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "Interview, \"Kasparov On Facing Deep Blue: 'I Was Part Of Something Really Unique'\", Chess.com",
+      "year": "2024"
+    },
+    {
+      "quote": "I feel I was beaten by IBM, not by Deep Blue.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "The Garry Kasparov Interview, Part 1, ChessBase",
+      "year": "2005"
+    },
+    {
+      "quote": "It was a sad day for chess. Scientifically speaking, the match was a fake.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "The Garry Kasparov Interview, Part 1, ChessBase, on the 1997 Deep Blue rematch",
+      "year": "2005"
+    },
+    {
+      "quote": "What is success? Winning occasionally isn't the thing, it's about being on top for twenty years.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "The Garry Kasparov Interview, Part 1, ChessBase",
+      "year": "2005"
+    },
+    {
+      "quote": "The Kasparov-Karpov matches were the foundations of modern chess.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "The Garry Kasparov Interview, Part 1, ChessBase",
+      "year": "2005"
+    },
+    {
+      "quote": "There's no more room for bluffs. Technology changed our ability to prepare for the game.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "Interview, \"There's no more room for bluffs,\" The Talks",
+      "year": "2020"
+    },
+    {
+      "quote": "The difference between a chess engine that you can buy and install your computer, and Magnus Carlsen...is about the same as the difference between Usain Bolt and a Ferrari.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "Interview, The Talks",
+      "year": "2020"
+    },
+    {
+      "quote": "We should look for humans working with machines rather than fighting them.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "Interview, The Talks",
+      "year": "2020"
+    },
+    {
+      "quote": "The human mind isn't a computer; it cannot progress in an orderly fashion down a list of candidate moves and rank them by a score down to the hundredth of a pawn the way a chess machine does.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "Deep Thinking: Where Machine Intelligence Ends and Human Creativity Begins (book)",
+      "year": "2017"
+    },
+    {
+      "quote": "My nature is that I have to excite myself with a big challenge.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "Guardian interview by Stephen Moss, \"Why Kasparov Quit Chess\"",
+      "year": "2005"
+    },
+    {
+      "quote": "As a chess player, I know that strategy is the future impact of present decisions. However grand our plans are for two, five, even ten moves ahead, it's the move that we make now that determines that future.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "TED talk, \"Stand with Ukraine in the fight against evil\"",
+      "year": "2022"
+    },
+    {
+      "quote": "In chess, we say that the player with the initiative is obliged to attack, otherwise the initiative will be lost and the counterattack will likely be decisive.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "\"The Truth About Putin,\" The Weekly Standard",
+      "year": "2018"
+    },
+    {
+      "quote": "This turned out to be a terrible blunder, the worst of my career.",
+      "author": "Garry Kasparov",
+      "author_role": "World Chess Champion 1985-2000",
+      "source": "Garry Kasparov on My Great Predecessors (book), on breaking away to found the rival PCA in 1993, Heinemann edition p. 115",
+      "year": "2003"
+    },
+    {
+      "quote": "I was late to adopt computers into my training regime. At the beginning of my career I used computers only for their game databases.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Vladimir Kramnik on Man vs Machine,\" ChessBase",
+      "year": "2018"
+    },
+    {
+      "quote": "It was already difficult, but still not totally impossible, for a human to beat a top computer program. But within maybe after two or three years it became completely impossible.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Vladimir Kramnik on Man vs Machine,\" ChessBase",
+      "year": "2018"
+    },
+    {
+      "quote": "Computers may now be stronger than the human World Champion, but this achievement does not change the real value of the game: the pleasure that we humans get from playing one another.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Vladimir Kramnik on Man vs Machine,\" ChessBase",
+      "year": "2018"
+    },
+    {
+      "quote": "I'm absolutely convinced that Garry was still a much stronger player than Deep Blue.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Vladimir Kramnik on Man vs Machine,\" ChessBase",
+      "year": "2018"
+    },
+    {
+      "quote": "Well… it's not bad for chess, it's just bad for chess players.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Kramnik on health, plans – and computers,\" ChessBase",
+      "year": "2006"
+    },
+    {
+      "quote": "My own play is not based on calculation, so that in spite of all the plusses which computers have I also have a few trumps myself.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Kramnik on health, plans – and computers,\" ChessBase",
+      "year": "2006"
+    },
+    {
+      "quote": "Computers have changed the world of chess. That is pretty clear.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Kramnik on health, plans – and computers,\" ChessBase",
+      "year": "2006"
+    },
+    {
+      "quote": "For most players, winning is by far the main goal. But since my childhood, I have not been competitive at all.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Vladimir Kramnik Interview: 'I'm Not Afraid To Lose'\", Chess.com",
+      "year": "2022"
+    },
+    {
+      "quote": "I was never intimidated or felt afraid of anyone. I think this particularly helped against Garry, whenever we played.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Vladimir Kramnik Interview: 'I'm Not Afraid To Lose'\", Chess.com",
+      "year": "2022"
+    },
+    {
+      "quote": "If you don't get intimidated, nobody can intimidate you.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Vladimir Kramnik Interview: 'I'm Not Afraid To Lose'\", Chess.com",
+      "year": "2022"
+    },
+    {
+      "quote": "He rarely won tournaments but he was the best defensive player in the world without a doubt.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Vladimir Kramnik Interview: 'I'm Not Afraid To Lose'\", Chess.com, on Peter Leko",
+      "year": "2022"
+    },
+    {
+      "quote": "I always said that I will quit chess when I stop enjoying it.",
+      "author": "Vladimir Kramnik",
+      "author_role": "World Chess Champion 2000-2007",
+      "source": "\"Vladimir Kramnik Interview: 'I'm Not Afraid To Lose'\", Chess.com",
+      "year": "2022"
+    },
+    {
+      "quote": "There are no excuses. You always have to be the best.",
+      "author": "Magnus Carlsen",
+      "author_role": "World Chess Champion 2013-2023",
+      "source": "CNN interview, quoted in ChessBase, May 29, 2020",
+      "year": "2020"
+    },
+    {
+      "quote": "At a time when all players prepare themselves with software, my goal is not to see if my computer is better than my opponent's.",
+      "author": "Magnus Carlsen",
+      "author_role": "World Chess Champion 2013-2023",
+      "source": "Le Monde interview, quoted in ChessBase (\"Magnus Carlsen explains his approach to chess\"), April 19, 2014",
+      "year": "2014"
+    },
+    {
+      "quote": "In the openings, I just need to reach a position that gives me play. The idea is to be smart rather than trying to crush the other.",
+      "author": "Magnus Carlsen",
+      "author_role": "World Chess Champion 2013-2023",
+      "source": "Le Monde interview, quoted in ChessBase (\"Magnus Carlsen explains his approach to chess\"), April 19, 2014",
+      "year": "2014"
+    },
+    {
+      "quote": "I don't quite fit into the usual schemes.",
+      "author": "Magnus Carlsen",
+      "author_role": "World Chess Champion 2013-2023",
+      "source": "ChessBase interview (\"Magnus Carlsen – 'I don't quite fit into the usual schemes'\"), December 22, 2011",
+      "year": "2011"
+    },
+    {
+      "quote": "My fundamental chess understanding was formed without machine involvement.",
+      "author": "Magnus Carlsen",
+      "author_role": "World Chess Champion 2013-2023",
+      "source": "ChessBase interview (\"Magnus Carlsen – 'I don't quite fit into the usual schemes'\"), December 22, 2011",
+      "year": "2011"
+    },
+    {
+      "quote": "I've never been much of a computer guy at least in terms of playing with computers. Actually until I was about 11 I didn't use a computer for preparing for games at all. I was playing a bit online, was using the chess club mainly.",
+      "author": "Magnus Carlsen",
+      "author_role": "World Chess Champion 2013-2023",
+      "source": "Business Insider interview by Gus Lubin, September 4, 2012",
+      "year": "2012"
+    },
+    {
+      "quote": "Either you play as if it matters or you don't.",
+      "author": "Viswanathan Anand",
+      "author_role": "World Chess Champion 2007-2013",
+      "source": "Chess.com interview (\"Vishy Anand Interview: 'It comes as a shock that people suddenly see you as the veteran'\"), May 14, 2020",
+      "year": "2020"
+    },
+    {
+      "quote": "Some of the work that took us one or two weeks back in 1995 with a team of four people working full time, the computer finds in exactly two seconds.",
+      "author": "Viswanathan Anand",
+      "author_role": "World Chess Champion 2007-2013",
+      "source": "Chess.com interview (\"Vishy Anand Interview: 'It comes as a shock that people suddenly see you as the veteran'\"), May 14, 2020",
+      "year": "2020"
+    },
+    {
+      "quote": "But crucially my attitude and the technology were in sync. I was in the mood to take risks, and I was really eager to learn and do something new.",
+      "author": "Viswanathan Anand",
+      "author_role": "World Chess Champion 2007-2013",
+      "source": "Chess.com interview (\"Vishy Anand Interview: 'It comes as a shock that people suddenly see you as the veteran'\"), May 14, 2020",
+      "year": "2020"
+    },
+    {
+      "quote": "I particularly hated the fact that it happened in Chennai. Of all the matches I played, it had to be this one that I lose in my home town.",
+      "author": "Viswanathan Anand",
+      "author_role": "World Chess Champion 2007-2013",
+      "source": "Chess.com interview (\"Vishy Anand Interview: 'It comes as a shock that people suddenly see you as the veteran'\"), May 14, 2020",
+      "year": "2020"
+    },
+    {
+      "quote": "I had a dream probably around the age of 10 that I would become world champion.",
+      "author": "Fabiano Caruana",
+      "author_role": "World Chess Championship Challenger 2018; World No. 2",
+      "source": "Chess.com interview (\"Caruana: 'I Had A Dream I Would Become World Chess Champion'\"), April 12, 2024",
+      "year": "2024"
+    },
+    {
+      "quote": "It's not possible to say, 'Be more psychologically stable!' It's something that just happens in the moment and you can't prepare for it, you can't train for it.",
+      "author": "Fabiano Caruana",
+      "author_role": "World Chess Championship Challenger 2018; World No. 2",
+      "source": "Chess.com interview (\"Caruana: 'I Had A Dream I Would Become World Chess Champion'\"), April 12, 2024",
+      "year": "2024"
+    },
+    {
+      "quote": "He is the player who is overall the strongest, the most accurate, and the most consistent.",
+      "author": "Fabiano Caruana",
+      "author_role": "World Chess Championship Challenger 2018; World No. 2",
+      "source": "Chess.com interview (\"Fabiano Caruana On Playing A World Championship, On Carlsen-Nepomniachtchi, And More\"), November 5, 2021",
+      "year": "2021"
+    },
+    {
+      "quote": "The idea isn't to wipe your opponent off the board; the idea is to maximize your equity.",
+      "author": "Fabiano Caruana",
+      "author_role": "World Chess Championship Challenger 2018; World No. 2",
+      "source": "Chess.com interview (\"Fabiano Caruana On Playing A World Championship, On Carlsen-Nepomniachtchi, And More\"), November 5, 2021",
+      "year": "2021"
+    },
+    {
+      "quote": "I love chess, but if you're just obsessed with that one thing, eventually you will go a little bit insane.",
+      "author": "Hikaru Nakamura",
+      "author_role": "Grandmaster, five-time U.S. Chess Champion",
+      "source": "Chess.com interview (\"Hikaru Nakamura Interview: Cause Of A Chess Boom?\"), February 4, 2019",
+      "year": "2019"
+    },
+    {
+      "quote": "In many ways, chess is better than the real world.",
+      "author": "Hikaru Nakamura",
+      "author_role": "Grandmaster, five-time U.S. Chess Champion",
+      "source": "Chess.com interview (\"Hikaru Nakamura Interview: Cause Of A Chess Boom?\"), February 4, 2019",
+      "year": "2019"
+    },
+    {
+      "quote": "I'd like to be competitive until I'm 40, but beyond that I'd like to do something else.",
+      "author": "Hikaru Nakamura",
+      "author_role": "Grandmaster, five-time U.S. Chess Champion",
+      "source": "Chess.com interview (\"Hikaru Nakamura Interview: Cause Of A Chess Boom?\"), February 4, 2019",
+      "year": "2019"
+    },
+    {
+      "quote": "I don't want to be that famous, to be written about every day, or interviewed after every tournament.",
+      "author": "Ding Liren",
+      "author_role": "World Chess Champion 2023-2024",
+      "source": "Chess.com interview (\"Ding Liren Interview: 'I Don't Want To Be Famous'\"), February 2, 2020",
+      "year": "2020"
+    },
+    {
+      "quote": "There is a price to fame. Of course I will earn more money if I become more well-known and maybe have better status, but I also won't have my own time.",
+      "author": "Ding Liren",
+      "author_role": "World Chess Champion 2023-2024",
+      "source": "Chess.com interview (\"Ding Liren Interview: 'I Don't Want To Be Famous'\"), February 2, 2020",
+      "year": "2020"
+    },
+    {
+      "quote": "A match is a match. It's between two players. When one player starts to hit his stride, how the opponent reacts depends on their experience and how they handle the situation at the moment.",
+      "author": "Ding Liren",
+      "author_role": "World Chess Champion 2023-2024",
+      "source": "FIDE interview (\"Ding Liren ahead of his World Championship showdown with Gukesh: 'A match is a match'\"), 2024",
+      "year": "2024"
+    },
+    {
+      "quote": "The only people who I truly dislike are those who buy and sell games, ratings and titles.",
+      "author": "Ian Nepomniachtchi",
+      "author_role": "World Chess Championship Challenger 2021, 2023",
+      "source": "Chess.com interview (\"Ian Nepomniachtchi Interview: 'I Dislike Players Who Buy And Sell Games'\"), October 28, 2019",
+      "year": "2019"
+    },
+    {
+      "quote": "Of course I love chess. However, sometimes I'm envious of amateurs who can play and enjoy chess and not have to care about their results.",
+      "author": "Ian Nepomniachtchi",
+      "author_role": "World Chess Championship Challenger 2021, 2023",
+      "source": "Chess.com interview (\"Ian Nepomniachtchi Interview: 'I Dislike Players Who Buy And Sell Games'\"), October 28, 2019",
+      "year": "2019"
+    },
+    {
+      "quote": "I think that everyone is different and peculiar. Strong players are not an exception, they all are unique and unlike each other.",
+      "author": "Ian Nepomniachtchi",
+      "author_role": "World Chess Championship Challenger 2021, 2023",
+      "source": "Chess.com interview (\"Ian Nepomniachtchi Interview: 'I Dislike Players Who Buy And Sell Games'\"), October 28, 2019",
+      "year": "2019"
+    },
+    {
+      "quote": "Chess was a way out for me.",
+      "author": "Wesley So",
+      "author_role": "Grandmaster, 2017 U.S. Chess Champion",
+      "source": "Chess.com interview (\"Wesley So Interview: 'Chess Was A Way Out'\"), April 10, 2019",
+      "year": "2019"
+    },
+    {
+      "quote": "Chess is the poor man's game. Rich people play tennis, polo, and golf, while poor people play chess because you don't need anything.",
+      "author": "Wesley So",
+      "author_role": "Grandmaster, 2017 U.S. Chess Champion",
+      "source": "Chess.com interview (\"Wesley So Interview: 'Chess Was A Way Out'\"), April 10, 2019",
+      "year": "2019"
+    },
+    {
+      "quote": "I play best when I'm very happy. The times when I'm not happy, you can see it in my play.",
+      "author": "Wesley So",
+      "author_role": "Grandmaster, 2017 U.S. Chess Champion",
+      "source": "Chess.com interview (\"Wesley So Interview: 'Chess Was A Way Out'\"), April 10, 2019",
+      "year": "2019"
+    },
+    {
+      "quote": "Well, I never thought I would be number two. But now that I'm here, I want to try to be number one. I'm not entirely satisfied with number two.",
+      "author": "Wesley So",
+      "author_role": "Grandmaster, 2017 U.S. Chess Champion",
+      "source": "Washington Post interview, quoted in ChessBase (\"Wesley So: 'I'm not entirely satisfied with (world) number two'\"), June 2017",
+      "year": "2017"
+    },
+    {
+      "quote": "I don't believe in predictions and who are the favorites. I just think whoever shows up every day as the best will win the game eventually.",
+      "author": "Gukesh Dommaraju",
+      "author_role": "World Chess Champion 2024-present",
+      "source": "FIDE interview (\"Gukesh Dommaraju: 'I just want to enjoy the experience'\"), November 10, 2024",
+      "year": "2024"
+    },
+    {
+      "quote": "I just want to enjoy the experience.",
+      "author": "Gukesh Dommaraju",
+      "author_role": "World Chess Champion 2024-present",
+      "source": "FIDE interview (\"Gukesh Dommaraju: 'I just want to enjoy the experience'\"), November 10, 2024",
+      "year": "2024"
+    },
+    {
+      "quote": "Just enjoy the game; chess is a beautiful game. It has many benefits.",
+      "author": "Gukesh Dommaraju",
+      "author_role": "World Chess Champion 2024-present",
+      "source": "FIDE interview (\"Gukesh Dommaraju: 'I just want to enjoy the experience'\"), November 10, 2024",
+      "year": "2024"
+    },
+    {
+      "quote": "I felt a bit more freedom to push my luck a little bit.",
+      "author": "Gukesh Dommaraju",
+      "author_role": "World Chess Champion 2024-present",
+      "source": "Post-match interview with GM Maurice Ashley after the 2024 World Chess Championship, December 2024",
+      "year": "2024"
+    },
+    {
+      "quote": "I don't think it's pressure if you don't make it as pressure. The fact that at least I have a shot is a good thing for me, I can try, so it's good. I don't feel the pressure.",
+      "author": "Alireza Firouzja",
+      "author_role": "Grandmaster, World No. 2 peak (2021)",
+      "source": "Chess.com interview (\"Alireza Firouzja: 'I am thinking about improving and having fun'\"), June 23, 2023",
+      "year": "2023"
+    },
+    {
+      "quote": "I like it a lot. You can't train it, you just have to play it by feeling.",
+      "author": "Alireza Firouzja",
+      "author_role": "Grandmaster, World No. 2 peak (2021)",
+      "source": "Chess.com interview (\"Alireza Firouzja: 'I am thinking about improving and having fun'\"), June 23, 2023",
+      "year": "2023"
+    },
+    {
+      "quote": "Everybody knows that it is harder for me to play against Hikaru in rapid and blitz than Magnus.",
+      "author": "Alireza Firouzja",
+      "author_role": "Grandmaster, World No. 2 peak (2021)",
+      "source": "Chess.com interview (\"Alireza Firouzja: 'I am thinking about improving and having fun'\"), June 23, 2023",
+      "year": "2023"
+    },
+    {
+      "quote": "For pleasure, peace of mind and the moral torture of their neighbour.",
+      "author": "Levon Aronian",
+      "author_role": "Grandmaster, former World No. 2",
+      "source": "Crestbook KC-Conference interview, quoted in Chess.com (\"Crestbook interview with Levon Aronian, part 1\"), August 31, 2011",
+      "year": "2011"
+    },
+    {
+      "quote": "You don't play chess to have fun. You play chess to crush your opponent.",
+      "author": "Levon Aronian",
+      "author_role": "Grandmaster, former World No. 2",
+      "source": "Chess.com interview (\"Aronian In South Africa: 'Chess Is The Purpose Of My Life'\"), January 11, 2020",
+      "year": "2020"
+    },
+    {
+      "quote": "Every time I'm playing a simul, people say 'this guy is good, this guy is bad, pay attention to this one'—but I actually don't like that. I like the randomness and I like the fact that I have to put up an effort.",
+      "author": "Levon Aronian",
+      "author_role": "Grandmaster, former World No. 2",
+      "source": "Chess.com interview (\"Aronian In South Africa: 'Chess Is The Purpose Of My Life'\"), January 11, 2020",
+      "year": "2020"
+    },
+    {
+      "quote": "I have often been asked, what made me think seriously about chess? It would appear that the atmosphere of silence and heavy smoking is not appropriate for a young lady...",
+      "author": "Vera Menchik",
+      "author_role": "first Women's World Chess Champion",
+      "source": "Letter/recollection published in CHESS magazine, May 1943 (quoted in Chess.com's \"Vera Menchik: The Real-life Beth Harmon\")",
+      "year": "1943"
+    },
+    {
+      "quote": "I am very thankful that chess was my sport of choice.",
+      "author": "Nona Gaprindashvili",
+      "author_role": "first woman awarded the FIDE Grandmaster title",
+      "source": "ChessBase interview at the 2018 World Senior Championships, Bled",
+      "year": "2018"
+    },
+    {
+      "quote": "Yes, I am Nona Gaprindashvili, I am Georgian. Yes, throughout my career I played against male chess players and often defeated them.",
+      "author": "Nona Gaprindashvili",
+      "author_role": "first woman awarded the FIDE Grandmaster title",
+      "source": "Georgia Today interview, January 28, 2022 (statement on her Netflix/Queen's Gambit defamation suit)",
+      "year": "2022"
+    },
+    {
+      "quote": "I was honored to become the first female grandmaster among men.",
+      "author": "Nona Gaprindashvili",
+      "author_role": "first woman awarded the FIDE Grandmaster title",
+      "source": "Georgia Today interview, January 2022",
+      "year": "2022"
+    },
+    {
+      "quote": "The fight continues until the final victory.",
+      "author": "Nona Gaprindashvili",
+      "author_role": "first woman awarded the FIDE Grandmaster title",
+      "source": "Georgia Today interview, January 28, 2022, on her lawsuit against Netflix over The Queen's Gambit",
+      "year": "2022"
+    },
+    {
+      "quote": "The most terrible thing is preparation before the game.",
+      "author": "Maia Chiburdanidze",
+      "author_role": "Women's World Champion 1978-1991",
+      "source": "Interview by Evgeny Surov, republished on Chess.com (\"Maya Chiburdanidze proposes a new tournament system\")",
+      "year": "2016"
+    },
+    {
+      "quote": "I think that forcing your opponent to play your limited repertoire is unfair.",
+      "author": "Maia Chiburdanidze",
+      "author_role": "Women's World Champion 1978-1991",
+      "source": "Interview by Evgeny Surov, republished on Chess.com",
+      "year": "2016"
+    },
+    {
+      "quote": "You should know chess, not learn a lot of computer variants by heart.",
+      "author": "Maia Chiburdanidze",
+      "author_role": "Women's World Champion 1978-1991",
+      "source": "Interview by Evgeny Surov, republished on Chess.com",
+      "year": "2016"
+    },
+    {
+      "quote": "I grew up in an era when there were very few women playing chess and I had to overcome a lot of challenges just to play in open tournaments with men.",
+      "author": "Susan Polgar",
+      "author_role": "first woman to earn the full Grandmaster title by norms and rating",
+      "source": "Interview reprinted courtesy of Northwest Chess Magazine, Chess.com blog",
+      "year": null
+    },
+    {
+      "quote": "Chess trains young people to make good choices in the game of life.",
+      "author": "Susan Polgar",
+      "author_role": "first woman to earn the full Grandmaster title by norms and rating",
+      "source": "Interview reprinted courtesy of Northwest Chess Magazine, Chess.com blog",
+      "year": null
+    },
+    {
+      "quote": "I am most proud of breaking the gender barrier, of becoming the first woman in history to earn the 'men's' grandmaster title by norms and rating.",
+      "author": "Susan Polgar",
+      "author_role": "first woman to earn the full Grandmaster title by norms and rating",
+      "source": "USCF Sales interview on her memoir \"Rebel Queen\"",
+      "year": "2025"
+    },
+    {
+      "quote": "While things have improved, unfortunately girls in chess today still face sexist attitudes from some men.",
+      "author": "Susan Polgar",
+      "author_role": "first woman to earn the full Grandmaster title by norms and rating",
+      "source": "USCF Sales interview on her memoir \"Rebel Queen\"",
+      "year": "2025"
+    },
+    {
+      "quote": "They may delay my progress, but they CANNOT stop me.",
+      "author": "Susan Polgar",
+      "author_role": "first woman to earn the full Grandmaster title by norms and rating",
+      "source": "USCF Sales interview on her memoir \"Rebel Queen\"",
+      "year": "2025"
+    },
+    {
+      "quote": "I always felt I had to prove my ability many more times than a boy would have.",
+      "author": "Judit Polgar",
+      "author_role": "strongest female chess player in history, only woman to break into the world top 10",
+      "source": "Chess.com interview, \"Judit Polgar Interview: 'I Had To Prove Myself More Than A Boy'\"",
+      "year": "2026"
+    },
+    {
+      "quote": "You can lose against Garry without making a single move...simply because he made such a strong psychological impression.",
+      "author": "Judit Polgar",
+      "author_role": "strongest female chess player in history, only woman to break into the world top 10",
+      "source": "Chess.com interview, \"Judit Polgar Interview: 'I Had To Prove Myself More Than A Boy'\"",
+      "year": "2026"
+    },
+    {
+      "quote": "Chess is a mind sport and I believe there shouldn't be such a big gap between the men and the women.",
+      "author": "Judit Polgar",
+      "author_role": "strongest female chess player in history, only woman to break into the world top 10",
+      "source": "Chess.com interview, \"Judit Polgar Interview: 'I Had To Prove Myself More Than A Boy'\"",
+      "year": "2026"
+    },
+    {
+      "quote": "Those negative experiences are actually necessary in order to look for new opportunities, be creative, and renew yourself.",
+      "author": "Judit Polgar",
+      "author_role": "strongest female chess player in history, only woman to break into the world top 10",
+      "source": "Chess.com interview, \"Judit Polgar Interview: 'I Had To Prove Myself More Than A Boy'\"",
+      "year": "2026"
+    },
+    {
+      "quote": "I think he made a big growth in his mindset. And he did appreciate and acknowledge my achievements.",
+      "author": "Judit Polgar",
+      "author_role": "strongest female chess player in history, only woman to break into the world top 10",
+      "source": "Chess.com interview, \"Judit Polgar Reflects On Queen Of Chess Success, Kasparov\" (referring to Garry Kasparov)",
+      "year": "2026"
+    },
+    {
+      "quote": "Chess is a game where you can learn a lot. So I wish that chess becomes part of everyday school material, in a fun and an educational way.",
+      "author": "Judit Polgar",
+      "author_role": "strongest female chess player in history, only woman to break into the world top 10",
+      "source": "Chess.com interview, \"Judit Polgar Reflects On Queen Of Chess Success, Kasparov\"",
+      "year": "2026"
+    },
+    {
+      "quote": "At first chess was just a game, later it became a sport and brought the teacher out of me.",
+      "author": "Sofia Polgar",
+      "author_role": "International Master, middle of the three Polgar sisters",
+      "source": "sofiapolgar.com (artist/author statement)",
+      "year": null
+    },
+    {
+      "quote": "To be the best female player has no attraction to me. I've been there for years.",
+      "author": "Hou Yifan",
+      "author_role": "four-time Women's World Chess Champion",
+      "source": "ESPN feature, \"The exceptional genius of Hou Yifan\"",
+      "year": "2017"
+    },
+    {
+      "quote": "I want my life to be rich and colorful, not narrow.",
+      "author": "Hou Yifan",
+      "author_role": "four-time Women's World Chess Champion",
+      "source": "ESPN feature, \"The exceptional genius of Hou Yifan\"",
+      "year": "2017"
+    },
+    {
+      "quote": "Some people's chess styles match their personality perfectly. For me, it's the opposite: In chess I'm aggressive, but not in real life.",
+      "author": "Hou Yifan",
+      "author_role": "four-time Women's World Chess Champion",
+      "source": "ESPN feature, \"The exceptional genius of Hou Yifan\"",
+      "year": "2017"
+    },
+    {
+      "quote": "I won't consider staying in a system with which I completely disagree.",
+      "author": "Hou Yifan",
+      "author_role": "four-time Women's World Chess Champion",
+      "source": "ESPN feature, \"The exceptional genius of Hou Yifan\"",
+      "year": "2017"
+    },
+    {
+      "quote": "To me the current Women's World Championship system seems to be unfair. And I believe I'm not the only one who thinks like this.",
+      "author": "Hou Yifan",
+      "author_role": "four-time Women's World Chess Champion",
+      "source": "ChessBase interview with Dagobert Kohlmeyer, \"Interview with Hou Yifan\"",
+      "year": "2016"
+    },
+    {
+      "quote": "Chess is a part of my life, but it is not my whole life!",
+      "author": "Hou Yifan",
+      "author_role": "four-time Women's World Chess Champion",
+      "source": "GibChess interview, YouTube, \"Interview with Hou Yifan\"",
+      "year": "2017"
+    },
+    {
+      "quote": "Despite the outcome, there cannot be winners in wars.",
+      "author": "Alexandra Kosteniuk",
+      "author_role": "12th Women's World Chess Champion",
+      "source": "Chess.com interview, \"Interview: Kosteniuk On Federation Change, 'There Cannot Be Winners In Wars'\"",
+      "year": "2023"
+    },
+    {
+      "quote": "Chess has a very wrong image. People think it's boring, and only fat men in suits play it, so I break that signal and show them chess is cool.",
+      "author": "Alexandra Kosteniuk",
+      "author_role": "12th Women's World Chess Champion",
+      "source": "Christian Science Monitor, \"A chess champion crusades to make the game 'cool'\"",
+      "year": "2009"
+    },
+    {
+      "quote": "You can easily be beautiful and play chess well, or be a professor, or any kind of high achiever.",
+      "author": "Alexandra Kosteniuk",
+      "author_role": "12th Women's World Chess Champion",
+      "source": "Christian Science Monitor, \"A chess champion crusades to make the game 'cool'\"",
+      "year": "2009"
+    },
+    {
+      "quote": "I am not a full-time chess player, like I don't practice. Sometimes I don't even see chess for weeks.",
+      "author": "Koneru Humpy",
+      "author_role": "second woman ever to cross 2600 FIDE rating, multiple-time World Rapid Champion",
+      "source": "Chess.com interview, \"Interview With Koneru Humpy On 2nd World Rapid Title, Indian 'Golden Era' & Tips For Improvers\"",
+      "year": "2025"
+    },
+    {
+      "quote": "It's important for me that I enjoy the game more than the results.",
+      "author": "Koneru Humpy",
+      "author_role": "second woman ever to cross 2600 FIDE rating, multiple-time World Rapid Champion",
+      "source": "Chess.com interview, \"Interview With Koneru Humpy On 2nd World Rapid Title, Indian 'Golden Era' & Tips For Improvers\"",
+      "year": "2025"
+    },
+    {
+      "quote": "I would suggest them to play a lot of men's tournaments...when you have a tough competition, you would automatically rise to the occasion.",
+      "author": "Koneru Humpy",
+      "author_role": "second woman ever to cross 2600 FIDE rating, multiple-time World Rapid Champion",
+      "source": "Chess.com interview, \"Interview With Koneru Humpy On 2nd World Rapid Title, Indian 'Golden Era' & Tips For Improvers\"",
+      "year": "2025"
+    },
+    {
+      "quote": "It's better not to think about the result...once you start the game probably you should erase everything from your mind.",
+      "author": "Koneru Humpy",
+      "author_role": "second woman ever to cross 2600 FIDE rating, multiple-time World Rapid Champion",
+      "source": "Chess.com interview, \"Interview With Koneru Humpy On 2nd World Rapid Title, Indian 'Golden Era' & Tips For Improvers\"",
+      "year": "2025"
+    },
+    {
+      "quote": "Playing chess makes me happier than doing anything else.",
+      "author": "Ju Wenjun",
+      "author_role": "Women's World Chess Champion",
+      "source": "ChessBase interview, \"Playing chess makes me happier than doing anything else\"",
+      "year": "2018"
+    },
+    {
+      "quote": "I have maybe a more solid style, positional style, which means I usually feel no need to be very aggressive.",
+      "author": "Ju Wenjun",
+      "author_role": "Women's World Chess Champion",
+      "source": "Chess.com interview, \"Interview: Ju Wenjun - Women's World Chess Champion 2025\"",
+      "year": "2025"
+    },
+    {
+      "quote": "I feel very excited. Like, all the stress, when I become champion, when I win a match, all the stress is gone.",
+      "author": "Ju Wenjun",
+      "author_role": "Women's World Chess Champion",
+      "source": "Chess.com interview, \"Interview: Ju Wenjun - Women's World Chess Champion 2025\"",
+      "year": "2025"
+    },
+    {
+      "quote": "The game of Chess is not merely an idle amusement; several very valuable qualities of the mind, useful in the course of human life, are to be acquired and strengthened by it, so as to become habits ready on all occasions.",
+      "author": "Benjamin Franklin",
+      "author_role": "American statesman, scientist, and polymath",
+      "source": "\"The Morals of Chess\" (essay)",
+      "year": "1786"
+    },
+    {
+      "quote": "Life is a kind of chess, in which we have often points to gain, and competitors or adversaries to contend with, and in which there is a vast variety of good and ill events, that are, in some degree, the effect of prudence or the want of it.",
+      "author": "Benjamin Franklin",
+      "author_role": "American statesman, scientist, and polymath",
+      "source": "\"The Morals of Chess\" (essay)",
+      "year": "1786"
+    },
+    {
+      "quote": "We learn by chess the habit of not being discouraged by present bad appearances in the state of our affairs, the habit of hoping for a favorable change, and that of persevering in the search of resources.",
+      "author": "Benjamin Franklin",
+      "author_role": "American statesman, scientist, and polymath",
+      "source": "\"The Morals of Chess\" (essay)",
+      "year": "1786"
+    },
+    {
+      "quote": "The passion for playing chess is one of the most unaccountable in the world. It slaps the theory of natural selection in the face.",
+      "author": "H.G. Wells",
+      "author_role": "English writer and novelist",
+      "source": "\"Concerning Chess,\" essay in Certain Personal Matters",
+      "year": "1897"
+    },
+    {
+      "quote": "There is no remorse like the remorse of chess.",
+      "author": "H.G. Wells",
+      "author_role": "English writer and novelist",
+      "source": "\"Concerning Chess,\" essay in Certain Personal Matters",
+      "year": "1897"
+    },
+    {
+      "quote": "You have, let us say, a promising politician, a rising artist, that you wish to destroy. Dagger or bomb are archaic, clumsy, and unreliable -- but teach him, inoculate him with chess!",
+      "author": "H.G. Wells",
+      "author_role": "English writer and novelist",
+      "source": "\"Concerning Chess,\" essay in Certain Personal Matters",
+      "year": "1897"
+    },
+    {
+      "quote": "While all artists are not chess players, all chess players are artists.",
+      "author": "Marcel Duchamp",
+      "author_role": "French-American visual artist",
+      "source": "Address at a banquet of the New York State Chess Association, quoted in Arturo Schwarz, The Complete Works of Marcel Duchamp",
+      "year": "1952"
+    },
+    {
+      "quote": "Why isn't my chess playing an art activity? A chess game is very plastic. You construct it. It's mechanical sculpture and with chess one creates beautiful problems and that beauty is made with the head and hands.",
+      "author": "Marcel Duchamp",
+      "author_role": "French-American visual artist",
+      "source": "Quoted by Truman Capote in Observations (with Richard Avedon)",
+      "year": "1959"
+    },
+    {
+      "quote": "Competition in chess problems is not really between White and Black but between the composer and the hypothetical solver (just as in a first-rate work of fiction the real clash is between the author and the world), so that a great part of a problem's value is due to the number of 'tries' -- delusive opening moves, false scents, specious lines of play, astutely and lovingly prepared to lead the would-be solver astray.",
+      "author": "Vladimir Nabokov",
+      "author_role": "Russian-American novelist",
+      "source": "Speak, Memory (autobiography)",
+      "year": "1951"
+    },
+    {
+      "quote": "Chess problems demand from the composer the same virtues that characterize all worthwhile art: originality, invention, conciseness, harmony, complexity, and splendid insincerity.",
+      "author": "Vladimir Nabokov",
+      "author_role": "Russian-American novelist",
+      "source": "Poems and Problems",
+      "year": "1970"
+    },
+    {
+      "quote": "Among a great many other things that chess teaches you is to control the initial excitement you feel when you see something that looks good. It trains you to think before grabbing, and to think just as objectively when you're in trouble.",
+      "author": "Stanley Kubrick",
+      "author_role": "American film director",
+      "source": "Interview with Eric Norden, Playboy magazine",
+      "year": "1968"
+    },
+    {
+      "quote": "A good chess player who has lost a game is genuinely convinced that his failure resulted from a false move on his part, and tries to see the mistake he made at the beginning of the game, forgetting that at each stage of play there were similar blunders, so that no single move was perfect.",
+      "author": "Leo Tolstoy",
+      "author_role": "Russian novelist",
+      "source": "War and Peace",
+      "year": "1869"
+    },
+    {
+      "quote": "War is like a game of chess ... but with this little difference, that in chess you may think over each move as long as you please and are not limited for time.",
+      "author": "Leo Tolstoy",
+      "author_role": "Russian novelist",
+      "source": "War and Peace",
+      "year": "1869"
+    },
+    {
+      "quote": "Les échecs, où l'on ne joue rien, sont le seul jeu qui m'amuse. (Chess, where one plays for nothing, is the only game that amuses me.)",
+      "author": "Jean-Jacques Rousseau",
+      "author_role": "Genevan-French philosopher and writer",
+      "source": "Letter to M. de Saint-Germain, 26 February 1770",
+      "year": "1770"
+    },
+    {
+      "quote": "The most suitable simile would be that of a game of chess, where the plan we determined to follow is conditioned by the play of our rival -- in life, by the caprice of fate ... we are compelled to modify our tactics, often to such an extent that, as we carry them out, hardly a single feature of the original plan can be recognized.",
+      "author": "Arthur Schopenhauer",
+      "author_role": "German philosopher",
+      "source": "Counsels and Maxims (Parerga und Paralipomena), trans. T. Bailey Saunders",
+      "year": "1851"
+    },
+    {
+      "quote": "A great chess-player is not a great man, for he leaves the world as he found it.",
+      "author": "William Hazlitt",
+      "author_role": "English essayist and literary critic",
+      "source": "Table-Talk",
+      "year": "1821"
+    },
+    {
+      "quote": "Life's too short for chess.",
+      "author": "Henry James Byron",
+      "author_role": "English playwright and actor",
+      "source": "Our Boys (play), Act I",
+      "year": "1875"
+    },
+    {
+      "quote": "Suppose that physics, or rather nature, is considered analogous to a great chess game with millions of pieces in it, and we are trying to discover the laws by which the pieces move ... We do not know what the rules of the game are; all we are allowed to do is to watch the playing.",
+      "author": "Richard Feynman",
+      "author_role": "American theoretical physicist",
+      "source": "The Character of Physical Law (based on the 1964 Messenger Lectures at Cornell)",
+      "year": "1965"
+    },
+    {
+      "quote": "I am explaining chess to someone; and I begin by pointing to a chessman and saying: 'This is the king; it can move like this, ...' -- In this case we shall say: the words 'This is the king' are a definition only if the learner already 'knows what a piece in a game is.'",
+      "author": "Ludwig Wittgenstein",
+      "author_role": "Austrian-British philosopher",
+      "source": "Philosophical Investigations, §31",
+      "year": "1953"
+    },
+    {
+      "quote": "As elaborate a waste of human intelligence as you could find anywhere outside an advertising agency.",
+      "author": "Raymond Chandler",
+      "author_role": "American-British crime novelist",
+      "source": "The Long Goodbye (novel, narrated in the voice of detective Philip Marlowe)",
+      "year": "1953"
+    },
+    {
+      "quote": "God moves the player, and he, the piece. What God beyond God begins the round of dust and time and sleep and agonies?",
+      "author": "Jorge Luis Borges",
+      "author_role": "Argentine writer and poet",
+      "source": "\"Ajedrez\" (\"Chess\"), poem in El Hacedor",
+      "year": "1960"
+    },
+    {
+      "quote": "Is the despatch of this chessboard an affair of state? Does this man fear that I shall give check to all the kings of Europe?",
+      "author": "Napoleon Bonaparte",
+      "author_role": "French emperor and military leader",
+      "source": "Remark to General Bertrand during exile on St Helena, recorded in 19th-century Napoleonic memoirs",
+      "year": "1817"
+    },
+    {
+      "quote": "It's a great huge game of chess that's being played -- all over the world -- if this is the world at all, you know. Oh, what fun it is! How I wish I was one of them! I wouldn't mind being a Pawn, if only I might join -- though of course I should like to be a Queen, best.",
+      "author": "Lewis Carroll",
+      "author_role": "English writer and mathematician",
+      "source": "Through the Looking-Glass, and What Alice Found There",
+      "year": "1871"
+    },
+    {
+      "quote": "I am not a chess expert and therefore not in a position to marvel at the force of mind revealed in his greatest intellectual achievement -- in the field of chess.",
+      "author": "Albert Einstein",
+      "author_role": "German-born theoretical physicist",
+      "source": "Foreword to J. Hannak, Emanuel Lasker: The Life of a Chess Master",
+      "year": "1952"
+    },
+    {
+      "quote": "Anyone who hopes to learn the noble game of chess from books will soon discover that only the openings and end-games admit of an exhaustive systematic presentation and that the infinite variety of moves which develop after the opening defy any such description. The rules which can be laid down for the practice of psycho-analytic treatment are subject to similar limitations.",
+      "author": "Sigmund Freud",
+      "author_role": "Austrian neurologist and founder of psychoanalysis",
+      "source": "\"On Beginning the Treatment\" (technique paper)",
+      "year": "1913"
+    }
+  ],
+  "trivia": [
+    {
+      "fact": "Wilhelm Steinitz defeated Johannes Zukertort 10 wins to 5 (with 5 draws) in 1886, in the match generally recognized as the first official World Chess Championship.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1886"
+    },
+    {
+      "fact": "Wilhelm Steinitz was 50 years old (born May 14, 1836) when he won the first official World Chess Championship in 1886.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Wilhelm Steinitz"
+    },
+    {
+      "fact": "Emanuel Lasker took the World Chess Championship from Steinitz in 1894 (score: 10 wins, 5 losses, 4 draws) and held the title for 27 years, from 1894 to 1921 — the longest reign of any recognized World Chess Champion.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Emanuel Lasker"
+    },
+    {
+      "fact": "Jose Raul Capablanca became the third World Chess Champion in 1921 by defeating Emanuel Lasker.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship"
+    },
+    {
+      "fact": "Alexander Alekhine defeated Capablanca in Buenos Aires in 1927 by a score of +6 −3 =25 over 34 games — the longest World Championship match ever to reach a decisive result.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1927"
+    },
+    {
+      "fact": "Max Euwe upset reigning champion Alekhine to win the World Chess Championship in 1935, winning 15.5–14.5.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1935"
+    },
+    {
+      "fact": "Alekhine regained the World Chess Championship from Euwe in a 1937 rematch, winning 15.5–9.5.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1937"
+    },
+    {
+      "fact": "Alexander Alekhine died in Estoril, Portugal on March 24, 1946, while still reigning World Chess Champion — the only World Chess Champion to die while holding the title.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Alexander Alekhine"
+    },
+    {
+      "fact": "Mikhail Botvinnik won the 1948 World Chess Championship tournament (held to fill the title left vacant by Alekhine's death) to become the sixth World Champion.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Mikhail Botvinnik"
+    },
+    {
+      "fact": "Mikhail Botvinnik held the World Chess Championship across three separate reigns (1948–57, 1958–60, 1961–63), repeatedly winning back the title via a rematch clause that let a deposed champion challenge again immediately.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Mikhail Botvinnik"
+    },
+    {
+      "fact": "Vasily Smyslov beat Botvinnik 12.5–9.5 in 1957 to become the seventh World Champion, then lost the title back to Botvinnik 12.5–10.5 in the 1958 rematch.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1957 / 1958"
+    },
+    {
+      "fact": "Mikhail Tal defeated Botvinnik 12.5–8.5 in 1960 to become World Champion at age 23, the youngest champion up to that time; Botvinnik won the title back 13–8 in their 1961 rematch.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Mikhail Tal"
+    },
+    {
+      "fact": "Tigran Petrosian defeated Botvinnik 12.5–9.5 in 1963 to become the ninth World Chess Champion, ending Botvinnik's ability to invoke a rematch clause (which FIDE abolished after 1963).",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1963"
+    },
+    {
+      "fact": "Boris Spassky lost to Petrosian in a 1966 title defense (Petrosian won 12.5–11.5) but defeated Petrosian 12.5–10.5 in their rematch in 1969 to become the tenth World Chess Champion.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1969"
+    },
+    {
+      "fact": "Bobby Fischer defeated Boris Spassky 12.5–8.5 in the 1972 Reykjavik match to become the 11th World Chess Champion — the first, and to date only, American to hold the undisputed world title.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1972"
+    },
+    {
+      "fact": "Bobby Fischer forfeited the World Chess Championship without playing a game in 1975 after a dispute with FIDE over match conditions — the first forfeited World Championship in history; Anatoly Karpov was declared champion by default on April 3, 1975.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1975"
+    },
+    {
+      "fact": "Anatoly Karpov defended his title against Viktor Korchnoi in Baguio, Philippines in 1978, winning 6 wins to 5 with 21 draws over 32 games.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1978"
+    },
+    {
+      "fact": "Karpov defended his title against Korchnoi again in Merano, Italy in 1981, winning 6 wins to 2 losses.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1981 (via chess.com summary)"
+    },
+    {
+      "fact": "The 1984–85 Karpov–Kasparov World Championship match was terminated without a result after 48 games (Karpov leading 5 wins to 3, with 40 draws) by FIDE president Florencio Campomanes — the only World Championship match in history to be abandoned without a decision, and the longest world title match ever played by number of games.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1984–1985"
+    },
+    {
+      "fact": "Garry Kasparov won the replayed 1985 World Chess Championship match 13–11, becoming champion at age 22 (22 years, 7 months) — the youngest undisputed World Chess Champion at that time, a record that stood until 2024.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1985"
+    },
+    {
+      "fact": "Kasparov and Karpov contested five World Chess Championship matches in total between 1984 and 1990 (1984–85, 1985, 1986, 1987, 1990), totaling 144 games — more world title matches than any other pair of opponents in chess history.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Karpov–Kasparov rivalry"
+    },
+    {
+      "fact": "In the 1987 Kasparov–Karpov World Championship match in Seville, the score finished tied 12–12; under the rules, a tied match meant the reigning champion (Kasparov) retained the title.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1987"
+    },
+    {
+      "fact": "Kasparov won the 1990 rematch against Karpov by a score of 12.5–11.5, his fourth consecutive world title defense against Karpov.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Karpov–Kasparov rivalry"
+    },
+    {
+      "fact": "In 1993, Garry Kasparov and challenger Nigel Short broke away from FIDE to form the Professional Chess Association (PCA); Kasparov beat Short 12.5–7.5 for the PCA/'Classical' world title, while FIDE stripped Kasparov of its title and staged a separate Karpov–Timman match (won by Karpov) for the FIDE title — beginning a split of the World Chess Championship that lasted 13 years.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1993 / Professional Chess Association"
+    },
+    {
+      "fact": "FIDE ran its World Chess Championship as a knockout tournament from 1998 to 2004, producing a different champion almost every cycle: Anatoly Karpov (1998), Alexander Khalifman (1999), Viswanathan Anand (2000), Ruslan Ponomariov (2002), and Rustam Kasimdzhanov (2004).",
+      "category": "World Championship History",
+      "source": "Wikipedia: FIDE World Chess Championships (1998–2004)"
+    },
+    {
+      "fact": "Vladimir Kramnik defeated Garry Kasparov 8.5–6.5 in the 2000 Classical World Chess Championship in London, winning two games and drawing the rest — Kasparov failed to win a single game in the match, a first in his career.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Classical World Chess Championship 2000"
+    },
+    {
+      "fact": "The 2006 World Chess Championship between Vladimir Kramnik and Veselin Topalov in Elista, Russia, reunified the split Classical and FIDE titles after 13 years apart; the classical portion finished tied 6–6, and Kramnik won a rapid tiebreak 2.5–1.5 for an overall match score of 8.5–7.5.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 2006"
+    },
+    {
+      "fact": "The 2006 Kramnik–Topalov match was marked by the 'Toiletgate' controversy, in which Topalov's team accused Kramnik of receiving illicit computer assistance during bathroom breaks; Kramnik forfeited Game 5 in protest before the match resumed.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 2006"
+    },
+    {
+      "fact": "Viswanathan Anand won the World Chess Championship in three different formats over his career — knockout (2000), tournament (2007), and match play (2008, 2010, 2012) — the only player to have won the world title under all three formats.",
+      "category": "World Championship History",
+      "source": "ESPN: How Viswanathan Anand won his five world chess championship titles"
+    },
+    {
+      "fact": "Viswanathan Anand is a five-time World Chess Champion, holding the title in 2000, 2007, 2008, 2010, and 2012, defending it against Kramnik (2008), Topalov (2010), and Gelfand (2012).",
+      "category": "World Championship History",
+      "source": "Wikipedia: Viswanathan Anand"
+    },
+    {
+      "fact": "Magnus Carlsen defeated Anand 6.5–3.5 (after 10 of 12 scheduled games) in the 2013 World Chess Championship in Chennai, India, becoming champion at age 22 years and 357 days — at the time the second-youngest champion ever, behind Kasparov's 22 years, 210 days.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 2013"
+    },
+    {
+      "fact": "In July 2022, Magnus Carlsen announced he would not defend his World Chess Championship title in 2023, citing lack of motivation — the first champion to voluntarily relinquish the world title since Bobby Fischer in 1975.",
+      "category": "World Championship History",
+      "source": "NPR: World chess champion Magnus Carlsen says he will not defend his title in 2023"
+    },
+    {
+      "fact": "Ding Liren defeated Ian Nepomniachtchi in the 2023 World Chess Championship — the 14-game classical match finished tied 7–7, and Ding won the rapid tiebreak 2.5–1.5 — becoming the first World Chess Champion from China.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 2023"
+    },
+    {
+      "fact": "Gukesh Dommaraju defeated Ding Liren 7.5–6.5 in the 2024 World Chess Championship in Singapore to become, at age 18 years and 197 days, the youngest undisputed World Chess Champion in history, surpassing Kasparov's 1985 record.",
+      "category": "World Championship History",
+      "source": "Guinness World Records: Youngest Chess World Champion (male)"
+    },
+    {
+      "fact": "The 1910 World Chess Championship match between champion Emanuel Lasker and challenger Carl Schlechter ended level, with Lasker retaining his title; Schlechter needed only a draw in the final game to win the match outright but instead played for a win and lost, one of the closest results in title-match history.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1910 (Lasker–Schlechter)"
+    },
+    {
+      "fact": "FIDE established the Women's World Chess Championship in 1927; Vera Menchik won the inaugural event with 10 wins and 1 draw in 11 games to become the first Women's World Chess Champion at age 21.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Vera Menchik"
+    },
+    {
+      "fact": "Vera Menchik held the Women's World Chess Championship for almost 17 years (1927 until her death in 1944), winning the title a record eight times — the longest reign of any world chess champion, men's or women's.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Vera Menchik"
+    },
+    {
+      "fact": "Vera Menchik was killed on June 26, 1944, along with her mother and sister, when a German V-1 flying bomb destroyed their home in south London during World War II.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Vera Menchik"
+    },
+    {
+      "fact": "Hou Yifan became the youngest-ever Women's World Chess Champion on December 24, 2010, winning the title at age 16 years, 9 months and 28 days by defeating fellow Chinese player Ruan Lufei.",
+      "category": "World Championship History",
+      "source": "Guinness World Records: Youngest Chess World Champion (Women's)"
+    },
+    {
+      "fact": "Ju Wenjun won the Women's World Chess Championship in May 2018, defeating Tan Zhongyi 5.5–4.5, and has successfully defended the title multiple times since, including in November 2018, 2020, 2023, and 2025.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Ju Wenjun; Women's World Chess Championship Match 2018"
+    },
+    {
+      "fact": "Judit Polgar reached a peak FIDE rating of 2735 and a world ranking of No. 8 in 2005 — both remain records for a female player — and she is the only woman to date to have qualified for a Candidates tournament (2005), though she never competed for the separate Women's World Championship.",
+      "category": "World Championship History",
+      "source": "Wikipedia: Judit Polgár"
+    },
+    {
+      "fact": "Steinitz's title reign (1886–1894), Lasker's (1894–1921), and Capablanca's (1921–1927) mean the first three officially recognized World Chess Champions together held the title for 41 consecutive years before Alekhine took over in 1927.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship"
+    },
+    {
+      "fact": "The Karpov–Kasparov 1984–85 match, at five months long (September 10, 1984 to February 8, 1985), is the longest World Chess Championship match in duration in history.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1984–1985"
+    },
+    {
+      "fact": "Mikhail Botvinnik is the only World Chess Champion to regain the title twice via rematch clauses, losing and reclaiming the crown against two different opponents (Smyslov in 1957–58, and Tal in 1960–61).",
+      "category": "World Championship History",
+      "source": "Wikipedia: Mikhail Botvinnik"
+    },
+    {
+      "fact": "The split between the FIDE and Classical/PCA World Chess Championship titles lasted from 1993 to 2006 — 13 years — before being reunified by the Kramnik–Topalov match.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 2006"
+    },
+    {
+      "fact": "Karpov's ascent to the World Chess Championship in 1975 was unique in that he became champion without ever playing a match against the previous title holder (Fischer), due to Fischer's forfeit.",
+      "category": "World Championship History",
+      "source": "Wikipedia: World Chess Championship 1975"
+    },
+    {
+      "fact": "Alexander Alekhine's two reigns as World Chess Champion (1927–1935 and 1937–1946) were separated by a two-year interregnum in which Max Euwe held the title (1935–1937).",
+      "category": "World Championship History",
+      "source": "Wikipedia: Alexander Alekhine"
+    },
+    {
+      "fact": "The Ruy Lopez opening is named after the Spanish priest Ruy López de Segura, whose 1561 treatise 'Libro de la invención liberal y arte del juego del ajedrez' analyzed it, even though he did not invent the opening himself.",
+      "category": "Openings History",
+      "source": "Wikipedia: Ruy López de Segura"
+    },
+    {
+      "fact": "The Encyclopaedia of Chess Openings (ECO) classification system, dividing all openings into codes A00–E99, originated in 1966 with the inaugural issue of the Yugoslav magazine Chess Informant, published by Šahovski Informator in Belgrade.",
+      "category": "Openings History",
+      "source": "Wikipedia: Encyclopaedia of Chess Openings"
+    },
+    {
+      "fact": "The Caro-Kann Defence is named after Englishman Horatio Caro and Austrian Marcus Kann, whose analysis of 1...c6 was published in 1886; Kann had already scored a notable win with it over Jacques Mieses at the 4th German Chess Congress in Hamburg in 1885.",
+      "category": "Openings History",
+      "source": "chesshistory.com (Edward Winter), 'The Caro-Kann Defence'"
+    },
+    {
+      "fact": "The French Defence takes its name from an 1834 correspondence match between the London Chess Club and the Paris Chess Club, in which Paris player Jacques Chamouillet persuaded his team to adopt 1...e6, and Paris won the match.",
+      "category": "Openings History",
+      "source": "chessgames.com, 'London Chess Club vs Paris Chess Club (1834)'"
+    },
+    {
+      "fact": "Although the Sicilian Defence was analyzed as early as 1594 by Giulio Polerio, the English name 'Sicilian Defence' was standardized only in 1813 by master Jacob Henry Sarratt, translating the Italian phrase 'il gioco siciliano' ('the Sicilian game') from an old manuscript.",
+      "category": "Openings History",
+      "source": "Wikipedia: Sicilian Defence"
+    },
+    {
+      "fact": "The Catalan Opening got its name when tournament organizers at Barcelona 1929 asked Savielly Tartakower to create an opening in homage to Catalonia; he debuted it on 30 September 1929 against Joaquín Torres Caravaca.",
+      "category": "Openings History",
+      "source": "Wikipedia: Catalan Opening"
+    },
+    {
+      "fact": "The Orangutan Opening (1.b4) got its nickname when Savielly Tartakower visited a New York zoo during the 1924 New York tournament, was impressed by an orangutan there, and dedicated his next game (against Géza Maróczy, 21 March 1924) to it.",
+      "category": "Openings History",
+      "source": "Wikipedia: Sokolsky Opening"
+    },
+    {
+      "fact": "1.b4 is also known as the Sokolsky Opening because Soviet player Alexei Sokolsky wrote a 1963 monograph on it, 'Debyut 1 b2–b4'.",
+      "category": "Openings History",
+      "source": "Wikipedia: Sokolsky Opening"
+    },
+    {
+      "fact": "The Scotch Game gets its name from an 1824–28 correspondence match between the Edinburgh and London chess clubs, in which Edinburgh won the deciding fifth game using 1.e4 e5 2.Nf3 Nc6 3.d4.",
+      "category": "Openings History",
+      "source": "Wikipedia: Scotch Game"
+    },
+    {
+      "fact": "The Evans Gambit was invented around 1824–1826 by Welsh sea captain William Davies Evans, who reportedly devised it while sailing between Wales and Ireland and introduced it in a famous London game defeating Irish master Alexander McDonnell.",
+      "category": "Openings History",
+      "source": "Wikipedia: William Davies Evans"
+    },
+    {
+      "fact": "Ernst Grünfeld introduced the Grünfeld Defence into master play at the Bad Pístany tournament in April 1922, then defeated Alexander Alekhine with it in Vienna that November — a loss that impressed Alekhine enough to try the opening himself in the same event, where he lost with it in 26 moves.",
+      "category": "Openings History",
+      "source": "chessgames.com, 'Alexander Alekhine vs Ernst Gruenfeld (1922)'"
+    },
+    {
+      "fact": "According to his own 1953 autobiography, Russian master and amateur astronomer Fyodor Dus-Chotimirsky claims to have coined the name 'Dragon Variation' in 1901, comparing Black's kingside pawn structure to the stars of the constellation Draco; the earliest known printed use of the name was found by historian Edward Winter in a 1914 issue of Wiener Schachzeitung.",
+      "category": "Openings History",
+      "source": "Wikipedia: Sicilian Defence, Dragon Variation"
+    },
+    {
+      "fact": "The 'Immortal Game' between Adolf Anderssen and Lionel Kieseritzky, played in London in 1851, was a casual game outside the official London 1851 tournament; it only acquired its famous nickname in 1855, when Austrian player Ernst Falkbeer dubbed it 'The Immortal Game'.",
+      "category": "Openings History",
+      "source": "Wikipedia: Immortal Game"
+    },
+    {
+      "fact": "Frank Marshall debuted the Marshall Attack against José Raúl Capablanca on 23 October 1918 in New York; although long believed to have been secretly prepared since 1909, chess historian Edward Winter found the same pawn sacrifice played in a game as far back as 1893.",
+      "category": "Openings History",
+      "source": "chesshistory.com (Edward Winter), 'The Marshall Gambit'"
+    },
+    {
+      "fact": "The Berlin Defence's drawish, solid reputation earned it the nickname 'the Berlin Wall'; it was propelled to modern fame when Vladimir Kramnik used it repeatedly to help dethrone Garry Kasparov in their 2000 World Championship match.",
+      "category": "Openings History",
+      "source": "chess.com, 'The Berlin Defense'"
+    },
+    {
+      "fact": "The Berlin Pleiades were a group of seven 19th-century German chess masters (active 1837–1843), named after the star cluster, who included Paul Rudolf von Bilguer and Ludwig Bledow and helped develop early opening theory including the Berlin Defence.",
+      "category": "Openings History",
+      "source": "Wikipedia: Berlin Pleiades"
+    },
+    {
+      "fact": "The earliest known game with the Budapest Gambit was a casual game between Mór Adler and Géza Maróczy in Budapest on 5 March 1896, but the opening was only taken seriously after Milan Vidmar, on advice from István Abonyi, used it to defeat Akiba Rubinstein at Berlin in April 1918.",
+      "category": "Openings History",
+      "source": "Wikipedia: Budapest Gambit"
+    },
+    {
+      "fact": "The Benko Gambit was originally called the Volga Gambit in Eastern Europe, after an article on 3...b5 by B. Argunow published in a 1946 issue of the Soviet magazine Shakhmaty v SSSR; the name 'Benko Gambit' took hold in English-speaking countries after Pal Benko's 1974 book on it.",
+      "category": "Openings History",
+      "source": "Wikipedia: Benko Gambit"
+    },
+    {
+      "fact": "The English Opening (1.c4) is named for Howard Staunton's use of it against Pierre Saint-Amant in their 1843 Paris match, which Staunton won 13–8 and which cemented his status as the world's strongest player.",
+      "category": "Openings History",
+      "source": "Wikipedia: Howard Staunton"
+    },
+    {
+      "fact": "Petrov's Defence is also called the Russian Game in honor of Alexander Petrov, who extensively analyzed 1.e4 e5 2.Nf3 Nf6 together with fellow Russian Carl Jaenisch and published his findings in his 1824 book 'Shakhmatnaya Igra'.",
+      "category": "Openings History",
+      "source": "Wikipedia: Petrov's Defence"
+    },
+    {
+      "fact": "Aron Nimzowitsch conceived the core idea of the Nimzo-Indian Defence around 1913, but it first appeared at World Championship level only in game two of the 1929 Alekhine–Bogoljubov match.",
+      "category": "Openings History",
+      "source": "Wikipedia: Nimzo-Indian Defence"
+    },
+    {
+      "fact": "Bird's Opening (1.f4) had appeared in Luis Ramírez de Lucena's chess book around 1497, but it was English accountant Henry Bird who popularized it from 1855 over a career of more than four decades; the Hereford Times formally named the opening in his honor in 1885.",
+      "category": "Openings History",
+      "source": "Wikipedia: Bird's Opening"
+    },
+    {
+      "fact": "Alexander Alekhine introduced what became known as Alekhine's Defence (1.e4 Nf6) at the Budapest tournament of 1921, playing it in games against Endre Steiner and Friedrich Sämisch.",
+      "category": "Openings History",
+      "source": "Wikipedia: Alekhine's Defence"
+    },
+    {
+      "fact": "François-André Danican Philidor introduced 1.e4 e5 2.Nf3 d6 — now called the Philidor Defence — in his own 1749 book 'Analyse du jeu des Échecs', in which he coined the maxim 'pawns are the soul of chess'.",
+      "category": "Openings History",
+      "source": "chesshistory.com (Edward Winter), 'Philidor: Pawns are the soul of chess'"
+    },
+    {
+      "fact": "The classic queen-sacrifice trap known as Legal's Mate is named after the 18th-century French player Sire de Legall, drawn from a game he supposedly played (at rook odds) against an opponent named Saint Brie in Paris around 1750; historians note the exact date and move order of the original game are disputed.",
+      "category": "Openings History",
+      "source": "Wikipedia: Legal Trap"
+    },
+    {
+      "fact": "The Fried Liver Attack takes its name from 'fegatello,' an Italian dish of roasted or pan-fried pig's liver — a metaphor for Black's king being 'cooked' in White's mating net; the line is also called the Fegatello Attack and dates back to at least the 17th century.",
+      "category": "Openings History",
+      "source": "Wikipedia: Fried Liver Attack"
+    },
+    {
+      "fact": "The 'Opera Game' — Paul Morphy's famous 1858 miniature against the consulting pair Duke Karl of Brunswick and Count Isouard — was played in a box at the Salle Le Peletier in Paris while an opera (likely Rossini's 'The Barber of Seville', per research by Edward Winter) was being performed on stage.",
+      "category": "Openings History",
+      "source": "chesshistory.com (Edward Winter), 'Morphy v the Duke and Count'"
+    },
+    {
+      "fact": "The Traxler Counterattack in the Two Knights Defence first appeared in the game J. Reinisch–Karel Traxler, played in Hostouň in 1890; it is also called the Wilkes-Barre Variation in the US and UK after Frank Marshall, who claimed to have independently analyzed and published the line, named it for the Pennsylvania town.",
+      "category": "Openings History",
+      "source": "Wikipedia: Traxler Counterattack"
+    },
+    {
+      "fact": "The Damiano Defence (1.e4 e5 2.Nf3 f6) is named after 16th-century chess author Pedro Damiano even though, in his own 1512 book, Damiano explicitly condemned 2...f6 as an inferior move that lets White gain the advantage with 3.Nxe5.",
+      "category": "Openings History",
+      "source": "Wikipedia: Damiano Defence"
+    },
+    {
+      "fact": "The Blackmar-Diemer Gambit is named for two people decades apart: 19th-century New Orleans player Armand Blackmar, who first published analysis of 1.d4 d5 2.e4 dxe4 3.f3, and 20th-century German master Emil Josef Diemer, who developed the sounder 3.Nc3-based version and promoted it in his 1950s book.",
+      "category": "Openings History",
+      "source": "Wikipedia: Blackmar–Diemer Gambit"
+    },
+    {
+      "fact": "The Réti Opening is named after Richard Réti following his game against Akiba Rubinstein at Karlovy Vary 1923 (so dubbed by commentator Hans Kmoch); Réti's most famous use of it came in 1924 when he defeated World Champion José Raúl Capablanca in New York, ending Capablanca's eight-year unbeaten streak.",
+      "category": "Openings History",
+      "source": "Wikipedia: Richard Réti"
+    },
+    {
+      "fact": "The joke opening 1.e4 e5 2.Ke2, known as the 'Bongcloud Attack,' was played by world champion Magnus Carlsen against Hikaru Nakamura in the 2021 Magnus Carlsen Invitational; Nakamura mirrored it with 2...Ke7, and the resulting 'Double Bongcloud' game was drawn by repeated king shuffling.",
+      "category": "Openings History",
+      "source": "Wikipedia: Bongcloud Attack"
+    },
+    {
+      "fact": "The oldest recorded game featuring the King's Gambit dates to 1560, played between Ruy López de Segura and Giovanni Leonardo Da Cutri, though the opening had already appeared in Luis Ramírez de Lucena's 1497 chess book.",
+      "category": "Openings History",
+      "source": "chessjournal.com, '10 Oldest Chess Openings in History'"
+    },
+    {
+      "fact": "The Queen's Gambit is not technically a true gambit, since White can almost always recapture the offered c-pawn (typically via e3 and Bxc4) without any lasting material sacrifice, unlike a genuine gambit where the pawn is permanently risked.",
+      "category": "Openings History",
+      "source": "Wikipedia: Queen's Gambit"
+    },
+    {
+      "fact": "The Queen's Gambit was also historically called the 'Aleppo Gambit' after the 18th-century Syrian-born chess theorist Philipp Stamma of Aleppo, who recommended the opening.",
+      "category": "Openings History",
+      "source": "Wikipedia: Queen's Gambit"
+    },
+    {
+      "fact": "The Colle System is named after Belgian master Edgard Colle, who introduced and played 1.d4 d5 2.Nf3 Nf6 3.e3 from 1925 until his death in 1932 at age 34, following complications from a fourth operation for a gastric ulcer.",
+      "category": "Openings History",
+      "source": "Wikipedia: Edgard Colle"
+    },
+    {
+      "fact": "The Trompowsky Attack (1.d4 Nf6 2.Bg5) is named after Brazilian champion Octávio Trompowsky, who played it in the 1930s and 1940s; it is also known as the Opočenský Opening after Czech master Karel Opočenský, who used it in the same era.",
+      "category": "Openings History",
+      "source": "Wikipedia: Trompowsky Attack"
+    },
+    {
+      "fact": "The Latvian Gambit was originally called the Greco Counter-Gambit after 17th-century Italian player Gioachino Greco; FIDE officially renamed it the Latvian Gambit at its 1937 Congress in tribute to Latvian analyst Kārlis Bētiņš, who had deeply studied the line.",
+      "category": "Openings History",
+      "source": "Wikipedia: Latvian Gambit"
+    },
+    {
+      "fact": "The Pirc Defence is named after Slovenian grandmaster Vasja Pirc, who played it from the late 1940s onward; in Russia and other former Soviet countries it is often called the Ufimtsev Defence (or Pirc–Ufimtsev), after Soviet master Anatoly Ufimtsev.",
+      "category": "Openings History",
+      "source": "Wikipedia: Pirc Defence"
+    },
+    {
+      "fact": "A possible early ancestor of the Scandinavian Defence appears in the Catalan poem 'Scachs d'amor' (c. 1475), a fictional game set in Valencia between Francesc de Castellví and Narcís Vinyoles, believed to be among the earliest documented games using the modern queen and bishop moves.",
+      "category": "Openings History",
+      "source": "Wikipedia: Scandinavian Defense"
+    },
+    {
+      "fact": "The Vienna Game owes its name to 19th-century Viennese analysts; Austrian master Carl Hamppe contributed so heavily to its theory that the opening was for a time known as the 'Hamppe Opening'.",
+      "category": "Openings History",
+      "source": "chessklub.com, 'The Vienna Game - A Scholarly Guide'"
+    },
+    {
+      "fact": "The Zukertort Opening (1.Nf3) is named after Johannes Zukertort, who employed it from his 1880 match against Samuel Rosenthal onward, even though the move itself predates him and had already appeared in games by Howard Staunton, Adolf Anderssen, and Paul Morphy.",
+      "category": "Openings History",
+      "source": "Wikipedia: Zukertort Opening"
+    },
+    {
+      "fact": "Miguel Najdorf first played the Sicilian move 5...a6 (now the Najdorf Variation) in 1939, but the line only broke through internationally at the 1947 Prague tournament, later becoming the signature weapon of Bobby Fischer, Garry Kasparov, and Viswanathan Anand.",
+      "category": "Openings History",
+      "source": "Wikipedia: Sicilian Defence, Najdorf Variation"
+    },
+    {
+      "fact": "The term 'Indian Defence' for openings like 1.d4 Nf6 was first used in 1884, but the specific modern names 'King's Indian Defence' and 'King's Indian Attack' are attributed to mid-20th-century chess writer Hans Kmoch.",
+      "category": "Openings History",
+      "source": "Wikipedia: King's Indian Defence"
+    },
+    {
+      "fact": "The King's Indian Defence was considered highly suspect until the 1940s, when Soviet players David Bronstein, Isaac Boleslavsky, and Alexander Konstantinopolsky's analysis and results made it a respected, popular opening.",
+      "category": "Openings History",
+      "source": "Wikipedia: King's Indian Defence"
+    },
+    {
+      "fact": "Owen's Defence (1.e4 b6) is named after English vicar John Owen, who in 1858 won one individual game against touring American master Paul Morphy in an odds match, despite starting that game with pawn-and-move odds and losing the overall match 6–1.",
+      "category": "Openings History",
+      "source": "Wikipedia: Owen's Defence"
+    },
+    {
+      "fact": "The Englund Gambit is named after Swedish player Fritz Englund not because he invented it, but because he sponsored a thematic tournament in Stockholm from late 1932 to early 1933 in which every game had to start from the position after 4.Qd5; the main line is actually credited to Kārlis Bētiņš.",
+      "category": "Openings History",
+      "source": "Wikipedia: Englund Gambit"
+    },
+    {
+      "fact": "Grob's Attack (1.g4) is named after Swiss International Master Henri Grob, who wrote a 1942 book on it titled 'Angriff g2-g4'; Grob himself called it the 'Spike Opening,' and it was earlier known as 'Ahlhausen's Opening' after 19th-century Berlin player Carl Ahlhausen.",
+      "category": "Openings History",
+      "source": "Wikipedia: Grob's Attack"
+    },
+    {
+      "fact": "Both Fool's Mate and Scholar's Mate were named and described in Francis Beale's 1656 book 'The Royall Game of Chesse-Play,' which adapted the earlier work of 17th-century Italian player Gioachino Greco.",
+      "category": "Openings History",
+      "source": "Wikipedia: Fool's mate; Wikipedia: Scholar's mate"
+    },
+    {
+      "fact": "'Scholar's mate' originally meant 'student's mate' — in 17th-century English, 'scholler' referred to a pupil or beginner rather than an expert, reflecting that the four-move trap is typically sprung by and against inexperienced players.",
+      "category": "Openings History",
+      "source": "Wikipedia: Scholar's mate"
+    },
+    {
+      "fact": "The 'Immortal Game' between Adolf Anderssen and Lionel Kieseritzky was played as an informal (non-tournament) game in London on June 21, 1851, during a break in the first international chess tournament.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1018910; Wikipedia 'Immortal Game'"
+    },
+    {
+      "fact": "In the Immortal Game, Anderssen sacrificed a bishop, both rooks, and his queen, then delivered checkmate using only his knight, bishop, and a pawn, while Kieseritzky had lost just three pawns.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1018910; Chess.com 'Immortal Game (chess)'"
+    },
+    {
+      "fact": "The Immortal Game was given its name in 1855 by the Austrian problemist and chess writer Ernst Falkbeer.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Immortal Game'"
+    },
+    {
+      "fact": "The 'Evergreen Game' was a casual Evans Gambit played by Adolf Anderssen against Jean Dufresne in Berlin in 1852.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1018961; Wikipedia 'Evergreen Game'"
+    },
+    {
+      "fact": "In the Evergreen Game, Anderssen sacrificed his queen with 21.Qxd7+, forcing a mating sequence with his bishops a few moves later.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1018961; Chess.com 'Evergreen Game (chess)'"
+    },
+    {
+      "fact": "The Evergreen Game was named by Wilhelm Steinitz, who called it 'an evergreen in the laurel crown' of Anderssen.",
+      "category": "Famous Games",
+      "source": "Chess.com 'Evergreen Game (chess)'; Wikipedia 'Evergreen Game'"
+    },
+    {
+      "fact": "The 'Opera Game' was a consultation game played by Paul Morphy (White, alone) against Duke Karl of Brunswick and Count Isouard (jointly playing Black) at the Salle Le Peletier opera house in Paris in 1858.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1233404; Wikipedia 'Opera Game'"
+    },
+    {
+      "fact": "Morphy won the Opera Game in just 17 moves, finishing with a queen sacrifice and checkmate delivered by his rooks and bishop.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1233404; Wikipedia 'Opera Game'"
+    },
+    {
+      "fact": "The 'Game of the Century' was played between Donald Byrne (White) and 13-year-old Bobby Fischer (Black) at the Rosenwald Memorial tournament at the Marshall Chess Club in New York City on October 17, 1956.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1008361; Wikipedia 'Game of the Century (chess)'"
+    },
+    {
+      "fact": "In the Game of the Century, Fischer sacrificed his queen with 17...Be6!!, receiving a rook, two bishops, and a pawn in return, and went on to win.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1008361; Wikipedia 'Game of the Century (chess)'"
+    },
+    {
+      "fact": "The name 'Game of the Century' was coined by chess journalist Hans Kmoch, writing in Chess Review.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Game of the Century (chess)'"
+    },
+    {
+      "fact": "'Kasparov's Immortal' is Garry Kasparov's win as White over Veselin Topalov at the Hoogovens tournament in Wijk aan Zee in 1999, launched by the piece sacrifice 24.Rxd4!!.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1011478; Wikipedia 'Kasparov's Immortal'"
+    },
+    {
+      "fact": "In Kasparov's Immortal vs. Topalov, Kasparov's combination included three separate rook sacrifices as he chased Topalov's king across the board before finishing with the decisive bishop retreat 36.Bf1.",
+      "category": "Famous Games",
+      "source": "Chess.com 'The Greatest Chess Game Of All Time Explained'; chessgames.com gid=1011478"
+    },
+    {
+      "fact": "Chess.com's editorial ranking of the greatest chess games ever played lists Kasparov vs. Topalov, Wijk aan Zee 1999, at number one.",
+      "category": "Famous Games",
+      "source": "Chess.com 'The Greatest Chess Game Of All Time Explained — Kasparov vs. Topalov, 1999'"
+    },
+    {
+      "fact": "In Game 6 of the 1997 rematch, played in New York on May 11, 1997, IBM's Deep Blue defeated Garry Kasparov in a Caro-Kann Steinitz Variation, with the computer playing the sharp knight sacrifice 8.Nxe6.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Deep Blue versus Kasparov, 1997, Game 6'"
+    },
+    {
+      "fact": "Kasparov resigned Game 6 of the 1997 Deep Blue rematch after just 19 moves, clinching the match for Deep Blue at 3.5-2.5 — the first time a computer had beaten a reigning World Chess Champion in a multi-game match under standard time controls.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Deep Blue versus Kasparov, 1997, Game 6'; History.com 'Deep Blue defeats Garry Kasparov in chess match'"
+    },
+    {
+      "fact": "Game 2 of the 1997 Deep Blue–Kasparov rematch became notorious after Kasparov resigned in a position that later computer analysis suggested was defensible or drawn; he initially suspected IBM of receiving covert human grandmaster help, a claim he significantly walked back in a 2016 interview.",
+      "category": "Famous Games",
+      "source": "Chess.com 'Garry Kasparov: Success, Deep Blue, After 1997 And The Controversy'; Wikipedia 'Deep Blue versus Garry Kasparov'"
+    },
+    {
+      "fact": "On February 10, 1996, in Philadelphia, Deep Blue beat Kasparov in Game 1 of their first match (a Sicilian, Alapin Variation), the first win by a chess computer over a reigning World Champion under normal tournament time controls.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Deep Blue versus Kasparov, 1996, Game 1'"
+    },
+    {
+      "fact": "Despite losing Game 1 in 1996, Kasparov won the overall six-game match against Deep Blue 4-2, winning three games and drawing two of the remainder.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Deep Blue versus Garry Kasparov'"
+    },
+    {
+      "fact": "Kasparov won Game 1 of the 1997 Deep Blue rematch, played May 3, 1997 in New York, in 45 moves.",
+      "category": "Famous Games",
+      "source": "Chess.com 'Kasparov vs. Deep Blue (1997)'; chessgames.com gid=1070917"
+    },
+    {
+      "fact": "The 'Gold Coins Game' was won by Frank Marshall against Stepan Levitsky in Breslau (now Wrocław) on July 20, 1912, during the DSB Congress masters' tournament.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1094915; Wikipedia 'Levitsky versus Marshall'"
+    },
+    {
+      "fact": "Marshall's winning move against Levitsky, 23...Qg3!!, placed his queen en prise to three different white pieces simultaneously, with no adequate defense; Levitsky resigned immediately.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Levitsky versus Marshall'"
+    },
+    {
+      "fact": "According to Marshall's own 1942 memoir 'My Fifty Years of Chess,' spectators showered the board with gold coins after his 23...Qg3!! move — though this account has been disputed by other witnesses, including Marshall's wife.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Levitsky versus Marshall'; chesshistory.com 'Marshall's Gold Coins Game' by Edward Winter"
+    },
+    {
+      "fact": "In round 10 of Hastings 1895 (played August 17), Wilhelm Steinitz defeated Curt von Bardeleben in a game that became known as 'The Battle of Hastings.'",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1132699; chesshistory.com 'Steinitz v von Bardeleben' by Edward Winter"
+    },
+    {
+      "fact": "Facing a demonstrated forced mate in ten moves against him, Curt von Bardeleben simply got up and walked out of the tournament hall rather than resign, letting his clock run out instead.",
+      "category": "Famous Games",
+      "source": "chesshistory.com 'Steinitz v von Bardeleben' by Edward Winter; Wikipedia 'Curt von Bardeleben'"
+    },
+    {
+      "fact": "'Rubinstein's Immortal' was played between Georg Rotlewi and Akiba Rubinstein in Łódź on December 26, 1907, a Tarrasch Defense in which Rubinstein sacrificed his queen and a rook to force checkmate.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1119679; Wikipedia 'Rotlewi versus Rubinstein'"
+    },
+    {
+      "fact": "The name 'Rubinstein's Immortal' for the Rotlewi game was coined by chess writer Hans Kmoch, and Garry Kasparov later called it Rubinstein's 'most famous creation.'",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Rotlewi versus Rubinstein'"
+    },
+    {
+      "fact": "The 'Polish Immortal' is a game won by the 19-year-old Miguel Najdorf as Black against a player named Glucksberg in Warsaw (most commonly dated 1929, though some sources give 1930 or 1935), in which Najdorf sacrificed all four of his minor pieces in a mating attack.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1100774; Wikipedia 'Polish Immortal'"
+    },
+    {
+      "fact": "In the Polish Immortal, Najdorf delivered checkmate in 22 moves after his sequence of four consecutive minor-piece sacrifices.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Polish Immortal'"
+    },
+    {
+      "fact": "At Tilburg on October 21, 1991, Nigel Short marched his own castled king up the board with 31.Kh2, 32.Kg3, 33.Kh4, and 34.Kg5 against Jan Timman, who resigned rather than face the mating threat.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1124533; Wikipedia 'King walk'"
+    },
+    {
+      "fact": "The Short–Timman 'king walk' game was voted one of the 100 greatest chess games of all time by authors Graham Burgess, John Nunn, and John Emms.",
+      "category": "Famous Games",
+      "source": "Chess.com 'Short's Immortal King Walk — Every Chess Move Explained'"
+    },
+    {
+      "fact": "In Game 6 of the 1972 World Championship in Reykjavik, Bobby Fischer played the Queen's Gambit for the first time in a serious tournament game against Boris Spassky, and won.",
+      "category": "Famous Games",
+      "source": "Chess.com '50 year anniversary Fischer-Spassky Game 6'"
+    },
+    {
+      "fact": "After losing Game 6 of the 1972 World Championship, Spassky stood up and joined the roughly 1,500 spectators in Reykjavik in applauding Fischer's performance.",
+      "category": "Famous Games",
+      "source": "Chess.com '50 year anniversary Fischer-Spassky Game 6'"
+    },
+    {
+      "fact": "Game 13 of the 1972 World Championship (Fischer as Black, Alekhine's Defense) was adjourned at move 42 and resumed the next day; Fischer won a complex rook-versus-pawns endgame after Spassky erred around move 69.",
+      "category": "Famous Games",
+      "source": "Chess.com '50 year anniversary Fischer-Spassky Game 13'; chessgames.com gid=1128889"
+    },
+    {
+      "fact": "Former World Champion Mikhail Botvinnik called Fischer's Game 13 win over Spassky in 1972 'the highest creative achievement of Fischer.'",
+      "category": "Famous Games",
+      "source": "Chess.com '50 year anniversary Fischer-Spassky Game 13'"
+    },
+    {
+      "fact": "'Kasparov versus the World' was an internet consultation game hosted by the MSN Gaming Zone in 1999, in which a 'World Team' of thousands of players voted on each move for Black against Garry Kasparov, who played White alone.",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Kasparov versus the World'"
+    },
+    {
+      "fact": "The Kasparov versus the World game lasted 62 moves over roughly four months (June-October 1999); the World Team resigned after Kasparov's 62.g7, and Kasparov called it 'the greatest game in the history of chess.'",
+      "category": "Famous Games",
+      "source": "Wikipedia 'Kasparov versus the World'"
+    },
+    {
+      "fact": "In Game 16 of the 1985 World Championship in Moscow, Garry Kasparov planted a knight on d3 with 16...Nd3, an outpost that paralyzed Anatoly Karpov's position for many moves.",
+      "category": "Famous Games",
+      "source": "Chess.com 'World Chess Championship 1985: Game 16'; chessgames.com gid=1067175"
+    },
+    {
+      "fact": "Karpov was finally forced to give up his queen to remove Kasparov's d3 knight with 34.Qxd3, after which 34...Nf2+ forked king and queen and Kasparov went on to win.",
+      "category": "Famous Games",
+      "source": "Chess.com 'World Chess Championship 1985: Game 16'"
+    },
+    {
+      "fact": "Kasparov won the 1985 World Championship match against Karpov 13-11, becoming the youngest World Chess Champion in history at age 22 (a record he still held as of this writing).",
+      "category": "Famous Games",
+      "source": "Wikipedia 'World Chess Championship 1985'"
+    },
+    {
+      "fact": "Bobby Fischer's win over Robert Byrne in the 1963/64 U.S. Championship in New York was awarded the tournament's brilliancy prize, featuring the shocking sacrifice 18...Nxg2!!.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1008419; Chess.com 'Bobby Fischer's Perfect US Championship Game'"
+    },
+    {
+      "fact": "Fischer won the 1963/64 U.S. Championship with a perfect score of 11 wins and 0 losses/draws, and included his brilliancy-prize win over Robert Byrne in his book 'My 60 Memorable Games.'",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1008419; Wikipedia 'Robert Byrne (chess player)'"
+    },
+    {
+      "fact": "Rashid Nezhmetdinov's queen sacrifice 12.Qxf6!! against Oleg Chernikov, played in Rostov-on-Don in the 1962 Chigorin Team Cup, is frequently cited as one of the greatest queen sacrifices in chess history.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1260278; Chess.com 'Nezhmetdinov's Immortal Queen Sacrifice'"
+    },
+    {
+      "fact": "The 'Immortal Zugzwang Game' was won by Aron Nimzowitsch against Friedrich Sämisch in round 6 of a tournament in Copenhagen in March 1923, with the final position (after 25...h6) long described as a rare middlegame zugzwang.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1102400; Wikipedia 'Immortal Zugzwang Game'"
+    },
+    {
+      "fact": "In September 2002, playing a rapid game (25 minutes plus 10-second increment) in the Russia vs. Rest of the World match in Moscow, Judit Polgar defeated Garry Kasparov, the world's top-ranked player — the first time a woman had beaten the world number one in a competitive game.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1254283"
+    },
+    {
+      "fact": "Frank Marshall unveiled his prepared pawn-sacrifice novelty, later named the Marshall Attack, against José Raúl Capablanca in the first round of the Manhattan Chess Club Masters tournament in New York on October 23, 1918; Capablanca found the defense over the board and won.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1095025; Wikipedia 'Marshall Attack'"
+    },
+    {
+      "fact": "On November 22, 1938, in round 11 of the AVRO tournament in Rotterdam, Mikhail Botvinnik defeated José Raúl Capablanca in a Nimzo-Indian with two piece sacrifices; Garry Kasparov later called it the 'game of his life' for Botvinnik.",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1031957; Wikipedia 'Botvinnik versus Capablanca, AVRO 1938'"
+    },
+    {
+      "fact": "At Linares 1998, Alexei Shirov (Black) played the bishop sacrifice 47...Bh3!! against Veselin Topalov in an opposite-colored-bishop endgame, a move ranked number one in John Emms' book 'The Most Amazing Chess Moves of All Time.'",
+      "category": "Famous Games",
+      "source": "chessgames.com gid=1143956; Chess.com 'Brilliant Endgames, Shirov Style'"
+    },
+    {
+      "fact": "Alexander Alekhine called his 1925 win over Richard Réti at Baden-Baden the finest game of his career, and noted that ironically neither it nor his 1922 Hastings win over Efim Bogoljubov received a brilliancy prize, since none was on offer at either event.",
+      "category": "Famous Games",
+      "source": "chesshistory.com 'Réti v Alekhine, Baden-Baden, 1925' by Edward Winter"
+    },
+    {
+      "fact": "In Game 6 of the 1960 World Championship match in Moscow, Mikhail Tal sacrificed a knight against Mikhail Botvinnik with 21...Nf4!! in a King's Indian Defense; Tal went on to win the match by four points, becoming the youngest World Chess Champion up to that time at age 23.",
+      "category": "Famous Games",
+      "source": "Chess.com 'Mikhail Tal's Greatest Game! — Botvinnik vs. Tal, 1960'; Wikipedia 'World Chess Championship 1960'"
+    },
+    {
+      "fact": "The youngest person ever to earn the Grandmaster title is Abhimanyu Mishra of the United States, who qualified at age 12 years, 4 months, and 25 days in 2021, breaking Sergey Karjakin's 19-year-old record.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: Abhimanyu Mishra; Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "Argentina's Faustino Oro became the second-youngest grandmaster in history at 12 years, 6 months, and 26 days, earning his final GM norm at the Sardinia World Chess Festival in Orosei, Italy on May 10, 2026.",
+      "category": "Records and Extremes",
+      "source": "Chess.com news: 'Faustino Oro' GM norm coverage, May 2026; WorldChess.com"
+    },
+    {
+      "fact": "Before Mishra, Sergey Karjakin held the youngest-grandmaster record for 19 years after qualifying in 2002 at age 12 years, 7 months.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: Sergey Karjakin; ChessBase"
+    },
+    {
+      "fact": "Judit Polgar broke Bobby Fischer's 33-year-old youngest-grandmaster record in December 1991, qualifying at 15 years, 4 months, becoming the first woman ever to hold the record.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: Judit Polgár"
+    },
+    {
+      "fact": "Bobby Fischer became a grandmaster at age 15 years, 6 months, 1 day in 1958 (via the Portorož Interzonal), the youngest grandmaster in the world at the time.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: Bobby Fischer"
+    },
+    {
+      "fact": "Hikaru Nakamura became the youngest American to earn the grandmaster title, at 15 years and 79 days in 2003, breaking Bobby Fischer's US record by about three months.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: Hikaru Nakamura"
+    },
+    {
+      "fact": "The highest FIDE classical chess rating ever officially attained is 2882, achieved by Magnus Carlsen (Norway) in May 2014 and matched again in August 2019 — still the record as of 2026.",
+      "category": "Records and Extremes",
+      "source": "Guinness World Records: 'Highest Chess Rating, Men'"
+    },
+    {
+      "fact": "Magnus Carlsen's highest unofficial live FIDE rating was 2889.2, reached on April 21, 2014, ahead of that month's official list publication.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess; ChessWorld.net"
+    },
+    {
+      "fact": "The highest FIDE rating ever achieved by a woman is 2735, by Judit Polgar in July 2005 — a record that still stands as of 2026, more than two decades later.",
+      "category": "Records and Extremes",
+      "source": "Guinness World Records: 'Highest Chess Rating, Women'"
+    },
+    {
+      "fact": "Judit Polgar is the only woman to have ever broken a 2700 FIDE rating, and she was the world's top-rated woman continuously from January 1989 until her retirement in 2014 — a 26-year streak.",
+      "category": "Records and Extremes",
+      "source": "Chess.com; Yahoo Sports interview with Judit Polgár"
+    },
+    {
+      "fact": "Bobby Fischer holds the record for the largest rating lead over the world's #2 player: 125 Elo points, in July 1972 after winning the world championship.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "Garry Kasparov spent a cumulative 255 months (roughly 21 years) ranked world No. 1 on the FIDE rating list, the longest of any player in history.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "Alireza Firouzja is the youngest player ever to surpass a 2800 FIDE rating, doing so at 18 years and 166 days old in December 2021, breaking Magnus Carlsen's previous record of 18 years, 336 days.",
+      "category": "Records and Extremes",
+      "source": "FIDE (via X/Twitter); Chess.com news: 'Alireza Firouzja Youngest Chess Player Ever To Break 2800'"
+    },
+    {
+      "fact": "The longest decisive FIDE-rated tournament game on record is Billy Fellowes vs. Peter Lalić, played at the Third Kingston Invitational in London in 2024, lasting 272 moves.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "The longest tournament chess game overall (by move count) is Ivan Nikolić vs. Goran Arsović, Belgrade 1989 (Yugoslav Championship), which ran 269 moves over 20 hours 15 minutes before ending in a draw.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess; Chess.com"
+    },
+    {
+      "fact": "The longest game ever played in a World Chess Championship match is Game 6 of Carlsen vs. Nepomniachtchi at the 2021 World Chess Championship: 136 moves, won by Carlsen after nearly 8 hours, ending a streak of 19 consecutive drawn classical WCC games going back 5 years.",
+      "category": "Records and Extremes",
+      "source": "Chess.com news: 'Carlsen Wins Game 6, Longest World Chess Championship Game Of All Time'; ESPN"
+    },
+    {
+      "fact": "Before 2021, the longest World Championship game was Game 5 of Korchnoi vs. Karpov in Baguio City, 1978, at 124 moves — it ended in a stalemate.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "The fewest possible moves to deliver checkmate is two, known as Fool's Mate (e.g., 1.g4 e5 2.f3 Qh4#).",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "The shortest decisive game between titled masters on record is Đorđević–Kovačević, Bela Crkva 1984, decided in just 3 moves (1.d4 Nf6 2.Bg5 c6 3.e3?? Qa5+ winning the bishop).",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "The shortest tournament loss by a grandmaster is 4 moves — GM Yair Kraidman lost to IM Hagen Poetsch at the 2013 Vienna Open after miscalculating a queen recapture.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "D Gukesh of India became the youngest undisputed World Chess Champion in history in December 2024, at 18 years, 6 months, 14 days old, defeating Ding Liren 7.5–6.5 — breaking Garry Kasparov's 39-year-old record (set in 1985 at age 22).",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess; ChessBase: '35 years ago: Kasparov becomes youngest World Champion'"
+    },
+    {
+      "fact": "Ruslan Ponomariov was the youngest FIDE (knockout-format) World Champion, winning the title in January 2002 at age 18 years, 3 months, 13 days.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "Hou Yifan became the youngest Women's World Chess Champion in history in 2010, at 16 years, 9 months, 27 days old.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "Vera Menchik was the first and longest-reigning Women's World Chess Champion, holding the title for 17 years (1927–1944) and winning all eight championship tournaments she entered.",
+      "category": "Records and Extremes",
+      "source": "FIDE (via X/Twitter, official account); Wikipedia: Vera Menchik"
+    },
+    {
+      "fact": "Vera Menchik won at least 59 consecutive games at the Women's World Championship tournaments, going undefeated across four straight events (1931–1937) with a combined score of 45 wins, 0 losses, 0 draws in those events.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess; Wikipedia: Vera Menchik"
+    },
+    {
+      "fact": "Nona Gaprindashvili reigned as Women's World Champion for 16 years (1962–1978) and in 1978 became the first woman ever awarded the FIDE Grandmaster title.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: Nona Gaprindashvili"
+    },
+    {
+      "fact": "Emanuel Lasker holds the record for the longest reign of any officially recognized World Chess Champion: 27 years, from 1894 (defeating Steinitz) until his loss to Capablanca in 1921.",
+      "category": "Records and Extremes",
+      "source": "Chess.com: '27 Years as World Champion!'; Wikipedia: Emanuel Lasker"
+    },
+    {
+      "fact": "José Raúl Capablanca went undefeated in serious competition for over 8 years — from a loss to Oscar Chajes on February 10, 1916, until a loss to Richard Réti on March 21, 1924 — a streak of 63 games (40 wins, 23 draws) spanning his 1921 World Championship win.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: José Raúl Capablanca; Chess.com"
+    },
+    {
+      "fact": "Wilhelm Steinitz holds the longest documented winning streak in chess history: 25 consecutive game wins spread across nine years, from Vienna 1873 to Vienna 1882.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "Magnus Carlsen holds the modern elite-level record for longest unbeaten streak in classical chess: 125 games (42 wins, 83 draws, zero losses) from July 31, 2018 to October 9, 2020, ended by Jan-Krzysztof Duda at Norway Chess. His opponents during the streak averaged a 2745 rating.",
+      "category": "Records and Extremes",
+      "source": "Guinness World Records: 'Longest unbeaten streak in professional chess'; CNN"
+    },
+    {
+      "fact": "Before Carlsen, the elite-level unbeaten-streak record was held by Sergei Tiviakov at 110 games (2004–2005), and before that by Ding Liren at 100 games.",
+      "category": "Records and Extremes",
+      "source": "Guinness World Records: 'Longest unbeaten streak in professional chess'"
+    },
+    {
+      "fact": "Bobby Fischer won 20 consecutive games against world-class competition in the 1970–71 World Championship cycle: closing the Palma de Mallorca Interzonal with 7 straight wins, then sweeping the Candidates matches 6–0 over Mark Taimanov, 6–0 over Bent Larsen, and winning the first game against Tigran Petrosian.",
+      "category": "Records and Extremes",
+      "source": "Chess.com; multiple sources on Fischer's 1970-71 Candidates run"
+    },
+    {
+      "fact": "Tigran Petrosian holds the record for most Chess Olympiad medals by an individual: 9 gold and 1 silver across 10 Olympiads (1958–1978) for the USSR, losing just a single game in his entire Olympiad career.",
+      "category": "Records and Extremes",
+      "source": "Sportsdigest.in: 'Top 10 Greatest Chess Olympiad Performances'"
+    },
+    {
+      "fact": "The 1984–85 Karpov vs. Kasparov World Championship match is the longest in history: it ran 5 months (September 10, 1984 to February 15, 1985) and 48 games before being controversially terminated without a result by FIDE President Florencio Campomanes, with Karpov leading 5–3 (40 draws).",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: World Chess Championship 1984–1985; CNN"
+    },
+    {
+      "fact": "Before the 1984–85 match, the longest World Championship match was Capablanca vs. Alekhine in 1927, at 34 games.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: World Chess Championship 1984–1985"
+    },
+    {
+      "fact": "The 2018 World Chess Championship between Magnus Carlsen and Fabiano Caruana is the only one in history where all 12 classical games ended in draws; Carlsen then won the rapid tiebreak 3–0. This broke the previous record of 8 consecutive WCC draws set by Anand vs. Kasparov in 1995.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: World Chess Championship 2018; Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "Garry Kasparov's 1997 loss to IBM's Deep Blue (3.5–2.5 in the rematch) was the first defeat of a reigning World Chess Champion by a computer under tournament match conditions; Kasparov had won the 1996 match 4–2.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: Deep Blue versus Garry Kasparov; History.com"
+    },
+    {
+      "fact": "Ehsan Ghaem-Maghami of Iran set the Guinness World Record for most simultaneous chess games played by an individual: 604 opponents over 25 hours at Shahid Beheshti University, Tehran, February 8–9, 2011, winning 580 games for a 97.35% score.",
+      "category": "Records and Extremes",
+      "source": "Guinness World Records: 'Most simultaneous games of chess by an individual'; Wikipedia: Ehsan Ghaem Maghami"
+    },
+    {
+      "fact": "The most games of chess ever played simultaneously in one location is 20,480, set by the Sports Authority of Gujarat in Ahmedabad, India, on December 24, 2010, with World Champion Viswanathan Anand making the ceremonial opening moves.",
+      "category": "Records and Extremes",
+      "source": "Guinness World Records: 'Most games of chess played simultaneously in one location'"
+    },
+    {
+      "fact": "American grandmaster Timur Gareyev holds the blindfold simultaneous chess record: 48 opponents at once over roughly 20 hours at UNLV in December 2016, scoring 35 wins, 7 draws, 6 losses (while riding an exercise bike throughout).",
+      "category": "Records and Extremes",
+      "source": "Chess.com news: 'Timur Gareyev Plays Record 48 Games Blindfolded - Now Recognized By Guinness'"
+    },
+    {
+      "fact": "José Raúl Capablanca's best simultaneous exhibition result was 102 wins and 1 draw against 103 opponents in Cleveland in 1922, a 99.5% score in seven hours.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "The Guinness World Record for longest chess marathon is 64 hours, set by Tunde Onakoya (Nigeria) and Shawn Martinez (USA) in Times Square, New York City, April 17–20, 2025, comprising 473 games — breaking the prior record of 61 hours 3 minutes 34 seconds set at 2024 Norway Chess.",
+      "category": "Records and Extremes",
+      "source": "Guinness World Records: 'Longest chess marathon'; Chess.com news"
+    },
+    {
+      "fact": "The longest correspondence chess game by real-world duration is a single game between Dr. Reinhart Straszacker and Dr. Hendrik van Huyssteen that lasted over 53 years, begun in 1946 and ended only by Straszacker's death in 1999 (part of a 112-game series they split evenly).",
+      "category": "Records and Extremes",
+      "source": "Guinness World Records: 'Longest duration playing correspondence chess'"
+    },
+    {
+      "fact": "Judit Polgar defeated then-world-#1 Garry Kasparov in a classical game in September 2002 — Kasparov was rated 2838 to her 2681, a 157-point rating upset, considered one of the biggest shocks against a reigning top player.",
+      "category": "Records and Extremes",
+      "source": "TheChessWorld: '10 Epic Upsets in Chess History'"
+    },
+    {
+      "fact": "Bobby Fischer became the youngest-ever U.S. Chess Champion at age 14 when he won the 1957–58 U.S. Championship, a record that stood for decades.",
+      "category": "Records and Extremes",
+      "source": "Chess.com; Wikipedia: Bobby Fischer"
+    },
+    {
+      "fact": "Hikaru Nakamura became the youngest U.S. Chess Champion since Bobby Fischer when he won the 2005 U.S. Championship at age 17.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: Hikaru Nakamura"
+    },
+    {
+      "fact": "Yuri Averbakh became the first-ever centenarian chess grandmaster, turning 100 on February 8, 2022; he remains the only grandmaster known to have lived to age 100.",
+      "category": "Records and Extremes",
+      "source": "FIDE: 'The oldest living Grandmaster Yuri Averbakh turns 100'"
+    },
+    {
+      "fact": "American IM Anthony Saidy set the record for oldest player to defeat a grandmaster, beating GM Vladimir Belous at the 2019 National Open at age 82 years, 1 month.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "India's Ashwath Kaushik set the record for youngest player ever to defeat a grandmaster, beating GM Jacek Stopa on February 18, 2024, at age 8 years, 6 months, 11 days.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "Fabiano Caruana posted a 3098 performance rating at the 2014 Sinquefield Cup — among the highest performance ratings ever recorded in a top-level round-robin against elite competition, going 7/10 including a 7-win start.",
+      "category": "Records and Extremes",
+      "source": "Wikipedia: List of world records in chess"
+    },
+    {
+      "fact": "Viktor Korchnoi was still competing at grandmaster level into his 80s, reported as the oldest grandmaster on the active world tournament circuit around 2012 (he died in 2016 at age 85).",
+      "category": "Records and Extremes",
+      "source": "Chess.com: 'Older Chess Players'; ESPN obituary"
+    },
+    {
+      "fact": "Alan Turing and David Champernowne devised 'Turochamp' in 1948, a chess-playing algorithm executed by hand (a 'paper machine') since no computer of the day could run it.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Turochamp"
+    },
+    {
+      "fact": "In 1952, Alan Turing personally executed the Turochamp algorithm by hand move-by-move in a game against colleague Alick Glennie, and lost in 29 moves.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Turochamp; Chess.com 'The History Of Computer Chess: Turochamp'"
+    },
+    {
+      "fact": "Claude Shannon's 1950 paper 'Programming a Computer for Playing Chess' (Philosophical Magazine, Vol. 41, No. 314) laid the theoretical foundation for computer chess, including minimax search with an evaluation function.",
+      "category": "Chess Computers and AI",
+      "source": "Chessprogramming wiki: Claude Shannon; Philosophical Magazine Vol 41 No 314"
+    },
+    {
+      "fact": "Shannon's 1950 paper classified chess programs into 'Type A' (brute-force search of all moves to a uniform depth) and 'Type B' (selective search of only plausible moves) strategies.",
+      "category": "Chess Computers and AI",
+      "source": "Chessprogramming wiki: Type B Strategy / Brute-Force"
+    },
+    {
+      "fact": "The first chess-like game played by a computer was on the MANIAC I at Los Alamos in 1956, written by Stanislaw Ulam, Paul Stein, Mark Wells, James Kister, William Walden and John Pasta, using a reduced 6x6 board without bishops (later called Los Alamos Chess) because the machine lacked power for full chess.",
+      "category": "Chess Computers and AI",
+      "source": "Chessprogramming wiki: MANIAC I; Wikipedia: Los Alamos chess"
+    },
+    {
+      "fact": "The MANIAC I program searched only 4 plies deep, taking about 12 minutes per move at roughly 11,000 operations/second, and in its third game defeated a novice human player -- the first recorded computer win against a person in a chess-like game.",
+      "category": "Chess Computers and AI",
+      "source": "Chessprogramming wiki: MANIAC I"
+    },
+    {
+      "fact": "The first-ever match between two chess computer programs was the Kotok-McCarthy program (Stanford, on an IBM 7090) versus the ITEP program (Moscow, on an M-20), a four-game correspondence match begun November 22, 1966 and finished in 1967, won 3-1 by the Soviet ITEP program.",
+      "category": "Chess Computers and AI",
+      "source": "Chessprogramming wiki: Stanford-ITEP Match"
+    },
+    {
+      "fact": "The First World Computer Chess Championship was held August 5-8, 1974 in Stockholm, Sweden, organized under IFIP with 13 participating programs; the Soviet program Kaissa won with a perfect 4/4 score.",
+      "category": "Chess Computers and AI",
+      "source": "Chessprogramming wiki: WCCC 1974; Wikipedia: Kaissa"
+    },
+    {
+      "fact": "In 1983, Ken Thompson (software) and Joe Condon (hardware)'s chess computer Belle became the first computer to earn a USCF Master rating, after scoring a 2363 performance rating in the U.S. Open; it won the $5,000 Fredkin Prize as the first program to reach master strength.",
+      "category": "Chess Computers and AI",
+      "source": "IEEE Spectrum: 'In 1983, This Bell Labs Computer Was the First Machine to Become a Chess Master'; Wikipedia: Belle (chess machine)"
+    },
+    {
+      "fact": "In 1988, Deep Thought -- built by Feng-hsiung Hsu, Murray Campbell, Thomas Anantharaman and colleagues at Carnegie Mellon -- became the first computer to defeat a grandmaster (Bent Larsen) in a regular tournament game, at the Software Toolworks Open in Long Beach, California.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Deep Thought (chess computer)"
+    },
+    {
+      "fact": "Deep Thought was named after the fictional supercomputer in Douglas Adams' 'The Hitchhiker's Guide to the Galaxy'; after its 1989 two-game loss to Garry Kasparov, IBM held a naming contest and the machine was rechristened 'Deep Blue' -- a play on 'Deep Thought' and IBM's corporate nickname 'Big Blue' -- with the winning name submitted by Peter Fitzhugh Brown.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Deep Blue (chess computer)"
+    },
+    {
+      "fact": "Key members of the Deep Thought team (Feng-hsiung Hsu and Murray Campbell) moved from Carnegie Mellon to IBM's T.J. Watson Research Center around 1989-1990, where Deep Thought's design evolved into Deep Blue.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Feng-hsiung Hsu; Wikipedia: Deep Thought (chess computer)"
+    },
+    {
+      "fact": "Garry Kasparov won the first Deep Blue match, played in Philadelphia February 10-17, 1996, by a score of 4-2 (one loss, two draws, three wins for Kasparov); Deep Blue's Game 1 win was the first game won by a chess computer against a reigning world champion under normal time controls.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Deep Blue versus Garry Kasparov; History.com"
+    },
+    {
+      "fact": "In the May 1997 rematch in New York, Deep Blue defeated Garry Kasparov 3.5-2.5, becoming the first computer to beat a reigning world chess champion in a full match under standard tournament time controls; Kasparov resigned the decisive Game 6 after just 19 moves on May 11, 1997.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Deep Blue versus Garry Kasparov; History.com: 'Deep Blue defeats Garry Kasparov in chess match'"
+    },
+    {
+      "fact": "Deep Blue was an IBM RS/6000 SP supercomputer using 30 PowerPC 604e processors paired with 480 custom VLSI 'chess chips,' giving it a sustained match search speed of roughly 200 million chess positions per second.",
+      "category": "Chess Computers and AI",
+      "source": "IBM: 'Deep Blue'; Tom's Hardware retrospective"
+    },
+    {
+      "fact": "After Deep Blue's Game 2 win in 1997, Kasparov accused IBM of cheating, citing an unusual move (37.Be4) he felt was too 'human'; IBM denied any in-game intervention, stating the only changes to the program were made between games as the rules allowed, and later published Deep Blue's log files online.",
+      "category": "Chess Computers and AI",
+      "source": "Chess.com: 'Did IBM Cheat Kasparov?'; Wikipedia: Deep Blue versus Garry Kasparov"
+    },
+    {
+      "fact": "IBM declined Kasparov's request for a rematch and retired Deep Blue after the 1997 match; parts of the machine are now preserved and displayed at the Smithsonian Institution and the Computer History Museum.",
+      "category": "Chess Computers and AI",
+      "source": "Chess.com forums: 'Why was Deep Blue disassembled by IBM'; IBM history site"
+    },
+    {
+      "fact": "In October 2002, world champion Vladimir Kramnik played an eight-game match ('Brains in Bahrain') against Deep Fritz 7 in Manama, Bahrain, which ended in a 4-4 tie (two wins each, four draws).",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Brains in Bahrain; ChessBase: '20 years ago: Brains in Bahrain'"
+    },
+    {
+      "fact": "In January-February 2003, Garry Kasparov played a six-game match in New York against Deep Junior (developed by Amir Ban and Shay Bushinsky), which ended 3-3.",
+      "category": "Chess Computers and AI",
+      "source": "Chessprogramming wiki: Kasparov versus Deep Junior 2003; ChessBase"
+    },
+    {
+      "fact": "In November 2003, Garry Kasparov played a four-game match against X3D Fritz (viewed through 3D glasses), which ended tied 2-2, with one win apiece and two draws.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: X3D Fritz; Chessprogramming wiki: Kasparov versus X3D Fritz 2003"
+    },
+    {
+      "fact": "In the November-December 2006 match in Bonn, Germany, Deep Fritz defeated reigning world champion Vladimir Kramnik 4-2, the last major human-vs-top-engine match before engines pulled decisively ahead of the best humans.",
+      "category": "Chess Computers and AI",
+      "source": "ChessBase: 'Kramnik vs Deep Fritz: Computer wins match by 4:2'"
+    },
+    {
+      "fact": "The Stockfish chess engine began as a fork of Tord Romstad's open-source Glaurung engine; Marco Costalba released the first version, Stockfish 1.0, in November 2008. Its name reflects that it was 'produced in Norway [Romstad] and cooked in Italy [Costalba].'",
+      "category": "Chess Computers and AI",
+      "source": "Stockfish official site 'About'; Wikipedia: Stockfish (chess)"
+    },
+    {
+      "fact": "Stockfish is released under the GNU General Public License (GPL v3) and has been developed since 2013 using the crowdsourced distributed-testing framework 'Fishtest,' created by Gary Linscott, in which volunteers donate CPU time to statistically validate proposed code changes; Stockfish reportedly gained about 120 Elo points in the 12 months after Fishtest's introduction.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Stockfish (chess); GitHub official-stockfish/fishtest README"
+    },
+    {
+      "fact": "Vasik Rajlich released the first public beta of his engine Rybka (Czech/Slavic for 'little fish') on December 5, 2005; Rybka went on to win the World Computer Chess Championship four consecutive times, 2007-2010.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Rybka; Bill Wall's Rybka article"
+    },
+    {
+      "fact": "On June 28, 2011, the International Computer Games Association (ICGA) ruled that Vasik Rajlich's Rybka had plagiarized code from the Crafty and Fruit engines, stripped Rybka of its 2006-2010 World Computer Chess Championship titles, ordered return of prize money and trophies, and banned Rajlich for life from ICGA-sanctioned events.",
+      "category": "Chess Computers and AI",
+      "source": "Chess.com: 'Rybka disqualified and banned from World Computer Chess Championships'"
+    },
+    {
+      "fact": "Robert Houdart released the first version of his engine Houdini for free download in May 2010; by July 2010, Houdini 1.03a already rated about 3116 Elo on the CCRL 40/4 list, and within months it displaced Rybka as the world's top-rated engine.",
+      "category": "Chess Computers and AI",
+      "source": "Chessprogramming wiki: Robert Houdart; ChessBase: '10 years Houdini'"
+    },
+    {
+      "fact": "Houdini won the first two seasons of the Top Chess Engine Championship (TCEC), in 2010 and 2011, ahead of Rybka and other leading engines of the time.",
+      "category": "Chess Computers and AI",
+      "source": "ChessBase: '10 years Houdini'"
+    },
+    {
+      "fact": "The Komodo chess engine began in 2007 as a collaboration between programmer Don Dailey and grandmaster Larry Kaufman, evolving out of Dailey's earlier engine Doch; Komodo was later acquired by Chess.com in 2018.",
+      "category": "Chess Computers and AI",
+      "source": "ChessBase: 'Komodo: Birth of a chess engine'; Wikipedia: Komodo (chess)"
+    },
+    {
+      "fact": "Don Dailey announced in October 2013, at the release of Komodo 6, that he had been diagnosed with acute leukemia and would step back from development; programmer Mark Lefler joined the Komodo team days later to continue the project. Dailey died in November 2013.",
+      "category": "Chess Computers and AI",
+      "source": "Chessprogramming wiki: Don Dailey"
+    },
+    {
+      "fact": "The Top Chess Engine Championship (TCEC) was launched in 2010 by Norwegian programmer Martin Thoresen as the 'Thoresen Chess Engines Competition'; after a hiatus it relaunched in 2013 and has been organized by Chessdom since Season 7.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Top Chess Engine Championship"
+    },
+    {
+      "fact": "Chess.com launched its own engine event, the Computer Chess Championship (originally CCCC), in November 2017 with ten of the strongest engines competing for $2,500 in prize money.",
+      "category": "Chess Computers and AI",
+      "source": "Chess.com: 'The First Computer Chess Championship in the USA'"
+    },
+    {
+      "fact": "DeepMind posted its AlphaZero preprint to arXiv on December 5, 2017 (arXiv:1712.01815), reporting that a single algorithm using self-play reinforcement learning and Monte Carlo tree search had reached superhuman level in chess, shogi, and Go within 24 hours of self-training, defeating Stockfish, the shogi engine Elmo, and a 3-day version of AlphaGo Zero.",
+      "category": "Chess Computers and AI",
+      "source": "arXiv:1712.01815; DeepMind blog 'AlphaZero: Shedding new light on chess, shogi, and Go'"
+    },
+    {
+      "fact": "In its first published 100-game match (December 2017 preprint) against Stockfish 8, AlphaZero scored 28 wins, 0 losses, and 72 draws under a fixed one-minute-per-move time control.",
+      "category": "Chess Computers and AI",
+      "source": "Chess.com: 'Google's AlphaZero Destroys Stockfish In 100-Game Match'; chessgames.com AlphaZero-Stockfish 2017 event page"
+    },
+    {
+      "fact": "The peer-reviewed version of the AlphaZero research, 'A general reinforcement learning algorithm that masters chess, shogi and Go through self-play,' was published in the journal Science on December 7, 2018 (Silver et al., Science 362(6419):1140-1144), using improved test conditions (Stockfish given an opening book and access to Syzygy tablebases) after criticism of the original 2017 match setup.",
+      "category": "Chess Computers and AI",
+      "source": "Science 362(6419):1140-1144; ChessBase 'The full AlphaZero paper is published at long last'"
+    },
+    {
+      "fact": "In the revised 2018 Science-paper match, a 1,000-game contest between AlphaZero and Stockfish 8 ended 155 wins, 6 losses, and 839 draws in AlphaZero's favor.",
+      "category": "Chess Computers and AI",
+      "source": "Chess.com: 'AlphaZero Crushes Stockfish In New 1,000-Game Match'"
+    },
+    {
+      "fact": "According to DeepMind, AlphaZero's chess-specific training required about 9 hours of self-play (compared with about 12 hours for shogi and roughly 13 days for Go) before reaching the reported superhuman benchmark.",
+      "category": "Chess Computers and AI",
+      "source": "DeepMind blog: 'AlphaZero: Shedding new light on chess, shogi, and Go'"
+    },
+    {
+      "fact": "Leela Chess Zero (Lc0), an open-source engine inspired by DeepMind's AlphaZero approach and adapted from the Leela Zero Go project, was launched by Gary Linscott (a former Stockfish contributor) in January 2018 and trains its neural network via distributed, crowdsourced self-play games contributed by volunteers.",
+      "category": "Chess Computers and AI",
+      "source": "Chess.com: 'Leela Chess Zero: A History'; Wikipedia: Leela Chess Zero"
+    },
+    {
+      "fact": "Leela Chess Zero made its TCEC debut in Division 4 of Season 12 in April 2018 as the first neural-network engine to compete in TCEC, initially losing almost every game before rapidly improving.",
+      "category": "Chess Computers and AI",
+      "source": "CentAUR: 'TCEC12: the 12th Top Chess Engine Championship'"
+    },
+    {
+      "fact": "In February 2019, Leela Chess Zero won the TCEC Cup by defeating Houdini in the final, becoming the first neural-network engine to win a major TCEC title.",
+      "category": "Chess Computers and AI",
+      "source": "Chessdom: 'First major title for a Neural Network in chess: LC0 wins TCEC Cup'"
+    },
+    {
+      "fact": "In May 2019, Leela Chess Zero won the TCEC Season 15 Superfinal against Stockfish 53.5-46.5 (14 wins, 7 losses, 79 draws) -- the first time a neural-network engine won a TCEC Superfinal.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: TCEC Season 15"
+    },
+    {
+      "fact": "NNUE (Efficiently Updatable Neural Network) evaluation, invented by Yu Nasu in 2018 for the shogi engine YaneuraOu, was ported into Stockfish and merged into the Stockfish source repository on August 6, 2020, producing an estimated 80-100 Elo jump in engine-testing strength -- the first time a top classical chess engine successfully paired a CPU-efficient neural network with traditional alpha-beta search.",
+      "category": "Chess Computers and AI",
+      "source": "Stockfish blog: 'Introducing NNUE Evaluation'; Chessprogramming wiki: Stockfish NNUE"
+    },
+    {
+      "fact": "Following Stockfish's NNUE adoption in 2020, other top engines including Komodo (rebranded 'Dragon by Komodo Chess'), Ethereal, Igel, and Scorpio also added NNUE-based evaluation within the following year.",
+      "category": "Chess Computers and AI",
+      "source": "dev.to: 'Why Stockfish is So Good'; Chess.com: 'Evolution of a Chess Fish: What is NNUE, anyway?'"
+    },
+    {
+      "fact": "University at Buffalo computer science professor Kenneth Regan developed the primary statistical cheating-detection methodology used by FIDE, which computes a player's 'Intrinsic Performance Rating' (IPR) from move-by-move engine agreement and flags suspicious deviation from a player's official rating using a z-score, with FIDE's suspicion threshold set at a z-score of about 4.5.",
+      "category": "Chess Computers and AI",
+      "source": "TIME: '\"Chess Detective\" Probes Magnus Carlsen, Hans Niemann Case'; ChessBase: 'Prof. Regan's statistical system'"
+    },
+    {
+      "fact": "FIDE has paid Kenneth Regan to monitor tournaments since 2020, and his proprietary engine-based cheat-detection software has by his account analyzed more than a million games.",
+      "category": "Chess Computers and AI",
+      "source": "TIME: '\"Chess Detective\" Probes Magnus Carlsen, Hans Niemann Case'"
+    },
+    {
+      "fact": "Deep Blue's predecessor Deep Thought used custom VLSI chess-search chips and could evaluate up to about 700,000 chess positions per second, several hundred times slower than the 480-chip Deep Blue system that beat Kasparov in 1997.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Deep Thought (chess computer)"
+    },
+    {
+      "fact": "IBM's Deep Blue project traced its lineage through a sequence of machines built by Feng-hsiung Hsu -- ChipTest, then Deep Thought, then Deep Blue -- spanning roughly a decade of hardware-accelerated chess search research from the mid-1980s to 1997.",
+      "category": "Chess Computers and AI",
+      "source": "Wikipedia: Feng-hsiung Hsu; Wikipedia: Deep Blue (chess computer)"
+    },
+    {
+      "fact": "FIDE (the International Chess Federation) was founded on 20 July 1924 in Paris, at the Paris town hall of the 9th Arrondissement, on the closing day of the first (unofficial) Chess Olympiad held alongside the 1924 Summer Olympics.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: FIDE; FIDE official history (museum.fide.com/fide-history)"
+    },
+    {
+      "fact": "FIDE's founding Proclamation Act was signed by fifteen delegates representing countries including Argentina, Belgium, Britain, France, Hungary, Italy, Spain, Switzerland, Canada, the Netherlands, Poland, Romania, Finland, Czechoslovakia, and Yugoslavia.",
+      "category": "Institutions and Culture",
+      "source": "FIDE official history (museum.fide.com/fide-history); Chess.com, \"How was FIDE created?\""
+    },
+    {
+      "fact": "FIDE's motto, \"Gens Una Sumus\" (Latin for \"We Are One Family\"), traces to a 1945 message from FIDE's first president Alexander Rueb about chess as a force for international understanding, and was first used in print by FIDE in 1952.",
+      "category": "Institutions and Culture",
+      "source": "Chess.com, \"Gens Una Sumus\"; Edward Winter, \"The History of FIDE\" (chesshistory.com)"
+    },
+    {
+      "fact": "Alexander Rueb of the Netherlands served as FIDE's first president, beginning at its founding in 1924.",
+      "category": "Institutions and Culture",
+      "source": "Edward Winter, \"The History of FIDE\" (chesshistory.com)"
+    },
+    {
+      "fact": "The first FIDE-organized official Chess Olympiad took place in London from 18 to 30 July 1927, at Westminster Central Hall, with 16 teams (70 players) competing; Hungary won the gold medal.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: 1st Chess Olympiad; OlimpBase, 1st Chess Olympiad, London 1927"
+    },
+    {
+      "fact": "The trophy awarded to the winning team in the Chess Olympiad's open section, the Hamilton-Russell Cup, was donated by English chess patron Sir Frederick Hamilton-Russell as a prize for the first Olympiad in London, 1927.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Chess Olympiad"
+    },
+    {
+      "fact": "Since 1950, the Chess Olympiad has been held every two years on a regular biennial schedule; before World War II it took place only occasionally and at irregular intervals.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Chess Olympiad"
+    },
+    {
+      "fact": "The Soviet Union won 18 gold medals in the open Chess Olympiad between 1952 and 1990, the most of any nation in the event's history, placing first in every edition it entered during that span except 1978 (it boycotted 1976).",
+      "category": "Institutions and Culture",
+      "source": "Chess.com, \"The Chess Olympiad: By The Numbers\"; House of Staunton, \"Guide to the Chess Olympiad\""
+    },
+    {
+      "fact": "The first Women's Chess Olympiad was held in Emmen, Netherlands, in 1957, hosted by the Royal Dutch Chess Federation, with 22 nations competing in a two-player-per-team format.",
+      "category": "Institutions and Culture",
+      "source": "OlimpBase, 1st Women's Chess Olympiad, Emmen 1957"
+    },
+    {
+      "fact": "The Staunton chess set design was registered as an \"Ornamental Design for a set of Chess-Men\" at the British Patent Office on 1 March 1849, under the name of English journalist Nathaniel Cooke.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Staunton chess set"
+    },
+    {
+      "fact": "The Staunton set was first manufactured and sold by the firm John Jaques of London starting in 1849, and the pattern was named after English chess master Howard Staunton, who endorsed it though he did not design it.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Staunton chess set; Smithsonian Magazine, \"How the Chess Set Got Its Look and Feel\""
+    },
+    {
+      "fact": "The first 500 Staunton chess sets sold by Jaques of London were individually numbered and hand-signed by Howard Staunton himself.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Staunton chess set"
+    },
+    {
+      "fact": "The knight piece in the Staunton chess set design is modeled on the carved horse head from the chariot of the moon goddess Selene, part of the Parthenon's east pediment sculptures (the Elgin Marbles) held in the British Museum.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Staunton chess set"
+    },
+    {
+      "fact": "The first mechanical chess clock, consisting of two spring-driven clocks balanced on a seesaw beam, was built in 1883 by Thomas Bright Wilson of Manchester, England, with input from chess master Joseph Henry Blackburne.",
+      "category": "Institutions and Culture",
+      "source": "History of Chess Clocks (innovationcorridor.net); billwall.phpwebhosting.com, \"Chess Clocks\""
+    },
+    {
+      "fact": "Chess clocks were used in a tournament for the first time at London 1883, with a time control of 15 moves in two hours; the first patent for a chess clock followed in 1884, issued to Amandus Schierwater of Liverpool.",
+      "category": "Institutions and Culture",
+      "source": "billwall.phpwebhosting.com, \"Chess Clocks\""
+    },
+    {
+      "fact": "The first digital chess clock was built in 1973 by Bruce Cheney, a Cornell University electrical-engineering student, as an undergraduate course project.",
+      "category": "Institutions and Culture",
+      "source": "Chess.com, \"Evolution of Chess Clocks and Increment\""
+    },
+    {
+      "fact": "The first commercially available digital chess clock, the Micromate-80, was created in 1975 by Joseph Meshi and Jeffrey R. Ponsor.",
+      "category": "Institutions and Culture",
+      "source": "Chess.com, \"Evolution of Chess Clocks and Increment\""
+    },
+    {
+      "fact": "In 1988, former World Champion Bobby Fischer patented a digital chess clock design that introduced the \"Fischer increment,\" adding a fixed amount of time to a player's clock after each move.",
+      "category": "Institutions and Culture",
+      "source": "Chess.com, \"Evolution of Chess Clocks and Increment\""
+    },
+    {
+      "fact": "The \"Bronstein delay\" time-control method, named after Soviet grandmaster David Bronstein, adds back only as much time as a player actually used on a move, up to a fixed cap, rather than always adding the full increment.",
+      "category": "Institutions and Culture",
+      "source": "Chess.com, \"Evolution of Chess Clocks and Increment\""
+    },
+    {
+      "fact": "The Elo chess rating system was created by Arpad Elo, a Hungarian-American physics professor at Marquette University in Milwaukee, who chaired a USCF committee tasked in 1959 with evaluating rating systems.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Arpad Elo; Wikipedia: Elo rating system"
+    },
+    {
+      "fact": "The United States Chess Federation adopted the Elo rating system in 1960, at its meeting in Saint Louis, replacing the previously used Harkness rating system.",
+      "category": "Institutions and Culture",
+      "source": "House of Staunton, \"How The Elo Chess Rating System Works\"; Wikipedia: Elo rating system"
+    },
+    {
+      "fact": "FIDE formally adopted the Elo rating system for international chess ratings in 1970.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Elo rating system"
+    },
+    {
+      "fact": "Arpad Elo's book \"The Rating of Chessplayers, Past and Present,\" the first publicly available text describing his rating system in full, was published in 1978.",
+      "category": "Institutions and Culture",
+      "source": "FIDE, \"Anniversary of Arpad Elo\"; Wikipedia: Arpad Elo"
+    },
+    {
+      "fact": "FIDE created the titles Grandmaster (GM), International Master (IM), and Woman International Master in 1950, formalizing an initial list of 27 Grandmasters at its Congress in Copenhagen that July.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Grandmaster (chess); mieses.info, \"The First FIDE Grandmasters 1950\""
+    },
+    {
+      "fact": "Chess master Jacques Mieses, at age 85, was the oldest player among FIDE's inaugural group of 27 Grandmasters named in 1950.",
+      "category": "Institutions and Culture",
+      "source": "mieses.info, \"The First FIDE Grandmasters 1950\""
+    },
+    {
+      "fact": "Because FIDE does not award chess titles posthumously, former World Champions Wilhelm Steinitz, Emanuel Lasker, José Raúl Capablanca, and Alexander Alekhine — all deceased before 1950 — never held the official FIDE Grandmaster title.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Grandmaster (chess)"
+    },
+    {
+      "fact": "FIDE did not introduce formal, norm-based requirements for earning the Grandmaster title until 1957; before that, titles were awarded by committee resolution without written criteria.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Grandmaster (chess)"
+    },
+    {
+      "fact": "An early forerunner of algebraic chess notation was published by Philipp Stamma, a chess player born in Aleppo, in his 1737 book \"Essai sur le Jeu des Echecs\" (English edition, 1745: \"The Noble Game of Chess\"), using files a-h and ranks 1-8.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Algebraic notation (chess); Chess.com, \"The Creator of Algebraic Chess Notation\""
+    },
+    {
+      "fact": "Stamma's original notation differed from modern algebraic notation in using the letter \"P\" for pawn moves and a capital letter (A-H) for a piece's originating file, rather than the piece's initial letter.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Algebraic notation (chess)"
+    },
+    {
+      "fact": "Descriptive notation, not algebraic, remained the standard in English-language chess publications until FIDE stopped officially recognizing it in 1981, after which algebraic notation became the sole internationally required system.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Algebraic notation (chess)"
+    },
+    {
+      "fact": "The first postage stamp with a chess theme was issued by Bulgaria on 29 September 1947, part of a set commemorating the 1947 Balkan Games in Sofia, depicting a knight chess piece.",
+      "category": "Institutions and Culture",
+      "source": "billwall.phpwebhosting.com, \"History of stamps and chess\"; Edward Winter, \"Chess and Postage Stamps\""
+    },
+    {
+      "fact": "The first postage stamp to depict an actual chess player was issued by Cuba on 1 November 1951, part of a set marking the 30th anniversary of José Raúl Capablanca's 1921 World Championship win over Emanuel Lasker.",
+      "category": "Institutions and Culture",
+      "source": "billwall.phpwebhosting.com, \"History of stamps and chess\""
+    },
+    {
+      "fact": "Hungary issued three chess-themed postage stamps on 9 April 1950 to commemorate the first Candidates Tournament, held in Budapest from April 9 to May 16, 1950.",
+      "category": "Institutions and Culture",
+      "source": "billwall.phpwebhosting.com, \"History of stamps and chess\""
+    },
+    {
+      "fact": "The World Chess Hall of Fame was founded in 1986 by Steven Doyle, then president of the U.S. Chess Federation, and opened to the public in 1988 in the basement of the USCF's headquarters in New Windsor, New York.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: World Chess Hall of Fame"
+    },
+    {
+      "fact": "The World Chess Hall of Fame relocated to Saint Louis, Missouri, on September 9, 2011, in a building renovated with funding from philanthropist Rex Sinquefield, located across the street from the Sinquefield-founded Saint Louis Chess Club.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: World Chess Hall of Fame"
+    },
+    {
+      "fact": "Fischer Random Chess (later known as Chess960) was formally introduced to the public by Bobby Fischer on 19 June 1996 in Buenos Aires, Argentina, under the name \"Fischerandom Chess.\"",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Chess960"
+    },
+    {
+      "fact": "Chess960 is named for the 960 possible distinct starting arrangements of the back-rank pieces (with bishops on opposite-colored squares and the king between the rooks), a figure Fischer had mathematicians compute while he was in Budapest.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Chess960"
+    },
+    {
+      "fact": "The chess variant Kriegspiel, in which each player cannot see the opponent's pieces and a neutral umpire adjudicates move legality, was invented in 1899 by Henry Michael Temple, adapting the concept from an 1812 Prussian military training wargame called Kriegsspiel devised by Georg von Reiswitz.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Kriegspiel (chess)"
+    },
+    {
+      "fact": "Xiangqi (Chinese chess) and Shogi (Japanese chess) both trace to a common ancestor, the Indian game chaturanga (roughly 3rd-6th century CE), the same game that spread west through Persia to become Western chess.",
+      "category": "Institutions and Culture",
+      "source": "ancientgames.org, \"Chess vs Shogi vs Xiangqi: Three Paths from Chaturanga\""
+    },
+    {
+      "fact": "The earliest documentary evidence of shogi in Japan appears in the Shin Sarugakuki, a literary work by Fujiwara no Akihira written around 1058-1064 CE.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: History of shogi"
+    },
+    {
+      "fact": "The sport of chess boxing was inspired by French comic-book artist Enki Bilal's 1992 graphic novel \"Froid Équateur,\" which depicted a fictional chess-boxing world championship.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Chess boxing"
+    },
+    {
+      "fact": "Dutch performance artist Iepe Rubingh turned the comic-book concept into a real competitive sport, staging the first official chess boxing match in Berlin in 2003, which he won to become the first World Chess Boxing Champion.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Chess boxing"
+    },
+    {
+      "fact": "Walter Tevis's 1983 novel \"The Queen's Gambit\" got its title from a suggestion by chess master Bruce Pandolfini, who consulted on the book's chess content and proposed naming it after the chess opening of the same name.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: The Queen's Gambit (novel)"
+    },
+    {
+      "fact": "Following the October 2020 release of Netflix's \"The Queen's Gambit\" miniseries starring Anya Taylor-Joy, U.S. game maker Goliath Games reported chess set sales increasing by more than 1,000 percent.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: The Queen's Gambit (miniseries)"
+    },
+    {
+      "fact": "\"Searching for Bobby Fischer\" (1993), directed by Steven Zaillian, dramatizes the real early chess career of prodigy Josh Waitzkin and is based on the memoir of the same name by his father, Fred Waitzkin.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Searching for Bobby Fischer"
+    },
+    {
+      "fact": "Austrian writer Stefan Zweig's novella \"Schachnovelle\" (published in English as \"The Royal Game\" or \"Chess Story\") was the last work of fiction he completed, written in exile in Brazil in 1941 and published in 1942, the year of his death.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: The Royal Game"
+    },
+    {
+      "fact": "Lewis Carroll structured his 1871 novel \"Through the Looking-Glass\" around a chess game, with protagonist Alice cast as a white pawn who journeys across the board and is crowned a queen in the final chapters; Carroll prefaced the book with an actual chess-move diagram.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Through the Looking-Glass"
+    },
+    {
+      "fact": "Satyajit Ray's 1977 film \"Shatranj Ke Khilari\" (\"The Chess Players\"), based on a short story by Munshi Premchand and set in 1856 Awadh, was Ray's only full-length feature film made in Hindi.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: The Chess Players (film)"
+    },
+    {
+      "fact": "\"Pawn Sacrifice\" (2014), directed by Edward Zwick and starring Tobey Maguire as Bobby Fischer and Liev Schreiber as Boris Spassky, dramatizes the 1972 World Chess Championship match in Reykjavik, Iceland.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: Pawn Sacrifice"
+    },
+    {
+      "fact": "The United States Chess Federation was formed in 1939 through the merger of two older organizations, the American Chess Federation and the National Chess Federation, and took over the NCF's management of the U.S. Championship and its FIDE affiliation.",
+      "category": "Institutions and Culture",
+      "source": "Wikipedia: United States Chess Federation"
+    },
+    {
+      "fact": "Bughouse chess, a team variant played on two boards where captured pieces are handed to a partner to \"drop\" onto their own board, emerged organically among players in the United States and Europe in the early 1960s with no single identifiable inventor.",
+      "category": "Institutions and Culture",
+      "source": "the-pechko-perspective.com, \"Bughouse Chess: The Wild History of Chess's Most Exciting Variant\""
+    }
+  ]
+}
