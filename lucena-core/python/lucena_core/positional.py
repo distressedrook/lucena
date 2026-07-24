@@ -660,20 +660,15 @@ def _activity_term(board, occ, attacks, ph: float,
     # denies d4 to White's knight; White's own Nf3 blocks the d1-h5
     # diagonal) — true, but not a verdict worth speaking when White's real
     # asset is the tempo, which mobility cannot see.
+    # aw/ab are the per-side rescaled activity (each 0-1), so the comparison is
+    # already MATERIAL-NEUTRAL — a queen's raw square-count does NOT swamp it
+    # (that skew lived only in the summed `cp`/diff_cp, which the bar no longer
+    # uses). This is exactly what surfaces a sacrifice's POSITIONAL comp: at
+    # Harikrishna-Nesterov 10.Kxf2, down a queen, White reads 0.62 vs Black
+    # 0.30 — the developed-minors-vs-dead-pieces compensation, made visible.
     aw = features.get("activity_white", 0.0)
     ab = features.get("activity_black", 0.0)
-    # A queen's mobility SWAMPS a cross-side comparison: with unequal queen
-    # counts (a queen vs three pieces — Bobotsov-Tal move 18) the side holding
-    # the queen reads "more active" on raw square-count alone, which is
-    # backwards when its pieces are passive. Mobility can't compare activity
-    # across that imbalance, so the verdict is WITHHELD there (2026-07-24).
-    qw = sum(1 for p in occ.values() if p.color == "white" and p.piece == "Q")
-    qb = sum(1 for p in occ.values() if p.color == "black" and p.piece == "Q")
-    features["comparable"] = qw == qb
-    if qw != qb:
-        leader, standing = None, ("piece activity isn't comparable across the "
-                                  "queen-for-pieces imbalance")
-    elif aw - ab >= ACTIVITY_GAP:
+    if aw - ab >= ACTIVITY_GAP:
         leader, standing = "White", "White's pieces are the more active"
     elif ab - aw >= ACTIVITY_GAP:
         leader, standing = "Black", "Black's pieces are the more active"
