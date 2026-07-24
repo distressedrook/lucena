@@ -662,7 +662,18 @@ def _activity_term(board, occ, attacks, ph: float,
     # asset is the tempo, which mobility cannot see.
     aw = features.get("activity_white", 0.0)
     ab = features.get("activity_black", 0.0)
-    if aw - ab >= ACTIVITY_GAP:
+    # A queen's mobility SWAMPS a cross-side comparison: with unequal queen
+    # counts (a queen vs three pieces — Bobotsov-Tal move 18) the side holding
+    # the queen reads "more active" on raw square-count alone, which is
+    # backwards when its pieces are passive. Mobility can't compare activity
+    # across that imbalance, so the verdict is WITHHELD there (2026-07-24).
+    qw = sum(1 for p in occ.values() if p.color == "white" and p.piece == "Q")
+    qb = sum(1 for p in occ.values() if p.color == "black" and p.piece == "Q")
+    features["comparable"] = qw == qb
+    if qw != qb:
+        leader, standing = None, ("piece activity isn't comparable across the "
+                                  "queen-for-pieces imbalance")
+    elif aw - ab >= ACTIVITY_GAP:
         leader, standing = "White", "White's pieces are the more active"
     elif ab - aw >= ACTIVITY_GAP:
         leader, standing = "Black", "Black's pieces are the more active"
