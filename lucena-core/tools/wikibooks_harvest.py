@@ -144,7 +144,11 @@ def _description(extract: str) -> str:
     lines = body.strip().splitlines()
     while lines and _is_move_list_line(lines[0].strip()):
         lines.pop(0)
-    return " ".join(" ".join(lines).split()).strip()
+    # In the plaintext extract each PARAGRAPH is its own line (single '\n'
+    # separators), so keep one paragraph per line — collapse whitespace WITHIN
+    # each, join paragraphs with a blank line so the card can render them.
+    paras = [" ".join(ln.split()) for ln in lines if ln.split()]
+    return "\n\n".join(paras)
 
 
 def _name(extract: str, wikitext: str, title: str) -> str:
