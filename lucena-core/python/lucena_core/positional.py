@@ -32,6 +32,16 @@ from __future__ import annotations
 from ._pesto import EG_TABLE, EG_VALUE, MG_TABLE, MG_VALUE
 from .reads import PIECE_NAME, king_square, occupancy
 
+# DANGER_MAX = SAFETY_TABLE's own ceiling (650) + shield_penalty max (3*14)
+# + file_penalty max (3*15) + center_penalty max (35) = 772. `danger/
+# DANGER_MAX` is a BOUNDED score, not a calibrated probability — "1.0"
+# means "maxed out this formula", not "certain mate". The calibrated
+# P(catastrophe) mapping (2026-07-24 king-safety calibration study,
+# research/experiments/studies/king_danger_calibration/) is a SEPARATE
+# artifact fit against engine-verified outcomes; do not conflate the two
+# under one "normalized" label.
+DANGER_MAX = 772
+
 # --- CPW king-safety model (Glaurung 1.2 safety table, verbatim) ------------
 SAFETY_TABLE = [
     0, 0, 0, 1, 1, 2, 3, 4, 5, 6, 8, 10, 13, 16, 20, 25, 30, 36, 42, 48,
@@ -64,6 +74,8 @@ _CONTROL = (7, 3)               # cp per net attacker on a core square
 
 _FILES = "abcdefgh"
 _LEAD_THRESHOLD = 25            # |cp| for a term to lead the analysis
+ACTIVITY_GAP = 0.08             # 0-1 activity gap before the term speaks a
+                                # verdict (see _activity_term's standing)
 
 
 def _fr(square: str) -> tuple[int, int]:
@@ -96,17 +108,33 @@ def _side_name(color: str) -> str:
 
 # --- shared geometry ---------------------------------------------------------
 
-def _attack_maps(board):
-    """One pass over all 64 squares: per-square attacker counts and, inverted,
-    per-piece attacked-square sets. `board.attackers` is the only primitive."""
-    ctrl: dict[str, tuple[int, int]] = {}
+def _loose_squares(fen: str) -> dict[str, float]:
+    """`geometry.loose_map` in this module's string-square dialect: square
+    name -> pressure weight for a piece the enemy can win outright (SEE >
+    0). Absent = full weight. See geometry.loose_map for the why."""
+    import chess as _c
+    from .geometry import loose_map as _lm
+    return {_c.square_name(sq): w for sq, w in _lm(_c.Board(fen)).items()}
+
+
+def _w(loose: dict[str, float] | None, square: str) -> float:
+    return 1.0 if loose is None else loose.get(square, 1.0)
+
+
+def _attack_maps(board, loose: dict[str, float] | None = None):
+    """One pass over all 64 squares: per-square attacker WEIGHT and,
+    inverted, per-piece attacked-square sets. `board.attackers` is the only
+    primitive. Counts are SEE-discounted (2026-07-24): an attacker that is
+    itself hanging does not really control the square it eyes."""
+    ctrl: dict[str, tuple[float, float]] = {}
     attacks: dict[str, set[str]] = {}
     for f in range(8):
         for r in range(8):
             s = _sq(f, r)
             w = board.attackers(s, "white")
             b = board.attackers(s, "black")
-            ctrl[s] = (len(w), len(b))
+            ctrl[s] = (sum(_w(loose, a) for a in w),
+                       sum(_w(loose, a) for a in b))
             for a in w + b:
                 attacks.setdefault(a, set()).add(s)
     return ctrl, attacks
@@ -122,7 +150,16 @@ def _phase(occ) -> float:
 def _material_term(board) -> dict:
     """Tapered PeSTO material in cp; the standing sentence is the exact-imbalance
     phrase (single source of truth in mcp.response — lazy import, noted layering
-    wart until material() moves engine-side)."""
+    wart until material() moves engine-side).
+
+    The STANDING is read off the SEE-settled board (owner ruling
+    2026-07-24: "always show the quiescenced version"). The raw count
+    would say "Black is up a queen for a bishop" about a queen the white
+    KING captures for free on the next move. Costs ~0.9ms — nothing
+    against the LLM call it feeds. NOTE: `cp` is still the RAW tapered
+    PeSTO sum; it is a decomposition term on its own scale (and a fitted
+    feature in the residual studies), not a spoken number — settling it
+    too is a separate, deliberate change."""
     from .reads import material as _material
 
     occ = occupancy(board)
@@ -131,7 +168,13 @@ def _material_term(board) -> dict:
     for _, p in sorted(occ.items()):     # canonical float order (see _activity_term)
         v = _taper(MG_VALUE[p.piece], EG_VALUE[p.piece], ph)
         cp += v if p.color == "white" else -v
-    return {"cp": round(cp), "standing": _material(board)["standing"]}
+    try:
+        from .board import Board as _LB
+        from .metrics import _quiesce as _q          # lazy: metrics <-> positional
+        settled = _material(_LB(_q(board.fen)[1]))["standing"]
+    except Exception:
+        settled = _material(board)["standing"]       # never lose the sentence
+    return {"cp": round(cp), "standing": settled}
 
 
 def _king_zone(ksq: str, color: str) -> list[str]:
@@ -144,7 +187,8 @@ def _king_zone(ksq: str, color: str) -> list[str]:
     return zone
 
 
-def _king_safety_term(board, occ, ph: float) -> dict:
+def _king_safety_term(board, occ, ph: float,
+                      loose: dict[str, float] | None = None) -> dict:
     features = {}
     danger = {}
     pst = {}
@@ -158,16 +202,26 @@ def _king_safety_term(board, occ, ph: float) -> dict:
         pst[color] = _taper(_pst(MG_TABLE, "K", color, ksq),
                             _pst(EG_TABLE, "K", color, ksq), ph)
 
-        # attack units: enemy N/B/R/Q attacks into the zone (CPW weights)
+        # attack units: enemy N/B/R/Q attacks into the zone (CPW weights),
+        # SEE-DISCOUNTED (2026-07-24). A besieging piece that is itself
+        # hanging is not besieging anything — it comes off the board next
+        # move. The motivating case scored 254 off a queen the defending
+        # KING captured for free on move one. A zero-weight attacker is
+        # also kept OUT of `attackers`, so it cannot help satisfy the
+        # two-attacker gate below.
         zone = _king_zone(ksq, color)
-        units, attackers = 0, {}
+        units, attackers = 0.0, {}
         for zs in zone:
             for a in board.attackers(zs, enemy):
                 p = occ.get(a)
                 if p is not None and p.piece in _ATTACK_UNITS:
-                    units += _ATTACK_UNITS[p.piece]
+                    wt = _w(loose, a)
+                    if wt <= 0:
+                        continue
+                    units += _ATTACK_UNITS[p.piece] * wt
                     attackers[a] = p.piece
-        zone_penalty = SAFETY_TABLE[min(units, 99)] if len(attackers) >= 2 else 0
+        zone_penalty = (SAFETY_TABLE[min(int(round(units)), 99)]
+                        if len(attackers) >= 2 else 0)
 
         # pawn shield: the three files around the king, one/two steps ahead
         fwd = 1 if color == "white" else -1
@@ -190,7 +244,9 @@ def _king_safety_term(board, occ, ph: float) -> dict:
                           if p.color == color and p.piece == "P"}
         enemy_pawn_files = {_fr(s)[0] for s, p in occ.items()
                             if p.color == enemy and p.piece == "P"}
-        heavy = any(p.piece in ("R", "Q") and p.color == enemy for p in occ.values())
+        # a hanging heavy cannot use (or open) the file beside the king
+        heavy = any(p.piece in ("R", "Q") and p.color == enemy
+                    and _w(loose, s) > 0 for s, p in occ.items())
         open_files, file_penalty = [], 0
         if heavy:
             for df in (-1, 0, 1):
@@ -212,7 +268,7 @@ def _king_safety_term(board, occ, ph: float) -> dict:
         center_penalty = 0
         if kf in (3, 4) and open_files:
             has_q = any(p.piece == "Q" and p.color == enemy
-                        for p in occ.values())
+                        and _w(loose, s) > 0 for s, p in occ.items())
             center_penalty = 35 if has_q else 15
 
         # shield/file penalties are middlegame concepts; zone attacks keep a
@@ -225,9 +281,12 @@ def _king_safety_term(board, occ, ph: float) -> dict:
             "danger": round(danger[color]),   # the composite (2026-07-23:
                                               # exposed for the efficacy
                                               # studies + future norm)
+            "danger_bounded": round(min(1.0, danger[color] / DANGER_MAX), 3),
             "zone_attackers": sorted(f"{PIECE_NAME.get(pc, pc)} on {s}"
                                      for s, pc in attackers.items()),
-            "attack_units": units,
+            # int by contract (schema test); this is also EXACTLY the
+            # value the SAFETY_TABLE lookup used, post-discount
+            "attack_units": int(round(units)),
             "shield_pawns": shield,
             "open_files_nearby": open_files,
             "centered_uncastled": center_penalty > 0,
@@ -342,6 +401,68 @@ DEV_LAG_NOTABLE = -15   # raw points behind own-side baseline before the
                         # the annoyance gate, owner 2026-07-23)
 
 
+def _mob_norm(board, square: str, p, ph: float) -> float:
+    """Per-piece Stockfish-mobility norm, from this module's string-square
+    dialect. Recomputes the area per call — fine at one call per piece;
+    activity_score() does the batched version."""
+    import chess as _c
+    from .geometry import mobility_area, mobility_norm, piece_mobility
+    try:
+        b = _c.Board(board.fen)
+        side = _c.WHITE if p.color == "white" else _c.BLACK
+        sq = _c.parse_square(square)
+        mob = piece_mobility(b, sq, side, mobility_area(b, side))
+        return mobility_norm(p.piece, mob, ph)
+    except Exception:
+        return 0.5
+
+
+def activity_score(fen: str, ph: float, color: str) -> float:
+    """A side's ACTIVITY in [0, 1] — the SAME quantity as the term's `cp`,
+    just rescaled (2026-07-24, owner: "cp and normalized, don't they
+    represent the same thing?" — they should, and now they do).
+
+    It is the side's summed tapered Stockfish MobilityBonus mapped onto its
+    own achievable range: 0 = every piece fully smothered (each at its
+    table's minimum), 1 = every piece maximally mobile.
+
+    IT AGREES WITH `cp` AT EQUAL MATERIAL, NOT ALWAYS. (An earlier docstring
+    claimed "can never disagree" — that is FALSE and the claim is retracted.)
+    The rescale uses EACH SIDE'S OWN range, so once piece counts differ the
+    denominators differ and the two can order the sides oppositely. Worked
+    example: a lone rampant queen (mob 16) against six mediocre black pieces
+    gives cp = -16 (Black, because six pieces sum to more raw bonus) but
+    0.681 vs 0.527 (White).
+    THAT DIVERGENCE IS CORRECT, and this number is the one to trust for
+    "who is more active": a raw sum conflates HOW MUCH material you have
+    with HOW ACTIVE it is, and material is the material term's job. `cp`
+    remains right for what Stockfish uses it for — the centipawn mobility
+    contribution inside an eval sum, where more pieces SHOULD contribute
+    more. Two questions, two numbers; the standing reads off this one.
+
+    Weighting therefore comes from Stockfish's table alone, which is the
+    only place it belongs: the queen's range (-49..221) is wider than the
+    knight's (-79..37) because a queen's mobility IS worth more."""
+    import chess as _c
+    from .geometry import (MOBILITY_BONUS, mobility_area, mobility_bonus,
+                           piece_mobility)
+    b = _c.Board(fen)
+    side = _c.WHITE if color == "white" else _c.BLACK
+    area = mobility_area(b, side)
+    total = lo_total = hi_total = 0.0
+    for pt, sym in ((_c.KNIGHT, "N"), (_c.BISHOP, "B"),
+                    (_c.ROOK, "R"), (_c.QUEEN, "Q")):
+        tbl = [mg * ph + eg * (1.0 - ph) for mg, eg in MOBILITY_BONUS[sym]]
+        for sq in b.pieces(pt, side):
+            total += mobility_bonus(sym, piece_mobility(b, sq, side, area), ph)
+            lo_total += min(tbl)
+            hi_total += max(tbl)
+    if hi_total <= lo_total:
+        return 0.0
+    return round(max(0.0, min(1.0, (total - lo_total)
+                              / (hi_total - lo_total))), 3)
+
+
 def _act_norm(piece: str, score: float, phase: str = "middlegame") -> float:
     """Raw activity score -> same-phase GM-practice percentile in [0, 1],
     by linear interpolation on the (phase, type) quantile grid."""
@@ -359,7 +480,35 @@ def _act_norm(piece: str, score: float, phase: str = "middlegame") -> float:
 
 
 def _activity_term(board, occ, attacks, ph: float,
-                   phase_name: str = "middlegame") -> dict:
+                   phase_name: str = "middlegame",
+                   loose: dict[str, float] | None = None) -> dict:
+    """ACTIVITY = MOBILITY, the Stockfish model (2026-07-24, owner: "do the
+    right thing / what engines actually do").
+
+    `cp` is now the summed tapered Stockfish MobilityBonus — the engine's
+    own activity term — NOT a PeSTO piece-square sum. PeSTO has no mobility
+    term by design (it folds positional knowledge into the PSTs precisely so
+    it never computes one), so a PST sum could not see activity at all: a
+    rook on an OPEN file and the same rook on a CLOSED file scored
+    identically. Measured on one open/locked pair with identical material,
+    PST gave the same number for both; mobility separates them by 13 points.
+
+    PeSTO placement is still REPORTED per piece as `placement` — it is
+    material placement, which is what PeSTO is good at, and it no longer
+    pretends to be activity.
+
+    NOTE: mobility is deliberately NOT SEE-discounted here. `_ACT_QUANTILES`
+    and `_DEV_BASELINE` are empirical grids fitted over millions of piece
+    observations of the UNDISCOUNTED score; the `loose` flag is exposed per
+    piece instead so consumers can see it."""
+    import chess as _c
+    from .geometry import mobility_area as _marea, mobility_bonus as _mbonus
+    from .geometry import piece_mobility as _pmob
+    try:
+        _b = _c.Board(board.fen)
+        _area = {"white": _marea(_b, _c.WHITE), "black": _marea(_b, _c.BLACK)}
+    except Exception:
+        _b, _area = None, None
     sums = {"white": 0.0, "black": 0.0}
     worst = {"white": None, "black": None}
     per_piece = {"white": [], "black": []}
@@ -372,20 +521,31 @@ def _activity_term(board, occ, attacks, ph: float,
             continue
         place = _taper(_pst(MG_TABLE, p.piece, p.color, s),
                        _pst(EG_TABLE, p.piece, p.color, s), ph)
-        base, weight = _MOBILITY[p.piece]
-        mob = sum(1 for t in attacks.get(s, ())
-                  if occ.get(t) is None or occ[t].color != p.color)
-        score = place + (mob - base) * weight
+        # SF mobility: safe squares only (the mobility area excludes squares
+        # enemy pawns cover and our own blocked/low pawns sit on), scored
+        # through Stockfish's own MobilityBonus table. Falls back to the raw
+        # attack count only if the board could not be parsed.
+        side = _c.WHITE if p.color == "white" else _c.BLACK
+        if _b is not None:
+            mob = _pmob(_b, _c.parse_square(s), side, _area[p.color])
+        else:
+            mob = sum(1 for t in attacks.get(s, ())
+                      if occ.get(t) is None or occ[t].color != p.color)
+        score = _mbonus(p.piece, mob, ph)
         sums[p.color] += score
-        # per-piece breakdown (2026-07-23, sheet-JSON activity block): the
-        # loop already knows every minor/major's score — keep it instead of
-        # throwing it away. `score` is cp-flavored: PeSTO placement (phase-
-        # tapered) + weighted mobility above the piece's baseline.
+        # per-piece breakdown: `score` is now the tapered SF MobilityBonus
+        # (cp), `placement` the tapered PeSTO PST (material placement).
         per_piece[p.color].append({"square": s, "piece": p.piece,
                                    "score": round(score, 1), "mobility": mob,
                                    "placement": round(place, 1),
-                                   "norm": round(_act_norm(p.piece, score,
-                                                           phase_name), 2)})
+                                   "loose": _w(loose, s) < 1.0,
+                                   # 0-1 within this piece's own STOCKFISH
+                                   # MobilityBonus table — the activity read
+                                   "norm": round(_mob_norm(board, s, p, ph), 2),
+                                   # the GM-corpus percentile, kept for the
+                                   # studies that were fitted against it
+                                   "gm_pct": round(_act_norm(p.piece, score,
+                                                             phase_name), 2)})
         # tie-break on square so identical scores pick the same piece every run
         if worst[p.color] is None or (score, s) < worst[p.color][:2]:
             worst[p.color] = (score, s, p.piece)
@@ -399,18 +559,43 @@ def _activity_term(board, occ, attacks, ph: float,
             per_piece[color],
             key=lambda e: (-e["norm"], -e["score"], e["square"]))
         features[f"score_{color}"] = round(sums[color])
+        # THE 0-1 ACTIVITY NUMBER — mean of the per-piece Stockfish mobility
+        # norms. This is the one to display, and the standing below is read
+        # off it so text and number can never contradict each other.
+        features[f"activity_{color}"] = activity_score(board.fen, ph, color)
         if worst[color] is not None:
             _, s, pc = worst[color]
             features[f"worst_piece_{color}"] = {"square": s, "piece": pc}
     # The least-active piece lives in `features` (worst_piece_*) for a caller that wants it — NOT
     # glued onto the standing, where it fired on every activity mention (even at dead balance, always
     # naming the side-to-move's back rook) and dragged noise into the briefing.
-    if cp >= _LEAD_THRESHOLD:
-        standing = "White's pieces are the more active"
-    elif cp <= -_LEAD_THRESHOLD:
-        standing = "Black's pieces are the more active"
+    # The STANDING reads off the 0-1 activity numbers, NOT `cp` (2026-07-24).
+    # They can disagree: `cp` is Stockfish's raw bonus sum, where a single
+    # rampant queen (bonuses to 221) outweighs everything, while the 0-1 is
+    # a per-type-normalized mean. On a locked test position cp said "White's
+    # pieces are the more active" while the displayed numbers read W 0.585 /
+    # B 0.598 — text contradicting the number it sits beside, which is the
+    # exact complaint that started this rework.
+    #
+    # ACTIVITY_GAP is deliberately wider than a couple of squares: after
+    # 1.e4 e5 2.Nf3 Nc6 Black is genuinely 3 safe squares up (its e5 pawn
+    # denies d4 to White's knight; White's own Nf3 blocks the d1-h5
+    # diagonal) — true, but not a verdict worth speaking when White's real
+    # asset is the tempo, which mobility cannot see.
+    aw = features.get("activity_white", 0.0)
+    ab = features.get("activity_black", 0.0)
+    if aw - ab >= ACTIVITY_GAP:
+        leader, standing = "White", "White's pieces are the more active"
+    elif ab - aw >= ACTIVITY_GAP:
+        leader, standing = "Black", "Black's pieces are the more active"
     else:
-        standing = "piece activity is roughly balanced"
+        leader, standing = None, "piece activity is roughly balanced"
+    # `leader` is the STRUCTURED verdict for the UI badge (owner 2026-07-24:
+    # "normalization isn't the way we show this — show it as a badge"). The
+    # 0-1 was false precision on screen: 0.681 vs 0.527 says nothing to a
+    # reader, and it hid that the raw sum ordered the sides the other way.
+    # The client renders this, never the number, and never parses the prose.
+    features["leader"] = leader
     return {"cp": round(cp), "standing": standing, "features": features}
 
 
@@ -485,19 +670,24 @@ def _pawns_term(board, occ, ph: float) -> dict:
     return {"cp": round(cp), "standing": standing, "features": feats}
 
 
-def _center_term(occ, ctrl, ph: float) -> dict:
+def _center_term(occ, ctrl, ph: float,
+                 loose: dict[str, float] | None = None) -> dict:
     cp = 0.0
     held = {"white": [], "black": []}
     detail = {}
     for s in _CORE:
         p = occ.get(s)
         if p is not None and p.piece in _OCCUPY:
-            v = _taper(*_OCCUPY[p.piece], ph)
+            # a hanging occupier neither scores nor HOLDS the square
+            wt = _w(loose, s)
+            v = _taper(*_OCCUPY[p.piece], ph) * wt
             cp += v if p.color == "white" else -v
-            held[p.color].append(s)
-        w, b = ctrl[s]
+            if wt > 0:
+                held[p.color].append(s)
+        w, b = ctrl[s]                      # already SEE-discounted
         cp += (w - b) * _taper(*_CONTROL, ph)
-        detail[s] = {"white_attackers": w, "black_attackers": b}
+        detail[s] = {"white_attackers": round(w, 1),
+                     "black_attackers": round(b, 1)}
     if cp >= _LEAD_THRESHOLD:
         standing = "White controls the centre"
     elif cp <= -_LEAD_THRESHOLD:
@@ -507,7 +697,11 @@ def _center_term(occ, ctrl, ph: float) -> dict:
     for color in ("white", "black"):
         if held[color]:
             standing += f"; {_side_name(color)} holds {', '.join(held[color])}"
-    return {"cp": round(cp), "standing": standing, "features": detail}
+    # round micro float noise first: accumulation order differs between a
+    # board and its mirror, and 1e-13 at a .5 boundary flipped the cp by 1
+    # (2026-07-24 mirror audit)
+    return {"cp": round(round(cp, 6)), "standing": standing,
+            "features": detail}
 
 
 # --- assembly ----------------------------------------------------------------
@@ -522,7 +716,13 @@ def analyze_positional(board) -> dict:
     input -> same output."""
     occ = occupancy(board)
     ph = _phase(occ)
-    ctrl, attacks = _attack_maps(board)
+    # ONE loose map per position, threaded into every term that counts
+    # pressure (2026-07-24 SEE discount — see geometry.loose_map).
+    try:
+        loose = _loose_squares(board.fen)
+    except Exception:
+        loose = None
+    ctrl, attacks = _attack_maps(board, loose)
     from .reads import game_phase as _gp
     try:
         phase_name = _gp(board.fen)["phase"]
@@ -530,10 +730,11 @@ def analyze_positional(board) -> dict:
         phase_name = "middlegame"
     terms = {
         "material": _material_term(board),
-        "king_safety": _king_safety_term(board, occ, ph),
-        "activity": _activity_term(board, occ, attacks, ph, phase_name),
+        "king_safety": _king_safety_term(board, occ, ph, loose),
+        "activity": _activity_term(board, occ, attacks, ph, phase_name,
+                                   loose),
         "pawns": _pawns_term(board, occ, ph),
-        "center": _center_term(occ, ctrl, ph),
+        "center": _center_term(occ, ctrl, ph, loose),
     }
     leads = [k for k in sorted(terms, key=lambda k: -abs(terms[k]["cp"]))
              if abs(terms[k]["cp"]) >= _LEAD_THRESHOLD][:2]
@@ -560,7 +761,10 @@ def attack_viability(fen: str) -> dict:
     the enemy king: score (raw), norm (score/max, clamped), components
     [{name, pts, why}]. Deterministic geometry; no engine."""
     import chess as _c
+    from .geometry import loose_map as _lm, loose_weight as _lw
     b = _c.Board(fen)
+    loose = _lm(b)          # SEE discount (2026-07-24): a hanging piece
+                            # is not attack infrastructure
     out = {}
     for color in (_c.WHITE, _c.BLACK):
         enemy = not color
@@ -601,7 +805,9 @@ def attack_viability(fen: str) -> dict:
                         break
                 if found:
                     reach.append(s)
-        pts = min(6, 2 * len(now) + len(reach))
+        mass = 2 * sum(_lw(loose, s) for s in now) \
+            + sum(_lw(loose, s) for s in reach)
+        pts = min(6, int(round(mass)))
         if pts:
             comps.append(("latent attackers", pts,
                           f"{len(now)} piece(s) already bear on the king "
@@ -634,7 +840,9 @@ def attack_viability(fen: str) -> dict:
 
         # 3. OPENABLE LINES: files beside the enemy king with no own pawn
         # (heavies can land or the file can open) — only with a heavy on.
-        heavies = list(b.pieces(_c.ROOK, color)) + list(b.pieces(_c.QUEEN, color))
+        heavies = [s for s in (list(b.pieces(_c.ROOK, color))
+                               + list(b.pieces(_c.QUEEN, color)))
+                   if _lw(loose, s) > 0]
         own_pawn_files = {_c.square_file(s) for s in b.pieces(_c.PAWN, color)}
         lines = [f for f in (kf - 1, kf, kf + 1)
                  if 0 <= f <= 7 and f not in own_pawn_files] if heavies else []
@@ -687,9 +895,11 @@ def region_control(fen: str) -> dict:
     b = _c.Board(fen)
 
     from .geometry import control_share as _cs   # the ONE copy (2026-07-23)
+    from .geometry import loose_map as _lm, loose_weight as _lw
+    loose = _lm(b)          # SEE discount (2026-07-24)
 
     def _share(sq) -> float:
-        return _cs(b, sq)
+        return _cs(b, sq, loose)
 
     def _region(squares) -> dict:
         s = sum(_share(sq) for sq in squares) / len(squares)
@@ -727,8 +937,10 @@ def region_control(fen: str) -> dict:
                 if bshare < 0.5 and b.piece_at(sq) is None:
                     continue                      # a hole nobody exploits
                 pc = b.piece_at(sq)
+                # a hanging knight is not an outpost — it is a loss
                 occupied = (pc is not None and pc.color == beneficiary
-                            and pc.piece_type in (_c.KNIGHT, _c.BISHOP))
+                            and pc.piece_type in (_c.KNIGHT, _c.BISHOP)
+                            and _lw(loose, sq) > 0)
                 pawn_backed = bool(b.attackers(beneficiary, sq)
                                    & b.pieces(_c.PAWN, beneficiary))
                 holes.append({
@@ -753,8 +965,10 @@ def region_control(fen: str) -> dict:
             continue
         heavies = {"White": 0, "Black": 0}
         for r in range(8):
-            pc = b.piece_at(_c.square(f, r))
-            if pc is not None and pc.piece_type in (_c.ROOK, _c.QUEEN):
+            sq_f = _c.square(f, r)
+            pc = b.piece_at(sq_f)
+            if pc is not None and pc.piece_type in (_c.ROOK, _c.QUEEN) \
+                    and _lw(loose, sq_f) > 0:
                 heavies["White" if pc.color == _c.WHITE else "Black"] += 1
         controller = ("White" if heavies["White"] > heavies["Black"] else
                       "Black" if heavies["Black"] > heavies["White"] else
