@@ -477,3 +477,41 @@ def test_king_storm_anticipation():
     # start position: no storm
     _, s0 = wdanger("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
     assert s0 == 0
+
+
+def test_king_line_pressure():
+    """Heavy-piece line pressure (2026-07-24): an enemy rook aligned on the
+    king's open file adds LINE_OPEN; one defender pawn between makes it a
+    half-open line (LINE_HALF); an unaligned rook adds nothing. Isolated by
+    moving/blocking ONLY the rook (shield held constant)."""
+    from lucena_core.positional import analyze_positional, LINE_OPEN, LINE_HALF
+    from lucena_core.board import Board as _B
+
+    def lp(fen):
+        f = analyze_positional(_B(fen))["terms"]["king_safety"]["features"]["white"]
+        return f["danger"], f.get("line_pressure", 0)
+
+    # White Kb1; b-file fully open (no b-pawns either side). Rook b8 = aligned.
+    aligned = "1r1q2k1/p4ppp/2n2n2/8/8/2N2N2/P4PPP/1K1Q3R w - - 0 1"
+    # same, but a White pawn on b5 shields the file (1 blocker -> half-open)
+    half = "1r1q2k1/p4ppp/2n2n2/1P6/8/2N2N2/P4PPP/1K1Q3R w - - 0 1"
+    # same, rook off the king's file (e8) -> not aligned
+    unaligned = "3qr1k1/p4ppp/2n2n2/8/8/2N2N2/P4PPP/1K1Q3R w - - 0 1"
+    d_a, lp_a = lp(aligned)
+    d_h, lp_h = lp(half)
+    d_u, lp_u = lp(unaligned)
+    assert lp_a == LINE_OPEN and lp_h == LINE_HALF and lp_u == 0
+    assert d_a > d_u                    # the aligned rook makes the king less safe
+
+    # RANK alignment (mirror of the file branch): enemy rook on the king's rank.
+    # (White to move IN CHECK is legal, so the open case is constructible.)
+    from lucena_core.positional import LINE_MAX
+    rank_open = "4k3/8/8/8/r3K3/8/8/8 w - - 0 1"        # Ra4 -- Ke4, 0 blockers
+    rank_half = "4k3/8/8/8/r1P1K3/8/8/8 w - - 0 1"      # White c4 blocks -> half
+    rank_two = "4k3/8/8/8/rPP1K3/8/8/8 w - - 0 1"       # two blockers -> 0
+    assert lp(rank_open)[1] == LINE_OPEN
+    assert lp(rank_half)[1] == LINE_HALF
+    assert lp(rank_two)[1] == 0
+    # CAP: a heavy battery on the open king-file exceeds LINE_MAX -> capped.
+    cap = "1r5k/1r6/1q6/8/8/8/8/1K6 w - - 0 1"          # Rb8+Rb7+Qb6 vs Kb1
+    assert lp(cap)[1] == LINE_MAX

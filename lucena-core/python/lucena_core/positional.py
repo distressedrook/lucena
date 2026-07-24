@@ -46,16 +46,27 @@ STORM_REACH = 5          # ranks of look-ahead toward the king (dist beyond -> 0
 STORM_PER_PAWN = 18      # a pawn one rank off the king's shield, adjacent file
 STORM_MAX = 72           # cap on the whole storm term
 
+# ---- heavy-piece line pressure (2026-07-24) --------------------------------
+# The other half of an attack the static term missed: enemy ROOKS/QUEEN bearing
+# on the king along its own file or rank. A rook on the OPEN file the king
+# sits on (Bobotsov-Tal: Rb8 vs the b1 king after ...cxb2 opened the b-file)
+# is a major threat the shield/zone terms structurally under-price. Scored by
+# how open the line is (defender pawns between the piece and the king).
+LINE_OPEN = 22           # 0 defender pawns between the heavy and the king
+LINE_HALF = 11           # exactly 1 (a half-open line)
+LINE_MAX = 55            # cap on the whole line-pressure term
+
 # DANGER_MAX = SAFETY_TABLE's own ceiling (650) + shield_penalty max (3*14)
-# + file_penalty max (3*15) + center_penalty max (35) + storm max (72) = 844.
+# + file_penalty max (3*15) + center_penalty max (35) + storm max (72) +
+# line-pressure max (55) = 899.
 # `danger/DANGER_MAX` is a BOUNDED score, not a calibrated probability — "1.0"
 # means "maxed out this formula", not "certain mate". The calibrated
 # P(catastrophe) mapping (2026-07-24 king-safety calibration study,
 # research/experiments/studies/king_danger_calibration/) is a SEPARATE
-# artifact fit against engine-verified outcomes; it was fit BEFORE this storm
-# term, so it now needs a refit against the storm-inclusive danger (flagged,
-# corpus job) — do not conflate the two under one "normalized" label.
-DANGER_MAX = 844
+# artifact fit against engine-verified outcomes; it was fit BEFORE the storm
+# and line-pressure terms, so it now needs a refit against the new danger
+# (flagged, corpus job) — do not conflate the two under one "normalized" label.
+DANGER_MAX = 899
 
 # --- CPW king-safety model (Glaurung 1.2 safety table, verbatim) ------------
 SAFETY_TABLE = [
@@ -309,10 +320,37 @@ def _king_safety_term(board, occ, ph: float,
                     storm *= 1.5                     # opposite-wing castling
         storm = min(round(storm), STORM_MAX)
 
-        # shield/file/storm penalties are middlegame concepts; zone attacks
-        # keep a small endgame tail (a cornered king can still be hunted)
+        # heavy-piece LINE PRESSURE: enemy R/Q on the king's own file or rank,
+        # scored by how open the line between them is (defender pawns in the
+        # way). A rook on the open file the king sits on is the piece half of
+        # the attack the pawn storm only starts.
+        line_pressure = 0
+        for s, p in occ.items():
+            if p.color != enemy or p.piece not in ("R", "Q") or _w(loose, s) <= 0:
+                continue
+            pf, pr = _fr(s)
+            if pf != kf and pr != kr:                # not aligned with the king
+                continue
+            if pf == kf:                             # same file: count blockers by rank
+                betw = range(min(pr, kr) + 1, max(pr, kr))
+                blk = sum(1 for r in betw
+                          if (q := occ.get(_sq(kf, r))) is not None
+                          and q.color == color and q.piece == "P")
+            else:                                    # same rank: blockers by file
+                betw = range(min(pf, kf) + 1, max(pf, kf))
+                blk = sum(1 for f in betw
+                          if (q := occ.get(_sq(f, kr))) is not None
+                          and q.color == color and q.piece == "P")
+            if blk == 0:
+                line_pressure += LINE_OPEN
+            elif blk == 1:
+                line_pressure += LINE_HALF
+        line_pressure = min(line_pressure, LINE_MAX)
+
+        # shield/file/storm/line penalties are middlegame concepts; zone
+        # attacks keep a small endgame tail (a cornered king can still be hunted)
         danger[color] = _taper(zone_penalty + shield_penalty + file_penalty
-                               + center_penalty + storm,
+                               + center_penalty + storm + line_pressure,
                                zone_penalty / 4.0, ph)
         features[color] = {
             "king": ksq,
@@ -329,6 +367,7 @@ def _king_safety_term(board, occ, ph: float,
             "open_files_nearby": open_files,
             "centered_uncastled": center_penalty > 0,
             "storm": int(storm),          # pawn-storm anticipation (2026-07-24)
+            "line_pressure": int(line_pressure),   # heavies on the king's file/rank
         }
 
     cp = (danger["black"] - danger["white"]) + (pst["white"] - pst["black"])
