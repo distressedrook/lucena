@@ -453,3 +453,27 @@ def test_kingless_side_is_rejected_at_board_construction():
     # guarantee (it is not a claim about the module itself).
     with pytest.raises(Exception):
         Board("8/8/8/8/8/8/8/4K3 w - - 0 1")
+
+
+def test_king_storm_anticipation():
+    """Pawn-storm anticipation (2026-07-24): enemy pawns marching at the king
+    RAISE its danger before any piece arrives, and it climbs as they advance;
+    a quiet/no-storm position adds ~nothing. (Bobotsov-Tal 1958 motivator.)"""
+    from lucena_core.positional import analyze_positional
+    from lucena_core.board import Board as _B
+
+    def wdanger(fen):
+        f = analyze_positional(_B(fen))["terms"]["king_safety"]["features"]
+        return f["white"]["danger"], f["white"].get("storm", 0)
+
+    # MIDDLEGAME (Q+2R+2N, high phase so the storm counts), White king on b1;
+    # Black c-pawn marches b1-ward c5 -> c3: storm and danger BOTH climb.
+    far = "1r1q1rk1/pp3ppp/2n2n2/2p5/8/2N2N2/PP1Q1PPP/1K1R3R w - - 0 1"
+    near = "1r1q1rk1/pp3ppp/2n2n2/8/8/2p2N2/PP1Q1PPP/1K1RN2R w - - 0 1"
+    d_far, s_far = wdanger(far)
+    d_near, s_near = wdanger(near)
+    assert s_near > s_far > 0                 # storm present and grows as it nears
+    assert d_near > d_far                     # danger climbs with the storm
+    # start position: no storm
+    _, s0 = wdanger("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1")
+    assert s0 == 0

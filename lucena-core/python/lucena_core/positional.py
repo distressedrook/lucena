@@ -32,15 +32,30 @@ from __future__ import annotations
 from ._pesto import EG_TABLE, EG_VALUE, MG_TABLE, MG_VALUE
 from .reads import PIECE_NAME, king_square, occupancy
 
+# ---- pawn-storm anticipation (2026-07-24) ----------------------------------
+# Static king safety saw an attack only once ENEMY PIECES were in the zone; an
+# opposite-wings game (Bobotsov-Tal 1958) is decided by the enemy PAWNS
+# marching at the king long before a piece arrives — and the old term read
+# White's king as ~safe the whole game. `storm` is a forward-looking term:
+# enemy pawns advanced onto the king's flank (files within 2 of the king),
+# weighted by how close they are (rank distance) and by file (adjacent files
+# heavier), amplified 1.5x when the two kings castled on OPPOSITE wings (a
+# mutual race). It rises move by move as the pawns advance — the anticipation
+# the static components structurally miss.
+STORM_REACH = 5          # ranks of look-ahead toward the king (dist beyond -> 0)
+STORM_PER_PAWN = 18      # a pawn one rank off the king's shield, adjacent file
+STORM_MAX = 72           # cap on the whole storm term
+
 # DANGER_MAX = SAFETY_TABLE's own ceiling (650) + shield_penalty max (3*14)
-# + file_penalty max (3*15) + center_penalty max (35) = 772. `danger/
-# DANGER_MAX` is a BOUNDED score, not a calibrated probability — "1.0"
+# + file_penalty max (3*15) + center_penalty max (35) + storm max (72) = 844.
+# `danger/DANGER_MAX` is a BOUNDED score, not a calibrated probability — "1.0"
 # means "maxed out this formula", not "certain mate". The calibrated
 # P(catastrophe) mapping (2026-07-24 king-safety calibration study,
 # research/experiments/studies/king_danger_calibration/) is a SEPARATE
-# artifact fit against engine-verified outcomes; do not conflate the two
-# under one "normalized" label.
-DANGER_MAX = 772
+# artifact fit against engine-verified outcomes; it was fit BEFORE this storm
+# term, so it now needs a refit against the storm-inclusive danger (flagged,
+# corpus job) — do not conflate the two under one "normalized" label.
+DANGER_MAX = 844
 
 # --- CPW king-safety model (Glaurung 1.2 safety table, verbatim) ------------
 SAFETY_TABLE = [
@@ -271,10 +286,33 @@ def _king_safety_term(board, occ, ph: float,
                         and _w(loose, s) > 0 for s, p in occ.items())
             center_penalty = 35 if has_q else 15
 
-        # shield/file penalties are middlegame concepts; zone attacks keep a
-        # small endgame tail (a cornered king can still be hunted)
+        # pawn-storm ANTICIPATION: enemy pawns marching at the king's flank,
+        # closer = heavier, amplified when the kings are on opposite wings (a
+        # mutual race). This is the forward-looking term the others miss.
+        storm = 0.0
+        for s, p in occ.items():
+            if p.color != enemy or p.piece != "P":
+                continue
+            pf, pr = _fr(s)
+            if abs(pf - kf) > 2:
+                continue
+            dist = abs(pr - kr)                      # ranks between pawn & king
+            if dist == 0 or dist > STORM_REACH:
+                continue
+            ff = 1.0 if abs(pf - kf) <= 1 else 0.55  # adjacent files weigh more
+            storm += (STORM_REACH - dist) / STORM_REACH * STORM_PER_PAWN * ff
+        if storm > 0:
+            eksq = king_square(board, enemy)
+            if eksq is not None:
+                ekf = _fr(eksq)[0]
+                if (kf <= 2 and ekf >= 5) or (kf >= 5 and ekf <= 2):
+                    storm *= 1.5                     # opposite-wing castling
+        storm = min(round(storm), STORM_MAX)
+
+        # shield/file/storm penalties are middlegame concepts; zone attacks
+        # keep a small endgame tail (a cornered king can still be hunted)
         danger[color] = _taper(zone_penalty + shield_penalty + file_penalty
-                               + center_penalty,
+                               + center_penalty + storm,
                                zone_penalty / 4.0, ph)
         features[color] = {
             "king": ksq,
@@ -290,6 +328,7 @@ def _king_safety_term(board, occ, ph: float,
             "shield_pawns": shield,
             "open_files_nearby": open_files,
             "centered_uncastled": center_penalty > 0,
+            "storm": int(storm),          # pawn-storm anticipation (2026-07-24)
         }
 
     cp = (danger["black"] - danger["white"]) + (pst["white"] - pst["black"])
