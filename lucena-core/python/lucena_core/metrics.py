@@ -134,6 +134,8 @@ def space_report(fen: str) -> dict:
             weak = []
             from .geometry import is_hole as _is_hole   # audited definition
             for f in files:
+                if f in (0, 7):        # rim holes price at nothing (corpus
+                    continue           # law: 0.496) — never "exploitable"
                 front = fronts[color].get(f, 0)
                 for rel in range(2, front):
                     r = rel if color == chess.WHITE else 7 - rel

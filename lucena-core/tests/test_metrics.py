@@ -80,3 +80,23 @@ def test_space_report_retains_percentile_score_as_payload():
             entry = sp[region][side]
             assert "score" in entry and isinstance(entry["score"], float)
             assert "raw" in entry and isinstance(entry["raw"], int)
+
+
+def test_space_exploitable_excludes_rim_holes():
+    """Rim holes price at nothing (corpus law 0.496 — the same cut
+    suggest.py tags 'rim'): an a/h-file hole never lands in `exploitable`,
+    even when it is a genuine, enemy-attacked hole behind the pawn front
+    (owner de-clutter ruling 2026-07-25). The central twin stays."""
+    from lucena_core.metrics import space_report
+    from lucena_core.geometry import is_hole
+    import chess
+    # White pawns a4/d4; safe black knights c2 (eyes a3) and f4 (eyes d3).
+    fen = "6k1/8/8/8/P2P1n2/8/2n3PP/6K1 w - - 0 30"
+    b = chess.Board(fen)
+    # a3 IS a hole, IS behind the a4 front, IS attacked — only the rim cut
+    # can be what excludes it.
+    assert is_hole(b, chess.A3, chess.WHITE)
+    assert b.is_attacked_by(chess.BLACK, chess.A3)
+    sr = space_report(fen)
+    assert sr["center"]["white"]["exploitable"] == ["d3"]
+    assert sr["queenside"]["white"]["exploitable"] == []
