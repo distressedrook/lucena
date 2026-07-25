@@ -490,7 +490,7 @@ def material_stability(fen: str) -> dict:
         if trail_grab[0] >= 0.6 * abs(raw):
             soft = True
             why.append(f"the trailing side wins material back with "
-                       f"{trail_grab[1]} (SEE +{trail_grab[0]})")
+                       f"{trail_grab[1]}")
         # (b) STRUCTURAL — surplus is a damaged pawn
         pawn_diff = (len(b.pieces(chess.PAWN, chess.WHITE))
                      - len(b.pieces(chess.PAWN, chess.BLACK)))
@@ -503,8 +503,7 @@ def material_stability(fen: str) -> dict:
             dbl, _iso = _pawn_flaws(b, lead_color)
             if dbl:
                 soft = True
-                why.append(f"the extra pawn is doubled ({dbl} on a file) — "
-                           f"worth less than its count")
+                why.append("the extra pawn is doubled")
         # (c) LIQUIDATABLE — a surplus pawn sits on SEE>=0 tension
         from .see import see as _see
         for s in b.pieces(chess.PAWN, lead_color):
@@ -520,16 +519,16 @@ def material_stability(fen: str) -> dict:
                     if m.to_square == s and probe.is_capture(m)]
             if any(_see(probe.fen(), m.uci()) >= 0 for m in caps):
                 soft = True
-                why.append(f"the {chess.square_name(s)} pawn can be "
-                           f"liquidated off the board (SEE >= 0)")
+                why.append(f"the {chess.square_name(s)} pawn can "
+                           "simply be traded off")
                 break
 
     soft_cp = adjusted - raw
     if soft_cp and abs(soft_cp) >= 50:
         soft = True                       # a real material swing is pending
         side_word = "White" if soft_cp > 0 else "Black"
-        why.insert(0, f"{abs(soft_cp)}cp swings to {side_word} once the "
-                       f"captures resolve (adjusted material {adjusted:+}cp)")
+        why.insert(0, f"once the captures resolve, the material swings "
+                       f"to {side_word}")
 
     # THE SPEAKABLE SENTENCE, read off the SETTLED board. `raw_standing`
     # describes the nominal position and is kept for diagnostics only —
