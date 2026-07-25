@@ -289,7 +289,24 @@ def trapped_pieces(fen: str) -> dict:
     """Pieces (N/B/R/Q) with no safe move (`trapped`) or exactly one
     (`restricted`). Safe = the destination isn't guarded by an enemy pawn,
     and if attacked at all, it is at least as defended (a cheap SEE
-    stand-in — geometry, not tactics; the tactics layer prices the rest)."""
+    stand-in — geometry, not tactics; the tactics layer prices the rest).
+
+    Each entry also says WHO did the trapping (2026-07-25, owner: "why is
+    Ra8 being tagged as trapped? ... they can move, right?"). The starting
+    rooks and bishops have no safe move at all — hemmed in by their OWN
+    army — and calling that "trapped" misuses the term: a trapped piece is
+    one the ENEMY has caught. So:
+
+      `denied_by`  "own"   every rejected square was occupied by a friendly
+                           piece — this is an UNDEVELOPED piece, not a
+                           trapped one (Ra8 behind a7/Nb8 on move 1)
+                   "enemy" at least one square was denied by enemy control
+      `attacked`   an enemy piece really attacks it right now (loose-
+                   discounted, same as everything else here)
+
+    The mobility numbers are unchanged — the corpus-validated signal
+    (r +0.072) is exactly what it was; these two fields only let a consumer
+    tell "caught" from "not out yet"."""
     b = chess.Board(fen)
     from .geometry import loose_map as _lm, loose_weight as _lw
     loose = _lm(b)          # SEE discount (2026-07-24): a square guarded
@@ -305,14 +322,17 @@ def trapped_pieces(fen: str) -> dict:
         for pt in (chess.KNIGHT, chess.BISHOP, chess.ROOK, chess.QUEEN):
             for s in b.pieces(pt, color):
                 safe = 0
+                enemy_denied = False     # any square the ENEMY takes away
                 for t in b.attacks(s):
                     pc = b.piece_at(t)
                     if pc is not None and pc.color == color:
-                        continue
+                        continue         # our own piece is standing there
                     if t in pawn_atk:
+                        enemy_denied = True
                         continue
                     if sum(_lw(loose, a) for a in b.attackers(enemy, t)) \
                             > sum(_lw(loose, a) for a in b.attackers(color, t)):
+                        enemy_denied = True
                         continue
                     safe += 1
                     if safe > 1:
@@ -322,6 +342,9 @@ def trapped_pieces(fen: str) -> dict:
                         "piece": chess.piece_symbol(pt).upper(),
                         "square": chess.square_name(s),
                         "state": "trapped" if safe == 0 else "restricted",
+                        "denied_by": "enemy" if enemy_denied else "own",
+                        "attacked": sum(_lw(loose, a)
+                                        for a in b.attackers(enemy, s)) > 0,
                     })
     return out
 

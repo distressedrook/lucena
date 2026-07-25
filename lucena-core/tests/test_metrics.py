@@ -100,3 +100,29 @@ def test_space_exploitable_excludes_rim_holes():
     sr = space_report(fen)
     assert sr["center"]["white"]["exploitable"] == ["d3"]
     assert sr["queenside"]["white"]["exploitable"] == []
+
+
+def test_trapped_says_who_did_the_trapping():
+    """TRAPPED means the ENEMY caught the piece (owner 2026-07-25: "why is
+    Ra8 being tagged as trapped? ... they can move, right?"). Every starting
+    rook, bishop and queen has zero safe moves — hemmed in by its OWN army —
+    which is UNDEVELOPED, not trapped. `denied_by`/`attacked` separate the
+    two so the sheet can surface only the real ones; the mobility numbers
+    (the corpus-validated signal) are untouched."""
+    from lucena_core.metrics import trapped_pieces
+    import chess
+
+    start = trapped_pieces(chess.STARTING_FEN)["black"]
+    by_sq = {e["square"]: e for e in start}
+    assert by_sq["a8"]["state"] == "trapped"       # it really has no move...
+    assert by_sq["a8"]["denied_by"] == "own"       # ...because a7/Nb8 block it
+    assert by_sq["a8"]["attacked"] is False
+    assert all(e["denied_by"] == "own" and not e["attacked"] for e in start)
+
+    # The classic: Bxa7 answered by ...b6. b8 and b6 are both covered, and
+    # the bishop is attacked where it stands — caught by the enemy.
+    fen = "rn1qkbnr/B1p1pppp/1p6/8/8/8/PPPPPPPP/RNBQK1NR b KQkq - 0 4"
+    ba7, = [e for e in trapped_pieces(fen)["white"] if e["square"] == "a7"]
+    assert ba7["state"] == "trapped"
+    assert ba7["denied_by"] == "enemy"
+    assert ba7["attacked"] is True
