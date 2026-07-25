@@ -12,6 +12,8 @@ module externally.
 
 from __future__ import annotations
 
+import chess as _c
+
 from .board import Board
 from lucena_engine.evalmodel import Score, win_pct_from_score
 
@@ -137,58 +139,98 @@ def pv_san(fen: str, pv: list[str], max_plies: int = 6) -> list[str]:
 
 
 # ---- game phase ------------------------------------------------------------
-# (2026-07-23, owner-ratified design): the three boundaries are different
-# KINDS of events, so the classifier is a hybrid — ENDGAME is a material
-# event (max side non-pawn material, the plans layer's own threshold);
-# OPENING is a development event (in the openings book, or development
-# incomplete by the classical tells: minors home, king uncastled with
-# rights, rooks unconnected); MIDDLEGAME is everything else. Single-FEN and
-# deterministic; stream callers add hysteresis themselves (a game never
-# returns to an earlier phase).
+# (2026-07-23, owner-ratified design; REDEFINED 2026-07-25): the three
+# boundaries are different KINDS of events, so the classifier is a hybrid —
+# ENDGAME is a material event (max side non-pawn material, the plans layer's
+# own threshold); OPENING is a DEVELOPMENT event; MIDDLEGAME is everything
+# else. Single-FEN and deterministic; stream callers add hysteresis
+# themselves (a game never returns to an earlier phase).
+#
+# The 2026-07-25 redefinition (owner: "the ply 20 isn't working ... be
+# concrete about what opening means") dropped three things the old rule
+# leaned on: the fullmove <= 20 window (a home bishop is undeveloped on move
+# 30 too), book membership (being in the book is a fact about theory, not
+# about this position's development), and the rooks-unconnected tell
+# ("sometimes the rook may not be connected at all" — rooks get traded or go
+# to open files and never connect). What is left is concrete geometry:
+# minors on their original squares, and an uncastled king with rights.
 
 _PHASE_NPM = {"Q": 9, "R": 5, "B": 3, "N": 3}
 ENDGAME_NPM = 13          # same bar as lucena_backend.plans.service
 
+# A minor's own ORIGINAL square — the concrete, unambiguous "undeveloped"
+# test. Keyed by (color, piece type), not by back rank: a bishop that has
+# come out to b1 is DEVELOPED even though b1 is a knight's home square.
+_HOME_MINORS = {
+    (_c.WHITE, _c.KNIGHT): {_c.B1, _c.G1},
+    (_c.WHITE, _c.BISHOP): {_c.C1, _c.F1},
+    (_c.BLACK, _c.KNIGHT): {_c.B8, _c.G8},
+    (_c.BLACK, _c.BISHOP): {_c.C8, _c.F8},
+}
+
+
+def development_debts(board, color) -> dict:
+    """One side's CONCRETE, ply-independent development debts: the minor
+    pieces (knights/bishops) still on their ORIGINAL squares, plus an
+    uncastled king that still holds castling rights.
+
+    Deliberately NO rook-connection tell (owner 2026-07-25: "sometimes the
+    rook may not be connected at all") — rooks get traded, or go to open
+    files and never "connect", so back-rank connection is not a reliable
+    development signal. And no ply cap: a home bishop is undeveloped whether
+    it is move 8 or move 30.
+
+    Returns {"minors": ["Bc8", ...], "uncastled": bool} — each minor as
+    "<letter><square>", sorted, the same spelling every consumer prints;
+    `board` is a python-chess Board.
+    """
+    minors = sorted(
+        f"{board.piece_at(s).symbol().upper()}{_c.square_name(s)}"
+        for pt in (_c.KNIGHT, _c.BISHOP)
+        for s in board.pieces(pt, color)
+        if s in _HOME_MINORS[(color, pt)])
+    k = board.king(color)
+    back = 0 if color == _c.WHITE else 7
+    uncastled = (k is not None and _c.square_rank(k) == back
+                 and _c.square_file(k) == 4
+                 and board.has_castling_rights(color))
+    return {"minors": minors, "uncastled": uncastled}
+
+
+def _developed(board, color) -> bool:
+    """A side has COMPLETED development when it has no minor on its home
+    square and its king is castled or committed (no debts)."""
+    d = development_debts(board, color)
+    return not d["minors"] and not d["uncastled"]
+
 
 def game_phase(fen: str) -> dict:
-    """{'phase': 'opening'|'middlegame'|'endgame', 'why': str}."""
-    import chess as _c
+    """{'phase': 'opening'|'middlegame'|'endgame', 'why': str,
+        'developed': {'white': bool, 'black': bool}}.
+
+    Opening vs middlegame is decided by DEVELOPMENT — concretely, per side,
+    and with NO ply cap (owner 2026-07-25: "the ply 20 isn't working ... be
+    concrete about what opening means"). The game reaches the MIDDLEGAME the
+    moment EITHER side has finished developing; the other side may still be
+    developing, which `developed` reports per side so a lagging side's debt
+    is still surfaced (owner: "the other team may not have completed the
+    development"). Endgame is still material-gated and takes precedence.
+    """
     b = _c.Board(fen)
     sym = {_c.QUEEN: "Q", _c.ROOK: "R", _c.BISHOP: "B", _c.KNIGHT: "N"}
-    npm = {}
-    for color in (_c.WHITE, _c.BLACK):
-        npm[color] = sum(_PHASE_NPM[s] * len(b.pieces(pt, color))
-                         for pt, s in sym.items())
+    npm = {color: sum(_PHASE_NPM[s] * len(b.pieces(pt, color))
+                      for pt, s in sym.items())
+           for color in (_c.WHITE, _c.BLACK)}
+    dev = {"white": _developed(b, _c.WHITE), "black": _developed(b, _c.BLACK)}
     if max(npm.values()) <= ENDGAME_NPM:
-        return {"phase": "endgame",
+        return {"phase": "endgame", "developed": dev,
                 "why": (f"max side non-pawn material "
                         f"{max(npm.values())} <= {ENDGAME_NPM}")}
-
-    fullmove = b.fullmove_number
-    if fullmove <= 20:
-        from . import openings
-        if openings.name_for(fen):
-            return {"phase": "opening", "why": "position is in the book"}
-        for color, back in ((_c.WHITE, 0), (_c.BLACK, 7)):
-            tells = []
-            minors_home = sum(
-                1 for pt in (_c.KNIGHT, _c.BISHOP)
-                for s in b.pieces(pt, color) if _c.square_rank(s) == back)
-            if minors_home >= 2:
-                tells.append(f"{minors_home} minors still home")
-            k = b.king(color)
-            if k is not None and _c.square_rank(k) == back \
-                    and _c.square_file(k) == 4 \
-                    and b.has_castling_rights(color):
-                tells.append("king uncastled with rights")
-            rooks = list(b.pieces(_c.ROOK, color))
-            if len(rooks) >= 2 and not any(
-                    r2 in b.attacks(r1) for r1 in rooks for r2 in rooks
-                    if r1 != r2):
-                tells.append("rooks unconnected")
-            if len(tells) >= 2:
-                side = "White" if color == _c.WHITE else "Black"
-                return {"phase": "opening",
-                        "why": f"{side}'s development incomplete: "
-                               + ", ".join(tells)}
-    return {"phase": "middlegame", "why": "developed, material still on"}
+    if dev["white"] or dev["black"]:
+        still = [s for s in ("white", "black") if not dev[s]]
+        why = ("both sides developed" if not still
+               else " and ".join(s.capitalize() for s in still)
+               + " still developing")
+        return {"phase": "middlegame", "why": why, "developed": dev}
+    return {"phase": "opening", "developed": dev,
+            "why": "both sides still developing"}
