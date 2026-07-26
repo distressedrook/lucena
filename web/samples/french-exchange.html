@@ -101,6 +101,7 @@
    color:var(--muted); }
  .moment.missed .kind { color:#A6392E; }
  .moment.plan .kind { color:#3A6EA5; }
+ .moment.drift .kind { color:#B8860B; }
  .moment h3 { font-size:23px; margin:3px 0; display:flex;
    align-items:center; gap:10px; flex-wrap:wrap; }
  .num { font-family:Menlo,monospace; color:var(--muted); }
@@ -122,6 +123,12 @@
    background:var(--card); font-size:14.5px; }
  .align.right { border-color:#B8860B; }
  .align.on { border-color:#2E7D5B; }
+ .endgame-read { margin-top:14px; border-left:3px solid #3A6EA5;
+   padding:8px 12px; background:var(--card); }
+ .endgame-read h4 { font-size:11px; letter-spacing:0.08em;
+   text-transform:uppercase; color:var(--muted); margin-bottom:4px; }
+ .endgame-read ul { margin:0; padding-left:16px; font-size:14.5px; }
+ .endgame-read li { margin:2px 0; }
  .read-block { margin-top:14px; font-size:15px; }
  .read-block p { margin:8px 0 4px; }
  ul.read { margin:4px 0 10px; padding-left:18px; }
@@ -259,6 +266,7 @@ R . B Q K . . R</pre></desc><defs><g id="white-pawn" class="white pawn"><path d=
       <div class="facts"><span class='fact'>placid — nothing forcing anywhere</span></div>
       <p class='align other'><b>A different plan.</b> What followed carried out <b>castle kingside, pair break</b>, which is not among the plans detected here. That is not automatically wrong — our menu is not exhaustive.</p>
       <div class="read-block"><p>The position is roughly equal — placid — nothing forcing anywhere.</p><p>Structure: petroff exchange — White&#x27;s side.</p><p><strong>White</strong></p><ul class='read'><li>No significant weaknesses.</li><li><em>Engine confirmed</em> — Castle kingside: get the king to safety — available right now.</li><li><em>Engine confirmed</em> — Castle queenside: get the king to safety — playable in the short term.</li><li><em>The structure suggests this</em> — Complete development: bring the Bc1 into play toward natural squares; castle without delay; avoid moving the same piece twice or grabbing material before development is complete.</li><li><em>The structure suggests this</em> — Rook activation: put a rook on the open/semi-open file.</li><li><em>The structure suggests this</em> — Double on the file: double rooks (or rook and queen) on the e-file.</li></ul><p><strong>Black</strong></p><ul class='read'><li>No significant weaknesses.</li><li><em>Engine confirmed</em> — Castle kingside: get the king to safety — available right now.</li><li><em>Engine confirmed</em> — Castle queenside: get the king to safety — a longer-term idea, not for right now.</li><li><em>Engine confirmed</em> — Rook activation: put a rook on the open/semi-open file — a longer-term idea, not for right now.</li><li><em>The structure suggests this</em> — Complete development: bring the Nb8 into play toward natural squares; castle without delay; avoid moving the same piece twice or grabbing material before development is complete.</li><li><em>The structure suggests this</em> — Double on the file: double rooks (or rook and queen) on the e-file.</li></ul></div>
+      
     </div>
   </div>
 </article><article class="moment plan">
@@ -282,6 +290,7 @@ R . B . R . K .</pre></desc><defs><g id="white-pawn" class="white pawn"><path d=
       <div class="facts"><span class='fact'>placid — nothing forcing anywhere</span></div>
       <p class='align on'><b>On plan.</b> What followed carried out <b>rook activation</b>, one of the plans on offer here.</p>
       <div class="read-block"><p>The position is roughly equal — placid — nothing forcing anywhere.</p><p>Structure: petroff exchange — White&#x27;s side.</p><p><strong>White</strong></p><ul class='read'><li>No significant weaknesses.</li><li><em>Strong humans play this</em> — Rook activation: put a rook on the open/semi-open file.</li><li><em>The structure suggests this</em> — Complete development: bring the Bc1 into play toward natural squares; avoid moving the same piece twice or grabbing material before development is complete.</li></ul><p><strong>Black</strong></p><ul class='read'><li>Black&#x27;s king has no luft.</li><li><em>Engine confirmed</em> — Rook activation: put a rook on the open/semi-open file — a longer-term idea, not for right now.</li></ul></div>
+      
     </div>
   </div>
 </article><article class="moment plan">
@@ -305,6 +314,7 @@ R . . . . . K .</pre></desc><defs><g id="white-pawn" class="white pawn"><path d=
       <div class="facts"><span class='fact'>placid — nothing forcing anywhere</span></div>
       <p class='align on'><b>On plan.</b> What followed carried out <b>rook activation</b>, one of the plans on offer here.</p>
       <div class="read-block"><p>The position is roughly equal — placid — nothing forcing anywhere.</p><p>Structure: petroff exchange — White&#x27;s side.</p><p><strong>White</strong></p><ul class='read'><li>No significant weaknesses.</li><li><em>Engine confirmed</em> — Knight to f5: maneuver a knight to the strong square in front of Black&#x27;s king — playable in the short term.</li><li><em>Engine confirmed</em> — Rook activation: put a rook on the open/semi-open file — available right now.</li></ul><p><strong>Black</strong></p><ul class='read'><li>Black&#x27;s king has no luft.</li><li>Holes at b6 — no pawn of yours can guard it again, so a piece that lands there cannot be chased off.</li><li><em>The structure suggests this</em> — Rook activation: put a rook on the open/semi-open file.</li></ul></div>
+      
     </div>
   </div>
 </article><article class="moment plan">
@@ -328,6 +338,7 @@ R . . . . . K .</pre></desc><defs><g id="white-pawn" class="white pawn"><path d=
       <div class="facts"><span class='fact'>placid — nothing forcing anywhere</span></div>
       <p class='align other'><b>A different plan.</b> What followed carried out <b>seventh invasion</b>, which is not among the plans detected here. That is not automatically wrong — our menu is not exhaustive.</p>
       <div class="read-block"><p>The position is roughly equal — placid — nothing forcing anywhere.</p><p>Structure: petroff exchange — White&#x27;s side, petroff exchange — Black&#x27;s side.</p><p><strong>White</strong></p><ul class='read'><li>Backward pawn on c3.</li><li>Holes at b3, d3, c4 — no pawn of yours can guard them again, so a piece that lands there cannot be chased off.</li><li><em>Engine confirmed</em> — Rook activation: put a rook on the open/semi-open file — a longer-term idea, not for right now.</li><li><em>The structure suggests this</em> — Free the backward pawn: prepare the c3-c4 break.</li></ul><p><strong>Black</strong></p><ul class='read'><li>Backward pawn on c6.</li><li>Doubled pawns on the g-file.</li><li>Holes at c5, b6, d6 — no pawn of yours can guard them again, so a piece that lands there cannot be chased off.</li><li><em>The structure suggests this</em> — Free the backward pawn: prepare the c6-c5 break.</li><li><em>The structure suggests this</em> — Rook activation: put a rook on the open/semi-open file.</li><li><em>The structure suggests this</em> — Double on the file: double rooks (or rook and queen) on the h-file.</li></ul></div>
+      
     </div>
   </div>
 </article>

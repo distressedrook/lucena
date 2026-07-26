@@ -3132,7 +3132,11 @@
      "castle_kingside",
      "pair_break"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "plan",
@@ -3302,7 +3306,11 @@
      "rook_activation"
     ],
     "tier": "human"
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "plan",
@@ -3475,7 +3483,11 @@
      "rook_activation"
     ],
     "tier": "engine"
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "plan",
@@ -3663,7 +3675,11 @@
     "played": [
      "seventh_invasion"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   }
  ],
  "summary": {

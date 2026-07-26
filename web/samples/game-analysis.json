@@ -5137,7 +5137,11 @@
      "castle_kingside",
      "free_bad_bishop"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "plan",
@@ -5328,7 +5332,11 @@
      "center_break_vs_king"
     ],
     "tier": "engine"
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "turning",
@@ -5572,7 +5580,11 @@
      "rook_activation"
     ],
     "tier": "structure"
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "plan",
@@ -5773,7 +5785,11 @@
     "played": [
      "prepared_break"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "turning",
@@ -6005,7 +6021,11 @@
      "prepared_break",
      "weakness_harvest"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "turning",
@@ -6269,7 +6289,11 @@
     "played": [
      "prepared_break"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "plan",
@@ -6527,7 +6551,11 @@
      "outpost_occupation",
      "wing_expansion"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "turning",
@@ -6834,7 +6862,11 @@
      "outpost_occupation",
      "wing_expansion"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "missed",
@@ -7142,7 +7174,11 @@
      "attack_passer"
     ],
     "tier": "structure"
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "missed",
@@ -7462,7 +7498,11 @@
     "played": [
      "seventh_invasion"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "plan",
@@ -7728,7 +7768,11 @@
     "played": [
      "seventh_invasion"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   },
   {
    "kind": "missed",
@@ -8039,7 +8083,11 @@
     "played": [
      "seventh_invasion"
     ]
-   }
+   },
+   "endgame": [],
+   "span_to_move": 0,
+   "span_cost": 0.0,
+   "span_moves": []
   }
  ],
  "summary": {
