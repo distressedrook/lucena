@@ -63,6 +63,12 @@
    border:1px solid var(--rule); }
  .curve-key { display:flex; justify-content:space-between;
    font-family:Menlo,monospace; font-size:11px; color:var(--muted); }
+ .track { width:100%; height:auto; display:block;
+   border:1px solid var(--rule); }
+ .track-row { margin:14px 0; }
+ .track-label { display:flex; align-items:baseline; gap:10px; margin-bottom:3px; }
+ .track-label b { font-size:14px; font-weight:600; }
+ .track-label span { color:var(--muted); font-size:12px; }
  ol.arc { list-style:none; padding:0; margin:18px 0 0;
    column-width:250px; column-gap:28px; }
  ol.arc li { display:flex; gap:10px; padding:3px 0;
@@ -325,6 +331,39 @@ R . . . . . K .</pre></desc><defs><g id="white-pawn" class="white pawn"><path d=
     </div>
   </div>
 </article>
+</section>
+
+<section id="tracks">
+  <h2>Activity and initiative</h2>
+  <p class="lede">The evaluation says who is better. These say why — whose
+     pieces are doing more work, and who is dictating play. Both are drawn
+     White-positive above the centre line, on the same scale of moves as the
+     curve above.</p>
+  <div class="track-row">
+    <div class="track-label"><b>Activity</b>
+      <span>how much more work one side's pieces are doing</span></div>
+    <svg viewBox="0 0 900 86" class="track" role="img">
+ <line x1='257.1' y1='0' x2='257.1' y2='86' stroke='var(--rule)' stroke-width='1'/><line x1='542.9' y1='0' x2='542.9' y2='86' stroke='var(--rule)' stroke-width='1'/><line x1='828.6' y1='0' x2='828.6' y2='86' stroke='var(--rule)' stroke-width='1'/>
+ <path d="M0,43.0 L0.0,13.8 L14.3,43.0 L28.6,41.7 L42.9,54.2 L57.1,51.0 L71.4,67.7 L85.7,37.2 L100.0,42.4 L114.3,34.0 L128.6,46.0 L142.9,40.6 L157.1,39.6 L171.4,34.8 L185.7,43.0 L200.0,46.2 L214.3,44.9 L228.6,39.8 L242.9,48.8 L257.1,21.3 L271.4,29.2 L285.7,23.9 L300.0,23.4 L314.3,17.4 L328.6,21.7 L342.9,27.3 L357.1,29.7 L371.4,29.7 L385.7,40.4 L400.0,37.8 L414.3,47.1 L428.6,44.1 L442.9,51.6 L457.1,58.3 L471.4,64.3 L485.7,72.7 L500.0,67.9 L514.3,63.9 L528.6,74.6 L542.9,50.7 L557.1,65.4 L571.4,49.0 L585.7,60.4 L600.0,63.9 L614.3,57.4 L628.6,58.3 L642.9,58.3 L657.1,57.4 L671.4,57.4 L685.7,46.0 L700.0,46.2 L714.3,46.0 L728.6,57.8 L742.9,57.8 L757.1,51.8 L771.4,47.3 L785.7,48.6 L800.0,53.1 L814.3,37.0 L828.6,37.6 L842.9,40.2 L857.1,44.5 L871.4,37.0 L885.7,37.6 L900.0,40.2 L900,43.0 Z" fill="#3A6EA5" opacity="0.22"/>
+ <path d="M0.0,13.8 L14.3,43.0 L28.6,41.7 L42.9,54.2 L57.1,51.0 L71.4,67.7 L85.7,37.2 L100.0,42.4 L114.3,34.0 L128.6,46.0 L142.9,40.6 L157.1,39.6 L171.4,34.8 L185.7,43.0 L200.0,46.2 L214.3,44.9 L228.6,39.8 L242.9,48.8 L257.1,21.3 L271.4,29.2 L285.7,23.9 L300.0,23.4 L314.3,17.4 L328.6,21.7 L342.9,27.3 L357.1,29.7 L371.4,29.7 L385.7,40.4 L400.0,37.8 L414.3,47.1 L428.6,44.1 L442.9,51.6 L457.1,58.3 L471.4,64.3 L485.7,72.7 L500.0,67.9 L514.3,63.9 L528.6,74.6 L542.9,50.7 L557.1,65.4 L571.4,49.0 L585.7,60.4 L600.0,63.9 L614.3,57.4 L628.6,58.3 L642.9,58.3 L657.1,57.4 L671.4,57.4 L685.7,46.0 L700.0,46.2 L714.3,46.0 L728.6,57.8 L742.9,57.8 L757.1,51.8 L771.4,47.3 L785.7,48.6 L800.0,53.1 L814.3,37.0 L828.6,37.6 L842.9,40.2 L857.1,44.5 L871.4,37.0 L885.7,37.6 L900.0,40.2" fill="none" stroke="#3A6EA5" stroke-width="1.5"/>
+ <line x1="0" y1="43.0" x2="900" y2="43.0"
+       stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
+</svg>
+  </div>
+  <div class="track-row">
+    <div class="track-label"><b>Initiative</b>
+      <span>who is making the threats</span></div>
+    <svg viewBox="0 0 900 86" class="track" role="img">
+ <line x1='257.1' y1='0' x2='257.1' y2='86' stroke='var(--rule)' stroke-width='1'/><line x1='542.9' y1='0' x2='542.9' y2='86' stroke='var(--rule)' stroke-width='1'/><line x1='828.6' y1='0' x2='828.6' y2='86' stroke='var(--rule)' stroke-width='1'/>
+ <path d="M0,43.0 L0.0,41.7 L14.3,43.0 L28.6,40.4 L42.9,44.0 L57.1,34.8 L71.4,44.0 L85.7,42.8 L100.0,44.1 L114.3,41.0 L128.6,46.4 L142.9,41.3 L157.1,42.7 L171.4,42.3 L185.7,45.3 L200.0,42.6 L214.3,42.4 L228.6,42.3 L242.9,34.4 L257.1,42.8 L271.4,44.9 L285.7,42.0 L300.0,43.4 L314.3,42.4 L328.6,43.9 L342.9,43.3 L357.1,43.4 L371.4,42.8 L385.7,44.1 L400.0,39.7 L414.3,45.3 L428.6,81.3 L442.9,46.3 L457.1,41.0 L471.4,43.2 L485.7,42.6 L500.0,44.1 L514.3,41.5 L528.6,4.5 L542.9,62.1 L557.1,4.6 L571.4,40.6 L585.7,46.9 L600.0,19.8 L614.3,45.1 L628.6,42.8 L642.9,46.3 L657.1,6.0 L671.4,44.3 L685.7,41.9 L700.0,56.9 L714.3,39.3 L728.6,45.1 L742.9,43.0 L757.1,43.7 L771.4,42.0 L785.7,43.7 L800.0,35.6 L814.3,52.2 L828.6,43.0 L842.9,77.5 L857.1,35.1 L871.4,51.6 L885.7,43.0 L900.0,51.3 L900,43.0 Z" fill="#A6392E" opacity="0.22"/>
+ <path d="M0.0,41.7 L14.3,43.0 L28.6,40.4 L42.9,44.0 L57.1,34.8 L71.4,44.0 L85.7,42.8 L100.0,44.1 L114.3,41.0 L128.6,46.4 L142.9,41.3 L157.1,42.7 L171.4,42.3 L185.7,45.3 L200.0,42.6 L214.3,42.4 L228.6,42.3 L242.9,34.4 L257.1,42.8 L271.4,44.9 L285.7,42.0 L300.0,43.4 L314.3,42.4 L328.6,43.9 L342.9,43.3 L357.1,43.4 L371.4,42.8 L385.7,44.1 L400.0,39.7 L414.3,45.3 L428.6,81.3 L442.9,46.3 L457.1,41.0 L471.4,43.2 L485.7,42.6 L500.0,44.1 L514.3,41.5 L528.6,4.5 L542.9,62.1 L557.1,4.6 L571.4,40.6 L585.7,46.9 L600.0,19.8 L614.3,45.1 L628.6,42.8 L642.9,46.3 L657.1,6.0 L671.4,44.3 L685.7,41.9 L700.0,56.9 L714.3,39.3 L728.6,45.1 L742.9,43.0 L757.1,43.7 L771.4,42.0 L785.7,43.7 L800.0,35.6 L814.3,52.2 L828.6,43.0 L842.9,77.5 L857.1,35.1 L871.4,51.6 L885.7,43.0 L900.0,51.3" fill="none" stroke="#A6392E" stroke-width="1.5"/>
+ <line x1="0" y1="43.0" x2="900" y2="43.0"
+       stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3"/>
+</svg>
+  </div>
+  <p class="note">Initiative is read from the engine's best-vs-second-line
+     spread — the side whose alternatives fall away is the side being
+     dictated to. 1 of 64 positions had no second engine line and fall back to the weaker geometry reading.</p>
 </section>
 
 
