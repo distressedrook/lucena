@@ -51,6 +51,7 @@
    "fen_before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "gift_wp": 0.0,
    "book": "King's Pawn Game",
+   "in_book": true,
    "label": "book",
    "symbol": "\u25cb",
    "cp_white": 32
@@ -78,6 +79,7 @@
    "fen_before": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
    "gift_wp": 0.5,
    "book": "King's Pawn Game",
+   "in_book": true,
    "label": "book",
    "symbol": "\u25cb",
    "cp_white": 44
@@ -105,6 +107,7 @@
    "fen_before": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2",
    "gift_wp": 1.1,
    "book": "King's Knight Opening",
+   "in_book": true,
    "label": "book",
    "symbol": "\u25cb",
    "cp_white": 39
@@ -133,6 +136,7 @@
    "fen_before": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
    "gift_wp": 0.5,
    "book": "Petrov's Defense",
+   "in_book": true,
    "label": "book",
    "symbol": "\u25cb",
    "cp_white": 51
@@ -165,6 +169,7 @@
    "fen_before": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
    "gift_wp": 1.1,
    "book": "Petrov's Defense: Three Knights Game",
+   "in_book": true,
    "label": "book",
    "symbol": "\u25cb",
    "cp_white": 21
@@ -219,8 +224,9 @@
    "fen_before": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 3",
    "gift_wp": 2.7,
    "book": null,
-   "label": "inaccuracy",
-   "symbol": "?!",
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
    "cp_white": 104
   },
   {
@@ -273,8 +279,9 @@
    "fen_before": "rnbqk2r/pppp1ppp/5n2/2b1p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 4",
    "gift_wp": 8.1,
    "book": null,
-   "label": "mistake",
-   "symbol": "?",
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
    "cp_white": 6
   },
   {
@@ -304,9 +311,10 @@
    "motifs": [],
    "fen_before": "rnbqk2r/pppp1ppp/5n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R b KQkq - 5 4",
    "gift_wp": 10.0,
-   "book": null,
-   "label": "excellent",
-   "symbol": "\u2713",
+   "book": "Four Knights Game: Italian Variation",
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
    "cp_white": 17
   },
   {
@@ -337,6 +345,7 @@
    "fen_before": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
    "gift_wp": 1.7,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": 6
@@ -369,6 +378,7 @@
    "fen_before": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQ1RK1 b kq - 7 5",
    "gift_wp": 1.0,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": 31
@@ -397,6 +407,7 @@
    "fen_before": "r1bqk2r/1ppp1ppp/p1n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQ1RK1 w kq - 0 6",
    "gift_wp": 2.3,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": 19
@@ -425,6 +436,7 @@
    "fen_before": "r1bqk2r/1ppp1ppp/p1n2n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 b kq - 0 6",
    "gift_wp": 1.1,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": 24
@@ -470,6 +482,7 @@
    "fen_before": "r1bqk2r/1pp2ppp/p1np1n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w kq - 0 7",
    "gift_wp": 0.5,
    "book": null,
+   "in_book": false,
    "label": "inaccuracy",
    "symbol": "?!",
    "cp_white": -46
@@ -498,6 +511,7 @@
    "fen_before": "r1bqk2r/1pp2ppp/p1np1n2/2b1p3/2B1P3/3P1N2/PPP1NPPP/R1BQ1RK1 b kq - 1 7",
    "gift_wp": 6.2,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -58
@@ -525,6 +539,7 @@
    "fen_before": "r2qk2r/1pp2ppp/p1np1n2/2b1p3/2B1P1b1/3P1N2/PPP1NPPP/R1BQ1RK1 w kq - 2 8",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -50
@@ -553,6 +568,7 @@
    "fen_before": "r2qk2r/1pp2ppp/p1np1n2/2b1p3/2B1P1b1/3P1NN1/PPP2PPP/R1BQ1RK1 b kq - 3 8",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -54
@@ -585,6 +601,7 @@
    "fen_before": "r2qk2r/1pp2pp1/p1np1n2/2b1p2p/2B1P1b1/3P1NN1/PPP2PPP/R1BQ1RK1 w kq h6 0 9",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -48
@@ -617,6 +634,7 @@
    "fen_before": "r2qk2r/1pp2pp1/p1np1n2/2b1p2p/2B1P1b1/3P1NNP/PPP2PP1/R1BQ1RK1 b kq - 0 9",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -55
@@ -649,6 +667,7 @@
    "fen_before": "r2qk2r/1pp2pp1/p1np1n2/2b1p3/2B1P1bp/3P1NNP/PPP2PP1/R1BQ1RK1 w kq - 0 10",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -42
@@ -677,6 +696,7 @@
    "fen_before": "r2qk2r/1pp2pp1/p1np1n2/2b1pN2/2B1P1bp/3P1N1P/PPP2PP1/R1BQ1RK1 b kq - 1 10",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -55
@@ -705,6 +725,7 @@
    "fen_before": "r2qk2r/1pp2pp1/p1np1n2/2b1pb2/2B1P2p/3P1N1P/PPP2PP1/R1BQ1RK1 w kq - 0 11",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -54
@@ -733,6 +754,7 @@
    "fen_before": "r2qk2r/1pp2pp1/p1np1n2/2b1pP2/2B4p/3P1N1P/PPP2PP1/R1BQ1RK1 b kq - 0 11",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -59
@@ -782,6 +804,7 @@
    "fen_before": "r3k2r/1ppq1pp1/p1np1n2/2b1pP2/2B4p/3P1N1P/PPP2PP1/R1BQ1RK1 w kq - 1 12",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "mistake",
    "symbol": "?",
    "cp_white": -203
@@ -814,6 +837,7 @@
    "fen_before": "r3k2r/1ppq1pp1/p1np1n2/2b1pP2/2BP3p/5N1P/PPP2PP1/R1BQ1RK1 b kq - 0 12",
    "gift_wp": 13.3,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -188
@@ -846,6 +870,7 @@
    "fen_before": "r3k2r/1ppq1pp1/p2p1n2/2b1pP2/2Bn3p/5N1P/PPP2PP1/R1BQ1RK1 w kq - 0 13",
    "gift_wp": 1.4,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": -219
@@ -878,6 +903,7 @@
    "fen_before": "r3k2r/1ppq1pp1/p2p1n2/2b1pP2/2BN3p/7P/PPP2PP1/R1BQ1RK1 b kq - 0 13",
    "gift_wp": 2.5,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -215
@@ -910,6 +936,7 @@
    "fen_before": "r3k2r/1ppq1pp1/p2p1n2/4pP2/2Bb3p/7P/PPP2PP1/R1BQ1RK1 w kq - 0 14",
    "gift_wp": 0.3,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -213
@@ -942,6 +969,7 @@
    "fen_before": "r3k2r/1ppq1pp1/p2p1n2/4pP2/2Bb3p/2P4P/PP3PP1/R1BQ1RK1 b kq - 0 14",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -222
@@ -970,6 +998,7 @@
    "fen_before": "r3k2r/1ppq1pp1/pb1p1n2/4pP2/2B4p/2P4P/PP3PP1/R1BQ1RK1 w kq - 1 15",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -248
@@ -1002,6 +1031,7 @@
    "fen_before": "r3k2r/1ppq1pp1/pb1p1n2/4pP2/2B4p/2P4P/PP3PP1/R1BQR1K1 b kq - 2 15",
    "gift_wp": 2.0,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -262
@@ -1034,6 +1064,7 @@
    "fen_before": "r3k2r/1pp2pp1/pb1p1n2/4pq2/2B4p/2P4P/PP3PP1/R1BQR1K1 w kq - 0 16",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": -309
@@ -1066,6 +1097,7 @@
    "fen_before": "r3k2r/1pp2pp1/pb1p1n2/4pq2/2B4p/2P1B2P/PP3PP1/R2QR1K1 b kq - 1 16",
    "gift_wp": 3.3,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -292
@@ -1098,6 +1130,7 @@
    "fen_before": "r3k2r/1pp2pp1/p2p1n2/4pq2/2B4p/2P1b2P/PP3PP1/R2QR1K1 w kq - 0 17",
    "gift_wp": 1.2,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -309
@@ -1147,6 +1180,7 @@
    "fen_before": "r3k2r/1pp2pp1/p2p1n2/4pq2/2B4p/2P1R2P/PP3PP1/R2Q2K1 b kq - 0 17",
    "gift_wp": 1.2,
    "book": null,
+   "in_book": false,
    "label": "inaccuracy",
    "symbol": "?!",
    "cp_white": -238
@@ -1179,6 +1213,7 @@
    "fen_before": "2kr3r/1pp2pp1/p2p1n2/4pq2/2B4p/2P1R2P/PP3PP1/R2Q2K1 w - - 1 18",
    "gift_wp": 5.1,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -225
@@ -1211,6 +1246,7 @@
    "fen_before": "2kr3r/1pp2pp1/p2p1n2/4pq2/1PB4p/2P1R2P/P4PP1/R2Q2K1 b - b3 0 18",
    "gift_wp": 0.4,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -225
@@ -1243,6 +1279,7 @@
    "fen_before": "2kr3r/1pp2pp1/p4n2/3ppq2/1PB4p/2P1R2P/P4PP1/R2Q2K1 w - - 0 19",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -224
@@ -1275,6 +1312,7 @@
    "fen_before": "2kr3r/1pp2pp1/p4n2/3ppq2/1P5p/2P1R2P/P4PP1/R2Q1BK1 b - - 1 19",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -233
@@ -1307,6 +1345,7 @@
    "fen_before": "2kr3r/1pp2p2/p4n2/3ppqp1/1P5p/2P1R2P/P4PP1/R2Q1BK1 w - g6 0 20",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -222
@@ -1361,6 +1400,7 @@
    "fen_before": "2kr3r/1pp2p2/p4n2/1P1ppqp1/7p/2P1R2P/P4PP1/R2Q1BK1 b - - 0 20",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "mistake",
    "symbol": "?",
    "cp_white": -71
@@ -1389,6 +1429,7 @@
    "fen_before": "2kr3r/1pp2p2/p4n2/1P1ppq2/6pp/2P1R2P/P4PP1/R2Q1BK1 w - - 0 21",
    "gift_wp": 14.6,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -71
@@ -1433,6 +1474,7 @@
    "fen_before": "2kr3r/1pp2p2/P4n2/3ppq2/6pp/2P1R2P/P4PP1/R2Q1BK1 b - - 0 21",
    "gift_wp": 1.2,
    "book": null,
+   "in_book": false,
    "label": "inaccuracy",
    "symbol": "?!",
    "cp_white": 8
@@ -1465,6 +1507,7 @@
    "fen_before": "2kr3r/2p2p2/p4n2/3ppq2/6pp/2P1R2P/P4PP1/R2Q1BK1 w - - 0 22",
    "gift_wp": 6.3,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -3
@@ -1493,6 +1536,7 @@
    "fen_before": "2kr3r/2p2p2/B4n2/3ppq2/6pp/2P1R2P/P4PP1/R2Q2K1 b - - 0 22",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "great",
    "symbol": "!",
    "cp_white": -28
@@ -1525,6 +1569,7 @@
    "fen_before": "3r3r/2pk1p2/B4n2/3ppq2/6pp/2P1R2P/P4PP1/R2Q2K1 w - - 1 23",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": -82
@@ -1557,6 +1602,7 @@
    "fen_before": "3r3r/2pk1p2/B4n2/3ppq2/Q5pp/2P1R2P/P4PP1/R5K1 b - - 2 23",
    "gift_wp": 4.9,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -107
@@ -1585,6 +1631,7 @@
    "fen_before": "3r3r/2p1kp2/B4n2/3ppq2/Q5pp/2P1R2P/P4PP1/R5K1 w - - 3 24",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -126
@@ -1617,6 +1664,7 @@
    "fen_before": "3r3r/2p1kp2/B4n2/3ppq2/1Q4pp/2P1R2P/P4PP1/R5K1 b - - 4 24",
    "gift_wp": 1.7,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -113
@@ -1684,6 +1732,7 @@
    "fen_before": "7r/2p1kp2/B2r1n2/3ppq2/1Q4pp/2P1R2P/P4PP1/R5K1 w - - 5 25",
    "gift_wp": 1.1,
    "book": null,
+   "in_book": false,
    "label": "inaccuracy",
    "symbol": "?!",
    "cp_white": -219
@@ -1755,6 +1804,7 @@
    "fen_before": "7r/1Qp1kp2/B2r1n2/3ppq2/6pp/2P1R2P/P4PP1/R5K1 b - - 6 25",
    "gift_wp": 9.0,
    "book": null,
+   "in_book": false,
    "label": "blunder",
    "symbol": "??",
    "cp_white": -25
@@ -1787,6 +1837,7 @@
    "fen_before": "3r4/1Qp1kp2/B2r1n2/3ppq2/6pp/2P1R2P/P4PP1/R5K1 w - - 7 26",
    "gift_wp": 15.6,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": -108
@@ -1819,6 +1870,7 @@
    "fen_before": "3r4/1Qp1kp2/3r1n2/1B1ppq2/6pp/2P1R2P/P4PP1/R5K1 b - - 8 26",
    "gift_wp": 4.8,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": -73
@@ -1846,6 +1898,7 @@
    "fen_before": "3r4/1Qp1kp2/3r1n2/1B1ppq2/7p/2P1R2p/P4PP1/R5K1 w - - 0 27",
    "gift_wp": 3.1,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -78
@@ -1874,6 +1927,7 @@
    "fen_before": "3r4/2Q1kp2/3r1n2/1B1ppq2/7p/2P1R2p/P4PP1/R5K1 b - - 0 27",
    "gift_wp": 0.5,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -76
@@ -1901,6 +1955,7 @@
    "fen_before": "3r1k2/2Q2p2/3r1n2/1B1ppq2/7p/2P1R2p/P4PP1/R5K1 w - - 1 28",
    "gift_wp": 0.2,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -74
@@ -1929,6 +1984,7 @@
    "fen_before": "3r1k2/2Q2p2/3r1n2/1B1ppq2/7p/2P4R/P4PP1/R5K1 b - - 0 28",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": -28
@@ -1957,6 +2013,7 @@
    "fen_before": "3r1k2/2Q2p2/3r4/1B1ppq2/4n2p/2P4R/P4PP1/R5K1 w - - 1 29",
    "gift_wp": 4.2,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": -61
@@ -1984,6 +2041,7 @@
    "fen_before": "3r1k2/2Q2p2/3r4/1B1ppq2/4n2p/2P2R2/P4PP1/R5K1 b - - 2 29",
    "gift_wp": 3.0,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -44
@@ -2060,6 +2118,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/1B1pp3/4n2p/2P2R2/P4PP1/R5K1 w - - 3 30",
    "gift_wp": 1.6,
    "book": null,
+   "in_book": false,
    "label": "mistake",
    "symbol": "?",
    "cp_white": -185
@@ -2092,6 +2151,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/1B1pp3/P3n2p/2P2R2/5PP1/R5K1 b - a3 0 30",
    "gift_wp": 11.7,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -137
@@ -2119,6 +2179,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/1B1pp1n1/P6p/2P2R2/5PP1/R5K1 w - - 1 31",
    "gift_wp": 1.3,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -147
@@ -2151,6 +2212,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/1B1pp1n1/P6p/2P1R3/5PP1/R5K1 b - - 2 31",
    "gift_wp": 0.9,
    "book": null,
+   "in_book": false,
    "label": "brilliant",
    "symbol": "!!",
    "cp_white": -156
@@ -2209,6 +2271,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/1B1pp1n1/P7/2P1R2p/5PP1/R5K1 w - - 0 32",
    "gift_wp": 0.0,
    "book": null,
+   "in_book": false,
    "label": "inaccuracy",
    "symbol": "?!",
    "cp_white": -258
@@ -2258,6 +2321,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/1B1pp1n1/P7/2P1R1Pp/5P2/R5K1 b - - 0 32",
    "gift_wp": 8.4,
    "book": null,
+   "in_book": false,
    "label": "inaccuracy",
    "symbol": "?!",
    "cp_white": -132
@@ -2286,6 +2350,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/1B1p2n1/P3p3/2P1R1Pp/5P2/R5K1 w - - 0 33",
    "gift_wp": 8.0,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": -141
@@ -2335,6 +2400,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/PB1p2n1/4p3/2P1R1Pp/5P2/R5K1 b - - 0 33",
    "gift_wp": 1.6,
    "book": null,
+   "in_book": false,
    "label": "mistake",
    "symbol": "?",
    "cp_white": 0
@@ -2397,6 +2463,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/PB1p4/4p3/2P1RnPp/5P2/R5K1 w - - 1 34",
    "gift_wp": 12.8,
    "book": null,
+   "in_book": false,
    "label": "miss",
    "symbol": "\u00d7",
    "cp_white": -129
@@ -2425,6 +2492,7 @@
    "fen_before": "3r1k2/2Q2p2/3r2q1/PB1p4/4p3/2P1RnPp/5P2/R6K b - - 2 34",
    "gift_wp": 11.7,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": -14
@@ -2452,6 +2520,7 @@
    "fen_before": "3r1k2/2Q2p2/3r1q2/PB1p4/4p3/2P1RnPp/5P2/R6K w - - 3 35",
    "gift_wp": 4.2,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": -46
@@ -2497,6 +2566,7 @@
    "fen_before": "3r1k2/2Q2p2/P2r1q2/1B1p4/4p3/2P1RnPp/5P2/R6K b - - 0 35",
    "gift_wp": 2.9,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": 15
@@ -2524,6 +2594,7 @@
    "fen_before": "3r1k2/2Q2p2/Pr3q2/1B1p4/4p3/2P1RnPp/5P2/R6K w - - 1 36",
    "gift_wp": 4.4,
    "book": null,
+   "in_book": false,
    "label": "good",
    "symbol": "",
    "cp_white": 0
@@ -2556,6 +2627,7 @@
    "fen_before": "3r1k2/2Q2p2/Pr3q2/3p4/4p3/2P1RnPp/5P2/R4B1K b - - 2 36",
    "gift_wp": 4.7,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": 19
@@ -2588,6 +2660,7 @@
    "fen_before": "3r1k2/2Q2p2/Pr3q2/3p4/4p3/2P1R1Pp/3n1P2/R4B1K w - - 3 37",
    "gift_wp": 1.7,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": 0
@@ -2627,6 +2700,7 @@
    "fen_before": "3r1k2/2Q2p2/Pr3q2/3p4/4p3/2P1R1PB/3n1P2/R6K b - - 0 37",
    "gift_wp": 1.7,
    "book": null,
+   "in_book": false,
    "label": "blunder",
    "symbol": "??",
    "cp_white": 483
@@ -2708,6 +2782,7 @@
    "fen_before": "3r1k2/2Q2p2/Pr5q/3p4/4p3/2P1R1PB/3n1P2/R6K w - - 1 38",
    "gift_wp": 35.6,
    "book": null,
+   "in_book": false,
    "label": "miss",
    "symbol": "\u00d7",
    "cp_white": 145
@@ -2766,6 +2841,7 @@
    "fen_before": "3r1k2/2Q2p2/Pr5q/3p4/4p3/2P1R1PB/3n1PK1/R7 b - - 2 38",
    "gift_wp": 20.7,
    "book": null,
+   "in_book": false,
    "label": "miss",
    "symbol": "\u00d7",
    "cp_white": 288
@@ -2798,6 +2874,7 @@
    "fen_before": "3r1k2/2Q2p2/Pr3q2/3p4/4p3/2P1R1PB/3n1PK1/R7 w - - 3 39",
    "gift_wp": 12.2,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": 263
@@ -2837,6 +2914,7 @@
    "fen_before": "3r1k2/P1Q2p2/1r3q2/3p4/4p3/2P1R1PB/3n1PK1/R7 b - - 0 39",
    "gift_wp": 1.4,
    "book": null,
+   "in_book": false,
    "label": "inaccuracy",
    "symbol": "?!",
    "cp_white": 380
@@ -2891,6 +2969,7 @@
    "fen_before": "3r1k2/P1Q2p2/1r3q2/3p4/2n1p3/2P1R1PB/5PK1/R7 w - - 1 40",
    "gift_wp": 7.4,
    "book": null,
+   "in_book": false,
    "label": "blunder",
    "symbol": "??",
    "cp_white": -111
@@ -2976,6 +3055,7 @@
    "fen_before": "Q2r1k2/2Q2p2/1r3q2/3p4/2n1p3/2P1R1PB/5PK1/R7 b - - 0 40",
    "gift_wp": 39.8,
    "book": null,
+   "in_book": false,
    "label": "miss",
    "symbol": "\u00d7",
    "cp_white": 380
@@ -3008,6 +3088,7 @@
    "fen_before": "r4k2/2Q2p2/1r3q2/3p4/2n1p3/2P1R1PB/5PK1/R7 w - - 0 41",
    "gift_wp": 40.2,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": 327
@@ -3040,6 +3121,7 @@
    "fen_before": "R4k2/2Q2p2/1r3q2/3p4/2n1p3/2P1R1PB/5PK1/8 b - - 0 41",
    "gift_wp": 0.5,
    "book": null,
+   "in_book": false,
    "label": "great",
    "symbol": "!",
    "cp_white": 350
@@ -3072,6 +3154,7 @@
    "fen_before": "R7/2Q2pk1/1r3q2/3p4/2n1p3/2P1R1PB/5PK1/8 w - - 1 42",
    "gift_wp": 1.5,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": 329
@@ -3104,6 +3187,7 @@
    "fen_before": "R7/2Q2pk1/1r3q2/3p4/2n1p3/2P3PB/5PK1/4R3 b - - 2 42",
    "gift_wp": 1.3,
    "book": null,
+   "in_book": false,
    "label": "excellent",
    "symbol": "\u2713",
    "cp_white": 349
@@ -3136,6 +3220,7 @@
    "fen_before": "R7/2Q2pk1/5q2/3p4/2n1p3/2P3PB/1r3PK1/4R3 w - - 3 43",
    "gift_wp": 1.3,
    "book": null,
+   "in_book": false,
    "label": "best",
    "symbol": "\u2713",
    "cp_white": 344
@@ -3203,6 +3288,7 @@
    "fen_before": "R7/5pk1/5q2/3p4/2n1pQ2/2P3PB/1r3PK1/4R3 b - - 4 43",
    "gift_wp": 0.3,
    "book": null,
+   "in_book": false,
    "label": "mistake",
    "symbol": "?",
    "cp_white": 639
@@ -3266,6 +3352,15 @@
    "to_move": 43
   }
  ],
+ "ending": {
+  "result": "0-1",
+  "termination": "hehe89 won on time"
+ },
+ "opening": {
+  "name": "Four Knights Game: Italian Variation",
+  "plies": 8,
+  "left_at_move": 5
+ },
  "moments": [
   {
    "kind": "turning",
@@ -3364,8 +3459,8 @@
    "read": "White is slightly better \u2014 sharp \u2014 concrete and punishing.\nWhite is up a pawn \u2014 though once the captures resolve, the material swings to White.\n\n**White**\n- No significant weaknesses.\n- _Strong humans play this_ \u2014 Castle kingside: get the king to safety.\n- _The structure suggests this_ \u2014 Complete development: bring the Bc1, Bf1 into play toward natural squares; castle without delay; avoid moving the same piece twice or grabbing material before development is complete.\n- _The structure suggests this_ \u2014 Castle queenside: get the king to safety.\n\n**Black**\n- No significant weaknesses.\n- _Strong humans play this_ \u2014 Castle kingside: get the king to safety.\n- _The structure suggests this_ \u2014 Complete development: bring the Bc8, Nb8 into play toward natural squares; castle without delay; avoid moving the same piece twice or grabbing material before development is complete.\n- _The structure suggests this_ \u2014 Castle queenside: get the king to safety.",
    "gift_wp": 8.1,
    "uci": "f1c4",
-   "label": "mistake",
-   "symbol": "?",
+   "label": "book",
+   "symbol": "\u25cb",
    "character_why": "sharp \u2014 concrete and punishing",
    "initiative": {
     "leader": "unclear",
@@ -3471,202 +3566,6 @@
      "castle_kingside",
      "free_bad_bishop"
     ]
-   }
-  },
-  {
-   "kind": "plan",
-   "ply": 15,
-   "move_no": 8,
-   "side": "w",
-   "san": "Ng3",
-   "fen_before": "r2qk2r/1pp2ppp/p1np1n2/2b1p3/2B1P1b1/3P1N2/PPP1NPPP/R1BQ1RK1 w kq - 2 8",
-   "fen_after": "r2qk2r/1pp2ppp/p1np1n2/2b1p3/2B1P1b1/3P1NN1/PPP2PPP/R1BQ1RK1 b kq - 3 8",
-   "eval_cp": -50,
-   "win_pct": 45.4,
-   "delta_win_pct": 0.7,
-   "cls": "ok",
-   "best_san": "Kh1",
-   "best_pv_san": [
-    "Kh1"
-   ],
-   "refutation_pv": [],
-   "motifs": [],
-   "phase": "opening",
-   "developed": {
-    "white": false,
-    "black": false
-   },
-   "structure": "giuoco_pianissimo (Black/White)",
-   "character": "DEAD",
-   "weaknesses": {
-    "white": {
-     "back_rank_weak": true
-    },
-    "black": {}
-   },
-   "plans": {
-    "white": [
-     {
-      "idea": "Break open the center while their king is stuck there",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "center_break_vs_king"
-      ],
-      "tier": "structure"
-     },
-     {
-      "idea": "Deny castling: hit e-file/f7 targets, keep the king stuck",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "deny_castling"
-      ],
-      "tier": "structure"
-     }
-    ],
-    "black": [
-     {
-      "idea": "Castle kingside: get the king to safety",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "castle_kingside"
-      ],
-      "tier": "structure"
-     },
-     {
-      "idea": "Castle queenside: get the king to safety",
-      "verdict": "CONFIRMED-SOUND-LATER",
-      "families": [
-       "castle_queenside"
-      ],
-      "tier": "engine"
-     }
-    ]
-   },
-   "read": "Black is slightly better \u2014 placid \u2014 nothing forcing anywhere.\nStructure: giuoco pianissimo \u2014 White's side, giuoco pianissimo \u2014 Black's side.\n\n**White**\n- White's king has no luft.\n- _The structure suggests this_ \u2014 Break open the center while their king is stuck there.\n- _The structure suggests this_ \u2014 Deny castling: hit e-file/f7 targets, keep the king stuck.\n- _The structure suggests this_ \u2014 Complete development: bring the Bc1 into play toward natural squares; avoid moving the same piece twice or grabbing material before development is complete.\n\n**Black**\n- No significant weaknesses.\n- _Engine confirmed_ \u2014 Castle queenside: get the king to safety \u2014 playable in the short term.\n- _The structure suggests this_ \u2014 Castle kingside: get the king to safety.\n- _The structure suggests this_ \u2014 Complete development: castle without delay; avoid moving the same piece twice or grabbing material before development is complete.",
-   "gift_wp": 0.0,
-   "uci": "e2g3",
-   "label": "excellent",
-   "symbol": "\u2713",
-   "character_why": "placid \u2014 nothing forcing anywhere",
-   "initiative": {
-    "leader": "Black",
-    "basis": "engine-spread+development",
-    "mechanism": [
-     "development"
-    ],
-    "checks": [],
-    "captures": [
-     "Bxf3"
-    ],
-    "attacked": [
-     "Knight on f3"
-    ],
-    "forcing": [
-     "Bxf3",
-     "Nxa7",
-     "Nxf3+"
-    ]
-   },
-   "king_risk": {
-    "white": {
-     "danger": 5,
-     "danger_bounded": 0.006,
-     "attack_units": 6,
-     "shield_pawns": 3,
-     "zone_attackers": [
-      "bishop on c5",
-      "bishop on g4"
-     ],
-     "open_files_nearby": [],
-     "storm": 2,
-     "line_pressure": 0,
-     "why": [
-      "attackers: bishop on c5, bishop on g4",
-      "enemy pawn storm approaching"
-     ],
-     "p_catastrophe": {
-      "if_pressed": {
-       "p_catastrophe": 0.08,
-       "regime": "if_pressed",
-       "confidence": "validated",
-       "defender_elo": 1500,
-       "low_n_tail": false,
-       "precision": "two_sig_fig"
-      },
-      "typical_1500": {
-       "p_catastrophe": 0.0,
-       "regime": "typical_1500",
-       "confidence": "validated",
-       "defender_elo": null,
-       "low_n_tail": false,
-       "precision": "two_sig_fig"
-      },
-      "typical_gm": {
-       "p_catastrophe": 0.0,
-       "regime": "typical_gm",
-       "confidence": "indicative",
-       "defender_elo": null,
-       "low_n_tail": false,
-       "precision": "one_sig_fig"
-      }
-     }
-    },
-    "black": {
-     "danger": 24,
-     "danger_bounded": 0.027,
-     "attack_units": 4,
-     "shield_pawns": 2,
-     "zone_attackers": [
-      "bishop on c4"
-     ],
-     "open_files_nearby": [],
-     "storm": 4,
-     "line_pressure": 0,
-     "why": [
-      "attackers: bishop on c4",
-      "enemy pawn storm approaching"
-     ],
-     "p_catastrophe": {
-      "if_pressed": {
-       "p_catastrophe": 0.09,
-       "regime": "if_pressed",
-       "confidence": "validated",
-       "defender_elo": 1500,
-       "low_n_tail": false,
-       "precision": "two_sig_fig"
-      },
-      "typical_1500": {
-       "p_catastrophe": 0.0,
-       "regime": "typical_1500",
-       "confidence": "validated",
-       "defender_elo": null,
-       "low_n_tail": false,
-       "precision": "two_sig_fig"
-      },
-      "typical_gm": {
-       "p_catastrophe": 0.0,
-       "regime": "typical_gm",
-       "confidence": "indicative",
-       "defender_elo": null,
-       "low_n_tail": false,
-       "precision": "one_sig_fig"
-      }
-     }
-    }
-   },
-   "only_move": false,
-   "intent": [
-    "B:storm_launch",
-    "W:center_break_vs_king",
-    "W:pair_acquisition",
-    "W:prepared_break"
-   ],
-   "alignment": {
-    "state": "on-plan",
-    "families": [
-     "center_break_vs_king"
-    ],
-    "tier": "structure"
    }
   },
   {
@@ -4106,360 +4005,119 @@
   },
   {
    "kind": "plan",
-   "ply": 27,
-   "move_no": 14,
+   "ply": 39,
+   "move_no": 20,
    "side": "w",
-   "san": "c3",
-   "fen_before": "r3k2r/1ppq1pp1/p2p1n2/4pP2/2Bb3p/7P/PPP2PP1/R1BQ1RK1 w kq - 0 14",
-   "fen_after": "r3k2r/1ppq1pp1/p2p1n2/4pP2/2Bb3p/2P4P/PP3PP1/R1BQ1RK1 b kq - 0 14",
-   "eval_cp": -213,
-   "win_pct": 31.3,
-   "delta_win_pct": 0.2,
+   "san": "b5",
+   "fen_before": "2kr3r/1pp2p2/p4n2/3ppqp1/1P5p/2P1R2P/P4PP1/R2Q1BK1 w - g6 0 20",
+   "fen_after": "2kr3r/1pp2p2/p4n2/1P1ppqp1/7p/2P1R2P/P4PP1/R2Q1BK1 b - - 0 20",
+   "eval_cp": -222,
+   "win_pct": 30.6,
+   "delta_win_pct": 0.9,
    "cls": "ok",
-   "best_san": "c3",
+   "best_san": "Qa4",
    "best_pv_san": [
-    "c3",
-    "Ba7",
-    "Qc2",
-    "d5",
-    "Be2",
-    "Qc6"
-   ],
-   "refutation_pv": [],
-   "motifs": [],
-   "phase": "opening",
-   "developed": {
-    "white": false,
-    "black": false
-   },
-   "structure": "",
-   "character": "DYNAMIC",
-   "weaknesses": {
-    "white": {},
-    "black": {
-     "passive_rooks": [
-      56,
-      63
-     ]
-    }
-   },
-   "plans": {
-    "white": [
-     {
-      "idea": "Break open the center while their king is stuck there",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "center_break_vs_king"
-      ],
-      "tier": "structure"
-     },
-     {
-      "idea": "Deny castling: hit e-file/f7 targets, keep the king stuck",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "deny_castling"
-      ],
-      "tier": "structure"
-     },
-     {
-      "idea": "Rook activation: put a rook on the open/semi-open file",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "rook_activation"
-      ],
-      "tier": "structure"
-     },
-     {
-      "idea": "Double on the file: double rooks (or rook and queen) on the d-file, e-file",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "heavy_battery"
-      ],
-      "tier": "structure"
-     }
-    ],
-    "black": [
-     {
-      "idea": "Break the bishop pair: trade a minor for a bishop (NxB or BxB \u2014 the pair dies either way)",
-      "verdict": "CONFIRMED-SOUND-LATER",
-      "families": [
-       "pair_break"
-      ],
-      "tier": "engine"
-     },
-     {
-      "idea": "Castle kingside: get the king to safety",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "castle_kingside"
-      ],
-      "tier": "structure"
-     },
-     {
-      "idea": "Castle queenside: get the king to safety",
-      "verdict": "CONFIRMED-SOUND",
-      "families": [
-       "castle_queenside"
-      ],
-      "tier": "engine"
-     }
-    ]
-   },
-   "read": "Black is clearly better \u2014 dynamic \u2014 real tension under the surface.\nBlack is up a pawn.\n\n**White**\n- Doubled pawns on the f-file.\n- _The structure suggests this_ \u2014 Break open the center while their king is stuck there.\n- _The structure suggests this_ \u2014 Deny castling: hit e-file/f7 targets, keep the king stuck.\n- _The structure suggests this_ \u2014 Complete development: bring the Bc1 into play toward natural squares; avoid moving the same piece twice or grabbing material before development is complete.\n- _The structure suggests this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Double on the file: double rooks (or rook and queen) on the d-file, e-file.\n\n**Black**\n- Rook(s) on a8, h8 with no file to ever get active on.\n- _Engine confirmed_ \u2014 Break the bishop pair: trade a minor for a bishop (NxB or BxB \u2014 the pair dies either way) \u2014 a longer-term idea, not for right now.\n- _Engine confirmed_ \u2014 Castle queenside: get the king to safety \u2014 available right now.\n- _The structure suggests this_ \u2014 Castle kingside: get the king to safety.\n- _The structure suggests this_ \u2014 Complete development: castle without delay; avoid moving the same piece twice or grabbing material before development is complete.",
-   "gift_wp": 0.3,
-   "uci": "c2c3",
-   "label": "best",
-   "symbol": "\u2713",
-   "character_why": "dynamic \u2014 real tension under the surface",
-   "initiative": {
-    "leader": "Black",
-    "basis": "engine-spread+development",
-    "mechanism": [
-     "development"
-    ],
-    "checks": [],
-    "captures": [
-     "Qxf5"
-    ],
-    "attacked": [],
-    "forcing": [
-     "Bxe3",
-     "Qxf5",
-     "Rxf5"
-    ]
-   },
-   "king_risk": {
-    "white": {
-     "danger": 12,
-     "danger_bounded": 0.014,
-     "attack_units": 2,
-     "shield_pawns": 3,
-     "zone_attackers": [
-      "bishop on d4"
-     ],
-     "open_files_nearby": [],
-     "storm": 9,
-     "line_pressure": 0,
-     "why": [
-      "attackers: bishop on d4",
-      "enemy pawn storm approaching"
-     ],
-     "p_catastrophe": {
-      "if_pressed": {
-       "p_catastrophe": 0.09,
-       "regime": "if_pressed",
-       "confidence": "validated",
-       "defender_elo": 1500,
-       "low_n_tail": false,
-       "precision": "two_sig_fig"
-      },
-      "typical_1500": {
-       "p_catastrophe": 0.0,
-       "regime": "typical_1500",
-       "confidence": "validated",
-       "defender_elo": null,
-       "low_n_tail": false,
-       "precision": "two_sig_fig"
-      },
-      "typical_gm": {
-       "p_catastrophe": 0.0,
-       "regime": "typical_gm",
-       "confidence": "indicative",
-       "defender_elo": null,
-       "low_n_tail": false,
-       "precision": "one_sig_fig"
-      }
-     }
-    },
-    "black": {
-     "danger": 22,
-     "danger_bounded": 0.025,
-     "attack_units": 4,
-     "shield_pawns": 2,
-     "zone_attackers": [
-      "bishop on c4"
-     ],
-     "open_files_nearby": [],
-     "storm": 7,
-     "line_pressure": 0,
-     "why": [
-      "attackers: bishop on c4",
-      "enemy pawn storm approaching"
-     ],
-     "p_catastrophe": {
-      "if_pressed": {
-       "p_catastrophe": 0.09,
-       "regime": "if_pressed",
-       "confidence": "validated",
-       "defender_elo": 1500,
-       "low_n_tail": false,
-       "precision": "two_sig_fig"
-      },
-      "typical_1500": {
-       "p_catastrophe": 0.0,
-       "regime": "typical_1500",
-       "confidence": "validated",
-       "defender_elo": null,
-       "low_n_tail": false,
-       "precision": "two_sig_fig"
-      },
-      "typical_gm": {
-       "p_catastrophe": 0.0,
-       "regime": "typical_gm",
-       "confidence": "indicative",
-       "defender_elo": null,
-       "low_n_tail": false,
-       "precision": "one_sig_fig"
-      }
-     }
-    }
-   },
-   "only_move": false,
-   "intent": [
-    "B:castle_queenside",
-    "B:pair_break",
-    "B:storm_launch",
-    "W:rook_activation"
-   ],
-   "alignment": {
-    "state": "on-plan",
-    "families": [
-     "rook_activation"
-    ],
-    "tier": "structure"
-   }
-  },
-  {
-   "kind": "plan",
-   "ply": 33,
-   "move_no": 17,
-   "side": "w",
-   "san": "Rxe3",
-   "fen_before": "r3k2r/1pp2pp1/p2p1n2/4pq2/2B4p/2P1b2P/PP3PP1/R2QR1K1 w kq - 0 17",
-   "fen_after": "r3k2r/1pp2pp1/p2p1n2/4pq2/2B4p/2P1R2P/PP3PP1/R2Q2K1 b kq - 0 17",
-   "eval_cp": -309,
-   "win_pct": 24.3,
-   "delta_win_pct": -1.2,
-   "cls": "ok",
-   "best_san": "fxe3",
-   "best_pv_san": [
-    "fxe3",
-    "O-O",
-    "Rf1",
-    "Qg5",
-    "Qd3",
-    "Rae8"
+    "Qa4",
+    "Ne4",
+    "f3",
+    "Nd6",
+    "Qa5",
+    "f6"
    ],
    "refutation_pv": [],
    "motifs": [],
    "phase": "middlegame",
    "developed": {
-    "white": true,
-    "black": false
+    "white": false,
+    "black": true
    },
-   "structure": "",
-   "character": "QUIET",
+   "structure": "grunfeld_center (Black)",
+   "character": "SHARP",
    "weaknesses": {
     "white": {},
     "black": {
      "passive_rooks": [
-      56,
+      59,
       63
+     ],
+     "weak_color_complex": [
+      48,
+      52
      ]
     }
    },
    "plans": {
     "white": [
      {
-      "idea": "Break open the center while their king is stuck there",
-      "verdict": "NOT-IN-BEST-LINES",
+      "idea": "Free the backward pawn: prepare the c3-c4 break",
+      "verdict": "CONFIRMED-SOUND-LATER",
       "families": [
-       "center_break_vs_king"
+       "backward_push"
       ],
-      "tier": "structure"
-     },
-     {
-      "idea": "Deny castling: hit e-file/f7 targets, keep the king stuck",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "deny_castling"
-      ],
-      "tier": "structure"
+      "tier": "engine"
      },
      {
       "idea": "Rook activation: put a rook on the open/semi-open file",
-      "verdict": "NOT-IN-BEST-LINES",
+      "verdict": "HUMAN-TYPICAL",
       "families": [
        "rook_activation"
       ],
-      "tier": "structure"
+      "tier": "human"
      },
      {
       "idea": "Double on the file: double rooks (or rook and queen) on the d-file, e-file",
-      "verdict": "NOT-IN-BEST-LINES",
+      "verdict": "CONFIRMED-SOUND",
       "families": [
        "heavy_battery"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Storm the queenside \u2014 an attack, not a minority attack",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "pawn_storm"
       ],
       "tier": "structure"
      }
     ],
     "black": [
      {
-      "idea": "Castle kingside: get the king to safety",
-      "verdict": "CONFIRMED-SOUND",
+      "idea": "Storm the kingside with g/h pawns",
+      "verdict": "HUMAN-TYPICAL",
       "families": [
-       "castle_kingside"
+       "pawn_storm"
       ],
-      "tier": "engine"
-     },
-     {
-      "idea": "Castle queenside: get the king to safety",
-      "verdict": "NOT-IN-BEST-LINES",
-      "families": [
-       "castle_queenside"
-      ],
-      "tier": "structure"
+      "tier": "human"
      }
     ]
    },
-   "read": "Black is winning \u2014 quiet \u2014 maneuvering, little forcing play.\nBlack is up two pawns \u2014 though once the captures resolve, the material swings to White.\n\n**White**\n- Holes at d3 \u2014 no pawn of yours can guard it again, so a piece that lands there cannot be chased off.\n- _The structure suggests this_ \u2014 Break open the center while their king is stuck there.\n- _The structure suggests this_ \u2014 Deny castling: hit e-file/f7 targets, keep the king stuck.\n- _The structure suggests this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Double on the file: double rooks (or rook and queen) on the d-file, e-file.\n\n**Black**\n- Rook(s) on a8, h8 with no file to ever get active on.\n- _Engine confirmed_ \u2014 Castle kingside: get the king to safety \u2014 available right now.\n- _The structure suggests this_ \u2014 Castle queenside: get the king to safety.\n- _The structure suggests this_ \u2014 Complete development: castle without delay; avoid moving the same piece twice or grabbing material before development is complete.",
-   "gift_wp": 1.2,
-   "uci": "e1e3",
+   "read": "Black is clearly better \u2014 sharp \u2014 concrete and punishing.\nBlack is up two pawns.\nStructure: grunfeld center \u2014 Black's side.\n\n**White**\n- Backward pawn on c3.\n- Holes at d3, c4 \u2014 no pawn of yours can guard them again, so a piece that lands there cannot be chased off.\n- _Engine confirmed_ \u2014 Free the backward pawn: prepare the c3-c4 break \u2014 playable in the short term.\n- _Engine confirmed_ \u2014 Double on the file: double rooks (or rook and queen) on the d-file, e-file \u2014 available right now.\n- _Strong humans play this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Simplify: trade pieces, especially their active ones.\n- _The structure suggests this_ \u2014 Complete development: bring the Bf1 into play toward natural squares; avoid moving the same piece twice or grabbing material before development is complete.\n- _The structure suggests this_ \u2014 Storm the queenside \u2014 an attack, not a minority attack.\n\n**Black**\n- Rook(s) on d8, h8 with no file to ever get active on.\n- A weak dark-square complex around Black's king on a7, e7.\n- _Strong humans play this_ \u2014 Storm the kingside with g/h pawns.\n- _The structure suggests this_ \u2014 Avoid trades: keep pieces on \u2014 Black's space suffocates White only while the board stays full.",
+   "gift_wp": 0.0,
+   "uci": "b4b5",
    "label": "excellent",
    "symbol": "\u2713",
-   "character_why": "quiet \u2014 maneuvering, little forcing play",
+   "character_why": "sharp \u2014 concrete and punishing",
    "initiative": {
-    "leader": "White",
+    "leader": null,
     "basis": "engine-spread",
-    "mechanism": [
-     "threats"
-    ],
-    "checks": [
-     "Qa4+"
-    ],
-    "captures": [
-     "Rxe3",
-     "fxe3"
-    ],
-    "attacked": [
-     "Bishop on e3"
-    ],
-    "forcing": [
-     "fxe3",
-     "Rxe3"
-    ]
+    "mechanism": [],
+    "checks": [],
+    "captures": [],
+    "attacked": [],
+    "forcing": []
    },
    "king_risk": {
     "white": {
-     "danger": 12,
-     "danger_bounded": 0.013,
+     "danger": 19,
+     "danger_bounded": 0.021,
      "attack_units": 15,
      "shield_pawns": 3,
      "zone_attackers": [
       "queen on f5"
      ],
      "open_files_nearby": [],
-     "storm": 9,
+     "storm": 19,
      "line_pressure": 0,
      "why": [
       "attackers: queen on f5",
@@ -4493,20 +4151,16 @@
      }
     },
     "black": {
-     "danger": 30,
-     "danger_bounded": 0.033,
-     "attack_units": 9,
+     "danger": 14,
+     "danger_bounded": 0.016,
+     "attack_units": 0,
      "shield_pawns": 2,
-     "zone_attackers": [
-      "bishop on c4",
-      "queen on d1"
-     ],
+     "zone_attackers": [],
      "open_files_nearby": [],
-     "storm": 0,
-     "line_pressure": 11,
+     "storm": 5,
+     "line_pressure": 0,
      "why": [
-      "attackers: bishop on c4, queen on d1",
-      "heavy pieces on the king's file or rank"
+      "enemy pawn storm approaching"
      ],
      "p_catastrophe": {
       "if_pressed": {
@@ -4538,10 +4192,8 @@
    },
    "only_move": false,
    "intent": [
-    "B:castle_queenside",
     "B:harvest_overextended",
     "B:prepared_break",
-    "B:storm_launch",
     "B:weakness_harvest",
     "W:prepared_break"
    ],
@@ -5045,6 +4697,264 @@
     "state": "different-plan",
     "played": [
      "prepared_break"
+    ]
+   }
+  },
+  {
+   "kind": "plan",
+   "ply": 57,
+   "move_no": 29,
+   "side": "w",
+   "san": "Rf3",
+   "fen_before": "3r1k2/2Q2p2/3r4/1B1ppq2/4n2p/2P4R/P4PP1/R5K1 w - - 1 29",
+   "fen_after": "3r1k2/2Q2p2/3r4/1B1ppq2/4n2p/2P2R2/P4PP1/R5K1 b - - 2 29",
+   "eval_cp": -61,
+   "win_pct": 44.4,
+   "delta_win_pct": -3.0,
+   "cls": "ok",
+   "best_san": "f3",
+   "best_pv_san": [
+    "f3",
+    "Ng5"
+   ],
+   "refutation_pv": [],
+   "motifs": [],
+   "phase": "middlegame",
+   "developed": {
+    "white": true,
+    "black": true
+   },
+   "structure": "grunfeld_center (Black), split_majorities (White)",
+   "character": "DYNAMIC",
+   "weaknesses": {
+    "white": {
+     "weak_pawns": [
+      18
+     ]
+    },
+    "black": {
+     "weak_pawns": [
+      31
+     ],
+     "weak_color_complex": [
+      45,
+      47,
+      52,
+      54
+     ],
+     "overextended_pawns": [
+      31
+     ]
+    }
+   },
+   "plans": {
+    "white": [
+     {
+      "idea": "Harvest the weak pawn on h4 \u2014 but it hands Black a passed pawn",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "weakness_harvest"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Attack the overextended pawn on h4: it has outrun its support \u2014 restrain it, blockade it, win it, and occupy the holes it left behind (Nimzowitsch) \u2014 but it hands Black a passed pawn",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "harvest_overextended"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "HUMAN-TYPICAL",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "human"
+     },
+     {
+      "idea": "Double on the file: double rooks (or rook and queen) on the d-file, e-file, h-file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "heavy_battery"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Push the passer toward the 6th",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "passer_creation",
+       "passer_push"
+      ],
+      "tier": "structure"
+     }
+    ],
+    "black": [
+     {
+      "idea": "Harvest the weak pawn on c3",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "weakness_harvest"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Attack the passer on a2: restrain it, then attack it \u2014 an enemy passer is a standing threat",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "attack_passer"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Double on the file: double rooks (or rook and queen) on the a-file, c-file, g-file",
+      "verdict": "UNSUPPORTED",
+      "families": [
+       "heavy_battery"
+      ],
+      "tier": "structure"
+     }
+    ]
+   },
+   "read": "The position is roughly equal \u2014 dynamic \u2014 real tension under the surface.\nStructure: grunfeld center \u2014 Black's side, split majorities \u2014 White's side.\n\n**White**\n- Isolated pawn on c3 \u2014 on a file Black can pile onto.\n- Holes at d3, c4 \u2014 no pawn of yours can guard them again, so a piece that lands there cannot be chased off.\n- _Engine confirmed_ \u2014 Harvest the weak pawn on h4 \u2014 but it hands Black a passed pawn \u2014 a longer-term idea, not for right now.\n- _Engine confirmed_ \u2014 Attack the overextended pawn on h4: it has outrun its support \u2014 restrain it, blockade it, win it, and occupy the holes it left behind (Nimzowitsch) \u2014 but it hands Black a passed pawn \u2014 a longer-term idea, not for right now.\n- _Strong humans play this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Simplify: trade pieces, especially their active ones.\n- _The structure suggests this_ \u2014 Double on the file: double rooks (or rook and queen) on the d-file, e-file, h-file.\n- _The structure suggests this_ \u2014 Push the passer toward the 6th.\n\n**Black**\n- Isolated pawn on h4 \u2014 on a file White can pile onto.\n- A weak dark-square complex around Black's king on f6, h6, e7, g7.\n- Overextended pawn(s) at h4 \u2014 advanced past any support and not passed.\n- _Engine confirmed_ \u2014 Harvest the weak pawn on c3 \u2014 playable in the short term.\n- _The structure suggests this_ \u2014 Avoid trades: keep pieces on \u2014 Black's space suffocates White only while the board stays full.\n- _The structure suggests this_ \u2014 Attack the passer on a2: restrain it, then attack it \u2014 an enemy passer is a standing threat.\n- _The structure suggests this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Double on the file: double rooks (or rook and queen) on the a-file, c-file, g-file.",
+   "gift_wp": 4.2,
+   "uci": "h3f3",
+   "label": "good",
+   "symbol": "",
+   "character_why": "dynamic \u2014 real tension under the surface",
+   "initiative": {
+    "leader": "Black",
+    "basis": "engine-spread",
+    "mechanism": [
+     "threats"
+    ],
+    "checks": [
+     "Qxf2+"
+    ],
+    "captures": [
+     "Nxf2"
+    ],
+    "attacked": [
+     "Rook on h3"
+    ],
+    "forcing": [
+     "dxc4"
+    ]
+   },
+   "king_risk": {
+    "white": {
+     "danger": 64,
+     "danger_bounded": 0.071,
+     "attack_units": 19,
+     "shield_pawns": 2,
+     "zone_attackers": [
+      "knight on e4",
+      "queen on f5"
+     ],
+     "open_files_nearby": [
+      "h"
+     ],
+     "storm": 9,
+     "line_pressure": 0,
+     "why": [
+      "attackers: knight on e4, queen on f5",
+      "open h-file beside the king",
+      "enemy pawn storm approaching"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.31,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.02,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    },
+    "black": {
+     "danger": 39,
+     "danger_bounded": 0.043,
+     "attack_units": 12,
+     "shield_pawns": 1,
+     "zone_attackers": [
+      "bishop on b5",
+      "queen on c7"
+     ],
+     "open_files_nearby": [
+      "g"
+     ],
+     "storm": 0,
+     "line_pressure": 0,
+     "why": [
+      "attackers: bishop on b5, queen on c7",
+      "open g-file beside the king"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.16,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    }
+   },
+   "only_move": false,
+   "intent": [
+    "B:outpost_occupation",
+    "W:outpost_occupation",
+    "W:wing_expansion"
+   ],
+   "alignment": {
+    "state": "different-plan",
+    "played": [
+     "outpost_occupation",
+     "wing_expansion"
     ]
    }
   },
@@ -5984,6 +5894,272 @@
    }
   },
   {
+   "kind": "plan",
+   "ply": 77,
+   "move_no": 39,
+   "side": "w",
+   "san": "a7",
+   "fen_before": "3r1k2/2Q2p2/Pr3q2/3p4/4p3/2P1R1PB/3n1PK1/R7 w - - 3 39",
+   "fen_after": "3r1k2/P1Q2p2/1r3q2/3p4/4p3/2P1R1PB/3n1PK1/R7 b - - 0 39",
+   "eval_cp": 263,
+   "win_pct": 72.5,
+   "delta_win_pct": -1.4,
+   "cls": "ok",
+   "best_san": "a7",
+   "best_pv_san": [
+    "a7",
+    "Ra8",
+    "Qc5+",
+    "Rd6",
+    "Ra6",
+    "Nc4"
+   ],
+   "refutation_pv": [],
+   "motifs": [],
+   "phase": "middlegame",
+   "developed": {
+    "white": true,
+    "black": true
+   },
+   "structure": "",
+   "character": "SHARP",
+   "weaknesses": {
+    "white": {
+     "weak_pawns": [
+      18
+     ]
+    },
+    "black": {
+     "weak_pawns": [
+      35
+     ],
+     "weak_color_complex": [
+      43,
+      47,
+      52,
+      54
+     ],
+     "backward_half_open": [
+      35
+     ]
+    }
+   },
+   "plans": {
+    "white": [
+     {
+      "idea": "Harvest the weak pawn on d5",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "weakness_harvest"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Free the backward pawn: prepare the f2-f3 break",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "backward_push"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Double on the file: double rooks (or rook and queen) on the d-file, e-file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "heavy_battery"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Push the passer toward the 6th",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "passer_creation"
+      ],
+      "tier": "engine"
+     }
+    ],
+    "black": [
+     {
+      "idea": "Harvest the weak pawn on c3 \u2014 it is defended \u2014 taking it now wins nothing on the exchange",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "weakness_harvest"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Outpost plan: plant Black's knight on c4",
+      "verdict": "HUMAN-TYPICAL",
+      "families": [
+       "outpost_occupation"
+      ],
+      "tier": "human"
+     },
+     {
+      "idea": "Attack the passer on a6: restrain it, then attack it \u2014 an enemy passer is a standing threat",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "attack_passer"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Free the backward pawn: prepare the d5-d4 break",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "backward_push"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Double on the file: double rooks (or rook and queen) on the a-file, c-file, g-file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "heavy_battery"
+      ],
+      "tier": "structure"
+     }
+    ]
+   },
+   "read": "White is winning \u2014 sharp \u2014 concrete and punishing.\nWhite is up a pawn \u2014 though the trailing side wins material back with Rxa6.\n\n**White**\n- Backward pawn on f2.\n- Isolated pawn on c3 \u2014 on a file Black can pile onto.\n- Holes at b3, d3, f3 \u2014 no pawn of yours can guard them again, so a piece that lands there cannot be chased off.\n- _Engine confirmed_ \u2014 Harvest the weak pawn on d5 \u2014 a longer-term idea, not for right now.\n- _Engine confirmed_ \u2014 Push the passer toward the 6th \u2014 a longer-term idea, not for right now.\n- _The structure suggests this_ \u2014 Free the backward pawn: prepare the f2-f3 break.\n- _The structure suggests this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Double on the file: double rooks (or rook and queen) on the d-file, e-file.\n\n**Black**\n- Backward pawn on d5 \u2014 on a file White can pile onto.\n- A weak dark-square complex around Black's king on d6, h6, e7, g7.\n- Holes at c5, f5, c6 \u2014 no pawn of yours can guard them again, so a piece that lands there cannot be chased off.\n- _Strong humans play this_ \u2014 Outpost plan: plant Black's knight on c4.\n- _The structure suggests this_ \u2014 Harvest the weak pawn on c3 \u2014 it is defended \u2014 taking it now wins nothing on the exchange.\n- _The structure suggests this_ \u2014 Attack the passer on a6: restrain it, then attack it \u2014 an enemy passer is a standing threat.\n- _The structure suggests this_ \u2014 Free the backward pawn: prepare the d5-d4 break.\n- _The structure suggests this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Double on the file: double rooks (or rook and queen) on the a-file, c-file, g-file.",
+   "gift_wp": 12.2,
+   "uci": "a6a7",
+   "label": "best",
+   "symbol": "\u2713",
+   "character_why": "sharp \u2014 concrete and punishing",
+   "initiative": {
+    "leader": "unclear",
+    "basis": "engine-spread",
+    "mechanism": [],
+    "checks": [],
+    "captures": [],
+    "attacked": [],
+    "forcing": []
+   },
+   "king_risk": {
+    "white": {
+     "danger": 110,
+     "danger_bounded": 0.122,
+     "attack_units": 24,
+     "shield_pawns": 1,
+     "zone_attackers": [
+      "knight on d2",
+      "queen on f6"
+     ],
+     "open_files_nearby": [
+      "h"
+     ],
+     "storm": 6,
+     "line_pressure": 0,
+     "why": [
+      "attackers: knight on d2, queen on f6",
+      "open h-file beside the king",
+      "enemy pawn storm approaching"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.31,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.13,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    },
+    "black": {
+     "danger": 39,
+     "danger_bounded": 0.043,
+     "attack_units": 12,
+     "shield_pawns": 1,
+     "zone_attackers": [
+      "bishop on h3",
+      "queen on c7"
+     ],
+     "open_files_nearby": [
+      "g"
+     ],
+     "storm": 0,
+     "line_pressure": 0,
+     "why": [
+      "attackers: bishop on h3, queen on c7",
+      "open g-file beside the king"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.16,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    }
+   },
+   "only_move": false,
+   "intent": [
+    "B:outpost_occupation",
+    "B:seventh_invasion",
+    "W:seventh_invasion"
+   ],
+   "alignment": {
+    "state": "different-plan",
+    "played": [
+     "seventh_invasion"
+    ]
+   }
+  },
+  {
    "kind": "missed",
    "ply": 80,
    "move_no": 40,
@@ -6337,10 +6513,10 @@
   "w": {
    "name": "misspelledNight",
    "moves": 43,
-   "errors": 9,
-   "error_rate": 20.9,
+   "errors": 8,
+   "error_rate": 18.6,
    "by_phase": {
-    "opening": 3,
+    "opening": 2,
     "middlegame": 6,
     "endgame": 0
    },
@@ -6369,25 +6545,25 @@
     ]
    ],
    "counts": {
-    "book": 3,
+    "book": 4,
     "best": 15,
     "excellent": 10,
     "good": 6,
     "inaccuracy": 3,
-    "mistake": 3,
+    "mistake": 2,
     "miss": 2,
     "blunder": 1
    },
    "accuracy": 76.0,
-   "book_plies": 3
+   "book_plies": 4
   },
   "b": {
    "name": "hehe89",
    "moves": 43,
-   "errors": 12,
-   "error_rate": 27.9,
+   "errors": 11,
+   "error_rate": 25.6,
    "by_phase": {
-    "opening": 1,
+    "opening": 0,
     "middlegame": 11,
     "endgame": 0
    },
@@ -6412,19 +6588,19 @@
     ]
    ],
    "counts": {
-    "book": 2,
+    "book": 4,
     "brilliant": 1,
     "great": 2,
     "best": 13,
-    "excellent": 8,
+    "excellent": 7,
     "good": 5,
-    "inaccuracy": 5,
+    "inaccuracy": 4,
     "mistake": 3,
     "miss": 2,
     "blunder": 2
    },
    "accuracy": 70.8,
-   "book_plies": 2
+   "book_plies": 4
   }
  },
  "moments_found": 12,

@@ -1,0 +1,2859 @@
+{
+ "schema": "lucena/gamestory@1",
+ "game": {
+  "id": "Chess.com",
+  "white": "ofribecker",
+  "black": "misspelledNight",
+  "result": "1/2-1/2",
+  "user_side": null,
+  "source": null,
+  "date": "2021.01.30"
+ },
+ "headers": {
+  "Event": "Live Chess",
+  "Site": "Chess.com",
+  "Date": "2021.01.30",
+  "White": "ofribecker",
+  "Black": "misspelledNight",
+  "Result": "1/2-1/2",
+  "ECO": "C01",
+  "WhiteElo": "1799",
+  "BlackElo": "1781",
+  "TimeControl": "3600",
+  "Termination": "Game drawn by agreement"
+ },
+ "plies": [
+  {
+   "ply": 1,
+   "move_no": 1,
+   "side": "w",
+   "san": "e4",
+   "uci": "e2e4",
+   "fen_after": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+   "eval_cp": 32,
+   "win_pct": 52.9,
+   "delta_win_pct": -0.5,
+   "class": "ok",
+   "best": {
+    "san": "e4",
+    "pv_san": [
+     "e4",
+     "e6",
+     "Nf3",
+     "d5",
+     "e5",
+     "c5"
+    ],
+    "eval_cp": 37
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "gift_wp": 0.0,
+   "book": "King's Pawn Game",
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
+   "cp_white": 32
+  },
+  {
+   "ply": 2,
+   "move_no": 1,
+   "side": "b",
+   "san": "e6",
+   "uci": "e7e6",
+   "fen_after": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+   "eval_cp": -41,
+   "win_pct": 46.2,
+   "delta_win_pct": -0.8,
+   "class": "ok",
+   "best": {
+    "san": "e5",
+    "pv_san": [
+     "e5"
+    ],
+    "eval_cp": -32
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+   "gift_wp": 0.5,
+   "book": "French Defense",
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
+   "cp_white": 41
+  },
+  {
+   "ply": 3,
+   "move_no": 2,
+   "side": "w",
+   "san": "Nf3",
+   "uci": "g1f3",
+   "fen_after": "rnbqkbnr/pppp1ppp/4p3/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+   "eval_cp": 27,
+   "win_pct": 52.5,
+   "delta_win_pct": -1.3,
+   "class": "ok",
+   "best": {
+    "san": "Nc3",
+    "pv_san": [
+     "Nc3",
+     "d5"
+    ],
+    "eval_cp": 41
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+   "gift_wp": 0.8,
+   "book": "French Defense: Knight Variation",
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
+   "cp_white": 27
+  },
+  {
+   "ply": 4,
+   "move_no": 2,
+   "side": "b",
+   "san": "d5",
+   "uci": "d7d5",
+   "fen_after": "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq d6 0 3",
+   "eval_cp": -27,
+   "win_pct": 47.5,
+   "delta_win_pct": 0.0,
+   "class": "ok",
+   "best": {
+    "san": "d5",
+    "pv_san": [
+     "d5",
+     "Nc3"
+    ],
+    "eval_cp": -27
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqkbnr/pppp1ppp/4p3/8/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+   "gift_wp": 1.3,
+   "book": null,
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
+   "cp_white": 27
+  },
+  {
+   "ply": 5,
+   "move_no": 3,
+   "side": "w",
+   "san": "exd5",
+   "uci": "e4d5",
+   "fen_after": "rnbqkbnr/ppp2ppp/4p3/3P4/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
+   "eval_cp": 22,
+   "win_pct": 52.0,
+   "delta_win_pct": -0.5,
+   "class": "ok",
+   "best": {
+    "san": "e5",
+    "pv_san": [
+     "e5",
+     "c5"
+    ],
+    "eval_cp": 27
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqkbnr/ppp2ppp/4p3/3p4/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq d6 0 3",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
+   "cp_white": 22
+  },
+  {
+   "ply": 6,
+   "move_no": 3,
+   "side": "b",
+   "san": "exd5",
+   "uci": "e6d5",
+   "fen_after": "rnbqkbnr/ppp2ppp/8/3p4/8/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 4",
+   "eval_cp": -22,
+   "win_pct": 48.0,
+   "delta_win_pct": 0.0,
+   "class": "ok",
+   "best": {
+    "san": "exd5",
+    "pv_san": [
+     "exd5",
+     "d4",
+     "Nf6",
+     "Bd3",
+     "c5",
+     "c3"
+    ],
+    "eval_cp": -22
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqkbnr/ppp2ppp/4p3/3P4/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
+   "gift_wp": 0.5,
+   "book": null,
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
+   "cp_white": 22
+  },
+  {
+   "ply": 7,
+   "move_no": 4,
+   "side": "w",
+   "san": "d4",
+   "uci": "d2d4",
+   "fen_after": "rnbqkbnr/ppp2ppp/8/3p4/3P4/5N2/PPP2PPP/RNBQKB1R b KQkq d3 0 4",
+   "eval_cp": 27,
+   "win_pct": 52.5,
+   "delta_win_pct": 0.5,
+   "class": "ok",
+   "best": {
+    "san": "d4",
+    "pv_san": [
+     "d4",
+     "Nf6",
+     "Bd3",
+     "c5",
+     "c3",
+     "cxd4"
+    ],
+    "eval_cp": 22
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqkbnr/ppp2ppp/8/3p4/8/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 4",
+   "gift_wp": 0.0,
+   "book": "French Defense: Exchange Variation",
+   "in_book": true,
+   "label": "book",
+   "symbol": "\u25cb",
+   "cp_white": 27
+  },
+  {
+   "ply": 8,
+   "move_no": 4,
+   "side": "b",
+   "san": "Bd6",
+   "uci": "f8d6",
+   "fen_after": "rnbqk1nr/ppp2ppp/3b4/3p4/3P4/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+   "eval_cp": -28,
+   "win_pct": 47.4,
+   "delta_win_pct": -0.1,
+   "class": "ok",
+   "best": {
+    "san": "Bd6",
+    "pv_san": [
+     "Bd6",
+     "Bd3",
+     "Ne7",
+     "O-O",
+     "O-O",
+     "c4"
+    ],
+    "eval_cp": -27
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqkbnr/ppp2ppp/8/3p4/3P4/5N2/PPP2PPP/RNBQKB1R b KQkq d3 0 4",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 28
+  },
+  {
+   "ply": 9,
+   "move_no": 5,
+   "side": "w",
+   "san": "Nc3",
+   "uci": "b1c3",
+   "fen_after": "rnbqk1nr/ppp2ppp/3b4/3p4/3P4/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 2 5",
+   "eval_cp": 7,
+   "win_pct": 50.6,
+   "delta_win_pct": -1.9,
+   "class": "ok",
+   "best": {
+    "san": "c4",
+    "pv_san": [
+     "c4",
+     "c6"
+    ],
+    "eval_cp": 28
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqk1nr/ppp2ppp/3b4/3p4/3P4/5N2/PPP2PPP/RNBQKB1R w KQkq - 1 5",
+   "gift_wp": 0.1,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 7
+  },
+  {
+   "ply": 10,
+   "move_no": 5,
+   "side": "b",
+   "san": "c6",
+   "uci": "c7c6",
+   "fen_after": "rnbqk1nr/pp3ppp/2pb4/3p4/3P4/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+   "eval_cp": -22,
+   "win_pct": 48.0,
+   "delta_win_pct": -1.4,
+   "class": "ok",
+   "best": {
+    "san": "Nf6",
+    "pv_san": [
+     "Nf6",
+     "Bd3"
+    ],
+    "eval_cp": -7
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqk1nr/ppp2ppp/3b4/3p4/3P4/2N2N2/PPP2PPP/R1BQKB1R b KQkq - 2 5",
+   "gift_wp": 1.9,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 22
+  },
+  {
+   "ply": 11,
+   "move_no": 6,
+   "side": "w",
+   "san": "Bd3",
+   "uci": "f1d3",
+   "fen_after": "rnbqk1nr/pp3ppp/2pb4/3p4/3P4/2NB1N2/PPP2PPP/R1BQK2R b KQkq - 1 6",
+   "eval_cp": 13,
+   "win_pct": 51.2,
+   "delta_win_pct": -0.8,
+   "class": "ok",
+   "best": {
+    "san": "Bd3",
+    "pv_san": [
+     "Bd3",
+     "Ne7"
+    ],
+    "eval_cp": 22
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqk1nr/pp3ppp/2pb4/3p4/3P4/2N2N2/PPP2PPP/R1BQKB1R w KQkq - 0 6",
+   "gift_wp": 1.4,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 13
+  },
+  {
+   "ply": 12,
+   "move_no": 6,
+   "side": "b",
+   "san": "Ne7",
+   "uci": "g8e7",
+   "fen_after": "rnbqk2r/pp2nppp/2pb4/3p4/3P4/2NB1N2/PPP2PPP/R1BQK2R w KQkq - 2 7",
+   "eval_cp": -22,
+   "win_pct": 48.0,
+   "delta_win_pct": -0.8,
+   "class": "ok",
+   "best": {
+    "san": "Ne7",
+    "pv_san": [
+     "Ne7",
+     "Ne2",
+     "O-O",
+     "Ng3",
+     "Ng6",
+     "O-O"
+    ],
+    "eval_cp": -13
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqk1nr/pp3ppp/2pb4/3p4/3P4/2NB1N2/PPP2PPP/R1BQK2R b KQkq - 1 6",
+   "gift_wp": 0.8,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 22
+  },
+  {
+   "ply": 13,
+   "move_no": 7,
+   "side": "w",
+   "san": "h3",
+   "uci": "h2h3",
+   "fen_after": "rnbqk2r/pp2nppp/2pb4/3p4/3P4/2NB1N1P/PPP2PP1/R1BQK2R b KQkq - 0 7",
+   "eval_cp": -7,
+   "win_pct": 49.4,
+   "delta_win_pct": -2.7,
+   "class": "ok",
+   "best": {
+    "san": "Ne2",
+    "pv_san": [
+     "Ne2",
+     "O-O",
+     "O-O",
+     "Ng6",
+     "Bg5",
+     "f6"
+    ],
+    "eval_cp": 22
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqk2r/pp2nppp/2pb4/3p4/3P4/2NB1N2/PPP2PPP/R1BQK2R w KQkq - 2 7",
+   "gift_wp": 0.8,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": -7
+  },
+  {
+   "ply": 14,
+   "move_no": 7,
+   "side": "b",
+   "san": "Bf5",
+   "uci": "c8f5",
+   "fen_after": "rn1qk2r/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQK2R w KQkq - 1 8",
+   "eval_cp": -21,
+   "win_pct": 48.1,
+   "delta_win_pct": -2.6,
+   "class": "ok",
+   "best": {
+    "san": "Nd7",
+    "pv_san": [
+     "Nd7"
+    ],
+    "eval_cp": 7
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rnbqk2r/pp2nppp/2pb4/3p4/3P4/2NB1N1P/PPP2PP1/R1BQK2R b KQkq - 0 7",
+   "gift_wp": 2.7,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": 21
+  },
+  {
+   "ply": 15,
+   "move_no": 8,
+   "side": "w",
+   "san": "O-O",
+   "uci": "e1g1",
+   "fen_after": "rn1qk2r/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQ1RK1 b kq - 2 8",
+   "eval_cp": 5,
+   "win_pct": 50.5,
+   "delta_win_pct": -1.5,
+   "class": "ok",
+   "best": {
+    "san": "Bxf5",
+    "pv_san": [
+     "Bxf5"
+    ],
+    "eval_cp": 21
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rn1qk2r/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQK2R w KQkq - 1 8",
+   "gift_wp": 2.6,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 5
+  },
+  {
+   "ply": 16,
+   "move_no": 8,
+   "side": "b",
+   "san": "O-O",
+   "uci": "e8g8",
+   "fen_after": "rn1q1rk1/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQ1RK1 w - - 3 9",
+   "eval_cp": -7,
+   "win_pct": 49.4,
+   "delta_win_pct": -0.2,
+   "class": "ok",
+   "best": {
+    "san": "O-O",
+    "pv_san": [
+     "O-O",
+     "Ne2",
+     "Nd7",
+     "Bf4",
+     "Bc7",
+     "Bxc7"
+    ],
+    "eval_cp": -5
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rn1qk2r/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQ1RK1 b kq - 2 8",
+   "gift_wp": 1.5,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 7
+  },
+  {
+   "ply": 17,
+   "move_no": 9,
+   "side": "w",
+   "san": "Re1",
+   "uci": "f1e1",
+   "fen_after": "rn1q1rk1/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQR1K1 b - - 4 9",
+   "eval_cp": -3,
+   "win_pct": 49.7,
+   "delta_win_pct": -0.9,
+   "class": "ok",
+   "best": {
+    "san": "Ne2",
+    "pv_san": [
+     "Ne2",
+     "Nd7"
+    ],
+    "eval_cp": 7
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rn1q1rk1/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQ1RK1 w - - 3 9",
+   "gift_wp": 0.2,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": -3
+  },
+  {
+   "ply": 18,
+   "move_no": 9,
+   "side": "b",
+   "san": "Bxd3",
+   "uci": "f5d3",
+   "fen_after": "rn1q1rk1/pp2nppp/2pb4/3p4/3P4/2Nb1N1P/PPP2PP1/R1BQR1K1 w - - 0 10",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": -0.3,
+   "class": "ok",
+   "best": {
+    "san": "h6",
+    "pv_san": [
+     "h6",
+     "Bxf5",
+     "Nxf5",
+     "Qd3",
+     "Qf6",
+     "Ne5"
+    ],
+    "eval_cp": 3
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rn1q1rk1/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQR1K1 b - - 4 9",
+   "gift_wp": 0.9,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 0
+  },
+  {
+   "ply": 19,
+   "move_no": 10,
+   "side": "w",
+   "san": "Qxd3",
+   "uci": "d1d3",
+   "fen_after": "rn1q1rk1/pp2nppp/2pb4/3p4/3P4/2NQ1N1P/PPP2PP1/R1B1R1K1 b - - 0 10",
+   "eval_cp": -1,
+   "win_pct": 49.9,
+   "delta_win_pct": -0.1,
+   "class": "ok",
+   "best": {
+    "san": "Qxd3",
+    "pv_san": [
+     "Qxd3",
+     "Re8"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rn1q1rk1/pp2nppp/2pb4/3p4/3P4/2Nb1N1P/PPP2PP1/R1BQR1K1 w - - 0 10",
+   "gift_wp": 0.3,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": -1
+  },
+  {
+   "ply": 20,
+   "move_no": 10,
+   "side": "b",
+   "san": "Na6",
+   "uci": "b8a6",
+   "fen_after": "r2q1rk1/pp2nppp/n1pb4/3p4/3P4/2NQ1N1P/PPP2PP1/R1B1R1K1 w - - 1 11",
+   "eval_cp": -14,
+   "win_pct": 48.7,
+   "delta_win_pct": -1.4,
+   "class": "ok",
+   "best": {
+    "san": "Re8",
+    "pv_san": [
+     "Re8",
+     "Ne2",
+     "Qc7",
+     "b3",
+     "Nd7",
+     "c4"
+    ],
+    "eval_cp": 1
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "rn1q1rk1/pp2nppp/2pb4/3p4/3P4/2NQ1N1P/PPP2PP1/R1B1R1K1 b - - 0 10",
+   "gift_wp": 0.1,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 14
+  },
+  {
+   "ply": 21,
+   "move_no": 11,
+   "side": "w",
+   "san": "a3",
+   "uci": "a2a3",
+   "fen_after": "r2q1rk1/pp2nppp/n1pb4/3p4/3P4/P1NQ1N1P/1PP2PP1/R1B1R1K1 b - - 0 11",
+   "eval_cp": -6,
+   "win_pct": 49.4,
+   "delta_win_pct": -1.8,
+   "class": "ok",
+   "best": {
+    "san": "Ne2",
+    "pv_san": [
+     "Ne2",
+     "Nc7",
+     "Bf4",
+     "Nc8",
+     "a4",
+     "Re8"
+    ],
+    "eval_cp": 14
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2q1rk1/pp2nppp/n1pb4/3p4/3P4/2NQ1N1P/PPP2PP1/R1B1R1K1 w - - 1 11",
+   "gift_wp": 1.4,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": -6
+  },
+  {
+   "ply": 22,
+   "move_no": 11,
+   "side": "b",
+   "san": "Nc7",
+   "uci": "a6c7",
+   "fen_after": "r2q1rk1/ppn1nppp/2pb4/3p4/3P4/P1NQ1N1P/1PP2PP1/R1B1R1K1 w - - 1 12",
+   "eval_cp": 8,
+   "win_pct": 50.7,
+   "delta_win_pct": 0.2,
+   "class": "ok",
+   "best": {
+    "san": "Nc7",
+    "pv_san": [
+     "Nc7",
+     "Ne2",
+     "Ng6",
+     "Bd2",
+     "Qd7",
+     "Ng3"
+    ],
+    "eval_cp": 6
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2q1rk1/pp2nppp/n1pb4/3p4/3P4/P1NQ1N1P/1PP2PP1/R1B1R1K1 b - - 0 11",
+   "gift_wp": 1.8,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": -8
+  },
+  {
+   "ply": 23,
+   "move_no": 12,
+   "side": "w",
+   "san": "Bd2",
+   "uci": "c1d2",
+   "fen_after": "r2q1rk1/ppn1nppp/2pb4/3p4/3P4/P1NQ1N1P/1PPB1PP1/R3R1K1 b - - 2 12",
+   "eval_cp": -9,
+   "win_pct": 49.2,
+   "delta_win_pct": -0.1,
+   "class": "ok",
+   "best": {
+    "san": "Ne2",
+    "pv_san": [
+     "Ne2",
+     "Ne6"
+    ],
+    "eval_cp": -8
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2q1rk1/ppn1nppp/2pb4/3p4/3P4/P1NQ1N1P/1PP2PP1/R1B1R1K1 w - - 1 12",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": -9
+  },
+  {
+   "ply": 24,
+   "move_no": 12,
+   "side": "b",
+   "san": "a5",
+   "uci": "a7a5",
+   "fen_after": "r2q1rk1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPB1PP1/R3R1K1 w - a6 0 13",
+   "eval_cp": -14,
+   "win_pct": 48.7,
+   "delta_win_pct": -2.1,
+   "class": "ok",
+   "best": {
+    "san": "Re8",
+    "pv_san": [
+     "Re8",
+     "Nd1",
+     "Ng6",
+     "Rxe8+",
+     "Nxe8",
+     "a4"
+    ],
+    "eval_cp": 9
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2q1rk1/ppn1nppp/2pb4/3p4/3P4/P1NQ1N1P/1PPB1PP1/R3R1K1 b - - 2 12",
+   "gift_wp": 0.1,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": 14
+  },
+  {
+   "ply": 25,
+   "move_no": 13,
+   "side": "w",
+   "san": "Re2",
+   "uci": "e1e2",
+   "fen_after": "r2q1rk1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPBRPP1/R5K1 b - - 1 13",
+   "eval_cp": 3,
+   "win_pct": 50.3,
+   "delta_win_pct": -1.0,
+   "class": "ok",
+   "best": {
+    "san": "Nd1",
+    "pv_san": [
+     "Nd1"
+    ],
+    "eval_cp": 14
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2q1rk1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPB1PP1/R3R1K1 w - a6 0 13",
+   "gift_wp": 2.1,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 3
+  },
+  {
+   "ply": 26,
+   "move_no": 13,
+   "side": "b",
+   "san": "Re8",
+   "uci": "f8e8",
+   "fen_after": "r2qr1k1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPBRPP1/R5K1 w - - 2 14",
+   "eval_cp": -1,
+   "win_pct": 49.9,
+   "delta_win_pct": 0.2,
+   "class": "ok",
+   "best": {
+    "san": "Ng6",
+    "pv_san": [
+     "Ng6",
+     "Rae1"
+    ],
+    "eval_cp": -3
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2q1rk1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPBRPP1/R5K1 b - - 1 13",
+   "gift_wp": 1.0,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 1
+  },
+  {
+   "ply": 27,
+   "move_no": 14,
+   "side": "w",
+   "san": "Rae1",
+   "uci": "a1e1",
+   "fen_after": "r2qr1k1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPBRPP1/4R1K1 b - - 3 14",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": -0.1,
+   "class": "ok",
+   "best": {
+    "san": "Rae1",
+    "pv_san": [
+     "Rae1"
+    ],
+    "eval_cp": 1
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2qr1k1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPBRPP1/R5K1 w - - 2 14",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 0
+  },
+  {
+   "ply": 28,
+   "move_no": 14,
+   "side": "b",
+   "san": "Ne6",
+   "uci": "c7e6",
+   "fen_after": "r2qr1k1/1p2nppp/2pbn3/p2p4/3P4/P1NQ1N1P/1PPBRPP1/4R1K1 w - - 4 15",
+   "eval_cp": -46,
+   "win_pct": 45.8,
+   "delta_win_pct": -4.2,
+   "class": "ok",
+   "best": {
+    "san": "a4",
+    "pv_san": [
+     "a4",
+     "Nd1",
+     "Qd7",
+     "Ne3",
+     "Ng6",
+     "Nf5"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2qr1k1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPBRPP1/4R1K1 b - - 3 14",
+   "gift_wp": 0.1,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": 46
+  },
+  {
+   "ply": 29,
+   "move_no": 15,
+   "side": "w",
+   "san": "Ne5",
+   "uci": "f3e5",
+   "fen_after": "r2qr1k1/1p2nppp/2pbn3/p2pN3/3P4/P1NQ3P/1PPBRPP1/4R1K1 b - - 5 15",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": -4.2,
+   "class": "ok",
+   "best": {
+    "san": "g3",
+    "pv_san": [
+     "g3"
+    ],
+    "eval_cp": 46
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2qr1k1/1p2nppp/2pbn3/p2p4/3P4/P1NQ1N1P/1PPBRPP1/4R1K1 w - - 4 15",
+   "gift_wp": 4.2,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": 0
+  },
+  {
+   "ply": 30,
+   "move_no": 15,
+   "side": "b",
+   "san": "Ng6",
+   "uci": "e7g6",
+   "fen_after": "r2qr1k1/1p3ppp/2pbn1n1/p2pN3/3P4/P1NQ3P/1PPBRPP1/4R1K1 w - - 6 16",
+   "eval_cp": -11,
+   "win_pct": 49.0,
+   "delta_win_pct": -1.0,
+   "class": "ok",
+   "best": {
+    "san": "Ng6",
+    "pv_san": [
+     "Ng6"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2qr1k1/1p2nppp/2pbn3/p2pN3/3P4/P1NQ3P/1PPBRPP1/4R1K1 b - - 5 15",
+   "gift_wp": 4.2,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 11
+  },
+  {
+   "ply": 31,
+   "move_no": 16,
+   "side": "w",
+   "san": "Nxg6",
+   "uci": "e5g6",
+   "fen_after": "r2qr1k1/1p3ppp/2pbn1N1/p2p4/3P4/P1NQ3P/1PPBRPP1/4R1K1 b - - 0 16",
+   "eval_cp": -16,
+   "win_pct": 48.5,
+   "delta_win_pct": -2.5,
+   "class": "ok",
+   "best": {
+    "san": "Nf3",
+    "pv_san": [
+     "Nf3",
+     "Nc7"
+    ],
+    "eval_cp": 11
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2qr1k1/1p3ppp/2pbn1n1/p2pN3/3P4/P1NQ3P/1PPBRPP1/4R1K1 w - - 6 16",
+   "gift_wp": 1.0,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": -16
+  },
+  {
+   "ply": 32,
+   "move_no": 16,
+   "side": "b",
+   "san": "hxg6",
+   "uci": "h7g6",
+   "fen_after": "r2qr1k1/1p3pp1/2pbn1p1/p2p4/3P4/P1NQ3P/1PPBRPP1/4R1K1 w - - 0 17",
+   "eval_cp": 17,
+   "win_pct": 51.6,
+   "delta_win_pct": 0.1,
+   "class": "only_move",
+   "best": {
+    "san": "hxg6",
+    "pv_san": [
+     "hxg6",
+     "g3"
+    ],
+    "eval_cp": 16
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2qr1k1/1p3ppp/2pbn1N1/p2p4/3P4/P1NQ3P/1PPBRPP1/4R1K1 b - - 0 16",
+   "gift_wp": 2.5,
+   "book": null,
+   "in_book": false,
+   "label": "great",
+   "symbol": "!",
+   "cp_white": -17
+  },
+  {
+   "ply": 33,
+   "move_no": 17,
+   "side": "w",
+   "san": "Nd1",
+   "uci": "c3d1",
+   "fen_after": "r2qr1k1/1p3pp1/2pbn1p1/p2p4/3P4/P2Q3P/1PPBRPP1/3NR1K1 b - - 1 17",
+   "eval_cp": -44,
+   "win_pct": 46.0,
+   "delta_win_pct": -2.5,
+   "class": "ok",
+   "best": {
+    "san": "g3",
+    "pv_san": [
+     "g3",
+     "Qf6",
+     "Na2",
+     "Red8",
+     "c3",
+     "c5"
+    ],
+    "eval_cp": -17
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2qr1k1/1p3pp1/2pbn1p1/p2p4/3P4/P1NQ3P/1PPBRPP1/4R1K1 w - - 0 17",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": -44
+  },
+  {
+   "ply": 34,
+   "move_no": 17,
+   "side": "b",
+   "san": "Qb6",
+   "uci": "d8b6",
+   "fen_after": "r3r1k1/1p3pp1/1qpbn1p1/p2p4/3P4/P2Q3P/1PPBRPP1/3NR1K1 w - - 2 18",
+   "eval_cp": 15,
+   "win_pct": 51.4,
+   "delta_win_pct": -2.7,
+   "class": "ok",
+   "best": {
+    "san": "Qh4",
+    "pv_san": [
+     "Qh4"
+    ],
+    "eval_cp": 44
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r2qr1k1/1p3pp1/2pbn1p1/p2p4/3P4/P2Q3P/1PPBRPP1/3NR1K1 b - - 1 17",
+   "gift_wp": 2.5,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": -15
+  },
+  {
+   "ply": 35,
+   "move_no": 18,
+   "side": "w",
+   "san": "c3",
+   "uci": "c2c3",
+   "fen_after": "r3r1k1/1p3pp1/1qpbn1p1/p2p4/3P4/P1PQ3P/1P1BRPP1/3NR1K1 b - - 0 18",
+   "eval_cp": -26,
+   "win_pct": 47.6,
+   "delta_win_pct": -1.0,
+   "class": "ok",
+   "best": {
+    "san": "g3",
+    "pv_san": [
+     "g3"
+    ],
+    "eval_cp": -15
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r3r1k1/1p3pp1/1qpbn1p1/p2p4/3P4/P2Q3P/1PPBRPP1/3NR1K1 w - - 2 18",
+   "gift_wp": 2.7,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": -26
+  },
+  {
+   "ply": 36,
+   "move_no": 18,
+   "side": "b",
+   "san": "Re7",
+   "uci": "e8e7",
+   "fen_after": "r5k1/1p2rpp1/1qpbn1p1/p2p4/3P4/P1PQ3P/1P1BRPP1/3NR1K1 w - - 1 19",
+   "eval_cp": 8,
+   "win_pct": 50.7,
+   "delta_win_pct": -1.7,
+   "class": "ok",
+   "best": {
+    "san": "Qb3",
+    "pv_san": [
+     "Qb3",
+     "h4",
+     "b5",
+     "g3",
+     "c5",
+     "Re3"
+    ],
+    "eval_cp": 26
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r3r1k1/1p3pp1/1qpbn1p1/p2p4/3P4/P1PQ3P/1P1BRPP1/3NR1K1 b - - 0 18",
+   "gift_wp": 1.0,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": -8
+  },
+  {
+   "ply": 37,
+   "move_no": 19,
+   "side": "w",
+   "san": "Bg5",
+   "uci": "d2g5",
+   "fen_after": "r5k1/1p2rpp1/1qpbn1p1/p2p2B1/3P4/P1PQ3P/1P2RPP1/3NR1K1 b - - 2 19",
+   "eval_cp": -15,
+   "win_pct": 48.6,
+   "delta_win_pct": -0.6,
+   "class": "ok",
+   "best": {
+    "san": "h4",
+    "pv_san": [
+     "h4",
+     "Rae8"
+    ],
+    "eval_cp": -8
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r5k1/1p2rpp1/1qpbn1p1/p2p4/3P4/P1PQ3P/1P1BRPP1/3NR1K1 w - - 1 19",
+   "gift_wp": 1.7,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": -15
+  },
+  {
+   "ply": 38,
+   "move_no": 19,
+   "side": "b",
+   "san": "Nxg5",
+   "uci": "e6g5",
+   "fen_after": "r5k1/1p2rpp1/1qpb2p1/p2p2n1/3P4/P1PQ3P/1P2RPP1/3NR1K1 w - - 0 20",
+   "eval_cp": 9,
+   "win_pct": 50.8,
+   "delta_win_pct": -0.6,
+   "class": "ok",
+   "best": {
+    "san": "Nxg5",
+    "pv_san": [
+     "Nxg5",
+     "Rxe7",
+     "Bxe7",
+     "Rxe7",
+     "Ne4",
+     "Qf3"
+    ],
+    "eval_cp": 15
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r5k1/1p2rpp1/1qpbn1p1/p2p2B1/3P4/P1PQ3P/1P2RPP1/3NR1K1 b - - 2 19",
+   "gift_wp": 0.6,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": -9
+  },
+  {
+   "ply": 39,
+   "move_no": 20,
+   "side": "w",
+   "san": "Rxe7",
+   "uci": "e2e7",
+   "fen_after": "r5k1/1p2Rpp1/1qpb2p1/p2p2n1/3P4/P1PQ3P/1P3PP1/3NR1K1 b - - 0 20",
+   "eval_cp": -21,
+   "win_pct": 48.1,
+   "delta_win_pct": -1.1,
+   "class": "only_move",
+   "best": {
+    "san": "Rxe7",
+    "pv_san": [
+     "Rxe7",
+     "Bxe7"
+    ],
+    "eval_cp": -9
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r5k1/1p2rpp1/1qpb2p1/p2p2n1/3P4/P1PQ3P/1P2RPP1/3NR1K1 w - - 0 20",
+   "gift_wp": 0.6,
+   "book": null,
+   "in_book": false,
+   "label": "great",
+   "symbol": "!",
+   "cp_white": -21
+  },
+  {
+   "ply": 40,
+   "move_no": 20,
+   "side": "b",
+   "san": "Bxe7",
+   "uci": "d6e7",
+   "fen_after": "r5k1/1p2bpp1/1qp3p1/p2p2n1/3P4/P1PQ3P/1P3PP1/3NR1K1 w - - 0 21",
+   "eval_cp": 15,
+   "win_pct": 51.4,
+   "delta_win_pct": -0.6,
+   "class": "ok",
+   "best": {
+    "san": "Bxe7",
+    "pv_san": [
+     "Bxe7",
+     "Rxe7",
+     "Ne4",
+     "Qf3",
+     "Nd6",
+     "Qg4"
+    ],
+    "eval_cp": 21
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r5k1/1p2Rpp1/1qpb2p1/p2p2n1/3P4/P1PQ3P/1P3PP1/3NR1K1 b - - 0 20",
+   "gift_wp": 1.1,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": -15
+  },
+  {
+   "ply": 41,
+   "move_no": 21,
+   "side": "w",
+   "san": "Rxe7",
+   "uci": "e1e7",
+   "fen_after": "r5k1/1p2Rpp1/1qp3p1/p2p2n1/3P4/P1PQ3P/1P3PP1/3N2K1 b - - 0 21",
+   "eval_cp": -20,
+   "win_pct": 48.2,
+   "delta_win_pct": -0.5,
+   "class": "only_move",
+   "best": {
+    "san": "Rxe7",
+    "pv_san": [
+     "Rxe7",
+     "Ne4",
+     "Qf3",
+     "Nd6",
+     "Qg4",
+     "Qb3"
+    ],
+    "eval_cp": -15
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r5k1/1p2bpp1/1qp3p1/p2p2n1/3P4/P1PQ3P/1P3PP1/3NR1K1 w - - 0 21",
+   "gift_wp": 0.6,
+   "book": null,
+   "in_book": false,
+   "label": "great",
+   "symbol": "!",
+   "cp_white": -20
+  },
+  {
+   "ply": 42,
+   "move_no": 21,
+   "side": "b",
+   "san": "Ne6",
+   "uci": "g5e6",
+   "fen_after": "r5k1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1PQ3P/1P3PP1/3N2K1 w - - 1 22",
+   "eval_cp": -35,
+   "win_pct": 46.8,
+   "delta_win_pct": -4.8,
+   "class": "ok",
+   "best": {
+    "san": "Ne4",
+    "pv_san": [
+     "Ne4",
+     "Qf3",
+     "Nd6",
+     "Rd7",
+     "Rd8",
+     "Rxd8+"
+    ],
+    "eval_cp": 17
+   },
+   "refutation_pv": [
+    "Qf3"
+   ],
+   "motifs": [],
+   "fen_before": "r5k1/1p2Rpp1/1qp3p1/p2p2n1/3P4/P1PQ3P/1P3PP1/3N2K1 b - - 0 21",
+   "gift_wp": 0.5,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": 35
+  },
+  {
+   "ply": 43,
+   "move_no": 22,
+   "side": "w",
+   "san": "Qf3",
+   "uci": "d3f3",
+   "fen_after": "r5k1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1P2Q1P/1P3PP1/3N2K1 b - - 2 22",
+   "eval_cp": 37,
+   "win_pct": 53.4,
+   "delta_win_pct": 0.9,
+   "class": "ok",
+   "best": {
+    "san": "Qf3",
+    "pv_san": [
+     "Qf3",
+     "Rf8",
+     "h4",
+     "Qb3",
+     "Kh2",
+     "a4"
+    ],
+    "eval_cp": 27
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r5k1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1PQ3P/1P3PP1/3N2K1 w - - 1 22",
+   "gift_wp": 4.8,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 37
+  },
+  {
+   "ply": 44,
+   "move_no": 22,
+   "side": "b",
+   "san": "Rf8",
+   "uci": "a8f8",
+   "fen_after": "5rk1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1P2Q1P/1P3PP1/3N2K1 w - - 3 23",
+   "eval_cp": -37,
+   "win_pct": 46.6,
+   "delta_win_pct": 0.0,
+   "class": "only_move",
+   "best": {
+    "san": "Rf8",
+    "pv_san": [
+     "Rf8",
+     "h4"
+    ],
+    "eval_cp": -37
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "r5k1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1P2Q1P/1P3PP1/3N2K1 b - - 2 22",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "great",
+   "symbol": "!",
+   "cp_white": 37
+  },
+  {
+   "ply": 45,
+   "move_no": 23,
+   "side": "w",
+   "san": "Qg4",
+   "uci": "f3g4",
+   "fen_after": "5rk1/1p2Rpp1/1qp1n1p1/p2p4/3P2Q1/P1P4P/1P3PP1/3N2K1 b - - 4 23",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": -3.4,
+   "class": "ok",
+   "best": {
+    "san": "h4",
+    "pv_san": [
+     "h4",
+     "Qb3",
+     "Kh2",
+     "b6",
+     "Rd7",
+     "Qc2"
+    ],
+    "eval_cp": 37
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "5rk1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1P2Q1P/1P3PP1/3N2K1 w - - 3 23",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": 0
+  },
+  {
+   "ply": 46,
+   "move_no": 23,
+   "side": "b",
+   "san": "Rb8",
+   "uci": "f8b8",
+   "fen_after": "1r4k1/1p2Rpp1/1qp1n1p1/p2p4/3P2Q1/P1P4P/1P3PP1/3N2K1 w - - 5 24",
+   "eval_cp": -32,
+   "win_pct": 47.1,
+   "delta_win_pct": -2.9,
+   "class": "ok",
+   "best": {
+    "san": "c5",
+    "pv_san": [
+     "c5",
+     "dxc5",
+     "Qxc5",
+     "Rxb7",
+     "Qc6",
+     "Ra7"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "5rk1/1p2Rpp1/1qp1n1p1/p2p4/3P2Q1/P1P4P/1P3PP1/3N2K1 b - - 4 23",
+   "gift_wp": 3.4,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": 32
+  },
+  {
+   "ply": 47,
+   "move_no": 24,
+   "side": "w",
+   "san": "Qf3",
+   "uci": "g4f3",
+   "fen_after": "1r4k1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1P2Q1P/1P3PP1/3N2K1 b - - 6 24",
+   "eval_cp": 36,
+   "win_pct": 53.3,
+   "delta_win_pct": 0.4,
+   "class": "ok",
+   "best": {
+    "san": "Qf3",
+    "pv_san": [
+     "Qf3",
+     "Rf8",
+     "h4",
+     "Qb3",
+     "Kh2",
+     "b6"
+    ],
+    "eval_cp": 32
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "1r4k1/1p2Rpp1/1qp1n1p1/p2p4/3P2Q1/P1P4P/1P3PP1/3N2K1 w - - 5 24",
+   "gift_wp": 2.9,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 36
+  },
+  {
+   "ply": 48,
+   "move_no": 24,
+   "side": "b",
+   "san": "Rf8",
+   "uci": "b8f8",
+   "fen_after": "5rk1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1P2Q1P/1P3PP1/3N2K1 w - - 7 25",
+   "eval_cp": -35,
+   "win_pct": 46.8,
+   "delta_win_pct": 0.1,
+   "class": "only_move",
+   "best": {
+    "san": "Rf8",
+    "pv_san": [
+     "Rf8",
+     "h4",
+     "Qb3",
+     "Kh2",
+     "b6",
+     "Rd7"
+    ],
+    "eval_cp": -36
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "1r4k1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1P2Q1P/1P3PP1/3N2K1 b - - 6 24",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "great",
+   "symbol": "!",
+   "cp_white": 35
+  },
+  {
+   "ply": 49,
+   "move_no": 25,
+   "side": "w",
+   "san": "b4",
+   "uci": "b2b4",
+   "fen_after": "5rk1/1p2Rpp1/1qp1n1p1/p2p4/1P1P4/P1P2Q1P/5PP1/3N2K1 b - b3 0 25",
+   "eval_cp": 11,
+   "win_pct": 51.0,
+   "delta_win_pct": -2.2,
+   "class": "ok",
+   "best": {
+    "san": "h4",
+    "pv_san": [
+     "h4",
+     "Qb3",
+     "Kh2",
+     "b6",
+     "h5",
+     "Qc2"
+    ],
+    "eval_cp": 35
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "5rk1/1p2Rpp1/1qp1n1p1/p2p4/3P4/P1P2Q1P/1P3PP1/3N2K1 w - - 7 25",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": 11
+  },
+  {
+   "ply": 50,
+   "move_no": 25,
+   "side": "b",
+   "san": "axb4",
+   "uci": "a5b4",
+   "fen_after": "5rk1/1p2Rpp1/1qp1n1p1/3p4/1p1P4/P1P2Q1P/5PP1/3N2K1 w - - 0 26",
+   "eval_cp": -13,
+   "win_pct": 48.8,
+   "delta_win_pct": -0.2,
+   "class": "ok",
+   "best": {
+    "san": "Ng5",
+    "pv_san": [
+     "Ng5",
+     "Qf4"
+    ],
+    "eval_cp": -11
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "5rk1/1p2Rpp1/1qp1n1p1/p2p4/1P1P4/P1P2Q1P/5PP1/3N2K1 b - b3 0 25",
+   "gift_wp": 2.2,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 13
+  },
+  {
+   "ply": 51,
+   "move_no": 26,
+   "side": "w",
+   "san": "axb4",
+   "uci": "a3b4",
+   "fen_after": "5rk1/1p2Rpp1/1qp1n1p1/3p4/1P1P4/2P2Q1P/5PP1/3N2K1 b - - 0 26",
+   "eval_cp": 10,
+   "win_pct": 50.9,
+   "delta_win_pct": -0.3,
+   "class": "ok",
+   "best": {
+    "san": "axb4",
+    "pv_san": [
+     "axb4",
+     "Ng5"
+    ],
+    "eval_cp": 13
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "5rk1/1p2Rpp1/1qp1n1p1/3p4/1p1P4/P1P2Q1P/5PP1/3N2K1 w - - 0 26",
+   "gift_wp": 0.2,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 10
+  },
+  {
+   "ply": 52,
+   "move_no": 26,
+   "side": "b",
+   "san": "Qa6",
+   "uci": "b6a6",
+   "fen_after": "5rk1/1p2Rpp1/q1p1n1p1/3p4/1P1P4/2P2Q1P/5PP1/3N2K1 w - - 1 27",
+   "eval_cp": -26,
+   "win_pct": 47.6,
+   "delta_win_pct": -1.5,
+   "class": "ok",
+   "best": {
+    "san": "Ng5",
+    "pv_san": [
+     "Ng5",
+     "Qg4",
+     "Ne4",
+     "g3",
+     "Qa6",
+     "Kg2"
+    ],
+    "eval_cp": -10
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "5rk1/1p2Rpp1/1qp1n1p1/3p4/1P1P4/2P2Q1P/5PP1/3N2K1 b - - 0 26",
+   "gift_wp": 0.3,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 26
+  },
+  {
+   "ply": 53,
+   "move_no": 27,
+   "side": "w",
+   "san": "Kh2",
+   "uci": "g1h2",
+   "fen_after": "5rk1/1p2Rpp1/q1p1n1p1/3p4/1P1P4/2P2Q1P/5PPK/3N4 b - - 2 27",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": -2.4,
+   "class": "ok",
+   "best": {
+    "san": "h4",
+    "pv_san": [
+     "h4",
+     "b6",
+     "g3",
+     "Qa3",
+     "Kg2",
+     "c5"
+    ],
+    "eval_cp": 26
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "5rk1/1p2Rpp1/q1p1n1p1/3p4/1P1P4/2P2Q1P/5PP1/3N2K1 w - - 1 27",
+   "gift_wp": 1.5,
+   "book": null,
+   "in_book": false,
+   "label": "good",
+   "symbol": "",
+   "cp_white": 0
+  },
+  {
+   "ply": 54,
+   "move_no": 27,
+   "side": "b",
+   "san": "Qa8",
+   "uci": "a6a8",
+   "fen_after": "q4rk1/1p2Rpp1/2p1n1p1/3p4/1P1P4/2P2Q1P/5PPK/3N4 w - - 3 28",
+   "eval_cp": -5,
+   "win_pct": 49.5,
+   "delta_win_pct": -0.5,
+   "class": "ok",
+   "best": {
+    "san": "Qa8",
+    "pv_san": [
+     "Qa8",
+     "Nb2",
+     "Qa3",
+     "Nd1"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "5rk1/1p2Rpp1/q1p1n1p1/3p4/1P1P4/2P2Q1P/5PPK/3N4 b - - 2 27",
+   "gift_wp": 2.4,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 5
+  },
+  {
+   "ply": 55,
+   "move_no": 28,
+   "side": "w",
+   "san": "Ne3",
+   "uci": "d1e3",
+   "fen_after": "q4rk1/1p2Rpp1/2p1n1p1/3p4/1P1P4/2P1NQ1P/5PPK/8 b - - 4 28",
+   "eval_cp": -8,
+   "win_pct": 49.3,
+   "delta_win_pct": -1.2,
+   "class": "ok",
+   "best": {
+    "san": "b5",
+    "pv_san": [
+     "b5",
+     "Ng5",
+     "Qf4",
+     "Ne6",
+     "Qg3",
+     "Re8"
+    ],
+    "eval_cp": 5
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "q4rk1/1p2Rpp1/2p1n1p1/3p4/1P1P4/2P2Q1P/5PPK/3N4 w - - 3 28",
+   "gift_wp": 0.5,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": -8
+  },
+  {
+   "ply": 56,
+   "move_no": 28,
+   "side": "b",
+   "san": "b5",
+   "uci": "b7b5",
+   "fen_after": "q4rk1/4Rpp1/2p1n1p1/1p1p4/1P1P4/2P1NQ1P/5PPK/8 w - b6 0 29",
+   "eval_cp": -5,
+   "win_pct": 49.5,
+   "delta_win_pct": -1.2,
+   "class": "ok",
+   "best": {
+    "san": "Qb8+",
+    "pv_san": [
+     "Qb8+",
+     "g3",
+     "Nc7",
+     "Qf4",
+     "Nb5",
+     "c4"
+    ],
+    "eval_cp": 8
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "q4rk1/1p2Rpp1/2p1n1p1/3p4/1P1P4/2P1NQ1P/5PPK/8 b - - 4 28",
+   "gift_wp": 1.2,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 5
+  },
+  {
+   "ply": 57,
+   "move_no": 29,
+   "side": "w",
+   "san": "Ng4",
+   "uci": "e3g4",
+   "fen_after": "q4rk1/4Rpp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 b - - 1 29",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": -0.5,
+   "class": "ok",
+   "best": {
+    "san": "Qg3",
+    "pv_san": [
+     "Qg3",
+     "Re8"
+    ],
+    "eval_cp": 5
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "q4rk1/4Rpp1/2p1n1p1/1p1p4/1P1P4/2P1NQ1P/5PPK/8 w - b6 0 29",
+   "gift_wp": 1.2,
+   "book": null,
+   "in_book": false,
+   "label": "excellent",
+   "symbol": "\u2713",
+   "cp_white": 0
+  },
+  {
+   "ply": 58,
+   "move_no": 29,
+   "side": "b",
+   "san": "Qd8",
+   "uci": "a8d8",
+   "fen_after": "3q1rk1/4Rpp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 w - - 2 30",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": 0.0,
+   "class": "ok",
+   "best": {
+    "san": "Qd8",
+    "pv_san": [
+     "Qd8",
+     "Rb7",
+     "Qc8",
+     "Re7",
+     "Qd8"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "q4rk1/4Rpp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 b - - 1 29",
+   "gift_wp": 0.5,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 0
+  },
+  {
+   "ply": 59,
+   "move_no": 30,
+   "side": "w",
+   "san": "Rb7",
+   "uci": "e7b7",
+   "fen_after": "3q1rk1/1R3pp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 b - - 3 30",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": 0.0,
+   "class": "ok",
+   "best": {
+    "san": "Rb7",
+    "pv_san": [
+     "Rb7",
+     "Qc8",
+     "Re7",
+     "Qd8"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "3q1rk1/4Rpp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 w - - 2 30",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 0
+  },
+  {
+   "ply": 60,
+   "move_no": 30,
+   "side": "b",
+   "san": "Qc8",
+   "uci": "d8c8",
+   "fen_after": "2q2rk1/1R3pp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 w - - 4 31",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": 0.0,
+   "class": "ok",
+   "best": {
+    "san": "Qc8",
+    "pv_san": [
+     "Qc8",
+     "Re7",
+     "Qd8",
+     "Rb7"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "3q1rk1/1R3pp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 b - - 3 30",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 0
+  },
+  {
+   "ply": 61,
+   "move_no": 31,
+   "side": "w",
+   "san": "Re7",
+   "uci": "b7e7",
+   "fen_after": "2q2rk1/4Rpp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 b - - 5 31",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": 0.0,
+   "class": "only_move",
+   "best": {
+    "san": "Re7",
+    "pv_san": [
+     "Re7",
+     "Qd8",
+     "Rb7",
+     "Qc8",
+     "Re7"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "2q2rk1/1R3pp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 w - - 4 31",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "great",
+   "symbol": "!",
+   "cp_white": 0
+  },
+  {
+   "ply": 62,
+   "move_no": 31,
+   "side": "b",
+   "san": "Qd8",
+   "uci": "c8d8",
+   "fen_after": "3q1rk1/4Rpp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 w - - 6 32",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": 0.0,
+   "class": "ok",
+   "best": {
+    "san": "Qd8",
+    "pv_san": [
+     "Qd8",
+     "Rb7",
+     "Qc8",
+     "Re7"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "2q2rk1/4Rpp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 b - - 5 31",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 0
+  },
+  {
+   "ply": 63,
+   "move_no": 32,
+   "side": "w",
+   "san": "Rb7",
+   "uci": "e7b7",
+   "fen_after": "3q1rk1/1R3pp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 b - - 7 32",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": 0.0,
+   "class": "ok",
+   "best": {
+    "san": "Rb7",
+    "pv_san": [
+     "Rb7",
+     "Qc8",
+     "Re7",
+     "Qd8",
+     "Rb7"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "3q1rk1/4Rpp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 w - - 6 32",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 0
+  },
+  {
+   "ply": 64,
+   "move_no": 32,
+   "side": "b",
+   "san": "Qc8",
+   "uci": "d8c8",
+   "fen_after": "2q2rk1/1R3pp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 w - - 8 33",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": 0.0,
+   "class": "ok",
+   "best": {
+    "san": "Qc8",
+    "pv_san": [
+     "Qc8",
+     "Re7",
+     "Qd8",
+     "Rb7"
+    ],
+    "eval_cp": 0
+   },
+   "refutation_pv": [],
+   "motifs": [],
+   "fen_before": "3q1rk1/1R3pp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 b - - 7 32",
+   "gift_wp": 0.0,
+   "book": null,
+   "in_book": false,
+   "label": "best",
+   "symbol": "\u2713",
+   "cp_white": 0
+  }
+ ],
+ "arc": [
+  {
+   "kind": "level",
+   "who": "",
+   "from_ply": 1,
+   "to_ply": 64,
+   "from_move": 1,
+   "to_move": 32
+  }
+ ],
+ "ending": {
+  "result": "1/2-1/2",
+  "termination": "Game drawn by agreement",
+  "repeats": 2,
+  "repetition": {
+   "times": 2,
+   "from_move": 30,
+   "to_move": 32,
+   "moves": [
+    "Re7",
+    "Qd8",
+    "Rb7",
+    "Qc8"
+   ],
+   "cp_white": 0
+  }
+ },
+ "opening": {
+  "name": "French Defense: Exchange Variation",
+  "plies": 7,
+  "left_at_move": 4
+ },
+ "moments": [
+  {
+   "kind": "plan",
+   "ply": 15,
+   "move_no": 8,
+   "side": "w",
+   "san": "O-O",
+   "fen_before": "rn1qk2r/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQK2R w KQkq - 1 8",
+   "fen_after": "rn1qk2r/pp2nppp/2pb4/3p1b2/3P4/2NB1N1P/PPP2PP1/R1BQ1RK1 b kq - 2 8",
+   "eval_cp": 5,
+   "win_pct": 50.5,
+   "delta_win_pct": -1.5,
+   "cls": "ok",
+   "best_san": "Bxf5",
+   "best_pv_san": [
+    "Bxf5"
+   ],
+   "refutation_pv": [],
+   "motifs": [],
+   "phase": "opening",
+   "developed": {
+    "white": false,
+    "black": false
+   },
+   "structure": "petroff_exchange (White)",
+   "character": "DEAD",
+   "weaknesses": {
+    "white": {},
+    "black": {}
+   },
+   "plans": {
+    "white": [
+     {
+      "idea": "Castle kingside: get the king to safety",
+      "verdict": "CONFIRMED-SOUND",
+      "families": [
+       "castle_kingside"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Castle queenside: get the king to safety",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "castle_queenside"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Double on the file: double rooks (or rook and queen) on the e-file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "heavy_battery"
+      ],
+      "tier": "structure"
+     }
+    ],
+    "black": [
+     {
+      "idea": "Castle kingside: get the king to safety",
+      "verdict": "CONFIRMED-SOUND",
+      "families": [
+       "castle_kingside"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Castle queenside: get the king to safety",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "castle_queenside"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Double on the file: double rooks (or rook and queen) on the e-file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "heavy_battery"
+      ],
+      "tier": "structure"
+     }
+    ]
+   },
+   "read": "The position is roughly equal \u2014 placid \u2014 nothing forcing anywhere.\nStructure: petroff exchange \u2014 White's side.\n\n**White**\n- No significant weaknesses.\n- _Engine confirmed_ \u2014 Castle kingside: get the king to safety \u2014 available right now.\n- _Engine confirmed_ \u2014 Castle queenside: get the king to safety \u2014 playable in the short term.\n- _The structure suggests this_ \u2014 Complete development: bring the Bc1 into play toward natural squares; castle without delay; avoid moving the same piece twice or grabbing material before development is complete.\n- _The structure suggests this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Double on the file: double rooks (or rook and queen) on the e-file.\n\n**Black**\n- No significant weaknesses.\n- _Engine confirmed_ \u2014 Castle kingside: get the king to safety \u2014 available right now.\n- _Engine confirmed_ \u2014 Castle queenside: get the king to safety \u2014 a longer-term idea, not for right now.\n- _Engine confirmed_ \u2014 Rook activation: put a rook on the open/semi-open file \u2014 a longer-term idea, not for right now.\n- _The structure suggests this_ \u2014 Complete development: bring the Nb8 into play toward natural squares; castle without delay; avoid moving the same piece twice or grabbing material before development is complete.\n- _The structure suggests this_ \u2014 Double on the file: double rooks (or rook and queen) on the e-file.",
+   "gift_wp": 2.6,
+   "uci": "e1g1",
+   "label": "excellent",
+   "symbol": "\u2713",
+   "character_why": "placid \u2014 nothing forcing anywhere",
+   "initiative": {
+    "leader": null,
+    "basis": "engine-spread",
+    "mechanism": [],
+    "checks": [],
+    "captures": [],
+    "attacked": [],
+    "forcing": []
+   },
+   "king_risk": {
+    "white": {
+     "danger": 82,
+     "danger_bounded": 0.091,
+     "attack_units": 2,
+     "shield_pawns": 1,
+     "zone_attackers": [
+      "bishop on f5"
+     ],
+     "open_files_nearby": [
+      "e"
+     ],
+     "storm": 4,
+     "line_pressure": 0,
+     "why": [
+      "attackers: bishop on f5",
+      "open e-file beside the king",
+      "enemy pawn storm approaching"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.31,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.02,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    },
+    "black": {
+     "danger": 82,
+     "danger_bounded": 0.091,
+     "attack_units": 0,
+     "shield_pawns": 1,
+     "zone_attackers": [],
+     "open_files_nearby": [
+      "e"
+     ],
+     "storm": 4,
+     "line_pressure": 0,
+     "why": [
+      "open e-file beside the king",
+      "enemy pawn storm approaching"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.31,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.02,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    }
+   },
+   "only_move": false,
+   "intent": [
+    "B:castle_kingside",
+    "W:castle_kingside",
+    "W:pair_break"
+   ],
+   "alignment": {
+    "state": "different-plan",
+    "played": [
+     "castle_kingside",
+     "pair_break"
+    ]
+   }
+  },
+  {
+   "kind": "plan",
+   "ply": 21,
+   "move_no": 11,
+   "side": "w",
+   "san": "a3",
+   "fen_before": "r2q1rk1/pp2nppp/n1pb4/3p4/3P4/2NQ1N1P/PPP2PP1/R1B1R1K1 w - - 1 11",
+   "fen_after": "r2q1rk1/pp2nppp/n1pb4/3p4/3P4/P1NQ1N1P/1PP2PP1/R1B1R1K1 b - - 0 11",
+   "eval_cp": -6,
+   "win_pct": 49.4,
+   "delta_win_pct": -1.8,
+   "cls": "ok",
+   "best_san": "Ne2",
+   "best_pv_san": [
+    "Ne2",
+    "Nc7",
+    "Bf4",
+    "Nc8",
+    "a4",
+    "Re8"
+   ],
+   "refutation_pv": [],
+   "motifs": [],
+   "phase": "middlegame",
+   "developed": {
+    "white": false,
+    "black": true
+   },
+   "structure": "petroff_exchange (White)",
+   "character": "DEAD",
+   "weaknesses": {
+    "white": {},
+    "black": {
+     "back_rank_weak": true
+    }
+   },
+   "plans": {
+    "white": [
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "HUMAN-TYPICAL",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "human"
+     }
+    ],
+    "black": [
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "engine"
+     }
+    ]
+   },
+   "read": "The position is roughly equal \u2014 placid \u2014 nothing forcing anywhere.\nStructure: petroff exchange \u2014 White's side.\n\n**White**\n- No significant weaknesses.\n- _Strong humans play this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Complete development: bring the Bc1 into play toward natural squares; avoid moving the same piece twice or grabbing material before development is complete.\n\n**Black**\n- Black's king has no luft.\n- _Engine confirmed_ \u2014 Rook activation: put a rook on the open/semi-open file \u2014 a longer-term idea, not for right now.",
+   "gift_wp": 1.4,
+   "uci": "a2a3",
+   "label": "excellent",
+   "symbol": "\u2713",
+   "character_why": "placid \u2014 nothing forcing anywhere",
+   "initiative": {
+    "leader": null,
+    "basis": "engine-spread",
+    "mechanism": [],
+    "checks": [],
+    "captures": [],
+    "attacked": [],
+    "forcing": []
+   },
+   "king_risk": {
+    "white": {
+     "danger": 6,
+     "danger_bounded": 0.006,
+     "attack_units": 4,
+     "shield_pawns": 3,
+     "zone_attackers": [
+      "bishop on d6"
+     ],
+     "open_files_nearby": [],
+     "storm": 0,
+     "line_pressure": 0,
+     "why": [
+      "attackers: bishop on d6"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.09,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    },
+    "black": {
+     "danger": 12,
+     "danger_bounded": 0.014,
+     "attack_units": 12,
+     "shield_pawns": 3,
+     "zone_attackers": [
+      "bishop on c1",
+      "queen on d3"
+     ],
+     "open_files_nearby": [],
+     "storm": 0,
+     "line_pressure": 0,
+     "why": [
+      "attackers: bishop on c1, queen on d3"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.09,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    }
+   },
+   "only_move": false,
+   "intent": [
+    "W:rook_activation"
+   ],
+   "alignment": {
+    "state": "on-plan",
+    "families": [
+     "rook_activation"
+    ],
+    "tier": "human"
+   }
+  },
+  {
+   "kind": "plan",
+   "ply": 27,
+   "move_no": 14,
+   "side": "w",
+   "san": "Rae1",
+   "fen_before": "r2qr1k1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPBRPP1/R5K1 w - - 2 14",
+   "fen_after": "r2qr1k1/1pn1nppp/2pb4/p2p4/3P4/P1NQ1N1P/1PPBRPP1/4R1K1 b - - 3 14",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": -0.1,
+   "cls": "ok",
+   "best_san": "Rae1",
+   "best_pv_san": [
+    "Rae1"
+   ],
+   "refutation_pv": [],
+   "motifs": [],
+   "phase": "middlegame",
+   "developed": {
+    "white": true,
+    "black": true
+   },
+   "structure": "petroff_exchange (White)",
+   "character": "DEAD",
+   "weaknesses": {
+    "white": {},
+    "black": {
+     "back_rank_weak": true
+    }
+   },
+   "plans": {
+    "white": [
+     {
+      "idea": "Knight to f5: maneuver a knight to the strong square in front of Black's king",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "strong_outpost"
+      ],
+      "tier": "engine"
+     },
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "CONFIRMED-SOUND",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "engine"
+     }
+    ],
+    "black": [
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "UNSUPPORTED",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "structure"
+     }
+    ]
+   },
+   "read": "The position is roughly equal \u2014 placid \u2014 nothing forcing anywhere.\nStructure: petroff exchange \u2014 White's side.\n\n**White**\n- No significant weaknesses.\n- _Engine confirmed_ \u2014 Knight to f5: maneuver a knight to the strong square in front of Black's king \u2014 playable in the short term.\n- _Engine confirmed_ \u2014 Rook activation: put a rook on the open/semi-open file \u2014 available right now.\n\n**Black**\n- Black's king has no luft.\n- Holes at b6 \u2014 no pawn of yours can guard it again, so a piece that lands there cannot be chased off.\n- _The structure suggests this_ \u2014 Rook activation: put a rook on the open/semi-open file.",
+   "gift_wp": 0.0,
+   "uci": "a1e1",
+   "label": "best",
+   "symbol": "\u2713",
+   "character_why": "placid \u2014 nothing forcing anywhere",
+   "initiative": {
+    "leader": null,
+    "basis": "engine-spread",
+    "mechanism": [],
+    "checks": [],
+    "captures": [],
+    "attacked": [],
+    "forcing": []
+   },
+   "king_risk": {
+    "white": {
+     "danger": 6,
+     "danger_bounded": 0.006,
+     "attack_units": 4,
+     "shield_pawns": 3,
+     "zone_attackers": [
+      "bishop on d6"
+     ],
+     "open_files_nearby": [],
+     "storm": 0,
+     "line_pressure": 0,
+     "why": [
+      "attackers: bishop on d6"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.09,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    },
+    "black": {
+     "danger": 12,
+     "danger_bounded": 0.014,
+     "attack_units": 12,
+     "shield_pawns": 3,
+     "zone_attackers": [
+      "bishop on d2",
+      "queen on d3"
+     ],
+     "open_files_nearby": [],
+     "storm": 0,
+     "line_pressure": 0,
+     "why": [
+      "attackers: bishop on d2, queen on d3"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.09,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    }
+   },
+   "only_move": false,
+   "intent": [
+    "W:rook_activation"
+   ],
+   "alignment": {
+    "state": "on-plan",
+    "families": [
+     "rook_activation"
+    ],
+    "tier": "engine"
+   }
+  },
+  {
+   "kind": "plan",
+   "ply": 57,
+   "move_no": 29,
+   "side": "w",
+   "san": "Ng4",
+   "fen_before": "q4rk1/4Rpp1/2p1n1p1/1p1p4/1P1P4/2P1NQ1P/5PPK/8 w - b6 0 29",
+   "fen_after": "q4rk1/4Rpp1/2p1n1p1/1p1p4/1P1P2N1/2P2Q1P/5PPK/8 b - - 1 29",
+   "eval_cp": 0,
+   "win_pct": 50.0,
+   "delta_win_pct": -0.5,
+   "cls": "ok",
+   "best_san": "Qg3",
+   "best_pv_san": [
+    "Qg3",
+    "Re8"
+   ],
+   "refutation_pv": [],
+   "motifs": [],
+   "phase": "middlegame",
+   "developed": {
+    "white": true,
+    "black": true
+   },
+   "structure": "petroff_exchange (Black/White)",
+   "character": "DEAD",
+   "weaknesses": {
+    "white": {},
+    "black": {}
+   },
+   "plans": {
+    "white": [
+     {
+      "idea": "Free the backward pawn: prepare the c3-c4 break",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "backward_push"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "CONFIRMED-SOUND-LATER",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "engine"
+     }
+    ],
+    "black": [
+     {
+      "idea": "Free the backward pawn: prepare the c6-c5 break",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "backward_push"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Rook activation: put a rook on the open/semi-open file",
+      "verdict": "UNSUPPORTED",
+      "families": [
+       "rook_activation"
+      ],
+      "tier": "structure"
+     },
+     {
+      "idea": "Double on the file: double rooks (or rook and queen) on the h-file",
+      "verdict": "NOT-IN-BEST-LINES",
+      "families": [
+       "heavy_battery"
+      ],
+      "tier": "structure"
+     }
+    ]
+   },
+   "read": "The position is roughly equal \u2014 placid \u2014 nothing forcing anywhere.\nStructure: petroff exchange \u2014 White's side, petroff exchange \u2014 Black's side.\n\n**White**\n- Backward pawn on c3.\n- Holes at b3, d3, c4 \u2014 no pawn of yours can guard them again, so a piece that lands there cannot be chased off.\n- _Engine confirmed_ \u2014 Rook activation: put a rook on the open/semi-open file \u2014 a longer-term idea, not for right now.\n- _The structure suggests this_ \u2014 Free the backward pawn: prepare the c3-c4 break.\n\n**Black**\n- Backward pawn on c6.\n- Doubled pawns on the g-file.\n- Holes at c5, b6, d6 \u2014 no pawn of yours can guard them again, so a piece that lands there cannot be chased off.\n- _The structure suggests this_ \u2014 Free the backward pawn: prepare the c6-c5 break.\n- _The structure suggests this_ \u2014 Rook activation: put a rook on the open/semi-open file.\n- _The structure suggests this_ \u2014 Double on the file: double rooks (or rook and queen) on the h-file.",
+   "gift_wp": 1.2,
+   "uci": "e3g4",
+   "label": "excellent",
+   "symbol": "\u2713",
+   "character_why": "placid \u2014 nothing forcing anywhere",
+   "initiative": {
+    "leader": null,
+    "basis": "engine-spread",
+    "mechanism": [],
+    "checks": [],
+    "captures": [],
+    "attacked": [],
+    "forcing": []
+   },
+   "king_risk": {
+    "white": {
+     "danger": 10,
+     "danger_bounded": 0.012,
+     "attack_units": 0,
+     "shield_pawns": 1,
+     "zone_attackers": [],
+     "open_files_nearby": [],
+     "storm": 4,
+     "line_pressure": 0,
+     "why": [
+      "enemy pawn storm approaching"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.09,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    },
+    "black": {
+     "danger": 25,
+     "danger_bounded": 0.028,
+     "attack_units": 13,
+     "shield_pawns": 2,
+     "zone_attackers": [
+      "queen on f3",
+      "rook on e7"
+     ],
+     "open_files_nearby": [
+      "h"
+     ],
+     "storm": 0,
+     "line_pressure": 0,
+     "why": [
+      "attackers: queen on f3, rook on e7",
+      "open h-file beside the king"
+     ],
+     "p_catastrophe": {
+      "if_pressed": {
+       "p_catastrophe": 0.09,
+       "regime": "if_pressed",
+       "confidence": "validated",
+       "defender_elo": 1500,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_1500": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_1500",
+       "confidence": "validated",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "two_sig_fig"
+      },
+      "typical_gm": {
+       "p_catastrophe": 0.0,
+       "regime": "typical_gm",
+       "confidence": "indicative",
+       "defender_elo": null,
+       "low_n_tail": false,
+       "precision": "one_sig_fig"
+      }
+     }
+    }
+   },
+   "only_move": false,
+   "intent": [
+    "W:seventh_invasion"
+   ],
+   "alignment": {
+    "state": "different-plan",
+    "played": [
+     "seventh_invasion"
+    ]
+   }
+  }
+ ],
+ "summary": {
+  "decisive_ply": 42,
+  "counts": {
+   "ok": 58,
+   "only_move": 6
+  },
+  "phase_losses": {
+   "opening": 0,
+   "middlegame": 0,
+   "endgame": 0
+  },
+  "weakness_hypotheses": []
+ },
+ "patterns": {
+  "w": {
+   "name": "ofribecker",
+   "moves": 32,
+   "errors": 0,
+   "error_rate": 0.0,
+   "by_phase": {
+    "opening": 0,
+    "middlegame": 0,
+    "endgame": 0
+   },
+   "worst": 0.0,
+   "missed": 0,
+   "motifs": [],
+   "counts": {
+    "book": 4,
+    "great": 3,
+    "best": 8,
+    "excellent": 10,
+    "good": 7
+   },
+   "accuracy": 95.0,
+   "book_plies": 4
+  },
+  "b": {
+   "name": "misspelledNight",
+   "moves": 32,
+   "errors": 0,
+   "error_rate": 0.0,
+   "by_phase": {
+    "opening": 0,
+    "middlegame": 0,
+    "endgame": 0
+   },
+   "worst": 0.0,
+   "missed": 0,
+   "motifs": [],
+   "counts": {
+    "book": 3,
+    "great": 3,
+    "best": 12,
+    "excellent": 8,
+    "good": 6
+   },
+   "accuracy": 95.5,
+   "book_plies": 3
+  }
+ },
+ "moments_found": 0,
+ "moments_dropped": 0,
+ "plan_chapters_considered": 9,
+ "plan_chapters_read": 6,
+ "plan_chapters_shown": 4
+}
