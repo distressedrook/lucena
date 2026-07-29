@@ -13,6 +13,11 @@ Two keying schemes coexist in the bank and are normalized here to `id`:
   * `maia_shards/argmax_*.jsonl` and `lift_shards/shard_*.jsonl` key on
     `n` + `anchor`, and hold ALREADY-LABELED plan sets rather than raw moves.
 
+`maia_shards/` holds BOTH: `argmax_*.jsonl` (labeled) and `bench_*.jsonl`
+(raw rollouts, the 2400v2400 baseline). Read it with the right pattern for
+what you want — `rollouts("2400v2400")` for moves, `labeled_plans()` for the
+reduced plan sets.
+
 `benchmark_v1.jsonl` is frozen and sha-pinned. Nothing here writes.
 """
 from __future__ import annotations
@@ -29,14 +34,19 @@ EXPERIMENTS = (Path(__file__).resolve().parent.parent
 BENCHMARK = EXPERIMENTS / "benchmark_v1.jsonl"
 ENG_SHARDS = EXPERIMENTS / "eng_shards"
 
-# The rating-conditioned rollout banks. These are ASYMMETRIC strong-vs-weak
-# coaching simulations (owner, 2026-07-30): one side plays 2400 policy, the
-# other the named weak band. Which COLOUR carries the weak policy is not
-# recorded in the row, so it is measured — see `probe_foil_side.py`. Nothing
-# in this module assumes it.
+# The raw rollout banks. These are strong-vs-weak coaching simulations in
+# which the OPPONENT's strength varies and the side to move stays 2400
+# (`gpu_benchmark/plan_frequency_by_strength.py`). Since every benchmark
+# position is White to move, White is the 2400 side in all three and the named
+# band is Black — asserted by `probe_bands.py`, not assumed here.
+#
+# 2400v2400 is the BASELINE and the correct rolls leg for anything that feeds
+# `fact_sheet.post_verify_json`: the HUMAN_TAG means "strong humans play this
+# from here", so a weak-opponent bank would bias it.
 ROLLOUT_BANDS = {
-    "2400v1300": EXPERIMENTS / "maia_shards_2400v1300",
+    "2400v2400": EXPERIMENTS / "maia_shards",
     "2400v1800": EXPERIMENTS / "maia_shards_2400v1800",
+    "2400v1300": EXPERIMENTS / "maia_shards_2400v1300",
 }
 
 

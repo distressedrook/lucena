@@ -113,13 +113,18 @@ re-rolling.
 |---|---|---|---|
 | `benchmark_v1.jsonl` | 4000 | `id, fen, anchor, result, structures, kstudy, plies_total, actual_ucis, random_ucis` | the frozen eval set |
 | `eng_shards/engine_*.jsonl` | 4000 | `{id, pvs:[{cp, ucis[~25]} × 4]}`, cp normalized to White | arm A; the eval-equal set |
-| `maia_shards/argmax_*.jsonl` | 4000 | `{n, anchor, structures, actual_slow, random_slow, maia_fast, maia_slow}` | **labeled plan sets, not raw moves**; the 2400v2400 baseline |
-| `maia_shards_2400v1300/bench_*.jsonl` | 4000 | `{id, k:16, samples:[[uci …25] × 16]}` | weak-**opponent** condition |
-| `maia_shards_2400v1800/bench_*.jsonl` | 4000 | same | weak-opponent condition |
+| `maia_shards/bench_*.jsonl` | 4000 | `{id, k:16, samples:[[uci …25] × 16]}` | **2400v2400 baseline raw rollouts** — the correct rolls leg for `post_verify_json` |
+| `maia_shards/argmax_*.jsonl` | 4000 | `{n, anchor, structures, actual_slow, random_slow, maia_fast, maia_slow}` | labeled plan sets, not raw moves |
+| `maia_shards_2400v1800/bench_*.jsonl` | 4000 | as the baseline | weak-**opponent** condition |
+| `maia_shards_2400v1300/bench_*.jsonl` | 4000 | as the baseline | weak-opponent condition |
 | `lift_shards/shard_*.jsonl` | 94289 | `{n, anchor, structures, af, as, rf, rs}` | the older pre-benchmark corpus scan — **do not join to the 4,000 by id** |
 
 Two keying schemes coexist — `id` (`n1883_a30`) in the benchmark and the raw
 shards, `n` + `anchor` in the labeled ones. `bank.py` normalizes to `id`.
+`maia_shards/` holds both kinds, distinguished only by filename pattern
+(`bench_*` raw, `argmax_*` labeled), which is easy to read past — arm B's
+rolls leg must be the **baseline** rollouts, since `HUMAN_TAG` means "strong
+humans play this from here" and a weak-opponent bank would bias it.
 
 **Every benchmark position is White to move** (`LOG.md` P1). Anchors sit at
 even plies, so this is guaranteed by the anchor scheme, not incidental. It has

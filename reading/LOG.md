@@ -126,3 +126,38 @@ shipped read beat a raw PV dump, and by how much, for whom." If the answer is
 yes-but-small, the foil roll is the obvious next lever and the eval will say
 so with a number. Ordering it the other way spends GPU hours on a hypothesis
 the harness can't yet score.
+
+---
+
+## 2026-07-30 · P4 · the baseline raw rollouts were there all along
+
+**Asked:** arm B calls `fact_sheet.post_verify_json(fen, pvs, rolls)`, which
+needs *raw* rolls. P0 recorded `maia_shards` as labeled-only, which would have
+left the only raw banks as weak-opponent conditions.
+
+**Measured:** `maia_shards/` holds four filename patterns, not one —
+`argmax_*.jsonl` (40, labeled), **`bench_*.jsonl` (80, raw rollouts)**,
+`ksample_*.jsonl` (12) and `ksample_ext_*.jsonl` (12). The `bench_*` rows have
+the same `{id, k:16, samples}` shape as the other bands and cover all 4,000
+positions.
+
+So the 2400v2400 **baseline raw rollouts exist**, and they are the correct
+rolls leg for arm B: `HUMAN_TAG` means "strong humans play this from here", so
+feeding a weak-opponent bank would have biased the human tier in a way no test
+would have caught. `bank.ROLLOUT_BANDS` now carries all three, baseline first.
+
+**Verdict:** P0's characterisation of `maia_shards` was wrong (it read only
+`argmax_*`). Arm B needs no new compute. `probe_bands.py` now covers three
+bands:
+
+| band | White ply-0 engine agreement |
+|---|---|
+| `2400v1300` | 0.6812 (8719/12800) |
+| `2400v2400` | 0.6930 (8870/12800) |
+| `2400v1800` | 0.6962 (8911/12800) |
+
+Spread 0.0150 over 800 positions each — White's strength is band-independent,
+as it must be if only the opponent varies. Note the baseline sits *between*
+the two weak-opponent conditions rather than above both, which is another
+reason not to read a strength ordering out of this number: at 1.5pp it is
+measuring RNG divergence at contested nodes, not policy.
