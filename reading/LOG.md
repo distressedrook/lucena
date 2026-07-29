@@ -297,3 +297,72 @@ report parse rate per arm as a first-class number, never folded into accuracy;
 (b) scale to all 4,000 positions — at ~1s/call that is ~2h for two conditions,
 so the noise problem is solved by running it, not by cleverness; (c) only then
 compare arms.
+
+---
+
+## 2026-07-30 · P8 · P7's "parse-rate confound" was my parser (RETRACTION)
+
+**Asked:** why did parse rates differ so much by condition (P7: baseline 58/60
+vs arm B 46/60; the first `score.py` smoke run: baseline 0.75 vs arm A 0.25)?
+
+**Measured:** inspected the raw replies in the student cache. The
+"abstentions" were answers:
+
+| raw reply | meaning |
+|---|---|
+| `🅰` `🅰️` `🅱` | enclosed-letter emoji, with and without the variation selector |
+| `2` | the ordinal — option two |
+| `\nA` | the form the parser did accept |
+
+**Verdict — RETRACTED.** P7 concluded "adding an explanation drops the parse
+rate, so arm comparisons partly measure prompt length." Wrong. The parser
+accepted only `\b[AB]\b`, so every emoji and ordinal answer was silently
+discarded, and prompt length shifted *which encoding the model reached for* —
+manufacturing an apparent parse-rate difference out of a regex.
+
+Worse than lost power: it was **asymmetric and biased**. Dropping `2` dropped
+B-answers specifically, so the surviving sample was skewed toward A, and the
+accuracy figures in P7 were computed on that skewed remainder. No conclusion
+from P7's accuracy columns survives.
+
+**Fix:** `parse_letter` accepts the emoji forms, the ordinals and bare
+lowercase; `student.py` cache reads now **re-parse from stored raw text**
+rather than trusting the stored verdict, so the parser is part of the
+experiment and a parser change replays over the cache for free instead of
+freezing old bugs into every later run.
+
+**After the fix, same 12 pairs, re-scored from cache in 3 seconds:**
+
+| condition | parse | acc | 95% CI | lift |
+|---|---|---|---|---|
+| baseline | 1.00 | 0.417 | [0.19,0.68] | — |
+| A:shipped | 1.00 | 0.583 | [0.32,0.81] | +0.167 |
+| A:stripped | 1.00 | 0.250 | [0.09,0.53] | −0.167 |
+| B:shipped | 1.00 | 0.417 | [0.19,0.68] | 0.000 |
+| B:stripped | 1.00 | 0.417 | [0.19,0.68] | 0.000 |
+| D:shipped | 1.00 | 0.333 | [0.14,0.61] | −0.083 |
+| D:stripped | 1.00 | 0.250 | [0.09,0.53] | −0.167 |
+
+**Parse rate is 1.00 everywhere. The confound is gone.** n=12 is pure noise —
+every CI spans chance — so none of these accuracies means anything yet. Two
+structural facts do:
+
+- **Leak rates: A 1.00, B 0.08, D 0.58.** Arm A always names the answer (it is
+  the engine line). Arm B almost never does — so for arm B the shipped and
+  stripped conditions are usually the same stimulus, and the two-mode design
+  costs nothing there while remaining essential for A and D.
+- **Arm A shipped 0.583 → stripped 0.250, i.e. below chance.** Strip the answer
+  out of an engine dump and it becomes worse than no information at all.
+  Directionally exactly what "a PV is a conclusion with the proof deleted"
+  predicts, and a good sign the harness measures what it is supposed to.
+
+**Also fixed:** the global paired subset collapsed to 1/12 (intersecting seven
+conditions at ~0.6 parse rate). Pairing is now per comparison — each condition
+against the baseline on the subset where both answered, with the baseline's
+accuracy recomputed on that same subset as the subtrahend.
+
+**Method note for the rest of this log:** two of the last three "findings"
+about the model turned out to be defects in my harness (P7's max_tokens, P8's
+parser). Both were caught by looking at raw output rather than at summary
+statistics. Any future capability claim about the reader gets the raw replies
+inspected before it goes in this file.
