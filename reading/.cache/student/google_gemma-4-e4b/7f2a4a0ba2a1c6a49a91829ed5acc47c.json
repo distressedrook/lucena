@@ -1,0 +1,7 @@
+{
+ "raw": "<|tool_call>call:B",
+ "parsed": "B",
+ "latency_s": 0.7522199153900146,
+ "fen": "5rk1/1p3p2/p5p1/3r4/3pR3/1P2Q3/P1q2PPP/5RK1 w - - 0 26",
+ "had_explanation": true
+}

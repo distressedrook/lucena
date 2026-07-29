@@ -366,3 +366,85 @@ about the model turned out to be defects in my harness (P7's max_tokens, P8's
 parser). Both were caught by looking at raw output rather than at summary
 statistics. Any future capability claim about the reader gets the raw replies
 inspected before it goes in this file.
+
+---
+
+## 2026-07-30 · P9 · FIRST REAL RESULT: the shipped read shows no detectable
+## effect on a weak reader's move choice
+
+**Coverage:** 400 pairs from `benchmark_v1` (first 400 by sorted id with a
+distractor gap ≥50cp; median gap 115cp), student `google/gemma-4-e4b` temp 0,
+band 2400v2400, parse rate **1.00 in every condition**, 26 min wall.
+`runs/20260730T043640-sweep400.json`.
+
+| condition | acc | 95% CI | lift | net discordant | p (McNemar) |
+|---|---|---|---|---|---|
+| baseline | 0.654 | [0.61,0.70] | — | — | — |
+| A:shipped | 0.729 | [0.68,0.77] | +0.075 | +30 | **0.0018** |
+| A:stripped | 0.447 | [0.40,0.50] | −0.206 | −82 | 2.1e-20 |
+| **B:shipped** | **0.679** | **[0.63,0.72]** | **+0.025** | **+10** | **0.32** |
+| B:stripped | 0.679 | [0.63,0.72] | +0.025 | +10 | 0.33 |
+| D:shipped | 0.516 | [0.47,0.57] | −0.139 | −55 | 2.0e-10 |
+| D:stripped | 0.609 | [0.56,0.66] | −0.045 | −18 | 0.020 |
+
+Leak rates: A 1.00, B 0.17, D 0.81.
+
+**Result 1 — the baseline is sound.** 0.654 against a 50% floor, and it
+replicates P7's 0.655 on a different slice. The reader can do the task, so
+there was real headroom for an explanation to move.
+
+**Result 2 — arm B has no detectable effect (p=0.32).** +2.5pp, 46 positions
+helped against 36 hurt. The shipped deterministic read does not change what a
+weak reader chooses. And because arm B names the answer only 17% of the time —
+with shipped and stripped scoring identically — this is not a leakage story
+either way. It is the first reader-side number this stack has ever had, and it
+is null.
+
+**Result 3 — the raw dump helps only by naming the answer (p=0.0018).** Arm A
+carries the eval-equal move in every text (leak 1.00), which is exactly the
+"conclusion with the proof deleted": maximally useful if you trust it, teaching
+nothing.
+
+**Result 4 — showing the actual game continuation HURTS (p=2e-10).** Arm D,
+strongest negative that is not an artifact. Worth understanding: a real game's
+continuation frequently is not the eval-equal move, so arm D often argues for
+the distractor.
+
+### Caveat that limits results 3 and 4 — an asymmetric-stripping flaw (mine)
+
+`strip_move` removes only the ANSWER, leaving the distractor's line intact.
+For arm A the stripped reader then sees PV lines 2-4 with the distractor
+spelled out and the best move redacted, so it is being pointed at the wrong
+option. **A:stripped (−0.206) and D:stripped (−0.045) are contaminated by this
+and should not be read as findings.** Arm B is unaffected: leak 0.17, and
+shipped ≡ stripped accuracy to three decimals.
+
+Fix before the stripped mode is trusted for A/D: strip BOTH candidate moves, or
+strip every move token, and re-measure. Cheap (cache serves the unchanged
+conditions).
+
+### Caveat that limits result 2 — the task may under-measure arm B
+
+The distractor is another ENGINE line (2nd-4th PV), so it is usually a sensible
+move. The read's plans ("rook activation", "break the bishop pair") can apply
+to BOTH options, in which case arm B is genuinely uninformative *for this
+discrimination* without being uninformative *about the position*. That is a
+limitation of the task design, not established evidence about the read.
+
+Two follow-ups that would separate the two explanations:
+1. Restrict to positions where the read's named plan corresponds to exactly one
+   of the options — if lift appears there, the read works and the task was
+   diluting it.
+2. Use a distractor the read's plans actively contradict, rather than the
+   widest-gap engine line.
+
+### Standing caveat
+
+One weak local LLM is not a human learner. Whether 0.654 baseline and a null
+arm-B effect reflect a human student is unvalidated — the cheap check is a
+human answering the same pairs cold and then with arm B's text.
+
+**Verdict: the instrument works and its first reading is null for the shipped
+read.** That is the useful outcome: it says the next effort belongs in
+selection and framing (the variants list) rather than in more detectors, and it
+gives every future variant a number to beat.
