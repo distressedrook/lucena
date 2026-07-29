@@ -97,9 +97,24 @@ Secondary metrics, both necessary:
 - **Bits per point of lift** — lift ÷ tokens. The complaint about engine
   output is that it is long and true. Length must cost something.
 
-**Move leakage is stripped from every arm, including D.** An explanation may
-not name its own move in SAN, coordinates, or description. Unstripped arms
-inflate trivially and are not comparable.
+**Two scoring modes, both reported.** A single leakage rule cannot serve both
+questions, because naming the move is the shipped read's *job* — arm B says
+things like "_Strong humans play this_ — Knight to g5", and stripping that
+guts the artifact rather than testing it.
+
+| mode | what is removed | question answered |
+|---|---|---|
+| **as-shipped** | nothing | does the read help a player choose well? — the product metric |
+| **stripped** | the move in every spelling: SAN, UCI, coordinates, and prose ("Knight to g5") | does the reader understand, or is it following instructions? |
+
+The **gap between the two modes is itself the finding**: it separates
+instruction-following from transferable understanding, which is the whole
+distinction this layer exists to make. A large as-shipped lift with a small
+stripped lift means the read is a good hint machine and a poor explanation —
+useful to know, and invisible to either mode alone.
+
+Stripping applies identically to every arm including D, or the arms are not
+comparable.
 
 ## The banked substrate (verified complete 2026-07-30 — `LOG.md` P0)
 

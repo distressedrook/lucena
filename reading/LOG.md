@@ -161,3 +161,36 @@ as it must be if only the opponent varies. Note the baseline sits *between*
 the two weak-opponent conditions rather than above both, which is another
 reason not to read a strength ordering out of this number: at 1.5pp it is
 measuring RNG divergence at contested nodes, not policy.
+
+---
+
+## 2026-07-30 · P5 · arm B runs end-to-end; one leakage rule is not enough
+
+**Asked:** does `post_verify_json(fen, pvs, rolls)` accept the bank's shapes
+directly, and does `position_read.render` produce a usable arm?
+
+**Measured:** yes, with no adaptation — `eng_shards` pvs (`[{cp, ucis}]`) and
+the 2400v2400 rollouts (`[[uci …] × 16]`) drop straight in. On `n10009_a40`
+the render produced the full shipped read: assessment with character
+("razor-sharp — one inaccuracy changes the verdict"), per-side weakness lines,
+and six tagged plans across all three evidence tiers.
+
+**Found, and it corrects this file's earlier blanket rule:** the read names
+moves in prose by design — "_Strong humans play this_ — Knight to g5",
+"trade a minor for a bishop (NxB or BxB)". A single strip-everything rule
+would gut arm B rather than test it, because telling the player what to do is
+the artifact's job.
+
+**Verdict:** score two modes, as-shipped and stripped, and report both. The
+GAP between them separates instruction-following from transferable
+understanding — a large as-shipped lift with a small stripped lift means the
+read is a good hint machine and a weak explanation. Neither mode alone can
+see that. CLAUDE.md's measurement section updated.
+
+**Consequence for the stripper:** it must handle prose move references
+("Knight to g5"), not just SAN and coordinates. Square names alone cannot be
+stripped wholesale — the weakness lines are *about* squares ("Holes at d3, b4,
+d4") and removing them would delete the content rather than the answer. So the
+stripper targets piece-name + destination-square constructions and explicit
+move tokens, and its recall against the eval-equal move gets measured, not
+assumed.
