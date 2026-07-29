@@ -194,3 +194,106 @@ d4") and removing them would delete the content rather than the answer. So the
 stripper targets piece-name + destination-square constructions and explicit
 move tokens, and its recall against the eval-equal move gets measured, not
 assumed.
+
+---
+
+## 2026-07-30 · P6 · the local student cannot play a move (hard negative)
+
+**Asked:** can `google/gemma-4-e4b` (7.5B, LM Studio, temp 0) serve as the
+weak reader — i.e. produce a legal move from a FEN often enough for lift to be
+measurable?
+
+**Measured**, 20 benchmark positions, two conditions:
+
+| condition | legal moves | eval-equal | latency |
+|---|---|---|---|
+| bare FEN | 3/20 (0.15) | 2/20 (0.10) | 4.6s/call |
+| FEN + full legal-move list in the prompt | 6/20 (0.30) | 1/20 (0.05) | 4.3s/call |
+
+**Verdict: unusable, and the mitigation does not rescue it.** Handing the
+model an explicit enumeration of every legal move raised legality only to 30%
+and *lowered* eval-equal accuracy. A reader that cannot reliably copy a move
+out of a provided list is not failing at formatting, it is failing at the
+task — so this is a capability limit and further prompt engineering would be
+chasing noise.
+
+Why it is fatal rather than merely weak: a 15–30% legality ceiling sits UNDER
+every arm. Lift would be measured inside the residue, and most of the variance
+would come from whether the model could read the board that time, not from
+whether the explanation helped. That is precisely the "measuring the harness,
+not the thing" failure this layer exists to avoid.
+
+**Also noted:** the 18.4B MoE (`llama-3.2-8x3b-...-abliterated`) is worse —
+~52s/call for 3 completion tokens (thrashing: 10.66GB on a 16GB machine) and
+it answered `d4` to three different positions, a constant output with no
+discrimination at all.
+
+**Correction to an earlier claim of mine:** I argued a small local model was
+methodologically *preferable*, not merely cheaper, because the student should
+be weak. The weakness argument still holds, but it assumed the model could at
+least produce legal moves. At 15–30% it cannot, so the premise was wrong.
+
+**Consequence — the TASK is wrong, not just the model.** "Generate a move"
+requires board reading this class of reader does not have. The fix is to ask
+for **discrimination** instead: show the position and two candidate moves, ask
+which is better. Answer space is one letter, so parse failure nearly vanishes;
+chance baseline is a clean 50%, so lift is interpretable; and it still measures
+whether an explanation transfers. Distractors come from the bank — the MultiPV
+line with the largest cp gap from best is plausible-but-inferior, and the pair
+order is flipped on a digest of the position id so there is no A/B bias.
+Measured in P7.
+
+---
+
+## 2026-07-30 · P7 · the harness works; arm B undetermined; a parse confound found
+
+**Asked:** can the reader do the DISCRIMINATION task (position + two candidate
+moves, answer A or B) above chance, and does arm B move it?
+
+**First, two harness failures of mine — not model findings, not logged as
+such.** (a) `max_tokens=8` gave 0/30 parses in both modes: the model's
+reasoning is unbounded and consumes any budget given (397 of 400 tokens,
+empty content). (b) An earlier run crashed importing `lucena_core` because it
+used system `python3` instead of the tactics venv.
+
+**The fix — assistant prefill.** Seeding the assistant turn with `"Answer: "`
+bypasses reasoning entirely: 0.6s/call, `reasoning_tokens=0`, direct answer,
+versus 22s with `reasoning_effort=low` (which reasons 510 tokens and then
+answers anyway). ~35× faster, and it makes statistical power affordable.
+
+**Stated property of the harness, not a detail:** prefill forces an immediate
+answer with no deliberation. For a weak-reader proxy that is defensible — a
+first impression rather than a search — but it IS a change in what is
+measured. It applies identically to the baseline and every arm, so it cannot
+manufacture lift.
+
+**Measured**, 60 pairs (median distractor gap 101cp), distractor = the MultiPV
+line with the largest cp gap from best, pair order flipped on a digest of the
+position id:
+
+| condition | parsed | correct/60 | correct/parsed | latency |
+|---|---|---|---|---|
+| baseline | 58/60 | 38 (0.63) | **0.655** | 0.6s |
+| arm B | 46/60 | 32 (0.53) | **0.696** | 1.4s |
+
+**Verdicts:**
+
+1. **The harness works.** Baseline 0.655 against a 50% chance floor (38/58,
+   binomial p≈0.02). The reader can do this task, so there is headroom for an
+   explanation to move.
+2. **Arm B is undetermined.** Read on the all-cases denominator it looks
+   harmful (0.63 → 0.53); conditioned on a parsed reply it looks mildly
+   helpful (0.655 → 0.696). Both differences are inside noise at n≈50. This is
+   NOT evidence of no effect, it is evidence the sample is too small.
+3. **A parse-rate confound exists and must be controlled first.** Adding an
+   explanation dropped the parse rate 58/60 → 46/60 — longer prompts make the
+   model likelier to ignore the prefill. With parse failures scored as wrong,
+   every arm comparison partly measures prompt length. `student.py` already
+   separates parse failure from wrong move; the scratch script did not, which
+   is exactly how the misleading headline arose.
+
+**Next, in order:** (a) retry-on-parse-failure with a bounded retry count, and
+report parse rate per arm as a first-class number, never folded into accuracy;
+(b) scale to all 4,000 positions — at ~1s/call that is ~2h for two conditions,
+so the noise problem is solved by running it, not by cleverness; (c) only then
+compare arms.
