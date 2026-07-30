@@ -816,3 +816,46 @@ The loop stops with a sharper handover than P16:
    to moves when this proxy cannot? A within-position human study on the B8
    texts would answer it; P17's calibration is 20/cell and cannot.
 3. Restart with /loop only after (1) or (2) produces new information.
+
+---
+
+## 2026-07-30 · P19 · THE RULING SHIPS: committed recommendation lands in
+## production render; +0.188, the largest non-probe lift on record
+
+**The ruling (owner, verbatim):** "I am OK with the commit, as long as we
+tell the student why. What does the move achieve?"
+
+**Implementation** (lucena-plans `dd7b791`, branch
+`reading/committed-recommendation`): `fact_sheet._recommendation_block` —
+move = PV1's first move, why = the plan PV1 enacts (plan_diff attribution
+matched to a detected plan entry); **no grounded why → no recommendation**,
+structurally. `position_read.render` speaks it under the assessment:
+"**Play Re2** — the strongest continuation pursues this plan: Rook
+activation: …" — a line-level claim, which is what the attribution
+witnessed. 133 plans tests pass (5 new). Recommendation coverage ~70% of
+benchmark sheets; the rest lack a grounded why and correctly stay Socratic.
+
+**Measured** (arm B = the production render, 400 pairs;
+`runs/20260730T224734-B9-prod-commit.json`):
+
+| condition | acc | lift |
+|---|---|---|
+| old read (P9) | 0.679 | +0.025 (null) |
+| **production read** | **0.842** | **+0.188** |
+| production, move stripped | 0.682 | +0.028 |
+
+The stripped row is the control: redact the move and the read reverts to the
+old number — the gain is the commitment, and only the commitment, gated on a
+witnessed why. Implied accuracy on covered positions ≈0.92 (0.68·x + 0.32·
+0.68 = 0.842). Leak rate 0.68 = recommendation coverage, by construction.
+
+**Why 0.92 covered rather than BM's 0.99:** plausibly the plan-heavy
+sentence is followed slightly less blindly than BM's bare directive — which,
+if it survives a closer look, is not a defect: a reason invites evaluation.
+Un-investigated; noted, not claimed.
+
+**The arc, in one line:** P9 found the read null → P12 proved the reader
+could follow direction → P14/P15/P18 proved nothing short of the move works
+→ P11's trade-off went to the owner → the ruling came back "commit, with a
+witnessed why" → this entry ships it and measures +0.188. That is the
+reading layer doing exactly what it was built for.
