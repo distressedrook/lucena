@@ -146,7 +146,38 @@ def arm_b4(pid, fen, pvs, rolls):
     return f"Your best idea right now: {idea}.\n\n{base}"
 
 
-arms.ARMS.update({"B2": arm_b2, "B3": arm_b3, "BM": arm_bm, "B4": arm_b4})
+def arm_b7(pid, fen, pvs, rolls):
+    """B7 "immediate-plan-as-direction" (P14's correction of B4).
+
+    B4 failed for a measured reason: the read's TOP engine-confirmed plan is
+    decision-orthogonal — its piece matched the distractor more often than the
+    answer (42 vs 34, neither 168/272). "Engine confirmed" means the plan
+    appears somewhere within the horizon, not that the best move enacts it.
+
+    The sheet itself distinguishes: timing=immediate ("available right now")
+    means the plan FIRES NOW in an eval-equal line. B7 promotes only that
+    bullet to the directive. Coverage is ~36%; the sweep measures the blend
+    and the log reports the split.
+    """
+    base = arms.arm_b(pid, fen, pvs, rolls)
+    if base is None:
+        return None
+    lines = base.split("\n")
+    try:
+        start = lines.index("**White**")
+    except ValueError:
+        return base
+    for line in lines[start + 1:]:
+        if line.startswith("**"):
+            break
+        m = _EC_BULLET.match(line)
+        if m and "available right now" in line:
+            return f"Your best idea right now: {m.group(1)}.\n\n{base}"
+    return base
+
+
+arms.ARMS.update({"B2": arm_b2, "B3": arm_b3, "BM": arm_bm, "B4": arm_b4,
+                  "B7": arm_b7})
 
 
 if __name__ == "__main__":

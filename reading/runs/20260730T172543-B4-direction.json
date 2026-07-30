@@ -1,0 +1,64 @@
+{
+ "model": "google/gemma-4-e4b",
+ "band": "2400v2400",
+ "n_pairs": 400,
+ "min_gap_cp": 50,
+ "median_gap_cp": 115,
+ "arms": {
+  "B4": {
+   "declined": 0,
+   "leak_rate": 0.175
+  }
+ },
+ "conditions": {
+  "baseline": {
+   "n_present": 400,
+   "n_answered": 399,
+   "parse_rate": 0.9975,
+   "own_parsed_accuracy": 0.6541353383458647,
+   "n_paired": 399,
+   "paired_hits": 261,
+   "paired_accuracy": 0.6541353383458647,
+   "paired_ci95": [
+    0.6061932723740734,
+    0.6991376567057436
+   ],
+   "baseline_on_subset": 0.6541353383458647,
+   "lift": 0.0,
+   "mean_latency_s": 0.44092692792415616
+  },
+  "B4:shipped": {
+   "n_present": 400,
+   "n_answered": 399,
+   "parse_rate": 0.9975,
+   "own_parsed_accuracy": 0.656641604010025,
+   "n_paired": 398,
+   "paired_hits": 262,
+   "paired_accuracy": 0.6582914572864321,
+   "paired_ci95": [
+    0.6103804599911781,
+    0.70317592640585
+   ],
+   "baseline_on_subset": 0.6557788944723618,
+   "lift": 0.002512562814070352,
+   "mean_latency_s": 1.5006003040075302
+  },
+  "B4:stripped": {
+   "n_present": 400,
+   "n_answered": 399,
+   "parse_rate": 0.9975,
+   "own_parsed_accuracy": 0.6591478696741855,
+   "n_paired": 398,
+   "paired_hits": 263,
+   "paired_accuracy": 0.6608040201005025,
+   "paired_ci95": [
+    0.6129508830777167,
+    0.7055825888176769
+   ],
+   "baseline_on_subset": 0.6557788944723618,
+   "lift": 0.005025125628140704,
+   "mean_latency_s": 1.3474484026432036
+  }
+ },
+ "wall_s": 672.59548163414
+}

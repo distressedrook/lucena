@@ -54,23 +54,21 @@ layers.
 **Best non-leaking variant: none beats B yet.** The measured target: the
 decision-relevance gap, +0.259 available (H1) vs +0.010 delivered (P10).
 
+Tried and settled: B4 plan-as-direction NULL (P14 — top plan is
+decision-orthogonal: points at the distractor's piece more often than the
+answer's). B5 urgency-only framing retired as redundant with B4's mechanism.
+
 ## Queue (ranked; the loop takes the top item unless the last entry re-ranks)
 
-1. **B4 "plan-as-direction"** — top engine-confirmed plan for the side to
-   move rephrased as the immediate idea, piece named, move NOT named: "Your
-   best idea right now involves your <piece>: <plan idea>." Tests whether
-   decision-framing of TRUE plan content closes the H1 gap. Piece comes from
-   the plan's own family/detail fields (rook_activation → rook), never from
-   the engine answer — otherwise it is H1 smuggled in and belongs in the
-   leaking division.
-2. **B5 "commitment without content"** — "One of these ideas matters right
-   now" prefix vs B: does mere urgency framing move anything, or does the
-   direction need content?
-3. **B6 side-to-move only** — drop Black's block entirely (reader is always
+1. **B7 "immediate-plan-as-direction"** — directive only from the
+   timing=immediate engine-confirmed bullet ("available right now"), the one
+   plan the sheet asserts FIRES NOW in an eval-equal line. ~36% coverage;
+   report the split. P14's corrected form of B4.
+2. **B6 side-to-move only** — drop Black's block entirely (reader is always
    White here): halves length, removes the opponent's plans as distractors.
-4. **Ordering probe** — does putting the engine-confirmed plan FIRST vs last
-   within the side block matter (primacy on a weak reader)?
-5. Re-rank after each result; retire the queue item its result obsoletes.
+3. **Ordering probe** — engine-confirmed plan FIRST vs last within the side
+   block (primacy on a weak reader).
+4. Re-rank after each result; retire the queue item its result obsoletes.
 
 ## Stop condition
 
@@ -78,3 +76,4 @@ Three consecutive iterations with no variant beating B (non-leaking, McNemar
 p<0.05) → stop, write a closing entry stating the loop is exhausted on this
 reader, and hand the open items to the human: the calibration page
 (`gen_human_page.py`) and the pedagogy ruling on commitment (P11).
+**Strikes: 1 of 3** (P14/B4).

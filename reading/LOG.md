@@ -591,3 +591,42 @@ No bucket significant; QUIET is +0.000 on the nose — the null hides no
 home-turf effect. Baseline rises with sharpness (0.574 → 0.769): sharper
 positions have more self-evident answers, squeezing headroom exactly where
 explanations should matter least.
+
+---
+
+## 2026-07-30 · P14 · B4 "plan-as-direction" is null — because the read's top
+## plan is DECISION-ORTHOGONAL (loop iteration 1; strike 1 of 3)
+
+**Hypothesis (stated before running):** the read fails for lack of direction,
+not content (P12); restating its own top engine-confirmed White plan as "Your
+best idea right now: …" closes part of the +0.259/+0.010 gap without naming a
+move.
+
+**Measured** (400 pairs, directive coverage 272/400 = 68%, leak 0.17
+unchanged; `runs/20260730T172543-B4-direction.json`):
+
+| | acc | lift | p |
+|---|---|---|---|
+| B4 overall | 0.658 | +0.003 | — |
+| B4, directive subset (n=272) | 0.680 | +0.022 | 0.54 |
+| B4, no-directive subset (n=128) | 0.602 | −0.039 | 0.38 |
+| B4 vs B (McNemar) | — | net −9 | 0.16 |
+
+**Verdict: null, and the verification found the mechanism.** Among the 272
+directive positions, the directive's plan mentions the ANSWER's piece 34
+times, the DISTRACTOR's piece 42 times, neither 168. The read's top
+engine-confirmed plan points at the wrong candidate slightly more often than
+the right one. "Engine confirmed" means the plan appears somewhere in an
+eval-equal line within the horizon — NOT that the best move enacts it. So
+decision-framing failed because the content is decision-orthogonal, not
+because framing does not work (P12 shows framing works when content points).
+
+**This sharpens the project finding:** the shipped read's gap is not
+phrasing; its plan inventory is not indexed to the present decision. The
+sheet DOES carry the needed index — timing=immediate ("available right now")
+marks plans that fire now in an eval-equal line.
+
+**Queue updated:** B5 (urgency-only framing) retired — B4 already shows
+framing over non-pointing content does nothing. New top item B7: directive
+only from the timing=immediate engine-confirmed bullet (~36% coverage, but
+those plans fire NOW). Strike count toward the stop condition: 1 of 3.
