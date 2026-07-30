@@ -488,3 +488,55 @@ the +0.010 MORE damning, since those are the positions where transfer should
 show. (b) The weak-reader caveat stands: gemma may simply lack the chess to
 map "rook activation" onto a move. The human calibration is the only way to
 close that one.
+
+---
+
+## 2026-07-30 · P11 · symmetric strip + variants v0: recommendation salience
+## dominates everything editorial
+
+**Coverage:** same 400 pairs as P9, symmetric stripping (both candidates
+redacted), parse rate 1.00 everywhere.
+`runs/20260730T125452-sweep400-symstrip.json`,
+`runs/20260730T131840-variants-v0.json`.
+
+| condition | acc | lift | McNemar |
+|---|---|---|---|
+| baseline | 0.654 | — | (replicated 3×) |
+| **BM: read + "the engine's preferred idea starts with <move>"** | **0.992** | **+0.338** | vs A: net +105, **p=1.8e-29** |
+| A: raw dump (contains the same move) | 0.729 | +0.075 | vs baseline p=0.0018 |
+| B3: engine-tier plans only | 0.697 | +0.043 | vs B: net +7, p=0.40 |
+| B: shipped read | 0.679 | +0.025 | p=0.32 (P9) |
+| B2: plans capped at 2/side | 0.679 | +0.025 | vs B: net 0, p=1.0 |
+| A:stripped (SYMMETRIC) | 0.666 | +0.010 | vs baseline p=0.70 |
+| D: game continuation | 0.516 | −0.139 | p=2e-10 (P9) |
+
+**Result 1 — P9's stripping artifact confirmed and quantified.** With both
+candidates redacted, A:stripped is +0.010 (p=0.70) — the −0.206 was entirely
+the one-sided strip pointing at the distractor. Corrected thesis statement:
+an engine line with its conclusion deleted transfers ~NOTHING (neutral), it
+does not actively harm. D:shipped's −0.139 stands.
+
+**Result 2 — the headline. Recommendation salience is worth +26pp; editorial
+curation is worth ~nothing.** BM and arm A carry the SAME answer move. Buried
+at the head of "Line 1 (+2.87): …" it yields 0.729; stated once as a
+recommendation on top of the read it yields 0.992 (net +105 discordant
+positions, p=1.8e-29 — the reader follows an explicit recommendation
+essentially always). Meanwhile both curation variants are null: capping plans
+changes nothing (net 0), engine-tier-only is +7 net (p=0.40). BM:stripped
+falls back to 0.674 ≈ B, so the sentence carries all of it.
+
+**What this does and does not license.** BM is instruction-following, not
+understanding — its stripped form collapses. It does NOT say "ship the move."
+It says: on this task, WHAT the read says matters far less than whether it
+COMMITS. `position_read` deliberately never says "play this"; that single
+choice, not the plan vocabulary, separates it from near-perfect task
+performance. Whether a Socratic coach should commit is a pedagogy ruling —
+the owner's, not this layer's — but it is now a quantified trade-off
+(+2.5pp without commitment, +34pp with) instead of a taste call.
+
+**Where the instrument goes next, given a null on curation:** the reader may
+be too weak for curation effects to register (a 7.5B model may not map "rook
+activation" to a move at ALL, in which case pruning tiers cannot matter).
+The human calibration is now load-bearing for any further editorial variant —
+without it, more variants ride on a reader that P10 suggests cannot use plan
+prose. Run it before variants v1.
