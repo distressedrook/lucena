@@ -1,0 +1,32 @@
+  … 25/400
+  … 50/400
+  … 75/400
+  … 100/400
+  … 125/400
+  … 150/400
+  … 175/400
+  … 200/400
+  … 225/400
+  … 250/400
+  … 275/400
+  … 300/400
+  … 325/400
+  … 350/400
+  … 375/400
+  … 400/400
+model  google/gemma-4-e4b
+pairs  400  (median gap 115cp, min 50cp)   chance 0.500
+
+condition           parse  n_pair     acc         95% CI    base    lift  s/call
+baseline             1.00     399   0.654    [0.61,0.70]   0.654   0.000    0.44
+B7:shipped           1.00     399   0.664    [0.62,0.71]   0.654   0.010    1.39
+B7:stripped          1.00     398   0.663    [0.62,0.71]   0.656   0.008    1.29
+
+`base` is the baseline's accuracy on that condition's OWN paired
+subset, so `lift` compares the same positions. Read the CI, not the
+point estimate: overlap means the slice is too small to separate the
+conditions — a statement about n, not about the arms.
+
+arm B7: declined 0  leak rate 0.17 (fraction of texts naming the answer move)
+
+wall 193s  ->  runs/20260730T174827-B7-immediate.json

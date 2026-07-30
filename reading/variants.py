@@ -176,8 +176,30 @@ def arm_b7(pid, fen, pvs, rolls):
     return base
 
 
+def arm_b6(pid, fen, pvs, rolls):
+    """B6 "side-to-move only" (LOOP.md queue; last remaining axis).
+
+    Drop Black's block entirely — the reader is always White here (P1).
+    Roughly halves the body and removes the opponent's plans as candidate
+    distractors. Weak prior after B2's null (a length cap did nothing), but
+    it is a different axis: B2 shortened both sides; this removes the
+    OTHER side's directives specifically.
+    """
+    base = arms.arm_b(pid, fen, pvs, rolls)
+    if base is None:
+        return None
+    lines = base.split("\n")
+    try:
+        cut = lines.index("**Black**")
+    except ValueError:
+        return base
+    while cut > 0 and lines[cut - 1] == "":
+        cut -= 1
+    return "\n".join(lines[:cut])
+
+
 arms.ARMS.update({"B2": arm_b2, "B3": arm_b3, "BM": arm_bm, "B4": arm_b4,
-                  "B7": arm_b7})
+                  "B6": arm_b6, "B7": arm_b7})
 
 
 if __name__ == "__main__":

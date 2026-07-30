@@ -630,3 +630,39 @@ marks plans that fire now in an eval-equal line.
 framing over non-pointing content does nothing. New top item B7: directive
 only from the timing=immediate engine-confirmed bullet (~36% coverage, but
 those plans fire NOW). Strike count toward the stop condition: 1 of 3.
+
+---
+
+## 2026-07-30 · P15 · B7 "immediate-plan-as-direction" also null (loop
+## iteration 2; strike 2 of 3)
+
+**Hypothesis:** B4's failure was content selection, not framing — gating the
+directive on the sheet's own timing=immediate marker ("available right now",
+i.e. the plan fires now in an eval-equal line) should make it point at the
+present decision.
+
+**Measured** (400 pairs, directive coverage 140/400 = 35%, leak 0.17;
+`runs/20260730T174827-B7-immediate.json`):
+
+| | acc | lift | p |
+|---|---|---|---|
+| B7 overall | 0.664 | +0.010 | — |
+| B7, directive subset (n=140) | 0.686 | +0.036 | 0.55 |
+
+Pointing on the directive subset: answer 28, distractor 17, both 18, neither
+77. The immediate gate DOES aim better than B4 (28:17 vs 34:42) — the sheet's
+timing field is real information — but 55% of immediate plans still name
+neither candidate's piece, and the effect does not register even where the
+aim is right.
+
+**Verdict: null, strike 2.** Across B2/B3/B4/B7 the pattern is now
+consistent: NO rearrangement, pruning, or reframing of the sheet's existing
+plan prose moves this reader. The only interventions that move it are
+explicit move-level direction (BM +0.338, H1 +0.259, H2 +0.229). The sheet's
+plan vocabulary lives at a level of abstraction ("activate a rook") that this
+reader cannot cash into a specific move comparison — and per P12 that is not
+because the reader ignores prose, but because the prose stops one step short
+of the move.
+
+**One queue item remains (B6, side-to-move only — a length/distraction axis,
+already weakened by B2's null). If it fails, the stop condition fires.**
