@@ -448,3 +448,43 @@ human answering the same pairs cold and then with arm B's text.
 read.** That is the useful outcome: it says the next effort belongs in
 selection and framing (the variants list) rather than in more detectors, and it
 gives every future variant a number to beat.
+
+---
+
+## 2026-07-30 · P10 · the dilution caveat mostly falls: arm B's null is not
+## hiding a plan-level signal
+
+**Asked:** P9 left open that the discrimination task might under-measure arm B
+— its plans could apply to both candidate moves, diluting real signal. Split
+arm B's lift by which candidate its own text NAMES (the P9 leak machinery run
+on both candidates; all answers served from cache, zero new inference).
+
+**Measured**, B:shipped vs baseline, per-bucket McNemar:
+
+| B's text names | n | base | armB | lift | p |
+|---|---|---|---|---|---|
+| neither candidate | 292 | 0.644 | 0.654 | +0.010 | 0.80 |
+| the answer | 59 | 0.729 | 0.814 | +0.085 | 0.27 |
+| the distractor | 38 | 0.658 | 0.711 | +0.053 | 0.69 |
+| both | 11 | 0.455 | 0.455 | 0.000 | 1.0 |
+
+**Verdict:** on the 73% of positions where the read names neither candidate,
+lift is +0.010 (p=0.80) — indistinguishable from nothing. The read's
+plan-level content ("rook activation", "break the bishop pair") is exactly
+what should operate in this bucket if understanding transferred: a reader who
+absorbed "rook activation" should prefer the rook-activating candidate without
+the move being named. It does not happen. What little overall lift exists
+concentrates where the text names a move (+0.085 at n=59, direction consistent
+with hint value, underpowered).
+
+So the P9 null survives its main methodological objection: it is not
+dilution hiding a plan-level effect. The shipped read's true, verified,
+tagged plan statements do not move a weak reader's choices at all.
+
+**Remaining outs, in honesty:** (a) the naming proxy is textual — a plan can
+correspond to a candidate without naming it, so the "neither" bucket contains
+some positions where the plan implicitly picks a side; if anything that makes
+the +0.010 MORE damning, since those are the positions where transfer should
+show. (b) The weak-reader caveat stands: gemma may simply lack the chess to
+map "rook activation" onto a move. The human calibration is the only way to
+close that one.

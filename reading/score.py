@@ -37,6 +37,7 @@ import chess
 
 import arms
 import bank
+import variants  # noqa: F401  — registers B2/B3/BM into arms.ARMS
 from student import Student, available_models
 
 RUNS = Path(__file__).resolve().parent / "runs"
@@ -72,7 +73,8 @@ def build_pair(pid: str, fen: str, pvs: list[dict]) -> dict | None:
     option_a, option_b = (foil_san, best_san) if flip else (best_san, foil_san)
     return {"id": pid, "fen": fen, "a": option_a, "b": option_b,
             "answer": "B" if flip else "A", "gap_cp": gap,
-            "answer_uci": best["ucis"][0]}
+            "answer_uci": best["ucis"][0],
+            "distractor_uci": worst["ucis"][0]}
 
 
 def wilson(hits: int, n: int) -> tuple[float, float]:
@@ -128,9 +130,15 @@ def run(limit: int, model: str, arm_names: list[str],
             if text is None:
                 declined[arm] += 1
                 continue
-            stripped, removed = arms.strip_move(text, fen, pair["answer_uci"])
-            if removed:
+            # Leak rate is about the ANSWER being named; the strip is over BOTH
+            # candidates — a one-sided strip redacts the answer while leaving
+            # the distractor visible, actively pointing at the wrong option
+            # (LOG.md P9's A:stripped artifact).
+            _, answer_named = arms.strip_move(text, fen, pair["answer_uci"])
+            if answer_named:
                 leaks[arm] += 1
+            stripped, _ = arms.strip_moves(
+                text, fen, [pair["answer_uci"], pair["distractor_uci"]])
             for label, body in ((f"{arm}:shipped", text),
                                 (f"{arm}:stripped", stripped)):
                 r = student.choose(fen, pair["a"], pair["b"], body)

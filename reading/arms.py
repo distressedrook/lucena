@@ -181,6 +181,24 @@ def strip_move(text: str, fen: str, uci: str) -> tuple[str, int]:
     return out, removed
 
 
+def strip_moves(text: str, fen: str, ucis: list[str]) -> tuple[str, int]:
+    """Remove every spelling of EVERY move in `ucis`. Returns (text, total).
+
+    This exists because of a measured flaw (LOG.md P9): stripping only the
+    answer left the DISTRACTOR's line intact, so a stripped engine dump showed
+    the reader PV lines 2-4 with the distractor spelled out and the best move
+    redacted — actively pointing at the wrong option. A:stripped's −0.206 was
+    that artifact, not a finding. The stripped condition must be symmetric
+    over the choice set or it biases the choice.
+    """
+    total = 0
+    out = text
+    for uci in ucis:
+        out, n = strip_move(out, fen, uci)
+        total += n
+    return out, total
+
+
 def render(arm: str, pid: str, row: dict, pvs: list[dict],
            rolls: list[list[str]]) -> str | None:
     fn = ARMS[arm]
