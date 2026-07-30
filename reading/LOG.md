@@ -717,3 +717,39 @@ evidence-backed feature request this loop hands back to the plans layer.
 40 positions, ~20 min) — decides whether any of this transfers to a human
 reader; and the P11 commitment ruling. The loop stops here; restart with
 /loop after either gate produces new information.
+
+---
+
+## 2026-07-30 · P17 · FIRST HUMAN DATA POINT — consistent with the machine
+## null; proxy validity reasonable
+
+**Setup:** the owner (self-described weak player — i.e. the actual target
+audience) answered all 40 calibration positions: 20 cold, 20 with the shipped
+read, same pairs/order/candidates as the machine sweeps, no engine, answer key
+not in the page. `runs/human_calibration_answers.json`.
+
+| condition | human | gemma (same positions) | agreement |
+|---|---|---|---|
+| cold | 14/20 = 0.70 (p vs chance 0.12) | 0.75 | 0.65 |
+| with read | 13/20 = 0.65 | 0.75 | 0.70 |
+
+Human lift from the read: **−0.05** (between-position, n=20 per cell).
+
+**Verdicts, with n=20 humility:**
+1. The target audience can do the task — 0.70 cold, right beside the proxy's
+   0.75 on identical items.
+2. The read did not help the human either. −5pp is indistinguishable from
+   zero at this n (±20pp), but it is directionally consistent with the
+   machine null (P9) and offers no evidence against it.
+3. Proxy validity: comparable accuracy and 65–70% item agreement. Good
+   enough for the overnight-loop-on-gemma / human-check-at-milestones
+   workflow; not good enough to skip human checks entirely.
+
+**Caveats:** one subject; 20 per cell; cold and with-read are different
+positions (within-subject, not within-position). A within-position human
+design (same position, two sessions, order counterbalanced) would be the
+next step up in rigor if a variant ever looks worth a real human study.
+
+**Net effect on the record:** every load-bearing conclusion of the loop
+(P9 null, P14/P15 decision-orthogonality, P16 closing verdict) survives its
+first contact with a human reader. The open ruling remains P11: commitment.
