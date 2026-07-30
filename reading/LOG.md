@@ -540,3 +540,54 @@ activation" to a move at ALL, in which case pruning tiers cannot matter).
 The human calibration is now load-bearing for any further editorial variant —
 without it, more variants ride on a reader that P10 suggests cannot use plan
 prose. Run it before variants v1.
+
+---
+
+## 2026-07-30 · P12 · the reader CAN follow directive prose — the curation
+## nulls are about the READ, not the reader
+
+**Asked:** P11's gate, tested directly instead of waiting. Hint ladder,
+auto-generated from ground truth, never naming the move: H1 "The best move
+here is a <piece> move" (only where answer/distractor piece classes differ);
+H2 "The best move here lands on the <file>-file" (only where destination
+files differ).
+
+**Measured** (`probe_directive.py`, `runs/directive.log`):
+
+| hint | n | base | hint acc | lift | net | p |
+|---|---|---|---|---|---|---|
+| H1: piece class | 282 | 0.663 | 0.922 | +0.259 | +73 | 4.0e-21 |
+| H2: file | 358 | 0.654 | 0.883 | +0.229 | +82 | 3.3e-16 |
+
+**Verdict: decisive capability.** The reader maps even the crudest directive
+description onto the correct candidate near-perfectly. So the P11 nulls are
+evidence about the READ: "the best move is a rook move" is worth +26pp while
+"rook activation: put a rook on the open/semi-open file" — true, verified,
+tagged — is worth +1pp (P10, neither-named bucket). The read is
+directive-capable prose delivered without direction: it describes the
+position, never the decision, and its timing markers even push away from the
+present move ("a longer-term idea, not for right now").
+
+**The measured decision-relevance gap of the shipped read: +0.259 available
+(H1) vs +0.010 delivered.** Un-gates variants v1 with a precise target: make
+true plan content decision-relevant WITHOUT naming a move.
+
+---
+
+## 2026-07-30 · P13 · character stratification: flat everywhere; QUIET —
+## the read's home turf — is exactly zero
+
+**Measured** (dynamism buckets, same 400 pairs, all answers from cache):
+
+| bucket | n | base | armB | lift | p |
+|---|---|---|---|---|---|
+| DEAD | 13 | 0.615 | 0.462 | −0.154 | 0.63 |
+| QUIET | 61 | 0.574 | 0.574 | +0.000 | 1.0 |
+| DYNAMIC | 141 | 0.631 | 0.660 | +0.028 | 0.56 |
+| SHARP | 107 | 0.645 | 0.692 | +0.047 | 0.46 |
+| RAZOR | 78 | 0.769 | 0.808 | +0.038 | 0.51 |
+
+No bucket significant; QUIET is +0.000 on the nose — the null hides no
+home-turf effect. Baseline rises with sharpness (0.574 → 0.769): sharper
+positions have more self-evident answers, squeezing headroom exactly where
+explanations should matter least.

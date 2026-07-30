@@ -106,7 +106,47 @@ def arm_bm(pid, fen, pvs, rolls):
     return f"{base}\n\nThe engine's preferred idea starts with {move}."
 
 
-arms.ARMS.update({"B2": arm_b2, "B3": arm_b3, "BM": arm_bm})
+_EC_BULLET = re.compile(r"^- _Engine confirmed_ — (.+?)(?: — [a-z][^—]*)?\.$")
+
+
+def arm_b4(pid, fen, pvs, rolls):
+    """B4 "plan-as-direction" (LOOP.md queue #1, from P12).
+
+    Hypothesis: the read fails not for lack of content but for lack of
+    direction (+0.259 available vs +0.010 delivered). Take the read's OWN top
+    engine-confirmed plan for the side to move and restate it up front as the
+    immediate idea — no move named, nothing added that the sheet does not
+    already assert.
+
+    The directive line is derived ONLY from the read's text (the first
+    engine-confirmed bullet in the **White** block, timing clause dropped) —
+    never from the engine answer, or this would be H1 smuggled in and belong
+    in the leaking division. Positions with no engine-confirmed White plan
+    return the base read unchanged; the sweep's job is to measure the blend,
+    and the log must report the directive-coverage fraction.
+    """
+    base = arms.arm_b(pid, fen, pvs, rolls)
+    if base is None:
+        return None
+    lines = base.split("\n")
+    try:
+        start = lines.index("**White**")
+    except ValueError:
+        return base
+    idea = None
+    for line in lines[start + 1:]:
+        if line.startswith("**"):
+            break
+        m = _EC_BULLET.match(line)
+        if m:
+            idea = m.group(1)
+            break
+    if idea is None:
+        return base
+    return f"Your best idea right now: {idea}.\n\n{base}"
+
+
+arms.ARMS.update({"B2": arm_b2, "B3": arm_b3, "BM": arm_bm, "B4": arm_b4})
 
 
 if __name__ == "__main__":
