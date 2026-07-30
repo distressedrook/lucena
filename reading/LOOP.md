@@ -77,13 +77,17 @@ p<0.05) → stop, write a closing entry stating the loop is exhausted on this
 reader, and hand the open items to the human: the calibration page
 (`gen_human_page.py`) and the pedagogy ruling on commitment (P11).
 
-**FIRED 2026-07-30 — strikes 3 of 3 (B4, B7, B6). See LOG.md P16 closing
-entry.** Final additions to the picture: B7 +0.036 on its directive subset
-(p=0.55, better-aimed but still null); B6 significantly WORSE than B (net
-−14, p=0.034 — the opponent's block carries real contrastive signal; the
-two-sided read earns its length). The loop's handover: (a) the calibration
-page `human_calibration.html` (40 positions, generated); (b) the P11
-commitment ruling; (c) one evidence-backed feature request to lucena-plans —
-plan-attribution of the eval-equal move ("this plan is what the best line
-enacts"), since the sheet's plans are measurably decision-orthogonal and no
-editing fixes that. Restart with /loop when a gate produces new information.
+**FIRED 2026-07-30 — strikes 3 of 3 (B4, B7, B6); see LOG.md P16.**
+
+**REOPENED by owner directive, then CLOSED AGAIN 2026-07-30 — see LOG.md
+P18.** B8 (plan-attribution of the best line, the P16 feature request
+prototyped) is null on its own directive subset (+0.006, p=0.90; vs B net +1).
+The whole rearrange/reframe/attribute class is dead. The abstraction cliff
+sits exactly at the plan/move boundary: naming the move is +26 to +34pp,
+naming the best line's plan is +0.6pp. Final handover: (a) the P11 commitment
+ruling — the only lever the eval endorses; (b) the human question — can a
+student map plan language to moves when this proxy cannot (within-position
+human study on the B8 texts; P17's n=20 cannot resolve it); (c) the
+plan-attribution feature is justified by truthfulness only, not by any
+measured comprehension gain. Restart /loop only after (a) or (b) produces
+new information.

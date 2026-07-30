@@ -753,3 +753,66 @@ next step up in rigor if a variant ever looks worth a real human study.
 **Net effect on the record:** every load-bearing conclusion of the loop
 (P9 null, P14/P15 decision-orthogonality, P16 closing verdict) survives its
 first contact with a human reader. The open ruling remains P11: commitment.
+
+---
+
+## 2026-07-30 · P18 · B8 — the feature-request prototype is NULL; the cliff
+## is the plan/move abstraction boundary itself (loop reopened by owner,
+## closed again on stronger grounds)
+
+**Hypothesis:** P16 blamed the curation nulls on decision-orthogonal content;
+plan-attribution of the best line should fix it. B8 computes it read-side
+with the plans layer's own labeler (`plan_diff.parse_line` over PV1 and the
+widest-gap PV; directive = earliest White family firing in the best line but
+not the inferior one). Production-computable from (fen, pvs); no move named;
+directive coverage 320/400 = 80%.
+
+**Measured** (`runs/20260730T211318-B8-discriminating.json`):
+
+| | acc | lift | p |
+|---|---|---|---|
+| B8 overall | 0.682 | +0.028 | — |
+| B8 directive subset (n=320) | 0.684 | +0.006 | 0.90 |
+| B8 vs B (McNemar) | — | net +1 | 1.0 |
+
+**Verdict: null, decisively.** Correctly attributed, decision-discriminating
+plan content transfers nothing. The abstraction hierarchy is complete:
+
+| the text names | lift |
+|---|---|
+| the move (BM) | +0.338 |
+| the answer's piece class (H1) | +0.259 |
+| the destination file (H2) | +0.229 |
+| the best line's plan family, attributed (B8) | +0.006 |
+| any plan prose, any arrangement (B/B2/B3/B4/B7) | ≤ +0.043, all null |
+
+**The cliff sits exactly at the plan/move boundary.** On this reader,
+plan-level language does not cash into move choice at all — not because the
+content is wrong (B8's is attributed and discriminating), not because the
+reader ignores prose (H1/H2), but because mapping "a plan of rook activation"
+onto "therefore Re1, not h3" is chess skill the reader does not have. Two
+open explanations only a human study can separate: (a) plan language
+inherently needs the concrete move alongside it (the commitment ruling), or
+(b) a human student CAN make that mapping and the proxy cannot — P17's n=20
+lacks the power to say.
+
+**This also revises the P16 feature request downward:** plan-attribution of
+the eval-equal move is still correct sheet content (it makes the read honest
+about which plan the best line enacts), but the eval gives NO evidence it
+improves comprehension on its own. Build it for truthfulness if at all, not
+on a promised comprehension gain.
+
+## CLOSING ENTRY v2 — the loop is exhausted, on stronger grounds
+
+B8 obsoletes the remaining queue: every unexplored variant is a rearrangement
+or reframing of plan prose, and that entire class is dead (B2/B3/B4/B6/B7/B8).
+The loop stops with a sharper handover than P16:
+
+1. **The commitment ruling (P11) is now the ONLY lever the eval endorses.**
+   Everything short of naming the move measures ≤ +0.6pp; naming it measures
+   +26 to +34pp. The Socratic middle ground this loop searched for does not
+   exist on this reader.
+2. **The decisive open question is human:** can a student map plan language
+   to moves when this proxy cannot? A within-position human study on the B8
+   texts would answer it; P17's calibration is 20/cell and cannot.
+3. Restart with /loop only after (1) or (2) produces new information.
