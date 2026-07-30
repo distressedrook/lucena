@@ -666,3 +666,54 @@ of the move.
 
 **One queue item remains (B6, side-to-move only — a length/distraction axis,
 already weakened by B2's null). If it fails, the stop condition fires.**
+
+---
+
+## 2026-07-30 · P16 · B6 significantly WORSE than B; strike 3 — the loop
+## closes (loop iteration 3)
+
+**Hypothesis:** dropping Black's block (reader is always White) halves length
+and removes the opponent's plans as distractors.
+
+**Measured** (400 pairs; `runs/20260730T181842-B6-sideonly.json`):
+
+| | acc | lift | p |
+|---|---|---|---|
+| B6 overall | 0.644 | −0.010 | — |
+| B6 vs B (McNemar) | — | net −14 (12 vs 26) | **0.034** |
+
+**Verdict: strike 3, and the first SIGNIFICANT difference between two
+non-leaking variants — in the wrong direction.** The opponent's block is not
+noise: deleting it costs ~2-3pp. The reader uses Black's weaknesses and plans
+as contrastive context for White's choice. A useful editorial fact in its own
+right (the two-sided read earns its length), and the opposite of the
+length-hurts intuition behind the variant.
+
+## CLOSING ENTRY — the loop's verdict after 3 strikes
+
+**Editorial search over the existing sheet is exhausted on this reader.**
+Six variants (B2 cap, B3 engine-only, B4 direction, B6 side-only, B7
+immediate-direction, plus BM as the leaking ceiling) and the full probe
+ladder produced one consistent account:
+
+1. The reader follows explicit move-level direction near-perfectly
+   (BM 0.992, H1 0.922, H2 0.883 — all p<1e-15).
+2. NO rearrangement, pruning, or reframing of the sheet's plan prose moves
+   it (B2/B3/B4/B7 all null), because the plan vocabulary stops one step
+   short of the move — and the sheet's plans are largely decision-orthogonal
+   (P14: top plan points at the distractor's piece more often than the
+   answer's; P15: even timing=immediate plans name neither piece 55% of the
+   time).
+3. The two-sided structure carries real signal (B6 significantly worse).
+
+**What would actually move the metric, in order of evidence:** (a) a
+commitment sentence — the owner's pedagogy ruling, P11; (b) plan content
+INDEXED to the present decision — which is not an editing problem but a
+lucena-plans capability: a "this plan is what the best line enacts" link,
+i.e. plan-attribution of the eval-equal move. That is the concrete,
+evidence-backed feature request this loop hands back to the plans layer.
+
+**Open human gates:** the calibration page (`human_calibration.html`,
+40 positions, ~20 min) — decides whether any of this transfers to a human
+reader; and the P11 commitment ruling. The loop stops here; restart with
+/loop after either gate produces new information.

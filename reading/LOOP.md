@@ -76,4 +76,14 @@ Three consecutive iterations with no variant beating B (non-leaking, McNemar
 p<0.05) → stop, write a closing entry stating the loop is exhausted on this
 reader, and hand the open items to the human: the calibration page
 (`gen_human_page.py`) and the pedagogy ruling on commitment (P11).
-**Strikes: 1 of 3** (P14/B4).
+
+**FIRED 2026-07-30 — strikes 3 of 3 (B4, B7, B6). See LOG.md P16 closing
+entry.** Final additions to the picture: B7 +0.036 on its directive subset
+(p=0.55, better-aimed but still null); B6 significantly WORSE than B (net
+−14, p=0.034 — the opponent's block carries real contrastive signal; the
+two-sided read earns its length). The loop's handover: (a) the calibration
+page `human_calibration.html` (40 positions, generated); (b) the P11
+commitment ruling; (c) one evidence-backed feature request to lucena-plans —
+plan-attribution of the eval-equal move ("this plan is what the best line
+enacts"), since the sheet's plans are measurably decision-orthogonal and no
+editing fixes that. Restart with /loop when a gate produces new information.
