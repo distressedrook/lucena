@@ -198,8 +198,70 @@ def arm_b6(pid, fen, pvs, rolls):
     return "\n".join(lines[:cut])
 
 
+def _line_families(fen: str, ucis: list[str], horizon: int = 25) -> dict[str, int]:
+    """White plan families fired by a line, family -> earliest ply.
+    Pure geometry via plan_diff.parse_line — the plans layer's own labeler."""
+    import plan_diff
+    board = chess.Board(fen)
+    moves = []
+    for uci in ucis:
+        try:
+            mv = chess.Move.from_uci(uci)
+        except ValueError:
+            break
+        if mv not in board.legal_moves:
+            break
+        moves.append(mv)
+        board.push(mv)
+    board = chess.Board(fen)
+    out: dict[str, int] = {}
+    try:
+        for ev in plan_diff.parse_line(board, moves, horizon=horizon):
+            if ev.get("side") == "W":
+                name = ev["name"]
+                out[name] = min(out.get(name, 99), ev.get("ply", 99))
+    except Exception:
+        return {}
+    return out
+
+
+def arm_b8(pid, fen, pvs, rolls):
+    """B8 "discriminating-plan directive" — the P16 feature request, prototyped.
+
+    The loop's closing verdict: the sheet's plans are decision-orthogonal, and
+    no editing fixes that; what is missing is plan-attribution of the best
+    line. This arm computes it read-side with the plans layer's own labeler:
+    label PV1 (best by cp) and PV-last (the widest-gap line) with
+    plan_diff.parse_line, and the directive is the earliest White family that
+    fires in the best line but NOT in the inferior one — the plan that
+    DISCRIMINATES the decision.
+
+    Division note: legitimately non-leaking. In production the sheet receives
+    all PVs and knows which is best by cp; "line 1 enacts X, the alternative
+    does not" derives from (fen, pvs) alone — no answer key, no move named.
+    """
+    base = arms.arm_b(pid, fen, pvs, rolls)
+    if base is None:
+        return None
+    usable = [p for p in pvs if p.get("ucis")]
+    if len(usable) < 2:
+        return base
+    sign = 1 if bank.white_to_move(fen) else -1
+    ranked = sorted(usable, key=lambda p: -sign * p["cp"])
+    best_fams = _line_families(fen, ranked[0]["ucis"])
+    worst_fams = _line_families(fen, ranked[-1]["ucis"])
+    discr = {f: ply for f, ply in best_fams.items() if f not in worst_fams}
+    if not discr:
+        return base
+    fam = min(discr, key=discr.get)
+    idea = fam.replace("_", " ")
+    return (f"Your best idea right now is a plan of {idea} — "
+            f"the strongest continuation pursues it and the alternatives do not."
+            f"\n\n{base}")
+
+
 arms.ARMS.update({"B2": arm_b2, "B3": arm_b3, "BM": arm_bm, "B4": arm_b4,
-                  "B6": arm_b6, "B7": arm_b7})
+                  "B6": arm_b6, "B7": arm_b7, "B8": arm_b8})
 
 
 if __name__ == "__main__":
