@@ -8,7 +8,7 @@
 One private **superrepo** (`lucena`) with three submodules — each layer its own repo, one clonable thing:
 
 ```
-lucena/            PRIVATE superrepo — pins each layer's commit; shared ops (serve.sh, docs)
+lucena/            PUBLIC superrepo — pins each layer's commit; shared ops (serve.sh, docs)
 ├── engine/        → lucena-engine   PUBLIC  (AGPL-3.0)   — the open release
 ├── backend/       → lucena-backend  PRIVATE (proprietary)
 └── mac-client/    → lucena-mac      PRIVATE (proprietary)
@@ -32,7 +32,7 @@ session exactly as before — the filesystem is one tree. Only git is split:
   commit goes with this backend/mac state (reproducible pinning).
 - Push: `git -C engine push`, then `git -C . push` for the pointer.
 
-## The open/closed boundary (AGPL)
+## The component and licensing boundaries
 - `engine` is AGPL-3.0 and public; you dual-license it (AGPL to the world, proprietary use by you as
   sole author — see `engine/NOTICE`, `engine/CONTRIBUTING.md` CLA).
 - The GPL-hygiene gate (`engine/tests/test_gpl_hygiene.py`) keeps python-chess out of the shipped

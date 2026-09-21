@@ -31,6 +31,9 @@ coach-home/.claude/settings.local.json
 # Eval harness transcripts
 tests/evalharness/transcripts/
 
+# Reading/research model cache — generated outputs, never source
+reading/.cache/
+
 # Generated narration smoke-test pack (regenerate via tools/smoke_narration.py)
 narration_pack.md
 

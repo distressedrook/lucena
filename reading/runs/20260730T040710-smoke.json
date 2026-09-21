@@ -1,0 +1,116 @@
+{
+ "model": "google/gemma-4-e4b",
+ "band": "2400v2400",
+ "n_pairs": 12,
+ "n_paired": 1,
+ "min_gap_cp": 50,
+ "median_gap_cp": 78,
+ "arms": {
+  "A": {
+   "declined": 0,
+   "leak_rate": 1.0
+  },
+  "B": {
+   "declined": 0,
+   "leak_rate": 0.08333333333333333
+  },
+  "D": {
+   "declined": 0,
+   "leak_rate": 0.5833333333333334
+  }
+ },
+ "conditions": {
+  "baseline": {
+   "n_present": 12,
+   "n_answered": 9,
+   "parse_rate": 0.75,
+   "own_parsed_accuracy": 0.2222222222222222,
+   "paired_hits": 0,
+   "paired_accuracy": 0.0,
+   "paired_ci95": [
+    0.0,
+    0.7934567085261071
+   ],
+   "mean_latency_s": 0.45852893590927124
+  },
+  "A:shipped": {
+   "n_present": 12,
+   "n_answered": 3,
+   "parse_rate": 0.25,
+   "own_parsed_accuracy": 0.3333333333333333,
+   "paired_hits": 0,
+   "paired_accuracy": 0.0,
+   "paired_ci95": [
+    0.0,
+    0.7934567085261071
+   ],
+   "mean_latency_s": 0.6100572347640991
+  },
+  "A:stripped": {
+   "n_present": 12,
+   "n_answered": 4,
+   "parse_rate": 0.3333333333333333,
+   "own_parsed_accuracy": 0.0,
+   "paired_hits": 0,
+   "paired_accuracy": 0.0,
+   "paired_ci95": [
+    0.0,
+    0.7934567085261071
+   ],
+   "mean_latency_s": 0.5386297702789307
+  },
+  "B:shipped": {
+   "n_present": 12,
+   "n_answered": 9,
+   "parse_rate": 0.75,
+   "own_parsed_accuracy": 0.3333333333333333,
+   "paired_hits": 0,
+   "paired_accuracy": 0.0,
+   "paired_ci95": [
+    0.0,
+    0.7934567085261071
+   ],
+   "mean_latency_s": 1.185078998406728
+  },
+  "B:stripped": {
+   "n_present": 12,
+   "n_answered": 9,
+   "parse_rate": 0.75,
+   "own_parsed_accuracy": 0.3333333333333333,
+   "paired_hits": 0,
+   "paired_accuracy": 0.0,
+   "paired_ci95": [
+    0.0,
+    0.7934567085261071
+   ],
+   "mean_latency_s": 1.171325186888377
+  },
+  "D:shipped": {
+   "n_present": 12,
+   "n_answered": 6,
+   "parse_rate": 0.5,
+   "own_parsed_accuracy": 0.16666666666666666,
+   "paired_hits": 0,
+   "paired_accuracy": 0.0,
+   "paired_ci95": [
+    0.0,
+    0.7934567085261071
+   ],
+   "mean_latency_s": 0.3130291700363159
+  },
+  "D:stripped": {
+   "n_present": 12,
+   "n_answered": 7,
+   "parse_rate": 0.5833333333333334,
+   "own_parsed_accuracy": 0.14285714285714285,
+   "paired_hits": 0,
+   "paired_accuracy": 0.0,
+   "paired_ci95": [
+    0.0,
+    0.7934567085261071
+   ],
+   "mean_latency_s": 0.3055286804835002
+  }
+ },
+ "wall_s": 44.568382024765015
+}

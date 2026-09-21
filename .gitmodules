@@ -1,15 +1,15 @@
 [submodule "engine"]
 	path = engine
-	url = git@github.com:distressedrook/lucena-engine.git
+	url = https://github.com/distressedrook/lucena-engine.git
 [submodule "backend"]
 	path = backend
-	url = git@github.com:distressedrook/lucena-backend.git
+	url = https://github.com/distressedrook/lucena-backend.git
 [submodule "mac-client"]
 	path = mac-client
-	url = git@github.com:distressedrook/lucena-mac.git
+	url = https://github.com/distressedrook/lucena-mac.git
 [submodule "lucena-plans"]
 	path = lucena-plans
-	url = git@github.com:distressedrook/lucena-plan.git
+	url = https://github.com/distressedrook/lucena-plan.git
 [submodule "lucena-tactics"]
 	path = lucena-tactics
-	url = git@github.com:distressedrook/lucena-tactics.git
+	url = https://github.com/distressedrook/lucena-tactics.git

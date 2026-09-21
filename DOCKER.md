@@ -43,16 +43,14 @@ compliant and cleanly separated:
 
 | Component        | Licence          | How it's used                                   |
 |------------------|------------------|-------------------------------------------------|
-| lucena-engine    | AGPL-3.0-only    | Imported in-process by the backend              |
+| lucena-engine    | AGPL-3.0-or-later | Imported in-process by the backend              |
 | Stockfish 18     | GPL-3.0-only     | Separate process, spoken to over UCI (arm's-length) |
 | Maia / maia3     | GPL-3.0-only     | Separate process, spoken to over UCI (arm's-length) |
-| lucena-backend   | proprietary      | The app; dual-licensed engine used under owner's grant |
+| lucena-backend   | AGPL-3.0-or-later | The open-source application layer                  |
 
-**The engine (AGPL) + backend combination.** The engine is dual-licensed by its
-sole copyright holder: AGPL-3.0 to the world, proprietary for use inside the
-closed backend. That grant is what lets the backend stay proprietary while
-linking the engine in-process — the AGPL's copyleft binds *other* users of the
-engine, not the copyright holder.
+**The engine and backend combination.** Lucena's original components are
+released together under AGPL-3.0-or-later. The AGPL network clause applies to
+modified versions of the service that are made available over a network.
 
 **AGPL §13 (the network clause).** Anyone operating a network service built on
 AGPL code must offer users its Corresponding Source. The image satisfies this

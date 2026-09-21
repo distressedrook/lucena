@@ -1,0 +1,202 @@
+[
+ {
+  "id": "n10009_a40",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n10246_a20",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n10443_a30",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n10765_a20",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n10844_a30",
+  "condition": "cold",
+  "answer": "B"
+ },
+ {
+  "id": "n1102_a40",
+  "condition": "with_read",
+  "answer": "B"
+ },
+ {
+  "id": "n11112_a50",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n111_a50",
+  "condition": "with_read",
+  "answer": "B"
+ },
+ {
+  "id": "n1136_a30",
+  "condition": "cold",
+  "answer": "B"
+ },
+ {
+  "id": "n11599_a20",
+  "condition": "with_read",
+  "answer": "B"
+ },
+ {
+  "id": "n11750_a50",
+  "condition": "cold",
+  "answer": "B"
+ },
+ {
+  "id": "n11887_a20",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n12027_a40",
+  "condition": "cold",
+  "answer": "B"
+ },
+ {
+  "id": "n12153_a50",
+  "condition": "with_read",
+  "answer": "B"
+ },
+ {
+  "id": "n12339_a40",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n12519_a20",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n12628_a20",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n12797_a30",
+  "condition": "with_read",
+  "answer": "B"
+ },
+ {
+  "id": "n1306_a30",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n13339_a20",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n13472_a30",
+  "condition": "cold",
+  "answer": "B"
+ },
+ {
+  "id": "n13618_a50",
+  "condition": "with_read",
+  "answer": "B"
+ },
+ {
+  "id": "n13749_a30",
+  "condition": "cold",
+  "answer": "B"
+ },
+ {
+  "id": "n13857_a50",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n14013_a30",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n14262_a20",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n14369_a20",
+  "condition": "cold",
+  "answer": "B"
+ },
+ {
+  "id": "n14565_a40",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n14722_a20",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n14925_a30",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n15021_a30",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n15136_a30",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n15335_a20",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n15461_a20",
+  "condition": "with_read",
+  "answer": "B"
+ },
+ {
+  "id": "n15652_a30",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n15950_a20",
+  "condition": "with_read",
+  "answer": "B"
+ },
+ {
+  "id": "n16188_a50",
+  "condition": "cold",
+  "answer": "A"
+ },
+ {
+  "id": "n16370_a30",
+  "condition": "with_read",
+  "answer": "A"
+ },
+ {
+  "id": "n16594_a50",
+  "condition": "cold",
+  "answer": "B"
+ },
+ {
+  "id": "n16807_a40",
+  "condition": "with_read",
+  "answer": "B"
+ }
+]
