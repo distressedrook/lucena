@@ -1,6 +1,6 @@
 # Backend API — client ↔ backend contract (v0, to lock)
 
-> How the mac client talks to the closed backend. **WebSocket** for the live coaching loop (input up,
+> How the mac client talks to the backend. **WebSocket** for the live coaching loop (input up,
 > the full state stream down); **REST** for everything not in the hot path (auth, library, history,
 > config). Hosting-friendly: SSE was rejected (one-way HTTP, awkward to host); the WS is the one live
 > channel.

@@ -6,8 +6,8 @@
 
 ## One-paragraph system
 
-Lucena is an engine-grounded Socratic chess coach. A native **mac client** talks to a **closed
-backend** whose **deterministic ConversationLoop** runs the coaching loop: it classifies each turn, calls
+Lucena is an engine-grounded Socratic chess coach. A native **mac client** talks to a Python
+**backend** whose **deterministic ConversationLoop** runs the coaching loop: it classifies each turn, calls
 an **open, stateless grounding engine** (Stockfish + Maia3 + validators) for chess *truth*, asks a
 commodity **LLM** for exactly one grounded generation, and pushes coaching **beats** to the player.
 The LLM is a pure generator — it never tool-calls, never decides chess, and never mutates state. All
@@ -19,18 +19,18 @@ backend, and is mutated only by deterministic code.
 | Decision | Choice |
 |---|---|
 | **Grounding engine** | OPEN source, **stateless**, **separate repo**, **gRPC** server. Python + Rust (reuse the `lucena-board` Rust core + the Stockfish/Maia/facts Python layer). |
-| **Backend** | CLOSED source, **Python** (reuse). In-process: state machine + ConversationLoop + LLM adapter. **Mastery, memory, and auth are PARKED this cycle** (first-class for v1, not built now). |
+| **Backend** | **Python**, released under AGPL-3.0-or-later. In-process: state machine + ConversationLoop + LLM adapter. **Mastery, memory, and auth are PARKED this cycle** (first-class for v1, not built now). |
 | **State machine** | Lifts **intact** from today's MCP server into the backend. Behaves exactly as today; made **more robust**. Mutated ONLY by the deterministic loop — never by the LLM. |
 | **LLM** | **Generic, provider-agnostic** in-process adapter — a single interface `generate(messages, {schema?, model?, temperature?, max_tokens?}) -> {text \| json, usage}`, OpenAI-chat-shaped so **OpenRouter is a drop-in**. The loop depends ONLY on this interface; the provider (Gemini now, OpenRouter later) and the model id are **config**. Never tool-calls, never sets state. |
 | **Client** | Thin native macOS. **WebSocket** for the interactive coaching loop (input up, beats/board down); **REST** for everything else (auth, library, history, config). |
 | **MCP** | **Retired entirely.** Its two jobs split: chess truth → engine gRPC; state/beats/gate → in-process state machine. |
-| **This monorepo** | The closed product: `backend/` · `mac-client/` · `infra/` · `docs/` + `legacy/` archive. The engine is its own open repo, consumed as a gRPC service. |
+| **This repository** | The open project: `backend/` · `mac-client/` · `infra/` · `docs/` and the research layers. The engine remains separately packaged and is also included as a submodule. |
 
 ## Topology (two processes)
 
 ```
                       WebSocket (coaching loop) + REST (everything else)
-   ┌── mac-client ─────────────────────────────────────────────▶ BACKEND  (closed, Python, ONE process)
+   ┌── mac-client ─────────────────────────────────────────────▶ BACKEND  (open, Python, ONE process)
    │   (renders board + beats,                                     ├─ state machine   (in-process, unchanged, robust)
    │    sends player input)                                        ├─ ConversationLoop (in-process, deterministic)
    └────────────────────────────────────────────────────────────  ├─ (mastery · auth — PARKED)
@@ -156,7 +156,7 @@ supervision).
 2. **Determinism first — the LLM interprets, it never calculates or orchestrates.** The backend
    classifies, grounds, and acts; the model only generates over facts it was handed. Perspective,
    evals, and moves are grounded/framed by the backend.
-3. **Open/closed firewall.** The backend reaches the grounding engine ONLY over its gRPC contract —
+3. **Component firewall.** The backend reaches the grounding engine ONLY over its gRPC contract —
    never by importing engine code. The engine holds no application state.
 4. **One bounded LLM call per hot-path turn** — cheap, predictable COGS; the model is swappable.
 5. **The engine is pure and stateless** — every request is independent given the position; engine
@@ -175,7 +175,7 @@ supervision).
   waits together. The coaching flows run this cycle without plans/content-selection/mastery — the
   engine grounds whatever position/PGN is in play; curated curriculum lands with mastery. Seams stay
   (content items will carry `concept_id`; the classifier already routes a "give me a puzzle" intent).
-- **Open/closed tier split beyond engine↔backend, cloudify/hosting details** — later.
+- **Cloud hosting details** — later.
 
 ## Per-layer API contracts (to lock next, design-first)
 

@@ -5,24 +5,24 @@ An engine-grounded, Socratic chess coach. A native macOS app talks to a local ba
 it. A grounding stack (Stockfish + Maia behind the `lucena-engine` wrapper, python-chess board
 truth + SEE in `lucena-core`) is the source of truth.
 
-This is the **private superrepo**: one clonable tree that pins each layer as a submodule.
+This is the public superrepo: one clonable tree that pins the layers used by the project.
 
 ```
 engine/       → lucena-engine   PUBLIC  (AGPL-3.0)   — Stockfish/Maia wrapper (uci, maia, pool,
                                  evalmodel, nnue), on PyPI as `lucena-engine`. Slimmed 2026-07-23:
-                                 everything else moved private (see below + lucena-tactics/docs/MIGRATION.md)
-lucena-core/  → (superrepo dir) PRIVATE — board truth: python-chess board + ported SEE
+                                 downstream coaching layers are documented below.
+lucena-core/  → (superrepo dir) PUBLIC — board truth: python-chess board + ported SEE
                                  (differential-gated vs the retired Rust core), positional terms,
                                  detect/pgn/openings/reads/_fen, gRPC client+server. Import name
                                  `lucena_core`; pip install -e lucena-core
-lucena-tactics/→ lucena-tactic  PRIVATE — the tactical lifecycle: census detectors + facts/hints,
+lucena-tactics/→ lucena-tactic  PUBLIC — the tactical lifecycle: census detectors + facts/hints,
                                  has_tactics verdict, line_tree/puzzle trees, DrillState walker,
                                  poisoned-line detector, mechanism naming + factsheet + lexicalizer.
                                  Contract: (1) why-wrong fact sheet, (2) has_tactics, (3) forcing tree.
                                  No superrepo remote yet (gitlink only). Its CLAUDE.md is the lab notebook.
-backend/      → lucena-backend  PRIVATE (proprietary) — conversation loop, state machine, Postgres
-mac-client/   → lucena-mac      PRIVATE (proprietary) — SwiftUI client (thin; streams over WS)
-lucena-plans/ → lucena-plan     PRIVATE (proprietary) — position→verified-plans library + research
+backend/      → lucena-backend  PUBLIC (AGPL-3.0-or-later) — conversation loop, state machine, Postgres
+mac-client/   → lucena-mac      PUBLIC (AGPL-3.0-or-later) — SwiftUI client (thin; streams over WS)
+lucena-plans/ → lucena-plan     PUBLIC (AGPL-3.0-or-later) — position→verified-plans library + research
                                  (src/ library · docs/ · research/ corpora+benchmarks; its CLAUDE.md
                                  is the lab notebook — read it before touching the plan grammar)
 ```
@@ -40,10 +40,8 @@ Each layer is its own repo with its own history. After editing:
 
 See `MULTIREPO.md` for the full flow.
 
-**Push identity:** these repos use the `distressedrook` account over SSH (`~/.ssh/id_ed25519`, pinned
-via `core.sshCommand`). `gh` may be logged into a **work** account (`avismara-c`) — never run GitHub
-actions against these repos with it; for any `gh` need, switch with `gh auth switch --user distressedrook`.
-Keep this superrepo **private** (a public superrepo can't recurse a private submodule).
+**Repository identity:** use the public remotes documented in `.gitmodules`. Do not embed personal
+credentials, host-specific SSH paths, or account-switching instructions in project documentation.
 
 ## Run / build / test
 
@@ -95,7 +93,7 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
   message, the fixed wording and the per-turn assembly alike — is built by a typed `Prompt` subclass
   in `backend/python/lucena_backend/coaching/` (`prompts.py`, `mode_prompts.py`), never hand-assembled
   with raw string concatenation in the handlers or anywhere else. Each family's pieces (`_head`/`_tail`/`_body`,
-  single-underscore — Python's actual privacy convention) are private; the only public surface is
+  single-underscore — Python's actual privacy convention) are implementation details; the only public surface is
   `SomePrompt.system(...)` and `SomePrompt.prompt(...)`, taking typed data in and returning text.
   Adding a new prompt or a new fragment of one means adding to that file, not the caller.
 - **Loop shape:** `ConversationLoop` resolves the mode (an active Lesson for this chat → coach, else
@@ -116,8 +114,8 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
   fact sheet when it's out of book, a middlegame, and |eval| ≤ 1.5 (`freeform._plans_read`). Every
   specific the sheet prints (freeing pushes, routes, trade mechanisms) comes from the firing
   eval-equal lines — suggest proposes, verify filters. NOTE: lucena-plans depends on python-chess
-  (GPL-3.0) — fine server-side/private, but none of it may ever migrate into the engine (the
-  dual-license invariant), and the repo must stay private.
+  (GPL-3.0) — keep its dependency and distribution obligations documented, and none of it may
+  migrate into the engine without revisiting the engine's license boundary.
 - **SAN on the wire.** UCI is engine-internal only (entry/exit conversion); the backend and app speak SAN.
 - **Storeless engine, one Postgres** in the backend. Relational session state (no json-as-state).
   Drill/forcing-line trees are precomputed and position-keyed, never per-session.
@@ -127,8 +125,8 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
 - **GPL hygiene (the dual-license invariant):** the public engine library **never** imports
   `python-chess`; Stockfish and Maia are used **only as subprocesses over UCI** (arm's-length). A CI
   gate enforces it (`engine/tests/test_gpl_hygiene.py`). Since the 2026-07-23 slim this is easy to
-  keep: the engine has no board at all — python-chess lives exclusively in the private layers
-  (`lucena-core`, tactics, plans, backend), where GPL is fine.
+  keep: the engine has no board at all — python-chess remains in the layers that explicitly depend
+  on it, with the resulting GPL obligations documented for distributors.
 
 ## Design & brand
 
@@ -140,12 +138,5 @@ REVIEW_ONLY=1 REVIEW_DIR=backend ./review-loop.sh "describe the change already i
 
 ## Releasing
 
-- **`RELEASE_CHECKLIST.md` gates the first production deploy** — what's deliberately deferred while
-  pre-production. Blocking one: **there is no migration mechanism**, so a schema change reaches fresh
-  schemas only and means recreating the dev DB.
-
-- **Engine → PyPI:** bump `engine/pyproject.toml`, tag `vX.Y.Z`, push the tag — CI builds wheels + sdist
-  and publishes via Trusted Publishing. Same version can't be re-uploaded; bump on a failed run.
-- The engine is AGPL-3.0 public; the backend/mac are closed. As sole copyright holder you dual-license
-  the engine (AGPL to the world, proprietary use in the closed backend). New contributors need the CLA
-  (`engine/CONTRIBUTING.md`).
+The release procedure (the `RELEASE_CHECKLIST.md` gate, engine → PyPI, the CLA / dual-licensing rules)
+lives in the `releasing` skill — `.claude/skills/releasing/SKILL.md`.
